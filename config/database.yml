@@ -51,4 +51,4 @@ production:
   <<: *default
   database: application
   username: application
-  password: <%= ENV['PRODUCTION_DATABASE_PASSWORD'] %>
+  password: ":vp.sh]n,f]d"
