@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: application
-  username: application
+  username: root
   password: ":vp.sh]n,f]d"
