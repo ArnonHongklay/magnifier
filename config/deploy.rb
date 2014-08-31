@@ -17,7 +17,7 @@ set :scm, :git
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :default_env, { path: '~/.rbenv/bin' }
+set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 
 set :keep_releases, 5
 
@@ -41,4 +41,8 @@ namespace :deploy do
     # end
   # end
 
+  desc "Symlink shared config files"
+  task :symlink_config_files do
+    run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+  end
 end
