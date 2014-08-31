@@ -14,11 +14,11 @@ default: &default
   encoding: utf8
   port: 3306
   username: root
-  password: ""
 
 development:
   <<: *default
   database: ohmpieng_development
+  password: ""
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -26,6 +26,7 @@ development:
 test:
   <<: *default
   database: ohmpieng_test
+  password: ""
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
