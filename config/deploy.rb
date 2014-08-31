@@ -1,6 +1,6 @@
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.1.2p95'
+set :rbenv_ruby, '2.1.2'
 
 # bundler
 set :bundle_gemfile, -> { release_path.join('Gemfile') }
