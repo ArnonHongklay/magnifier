@@ -1,23 +1,19 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 10
-  reaping_frequency: 60
-  host: localhost
-  database: application
-  username: root
-  password: "oomN8iy[z,"
-  socket: /var/run/mysqld/mysqld.sock
   port: 3306
+  username: root
+  password: ""
 
 development:
   <<: *default
-  database: application
+  database: ohmpieng_develop
 
 test:
   <<: *default
-  database: application
+  database: ohmpieng_test
 
 production:
   <<: *default
-  database: application
+  database: ohmpieng_production
+  password: "oomN8iy[z,"
