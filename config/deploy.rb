@@ -31,8 +31,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
@@ -43,6 +42,8 @@ namespace :deploy do
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
+
+  after "deploy:update", "deploy:cleanup"
 
   after :publishing, :restart
 
