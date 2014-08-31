@@ -7,7 +7,7 @@ set :repo_url, 'git@bitbucket.org:arnononline/production.git'
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/home/deploy'
+set :deploy_to, '/home/deploy/myapp'
 set :scm, :git
 
 # Default value for :format is :pretty
@@ -21,8 +21,6 @@ set :scm, :git
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :keep_releases, 5
 
