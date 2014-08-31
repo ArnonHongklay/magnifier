@@ -17,7 +17,7 @@ set :scm, :git
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :default_env, { path: '$HOME/.rbenv/bin:$PATH' }
+set :default_env, { path: '~/.rbenv/bin' }
 
 set :keep_releases, 5
 
