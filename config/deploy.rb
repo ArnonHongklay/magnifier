@@ -1,4 +1,15 @@
 
+set :rbenv_type, :user
+set :rbenv_ruby, '2.1.2p95'
+
+# bundler
+set :bundle_gemfile, -> { release_path.join('Gemfile') }
+set :bundle_dir, -> { shared_path.join('bundle') }
+set :bundle_flags, '--deployment --quiet'
+set :bundle_without, %w{development test}.join(' ')
+set :bundle_binstubs, -> { shared_path.join('bin') }
+set :bundle_roles, :all
+
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
@@ -23,8 +34,7 @@ set :scm, :git
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :keep_releases, 5
 
