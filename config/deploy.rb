@@ -7,10 +7,7 @@ set :repo_url, 'git@bitbucket.org:arnononline/production.git'
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy'
-
-# Default value for :scm is :git
 set :scm, :git
 
 # Default value for :format is :pretty
@@ -22,16 +19,18 @@ set :scm, :git
 # Default value for :pty is false
 # set :pty, true
 
-# Default value for :linked_files is []
 set :linked_files, %w{config/database.yml}
-
-# Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 set :keep_releases, 5
+
+after "deploy", "deploy:bundle_gems"
+after "deploy:bundle_gems", "deploy:restart"
+after "deploy:update_code", "deploy:migrate"
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
 
@@ -43,7 +42,6 @@ namespace :deploy do
     end
   end
 
-  after "deploy:update", "deploy:cleanup"
 
   after :publishing, :restart
 
