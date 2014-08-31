@@ -10,17 +10,14 @@ set :repo_url, 'git@bitbucket.org:arnononline/production.git'
 set :deploy_to, '/home/deploy/myapp'
 set :scm, :git
 
-# Default value for :format is :pretty
 # set :format, :pretty
-
-# Default value for :log_level is :debug
 # set :log_level, :debug
-
-# Default value for :pty is false
 # set :pty, true
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+set :default_env, { path: '$HOME/.rbenv/bin:$PATH' }
 
 set :keep_releases, 5
 
