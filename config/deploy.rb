@@ -27,19 +27,9 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 set :keep_releases, 5
-
-after "deploy", "deploy:bundle_gems"
-after "deploy:bundle_gems", "deploy:restart"
-after "deploy:update_code", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 
 namespace :deploy do
-
-  desc "Bundle Gems"
-  task :bundle_gems do
-    run "cd #{deploy_to}/current && bundle install vendor/gems"
-  end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -48,17 +38,14 @@ namespace :deploy do
     end
   end
 
-  task :start do ; end
-  task :stop do ; end
-
   after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      within release_path do
-        execute :rake, 'cache:clear'
-      end
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
 
