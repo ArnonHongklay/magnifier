@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => 'landing#index'
-  get 'application' => 'application#index'
+
+  root  'landing#index'
+  get 'home' => 'landing#index'
+  get 'app' => 'application#index'
 end
