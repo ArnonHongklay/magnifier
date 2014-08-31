@@ -1,10 +1,14 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
+  pool: 10
+  reaping_frequency: 60
+  host: localhost
+  database: application
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: "oomN8iy[z,"
+  socket: /var/run/mysqld/mysqld.sock
+  port: 3306
 
 development:
   <<: *default
@@ -12,10 +16,8 @@ development:
 
 test:
   <<: *default
-  database: application_test
+  database: application
 
 production:
   <<: *default
   database: application
-  username: root
-  password: ":vp.sh]n,f]d"
