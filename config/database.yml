@@ -50,4 +50,4 @@ test:
 production:
   <<: *default
   database: ohmpieng_production
-  password: <%= ENV['PRODUCTION_DATABASE_PASSWORD'] %>
+  password: "oomN8iy[z,"

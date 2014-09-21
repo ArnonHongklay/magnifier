@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'								# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'railties'
 gem 'mysql2'												# Use mysql as the database for Active Record
 gem 'sass-rails', '~> 4.0.3'				# Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0'					# Use Uglifier as compressor for JavaScript assets
@@ -31,11 +32,11 @@ group :development do
   gem 'letter_opener'             # For easier mail testing
   gem 'guard-livereload', require: false # Live CSS reloading
 
-	gem 'hirb' 												# Console pleasantries
-	gem 'pry' 												# Console pleasantries
-	gem 'pry-doc' 										# Console pleasantries
-	gem 'pry-rails'					 				  # Console pleasantries
-	gem 'ruby-debug-pry', require: 'ruby-debug/pry' # Add pry command to ruby-debug
+	# gem 'hirb' 												# Console pleasantries
+	# gem 'pry' 												# Console pleasantries
+	# gem 'pry-doc' 										# Console pleasantries
+	# gem 'pry-rails'					 				  # Console pleasantries
+	# gem 'ruby-debug-pry', require: 'ruby-debug/pry' # Add pry command to ruby-debug
 end
 
 group :development, :test do
