@@ -73,4 +73,5 @@ group :production do
 	# gem 'therubyracer',  platforms: :ruby
   gem 'therubyracer'              # JavaScript compilation
   gem 'gibbon'                    # Mailchimp gem
+  gem 'passenger'
 end
