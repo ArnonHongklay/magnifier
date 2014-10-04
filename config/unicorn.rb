@@ -1,4 +1,4 @@
-working_directory "/home/non/ohmpieng/project/production/current/public"
+working_directory "/home/non/ohmpieng/project/production/current"
 pid "/home/non/ohmpieng/project/production/current/pids/unicorn.pid"
 stderr_path "/var/www/my_app/log/unicorn.log"
 stdout_path "/var/www/my_app/log/unicorn.log"
