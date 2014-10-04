@@ -24,6 +24,11 @@ gem 'omniauth'                      # Authentication
 gem 'omniauth-facebook'           	# Authentication strategy
 gem 'cancan'                     		# Authorization
 
+gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 group :development do
   gem 'puma'            # Multi-threaded server for development
   gem 'spring'          # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -46,10 +51,6 @@ group :development, :test do
   gem 'byebug'
   gem 'machinist'                   # Fixtures, Blueprint
   gem 'capistrano-ext'              # So developers and CircleCI can deploy
-	gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
-	gem 'capistrano-bundler', '~> 1.1.2'
-	gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
-	gem 'capistrano-rbenv', github: "capistrano/rbenv"
 end
 
 group :test do
