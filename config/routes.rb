@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get 'admin' => 'application#index'
+  get '/' => 'application#index'
 end
