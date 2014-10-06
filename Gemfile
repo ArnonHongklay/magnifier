@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.3'
 
 gem 'rails', '4.1.5'                # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'railties'
@@ -54,6 +55,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'sdoc', '0.3.20', require: false
   gem 'minitest'
   gem 'faker'                     # Fake data for fixtures
   gem 'mock_redis'                # Fake redis implemented in Ruby
@@ -72,6 +74,7 @@ end
 group :production do
 	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 	# gem 'therubyracer',  platforms: :ruby
+  gem 'rails_12factor', '0.0.2'
   gem 'therubyracer'              # JavaScript compilation
   gem 'gibbon'                    # Mailchimp gem
   gem 'passenger'
