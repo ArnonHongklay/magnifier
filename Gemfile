@@ -55,7 +55,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'sdoc', '0.3.20', require: false
+  # gem 'sdoc', '0.4.0', require: false
   gem 'minitest'
   gem 'faker'                     # Fake data for fixtures
   gem 'mock_redis'                # Fake redis implemented in Ruby
