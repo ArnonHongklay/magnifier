@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'production'
-set :repo_url, 'git@bitbucket.org:nonmadden/production.git'
+set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@github.com/nonmadden/production.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
