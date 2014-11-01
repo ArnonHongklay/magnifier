@@ -2584,7 +2584,6 @@ body {
 }
 .landing-intro .header .logo img {
   float: left;
-  padding-right: 20px;
 }
 .landing-intro .header .logo .slogan {
   color: #ffffff;
@@ -2625,14 +2624,15 @@ body {
 }
 .landing-intro .description-bar {
   background: rgba(0, 0, 0, 0.35);
-  height: 150px;
+  height: 180px;
 }
 .landing-intro .description-bar p {
-  padding: 50px 25px;
+  padding: 0 25px;
   font-weight: normal;
   font-size: 24px;
   color: #ffffff;
   line-height: 40px;
+  display: table-cell;
   height: 145px;
   vertical-align: middle;
 }

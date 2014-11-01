@@ -3,16 +3,17 @@ default: &default
   encoding: utf8
   port: 3306
   username: root
-  password: "oomN8iy[z,"
 
 development:
   <<: *default
   database: ohmpieng_development
-
+  password:
 test:
   <<: *default
   database: ohmpieng_test
+  password:
 
 production:
   <<: *default
   database: ohmpieng_production
+  password: "oomN8iy[z,"

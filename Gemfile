@@ -4,9 +4,10 @@ ruby '2.1.3'
 gem 'rails', '4.1.5'                # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'railties'
 gem 'mysql2'                        # Use mysql as the database for Active Record
-gem 'sass-rails', '~> 4.0.3'        # Use SCSS for stylesheets
-gem 'uglifier', '>= 1.3.0'          # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.0.0'      # Use CoffeeScript for .js.coffee assets and views
+
+gem 'sass-rails'                    # Use SCSS for stylesheets
+gem 'uglifier'                      # Use Uglifier as compressor for JavaScript assets
+gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'                  # Use jquery as the JavaScript library
 gem 'jwt'
 gem 'turbolinks'                    # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
