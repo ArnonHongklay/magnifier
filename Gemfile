@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.3'
 
 gem 'rails', '4.1.5'                # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'railties'
@@ -24,6 +25,12 @@ gem 'omniauth'                      # Authentication
 gem 'omniauth-facebook'           	# Authentication strategy
 gem 'cancan'                     		# Authorization
 
+gem 'capistrano-ext'              # So developers and CircleCI can deploy
+gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 group :development do
   gem 'puma'            # Multi-threaded server for development
   gem 'spring'          # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -39,14 +46,10 @@ group :development, :test do
   gem 'rspec-collection_matchers'   # Rspec deprecated should
   gem 'byebug'
   gem 'machinist'                   # Fixtures, Blueprint
-  gem 'capistrano-ext'              # So developers and CircleCI can deploy
-	gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
-	gem 'capistrano-bundler', '~> 1.1.2'
-	gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
-	gem 'capistrano-rbenv', github: "capistrano/rbenv"
 end
 
 group :test do
+  # gem 'sdoc', '0.4.0', require: false
   gem 'minitest'
   gem 'faker'                     # Fake data for fixtures
   gem 'mock_redis'                # Fake redis implemented in Ruby
@@ -65,6 +68,8 @@ end
 group :production do
 	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 	# gem 'therubyracer',  platforms: :ruby
+  gem 'rails_12factor', '0.0.2'
   gem 'therubyracer'              # JavaScript compilation
   gem 'gibbon'                    # Mailchimp gem
+  gem 'passenger'
 end
