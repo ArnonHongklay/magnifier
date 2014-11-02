@@ -6,7 +6,7 @@ set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@githu
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-set :branch,          "origin/master"
+# set :branch,          "origin/master"
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/non/ohmpieng/project/production'
