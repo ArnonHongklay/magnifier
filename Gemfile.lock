@@ -77,6 +77,7 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     columnize (0.8.9)
+    commonjs (0.2.7)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     daemon_controller (1.2.0)
@@ -137,6 +138,11 @@ GEM
       multi_json
     launchy (2.4.2)
       addressable (~> 2.3)
+    less (2.5.1)
+      commonjs (~> 0.2.7)
+    less-rails (2.5.0)
+      actionpack (>= 3.1)
+      less (~> 2.5.0)
     letter_opener (1.2.0)
       launchy (~> 2.2)
     libv8 (3.16.14.7)
@@ -359,6 +365,7 @@ DEPENDENCIES
   jquery-rails
   jwt
   koala
+  less-rails
   letter_opener
   machinist
   minitest
