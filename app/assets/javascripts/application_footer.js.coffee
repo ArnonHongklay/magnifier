@@ -1,4 +1,4 @@
-#= require plugins/core/slimscroll/jquery.slimscroll.min
+#= require plugins/core/slimscroll/jquery.slimscroll.min.js
 #= require plugins/core/slimscroll/jquery.slimscroll.horizontal.min
 #= require plugins/forms/autosize/jquery.autosize
 #= require plugins/core/quicksearch/jquery.quicksearch
