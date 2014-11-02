@@ -33,5 +33,4 @@
 #= require jquery.sprFlat
 #= require app
 #= require pages/dashboard
-
 #= require_tree .

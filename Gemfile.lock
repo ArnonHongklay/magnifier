@@ -349,6 +349,7 @@ DEPENDENCIES
   cliver
   coffee-rails
   database_cleaner
+  execjs
   faker
   foreman
   gibbon
