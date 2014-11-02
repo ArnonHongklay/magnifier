@@ -18,10 +18,11 @@ set :keep_releases, 5
 
 namespace :deploy do
   desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
+    task :restart do
+      on roles(:app), in: :sequence, wait: 5 do
+        # Your restart mechanism here, for example:
+        execute :touch, release_path.join('tmp/restart.txt')
+      end
     end
   end
 
@@ -37,15 +38,9 @@ namespace :deploy do
     end
   end
 
-  desc "Database config"
-    task :setup_config, roles: :app do
-      # upload you database.yml from config dir to shared dir on server
-      put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
-      # make symlink
-      run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      # upload you database.yml from config dir to shared dir on server
-      put File.read(".env"), "#{shared_path}/config/.env"
-      # make symlink
-      run "ln -nfs #{shared_path}/config/.env #{current_path}/.env"
-    end
+  # desc "Symlink shared config files"
+  #   task :symlink_config_files do
+  #     run "ssh deployer@ohmpieng.org ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  #   end
+  # end
 end
