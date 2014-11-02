@@ -11,7 +11,9 @@ set :deploy_to, '/home/deployer/project/production'
 set :deploy_user, 'deployer'
 set :use_sudo, true
 
-set :linked_files, %w{config/database.yml config/config.yml}
+set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
+
+set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
 set :tmp_dir, "#{fetch(:home)}/tmp"
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
@@ -43,6 +45,11 @@ namespace :deploy do
     task :setup_config do
       on roles(:app), in: :sequence, wait: 5 do
         execute "mkdir -p #{shared_path}/config"
+        execute "mkdir -p #{shared_path}/bin"
+        execute "mkdir -p #{shared_path}/log"
+        execute "mkdir -p #{shared_path}/tmp"
+        execute "mkdir -p #{shared_path}/vendor/bundle"
+        execute "mkdir -p #{shared_path}/public/system"
         upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
         upload! StringIO.new(File.read("config/config.yml")), "#{shared_path}/config/config.yml"
     end
