@@ -17,6 +17,13 @@ set :stage, :production
 # extended properties on the server.
 server 'ohmpieng.org', user: 'deployer', roles: %w{web app}, my_property: :my_value
 
+set :ssh_options, {
+  keys: %w(/Users/non/.ssh/id_rsa),
+  forward_agent: false,
+  user: 'deployer'
+  # auth_methods: %w(password)
+}
+
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
