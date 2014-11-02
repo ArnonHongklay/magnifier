@@ -14,7 +14,7 @@ set :use_sudo, true
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
+# set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
 set :tmp_dir, "#{fetch(:home)}/tmp"
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 set :keep_releases, 5
