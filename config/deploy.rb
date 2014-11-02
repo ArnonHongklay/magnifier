@@ -9,7 +9,7 @@ set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@githu
 # set :branch,          "origin/master"
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/non/ohmpieng/project/production'
+set :deploy_to, '/home/non/deployer/project/production'
 
 # Default value for :scm is :git
 set :scm, :git
