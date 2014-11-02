@@ -38,8 +38,35 @@ namespace :deploy do
     end
   end
 
+  # run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
   desc "Symlink shared config files"
-  task :symlink_config_files do
-    run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+  task :linked_files do
+    next unless any? :linked_files
+    on roles :app do
+      execute :mkdir, '-pv', linked_file_dirs(release_path)
+      fetch(:linked_files).each do |file|
+        target = release_path.join(file)
+        source = shared_path.join(file)
+        unless test "[ -L #{target} ]"
+          if test "[ -f #{target} ]"
+            execute :rm, target
+          end
+          execute :ln, '-s', source, target
+        end
+      end
+    end
+  end
+
+  desc 'Check files to be linked exist in shared'
+  task :linked_files do
+    next unless any? :linked_files
+    on roles :app do |host|
+      linked_files(shared_path).each do |file|
+        unless test "[ -f #{file} ]"
+          error t(:linked_file_does_not_exist, file: file, host: host)
+          exit 1
+        end
+      end
+    end
   end
 end
