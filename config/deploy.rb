@@ -10,7 +10,8 @@ set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@githu
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deployer/project/production'
-
+set :use_sudo, true
+set :user, "deployer"
 # Default value for :scm is :git
 set :scm, :git
 set :rails_env, 'production'
