@@ -2,30 +2,24 @@
 lock '3.1.0'
 
 set :application, 'production'
+
+set :scm, :git
 set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@github.com/nonmadden/production.git'
+set :branch, 'master'
 
 set :deploy_to, '/home/deployer/project/production'
-set :pty, true
-set :format, :pretty
+set :deploy_user, 'deployer'
 set :use_sudo, true
-set :user, "deployer"
-set :scm, :git
-set :rails_env, 'production'
-set :linked_files, %w{config/database.yml}
+
+set :linked_files, %w{config/database.yml config/config.yml}
+set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
 set :tmp_dir, "#{fetch(:home)}/tmp"
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 set :keep_releases, 5
+set :pty, true
+set :format, :pretty
 
 namespace :deploy do
-  desc 'Restart application'
-    task :restart do
-      on roles(:app), in: :sequence, wait: 5 do
-        # Your restart mechanism here, for example:
-        execute :touch, release_path.join('tmp/restart.txt')
-      end
-    end
-  end
-
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
@@ -38,9 +32,19 @@ namespace :deploy do
     end
   end
 
-  # desc "Symlink shared config files"
-  #   task :symlink_config_files do
-  #     run "ssh deployer@ohmpieng.org ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  #   end
-  # end
+  desc 'Restart application'
+    task :restart do
+      on roles(:app), in: :sequence, wait: 5 do
+        execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  desc "Database config"
+    task :setup_config do
+      on roles(:app), in: :sequence, wait: 5 do
+        execute "mkdir -p #{shared_path}/config"
+        upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
+        upload! StringIO.new(File.read("config/config.yml")), "#{shared_path}/config/config.yml"
+    end
+  end
 end
