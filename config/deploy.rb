@@ -13,7 +13,7 @@ set :deploy_to, '/home/non/ohmpieng/project/production'
 
 # Default value for :scm is :git
 set :scm, :git
-
+set :rails_env, 'production'
 # Default value for :format is :pretty
 # set :format, :pretty
 
