@@ -3,4 +3,4 @@
 #= require turbolinks
 #= require bootstrap/bootstrap
 #= require jRespond.min
-#= require_tree .
+#= require_tree ./application
