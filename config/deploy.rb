@@ -22,6 +22,7 @@ set :pty, true
 set :format, :pretty
 
 namespace :deploy do
+  before :publishing, :setup_config
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
