@@ -12,3 +12,13 @@ Rails.application.config.assets.precompile += %w( *.css )
 
 Rails.application.config.assets.precompile += %w( *.png )
 Rails.application.config.assets.precompile += %w( *.jpg )
+
+Rails.application.config.assets.precompile += %w( *.woff )
+Rails.application.config.assets.precompile += %w( *.ttf )
+
+
+# config.assets.precompile << Proc.new { |path|
+#   if path =~ /\.(eot|svg|ttf|woff)\z/
+#     true
+#   end
+# }
