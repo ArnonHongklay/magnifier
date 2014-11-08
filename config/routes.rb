@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root 'application#index'
-  # get 'apps' => 'application#index'
+  root 'greetings#hello'
+
+  get 'apps' => 'application#index'
+  namespace :apps do
+    resources :index, :dashboard, :analysis, :reports
+  end
 end
