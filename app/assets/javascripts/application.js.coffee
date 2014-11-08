@@ -1,5 +1,5 @@
 #= require jquery-2.1.1.min
-#= require jquery-ui-1.10.4
+#= require jquery-ui-1.11.1.min
 #= require moment-with-locales.min
 #= require bootstrap.min
 #= require angular.min
