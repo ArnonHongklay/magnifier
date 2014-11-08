@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  # root 'application#index'
-  get 'apps' => 'application#index'
+  root 'application#index'
+  # get 'apps' => 'application#index'
 end
