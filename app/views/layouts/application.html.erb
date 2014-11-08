@@ -9,47 +9,18 @@
         <%= render partial: 'layouts/header' %>
     </head>
     <body>
-        <!-- Start #header -->
-        <div id="header">
-            <div class="container-fluid">
-                <div class="navbar">
-                  <%= render partial: 'layouts/nav' %>
-                </div>
-                <!-- Start #header-area -->
-                <%= render partial: 'layouts/nav_main' %>
-                <!-- End #header-area -->
-            </div>
-            <!-- Start .header-inner -->
+      <div id="header">
+        <div class="container-fluid">
+          <div class="navbar">
+            <%= render partial: 'layouts/navbar' %>
+          </div>
         </div>
-        <!-- End #header -->
-        <!-- Start #sidebar -->
-        <div id="sidebar">
-          <!-- Start .sidebar-inner -->
-            <%= render partial: 'layouts/sidebar' %>
-          <!-- End .sidebar-inner -->
-        </div>
-        <!-- End #right-sidebar -->
-
-        <%= yield %>
-
-        <!-- Javascripts -->
-        <!-- Load pace first -->
-        <script src="assets/plugins/core/pace/pace.min.js"></script>
-        <!-- Important javascript libs(put in all pages) -->
-        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-        window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
-        </script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <script>
-        window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
-        </script>
-        <!--[if lt IE 9]>
-          <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
-          <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-          <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
-        <![endif]-->
-        <!-- Bootstrap plugins -->
-        <%= javascript_include_tag 'application_footer' %>
+      </div>
+      <div id="sidebar">
+        <%= render partial: 'layouts/sidebar' %>
+      </div>
+      <%= yield %>
+      <!-- Javascripts -->
+      <%= javascript_include_tag 'application_footer' %>
     </body>
 </html>
