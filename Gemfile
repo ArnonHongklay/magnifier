@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'            # Use ActiveModel has_secure_password
 gem 'unicorn', '4.8.3'              # Use unicorn as the app server
 gem 'bcrypt-ruby'                   # Secure password storing
 gem 'execjs'
+gem 'bootbox-rails', '~>0.4'
 
 gem 'redis-namespace'               # Cleaner redis keys
 gem 'redis-semaphore'               # Facebook access locking
