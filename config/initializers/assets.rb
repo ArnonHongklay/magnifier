@@ -14,3 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join("lib", "videoplayer", "
 
 Rails.application.config.assets.precompile << '*.ttf' << '*.eot' << '*.svg' << '*.woff'
 Rails.application.config.assets.precompile << '*.png' << '*.jpg' << '*.gif'
+
+Rails.application.config.assets.precompile += %w( *.js )
