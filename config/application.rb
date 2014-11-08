@@ -32,5 +32,7 @@ module Production
     # Enable caching via the memory store
     config.cache_store = :memory_store
 
+    config.root_directory = '/apps'
+    config.assets.prefix = '/apps/assets/'
   end
 end
