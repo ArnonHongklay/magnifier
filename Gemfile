@@ -5,8 +5,8 @@ gem 'rails', '4.1.5'                # Bundle edge Rails instead: gem 'rails', gi
 gem 'railties'
 gem 'mysql2'                        # Use mysql as the database for Active Record
 
-gem "less-rails"
 gem 'sass-rails'                    # Use SCSS for stylesheets
+gem "less-rails"
 gem 'uglifier'                      # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'                  # Use jquery as the JavaScript library
