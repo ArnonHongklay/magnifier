@@ -41,6 +41,8 @@ GEM
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     bootbox-rails (0.4.0)
+    bootstrap-sass (3.3.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -346,6 +348,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bcrypt-ruby
   bootbox-rails (~> 0.4)
+  bootstrap-sass
   byebug
   cancan
   capistrano (~> 3.1.0)

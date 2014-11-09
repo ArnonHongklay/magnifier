@@ -7,6 +7,7 @@ gem 'mysql2'                        # Use mysql as the database for Active Recor
 
 gem 'sass-rails'                    # Use SCSS for stylesheets
 gem "less-rails"
+gem "bootstrap-sass"
 gem 'uglifier'                      # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'                  # Use jquery as the JavaScript library
