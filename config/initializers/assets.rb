@@ -10,9 +10,7 @@ Rails.application.config.assets.version = '1.3'
 Rails.application.config.assets.enabled = true
 
 Rails.application.config.assets.prefix = '/apps/assets/'
-Rails.application.config.assets.paths << Rails.root.join("lib", "videoplayer", "flash")
-
-Rails.application.config.assets.precompile << '*.ttf' << '*.eot' << '*.svg' << '*.woff'
+Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 Rails.application.config.assets.precompile << '*.png' << '*.jpg' << '*.gif'
-
 Rails.application.config.assets.precompile += %w( *.js )
