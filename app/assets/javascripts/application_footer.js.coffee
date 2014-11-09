@@ -20,10 +20,6 @@
 #= require plugins/forms/tinymce/tinymce.min
 #= require plugins/misc/highlight/highlight.pack
 #= require plugins/misc/countTo/jquery.countTo
-#= require plugins/ui/weather/skyicons
-#= require plugins/ui/notify/jquery.gritter
-#= require plugins/ui/calendar/fullcalendar
-
 
 #= require bootstrap.min
 #= require jRespond.min

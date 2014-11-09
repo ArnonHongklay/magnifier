@@ -1,5 +1,5 @@
 class GreetingsController < ApplicationController
-  layout "geetings"
+  # layout "geetings"
 
   def hello
   end
