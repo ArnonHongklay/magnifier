@@ -4,7 +4,6 @@
 #= require plugins/core/slimscroll/jquery.slimscroll.horizontal.min
 #= require plugins/forms/autosize/jquery.autosize
 #= require plugins/core/quicksearch/jquery.quicksearch
-#= require plugins/ui/bootbox/bootbox
 #= require plugins/charts/flot/jquery.flot
 #= require plugins/charts/flot/jquery.flot.pie
 #= require plugins/charts/flot/jquery.flot.resize
