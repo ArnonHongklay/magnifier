@@ -6,9 +6,12 @@ gem 'railties'
 gem 'mysql2'                        # Use mysql as the database for Active Record
 gem 'sdoc', '~> 0.4.0',	group: :doc	# bundle exec rake doc:rails generates the API under doc/api.
 
-gem 'sass-rails'                    # Use SCSS for stylesheets
-gem "less-rails"
-gem "bootstrap-sass"
+
+# gem 'less-rails'
+# gem 'therubyracer' # Ruby
+gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'autoprefixer-rails'
 
 gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'                  # Use jquery as the JavaScript library

@@ -1,10 +1,11 @@
 
+#= require pace.min
 #= require jRespond.min
 #= require jquery.slimscroll.min
 #= require jquery.slimscroll.horizontal.min
 #= require jquery.autosize.min
+#= require jquery.quicksearch
 #= require bootbox.min
-
 
 # = require charts/jquery.flot
 # = require charts/jquery.flot.pie
@@ -19,8 +20,9 @@
 # = require charts/jquery.sparkline
 # = require charts/jquery.easy-pie-chart
 
-
 #= require highlight.pack
+#= require tinymce.min
+#= require fullcalendar.min
 #= require jquery.icheck.min
 #= require jquery.tagsinput.min
 #= require jquery.countTo

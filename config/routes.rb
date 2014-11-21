@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  root 'greetings#hello'
+  root 'admin#index'
 
-  # application
-  get 'apps' => 'application#index'
-  get 'apps/dashboard' => 'application#dashboard'
-  get 'apps/analysis' => 'application#analysis'
-  get 'apps/reports' => 'application#reports'
-
-  # namespace :apps, controller: "application#index" do
-  #   # root to: "application#index"
-  #   resources :index, :dashboard, :analysis, :reports
-  # end
+  get 'admin' => 'admin#index'
+  get 'admin/dashboard' => 'admin#dashboard'
+  get 'admin/analysis' => 'admin#analysis'
+  get 'admin/reports' => 'admin#reports'
 end
