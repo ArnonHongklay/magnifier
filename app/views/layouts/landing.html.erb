@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ohmpieng</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script type="text/javascript">
+    function preloader(){
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }//preloader
+    window.onload = preloader;
+  </script>
+
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  </head>
+
+  <body id="page-top" class="list_blog" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="loading"></div>
+
+    <%= yield %>
+
+    <%= javascript_include_tag 'landing', 'data-turbolinks-track' => true %>
+  </body>
+  </html>
