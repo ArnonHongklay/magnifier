@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    h1 {
+      color: #ccc;
+    }
+  </style>
+  <!--
+    lib
+      https://github.com/mileszs/wicked_pdf
+      http://snikt.net/blog/2012/04/26/wicked-pdf/
+  -->
+</head>
+<body>
+  <div id="header">
+    <%= wicked_pdf_image_tag 'team/john_doe.jpg' %>
+  </div>
+  <%= yield %>
+</body>
+<html>
