@@ -14,6 +14,7 @@
     window.onload = preloader;
   </script>
 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true %>
@@ -140,6 +141,8 @@
         </a>
       </div>
     </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-<%= jquery_version %>.min.js"></script>
     <%= javascript_include_tag 'landing', 'data-turbolinks-track' => true %>
   </body>
   </html>

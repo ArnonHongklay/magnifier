@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// = require landing/bootstrap
 // = require landing/animate
 // = require landing/font-awesome.min
 
@@ -517,13 +516,13 @@ header.home{
   width: 100%;
   height: 456px;
   background-position: 50% 0px;
-  /*max-width:100%;
+  max-width:100%;
   top:0px;
   padding-top:0;
   margin:auto;
   position:relative;
   width:100%;
-  height:100%;*/
+  height:100%;
 }
 .navbar-fixed-top{
   display:none;

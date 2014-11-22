@@ -2,13 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# = require landing/jquery-1.10.2
-# = require landing/bootstrap.min
 # = require landing/jquery.easing.min
 # = require landing/classie
 # = require landing/cbpAnimatedHeader
 # = require landing/jquery.appear
-# = require landing/businessplus
 # = require landing/jquery.flexslider-min
 # = require landing/jquery.isotope.min
 
@@ -20,7 +17,6 @@ $(document).ready ->
   # Floating label headings for the contact form
   #home section image size to window size.
   #Flex slider in home section
-
   initialize = ->
     mapProp =
       center: new google.maps.LatLng(51.508742, -0.120850)
@@ -37,7 +33,7 @@ $(document).ready ->
     event.preventDefault()
     return
 
-  $("#content").scrollspy target: ".navbar-fixed-top"
+  # $("#content").scrollspy target: ".navbar-fixed-top"
   $("body").on("input propertychange", ".floating-label-form-group", (e) ->
     $(this).toggleClass "floating-label-form-group-with-value", !!$(e.target).val()
     return
