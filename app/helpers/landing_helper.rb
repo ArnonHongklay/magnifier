@@ -4,6 +4,6 @@ module LandingHelper
   end
 
   def jquery_version
-    "1.10.2"
+    "1.11.1"
   end
 end

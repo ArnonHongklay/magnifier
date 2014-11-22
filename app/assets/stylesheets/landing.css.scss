@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // = require landing/animate
-// = require landing/font-awesome.min
+// = require font-awesome.min
 
 body {
   overflow-x: hidden;
@@ -513,16 +513,16 @@ header.home{
   -ms-animation: BackgroundAnimation 300s linear infinite;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 456px;
-  background-position: 50% 0px;
-  max-width:100%;
-  top:0px;
-  padding-top:0;
-  margin:auto;
-  position:relative;
-  width:100%;
-  height:100%;
+  // width: 100%;
+  // height: 456px;
+  // background-position: 50% 0px;
+  // max-width:100%;
+  // top:0px;
+  // padding-top:0;
+  // margin:auto;
+  // position:relative;
+  // width:100%;
+  // height:100%;
 }
 .navbar-fixed-top{
   display:none;

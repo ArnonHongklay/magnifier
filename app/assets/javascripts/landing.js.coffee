@@ -4,7 +4,7 @@
 
 # = require landing/jquery.easing.min
 # = require landing/classie
-# = require landing/cbpAnimatedHeader.min
+# = require landing/cbpAnimatedHeader
 # = require landing/jquery.appear
 # = require landing/jquery.flexslider-min
 # = require landing/jquery.isotope.min
