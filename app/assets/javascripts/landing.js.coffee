@@ -17,12 +17,10 @@
 $(document).ready ->
 
   # Highlight the top nav as scrolling occurs
-
   # Floating label headings for the contact form
-
   #home section image size to window size.
-
   #Flex slider in home section
+
   initialize = ->
     mapProp =
       center: new google.maps.LatLng(51.508742, -0.120850)
