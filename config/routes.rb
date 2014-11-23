@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
+  # devise_for :users
+
   root 'landing#index'
+
+  get '/hello' => 'landing#hello'
+
+  resources :dashboard
+  resources :report
+  resources :monitoring_tools
+  resources :ticket_support
+
+  # get "/auth/:provider/callback" => "sessions#create"
+  # get "/signout" => "sessions#destroy", :as => :signout
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

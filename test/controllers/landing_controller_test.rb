@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class LandingControllerTest < ActionController::TestCase
-  test "should get hello" do
-    get :hello
+  test "should get index" do
+    get :index
     assert_response :success
   end
 
