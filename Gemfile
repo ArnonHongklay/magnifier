@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.1.5'
+
+# gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -10,6 +12,7 @@ gem 'sqlite3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 
 # javascript
 gem 'jquery-rails'
