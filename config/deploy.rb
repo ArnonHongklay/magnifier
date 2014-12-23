@@ -52,7 +52,7 @@ namespace :deploy do
         execute "mkdir -p #{shared_path}/vendor/bundle"
         execute "mkdir -p #{shared_path}/public/system"
         upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
-        upload! StringIO.new(File.read("config/config.yml")), "#{shared_path}/config/config.yml"
+        # upload! StringIO.new(File.read("config/config.yml")), "#{shared_path}/config/config.yml"
     end
   end
 end
