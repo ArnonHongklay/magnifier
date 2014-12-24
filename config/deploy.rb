@@ -21,6 +21,9 @@ set :keep_releases, 5
 set :pty, true
 set :format, :pretty
 
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
+
 namespace :deploy do
   before :publishing, :setup_config
   after :publishing, :restart
