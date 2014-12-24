@@ -1,5 +1,5 @@
 set :stage, :staging
-set :rails_env, :staging
+set :rails_env, :production
 
 role :app, %w{deployer@staging.ohmpieng.org}
 role :web, %w{deployer@staging.ohmpieng.org}

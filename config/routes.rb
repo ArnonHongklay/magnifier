@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   get '/hello' => 'landing#hello'
 
-  resources :dashboard
-  resources :report
-  resources :monitoring_tools
-  resources :ticket_support
+  # resources :dashboard
+  # resources :report
+  # resources :monitoring_tools
+  # resources :ticket_support
 
   # get "/auth/:provider/callback" => "sessions#create"
   # get "/signout" => "sessions#destroy", :as => :signout
