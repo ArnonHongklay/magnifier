@@ -1,0 +1,54 @@
+<div class="sidebar-inner">
+  <ul id="sideNav" class="nav nav-pills nav-stacked">
+    <li><a href="<%= account_index_path %>">Home<i class="im-home"></i></a></li>
+    <li><a href="<%= account_dashboard_path %>">Dashboard<i class="fa-dashboard"></i></a></li>
+    <li><a href="<%= account_monitoring_tools_path %>">Monitoring Tools<i class="fa-th-large"></i></a>
+      <!-- <ul class="nav sub">
+        <li><a href="forms.html"><i class="ec-pencil2"></i> Form Stuff</a></li>
+        <li><a href="form-validation.html"><i class="im-checkbox-checked"></i> Form Validation</a></li>
+        <li><a href="form-wizard.html"><i class="im-wand"></i> Form Wizard</a></li>
+        <li><a href="wysiwyg.html"><i class="fa-pencil"></i> WYSIWYG editor</a></li>
+      </ul> -->
+    </li>
+    <li><a href="<%= account_index_path %>">News<i class="fa-th-large"></i></a></li>
+    <li><a href="<%= account_report_path %>">Report<i class="fa-th-large"></i></a>
+      <!-- <ul class="nav sub">
+        <li><a href="forms.html"><i class="ec-pencil2"></i> Form Stuff</a></li>
+        <li><a href="form-validation.html"><i class="im-checkbox-checked"></i> Form Validation</a></li>
+        <li><a href="form-wizard.html"><i class="im-wand"></i> Form Wizard</a></li>
+        <li><a href="wysiwyg.html"><i class="fa-pencil"></i> WYSIWYG editor</a></li>
+      </ul> -->
+    </li>
+    <li><a href="<%= account_ticket_support_path %>">Ticket Support<i class="fa-group"></i></a></li>
+    <!-- <li><a href="<%= account_community_path %>">Community<i class="fa-group"></i></a></li> -->
+  </ul>
+  <div class="sidebar-panel">
+      <h4 class="sidebar-panel-title"><i class="im-fire"></i> Server usage</h4>
+      <div class="sidebar-panel-content">
+          <ul class="server-stats">
+              <li>
+                  <span class="txt">Disk space</span>
+                  <span class="percent">78</span>
+                  <div id="usage-sparkline" class="sparkline">Loading...</div>
+                  <div class="pie-chart" data-percent="78"></div>
+              </li>
+          </ul>
+          <ul class="server-stats">
+              <li>
+                  <span class="txt">CPU</span>
+                  <span class="percent">56</span>
+                  <div id="cpu-sparkline" class="sparkline">Loading...</div>
+                  <div class="pie-chart" data-percent="56"></div>
+              </li>
+          </ul>
+          <ul class="server-stats">
+              <li>
+                  <span class="txt">Memory</span>
+                  <span class="percent">14</span>
+                  <div id="ram-sparkline" class="sparkline">Loading...</div>
+                  <div class="pie-chart" data-percent="14"></div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,1024 @@
+// = require landing/animate
+// = require font-awesome.min
+
+//colors
+$color_fern_frond_approx: #577929;
+$color_scooter_approx: #1eb3d9;
+$concrete: #f2f2f2;
+$color_atlantis_approx: #91c444;
+$color_red_berry_approx: #950c01;
+$color_macaroni_and_cheese_approx: #ffbc81;
+$color_pickled_bluewood_approx: #2c3e50;
+$white: #fff;
+$color_scooter_90_approx: rgba(30,179,217,.9);
+$color_gallery_approx: #eee;
+$color_rangoon_green_approx: #1d1d1d;
+$color_blue_lagoon_approx: #006f8a;
+$alabaster: #fafafa;
+$color_picton_blue_approx: #3fbfe1;
+$black: #000;
+$color_tapa_approx: #757575;
+$color_storm_dust_approx: #616060;
+$wild_sand: #f4f4f4;
+
+//fonts
+$font_0: "Roboto Slab";
+$font_1: serif;
+$font_2: "Montserrat";
+$font_3: Helvetica Neue;
+$font_4: Helvetica;
+$font_5: Arial;
+$font_6: sans-serif;
+$font_7: "FontAwesome";
+$font_8: "Lato";
+
+//@extend-elements
+//original selectors
+//h1, h2, h3, h4, h5, h6
+%extend_1 {
+  text-transform: uppercase;
+  font-family: $font_2, $font_3, $font_4, $font_5, $font_6;
+  font-weight: 700;
+}
+
+//original selectors
+//hr.star-light, hr.star-primary
+%extend_2 {
+  margin: 25px auto 30px;
+  padding: 0;
+  max-width: 250px;
+  border: 0;
+  border-top: solid 5px;
+  text-align: center;
+}
+
+//original selectors
+//hr.star-light:after, hr.star-primary:after
+%extend_3 {
+  content: "\f005";
+  display: inline-block;
+  position: relative;
+  top: -.8em;
+  padding: 0 .25em;
+  font-family: $font_7;
+  font-size: 2em;
+}
+
+//original selectors
+//.floating-label-form-group input, .floating-label-form-group textarea
+%extend_4 {
+  z-index: 1;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 0;
+  font-size: 1.5em;
+  background: 0 0;
+  //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none!important;
+  resize: none;
+}
+
+//original selectors
+//.testimonial .item .textbox:after, .testimonial .item .textbox:before
+%extend_5 {
+  width: 0;
+  height: 0;
+  left: 80px;
+  content: " ";
+  bottom: -20px;
+  display: block;
+  position: absolute;
+}
+
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+#map-canvas {
+  height: 100%;
+}
+p {
+  font-family: $font_0, $font_1;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 1.25em;
+  &.small {
+    font-size: 16px;
+  }
+}
+a {
+  outline: 0;
+  color: $color_scooter_approx;
+  &:hover {
+    outline: 0;
+    color: $color_scooter_approx;
+  }
+  &:focus {
+    outline: 0;
+    color: $color_scooter_approx;
+  }
+  &:active {
+    outline: 0;
+    color: $color_scooter_approx;
+  }
+  &.active {
+    outline: 0;
+    color: $color_scooter_approx;
+  }
+}
+h1 {
+  @extend %extend_1;
+}
+h2 {
+  @extend %extend_1;
+}
+h3 {
+  @extend %extend_1;
+}
+h4 {
+  @extend %extend_1;
+}
+h5 {
+  @extend %extend_1;
+}
+h6 {
+  @extend %extend_1;
+}
+hr {
+  &.star-light {
+    @extend %extend_2;
+    &:after {
+      @extend %extend_3;
+      background-color: $color_scooter_approx;
+    }
+  }
+  &.star-primary {
+    @extend %extend_2;
+    border-color: $color_pickled_bluewood_approx;
+    &:after {
+      @extend %extend_3;
+      color: $color_pickled_bluewood_approx;
+      background-color: $concrete;
+    }
+  }
+}
+.services {
+  background-color: #91C444;
+  color: $white;
+  hr.star-light:after {
+    background-color: #91C444;
+  }
+}
+.contact {
+  background-color: $color_macaroni_and_cheese_approx;
+  color: #950C01;
+  hr {
+    &.star-light {
+      border-color: #950C01 !important;
+    }
+    &.star-primary:after {
+      color: #950C01;
+      background-color: $color_macaroni_and_cheese_approx;
+    }
+  }
+  .btn-success {
+    background-color: transparent;
+    color: #950C01;
+    border: 2px solid #950C01;
+    font-size: 25px;
+    font-weight: bold;
+    &:hover {
+      color: $color_macaroni_and_cheese_approx;
+      background-color: #950C01;
+    }
+  }
+}
+.img-centered {
+  margin: 0 auto;
+}
+header {
+  text-align: center;
+  color: $white;
+  background: $color_scooter_approx;
+  .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  img {
+    display: block;
+    margin: 0 auto 20px;
+  }
+  .intro-text {
+    .name {
+      display: block;
+      text-transform: uppercase;
+      font-family: $font_2, $font_3, $font_4, $font_5, $font_6;
+      font-size: 2em;
+      font-weight: 700;
+    }
+    .skills {
+      font-size: 1.25em;
+      font-weight: 300;
+    }
+  }
+  .menu-icon {
+    margin: auto;
+    width: 100px;
+    color: $white;
+    i {
+      padding: 10%;
+      margin-top: 30px;
+      color: $white;
+    }
+    i.fa.pull-left {
+      margin: 0.3em !important;
+    }
+    &:hover i {
+      background-color: $white;
+      color: $color_scooter_approx;
+      //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all ease .5s;
+    }
+  }
+  &.home {
+    background-image: url(image_path("TemplateImg/homebackground.jpg"));
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed !important;
+    background-repeat: repeat;
+    position: relative;
+    overflow: hidden;
+    // height: 456px;
+    // background-position: 50% 0;
+    // max-width: 100%;
+    // top: 0;
+    // padding-top: 0;
+    // margin: auto;
+    // position: relative;
+    // width: 100%;
+    // height: 100%;
+    .img-responsive {
+      width: 120px;
+      border: solid $white;
+      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+      border-radius: 50%;
+    }
+  }
+}
+@media (min-width:768px) {
+  header .intro-text .name {
+    font-size: 3.5em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+  header .menu-icon {
+    font-size: 2.5em;
+  }
+  .navbar-fixed-top {
+    padding: 25px 0;
+    //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: padding .3s;
+    .navbar-brand {
+      font-size: 2em;
+      //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .3s;
+    }
+    &.navbar-shrink {
+      padding: 10px 0;
+      .navbar-brand {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+@media (max-width:767px) {
+  section {
+    padding: 75px 0;
+    &.first {
+      padding-top: 75px;
+    }
+  }
+}
+.navbar {
+  text-transform: uppercase;
+  font-family: $font_2, $font_3, $font_4, $font_5, $font_6;
+  font-weight: 700;
+  .navbar-nav {
+    letter-spacing: 1px;
+    li a:focus {
+      outline: 0;
+    }
+  }
+  a:focus {
+    outline: 0;
+  }
+}
+.navbar-default {
+  border: 0;
+}
+.navbar-inverse {
+  border: 0;
+}
+section {
+  padding: 100px 0;
+  background-color: $concrete;
+  h2 {
+    margin: 0;
+    font-size: 3em;
+  }
+  &.success {
+    color: $white;
+    background: $color_scooter_approx;
+  }
+}
+#portfolio {
+  .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+    .portfolio-link {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      max-width: 400px;
+      .caption {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: $color_scooter_90_approx;
+        //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all ease .5s;
+        &:hover {
+          opacity: 1;
+        }
+        .caption-content {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          height: 20px;
+          margin-top: -12px;
+          text-align: center;
+          font-size: 20px;
+          color: $white;
+          i {
+            margin-top: -12px;
+          }
+          h3 {
+            margin: 0;
+          }
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+      > img {
+        min-width: 100%;
+      }
+    }
+  }
+  * {
+    z-index: 2;
+  }
+  hr.star-light:after {
+    background: $concrete;
+  }
+}
+@media (min-width:767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+.btn-outline {
+  margin-top: 15px;
+  border: solid 2px #950C01;
+  font-size: 20px;
+  color: #950C01;
+  background: 0 0;
+  //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all .3s ease-in-out;
+  &:hover {
+    color: $color_macaroni_and_cheese_approx !important;
+    background: #950C01;
+  }
+  &:focus {
+    color: $color_macaroni_and_cheese_approx !important;
+    background: #950C01;
+  }
+  &:active {
+    color: $color_macaroni_and_cheese_approx !important;
+    background: #950C01;
+  }
+  &.active {
+    color: $color_macaroni_and_cheese_approx !important;
+    background: #950C01;
+  }
+}
+.floating-label-form-group {
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: .5em;
+  border-bottom: 2px solid #950C01;
+  input {
+    @extend %extend_4;
+  }
+  textarea {
+    @extend %extend_4;
+  }
+  label {
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0;
+    font-size: .85em;
+    line-height: 1.764705882em;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0;
+    //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: top .3s ease,opacity .3s ease;
+  }
+  &:not:first-child {
+    padding-left: 14px;
+    border-left: 1px solid $color_gallery_approx;
+  }
+}
+footer {
+  color: $white;
+  h3 {
+    margin-bottom: 30px;
+  }
+  .footer-above {
+    padding-top: 50px;
+    background-color: $color_macaroni_and_cheese_approx;
+    color: #950C01;
+  }
+  .footer-col {
+    margin-bottom: 50px;
+  }
+  .footer-below {
+    padding: 25px 0;
+    background-color: $color_rangoon_green_approx;
+  }
+}
+.btn-social {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #950C01;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+  a:hover {
+    color: $color_macaroni_and_cheese_approx;
+  }
+}
+.btn {
+  &:focus {
+    outline: 0;
+  }
+  &:active {
+    outline: 0;
+  }
+  &.active {
+    outline: 0;
+  }
+}
+.scroll-top {
+  z-index: 1049;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  width: 50px;
+  height: 50px;
+  .btn {
+    width: 50px;
+    height: 50px;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 28px;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+.portfolio-modal {
+  .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0;
+    text-align: center;
+    //Instead of the line below you could use @includebackground-clip($clip)
+    background-clip: border-box;
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    h2 {
+      margin: 0;
+      font-size: 3em;
+    }
+    img {
+      margin-bottom: 30px;
+    }
+    .item-details {
+      margin: 30px 0;
+    }
+  }
+  .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+      opacity: .3;
+    }
+    .lr {
+      z-index: 1051;
+      width: 1px;
+      height: 75px;
+      margin-left: 35px;
+      background-color: $color_pickled_bluewood_approx;
+      //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(45deg);
+      .rl {
+        z-index: 1052;
+        width: 1px;
+        height: 75px;
+        background-color: $color_pickled_bluewood_approx;
+        //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+.navbar-fixed-top {
+  display: none;
+  &.navbar-shrink {
+    display: block;
+    //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all ease .5s;
+  }
+}
+.heading {
+  .white {
+    color: $white;
+  }
+  .darkblue {
+    color: $color_blue_lagoon_approx;
+  }
+}
+@font-face {
+  font-family: $font_0;
+  src: url('RobotoSlab-Light.ttf');
+}
+.testimonial {
+  &.testimonial-version2 {
+    .testimonial-control {
+      top: -45px;
+    }
+    .item .textbox {
+      &:after {
+        border-right: 0 solid transparent;
+        border-left: 22px solid transparent;
+        border-top: 22px solid $alabaster;
+        left: 10px;
+      }
+      &:before {
+        left: 10px;
+      }
+    }
+  }
+  .testimonial-control {
+    background-image: none;
+    top: -65px;
+    position: relative;
+  }
+  .testimonial-metadata {
+    img {
+      width: 80px;
+      height: 80px;
+      padding: 2px;
+      margin-right: 15px;
+      float: left;
+      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+      border-radius: 50%;
+    }
+    .author {
+      top: 3px;
+      font-size: 16px;
+      position: relative;
+      font-weight: bold;
+      color: $color_blue_lagoon_approx;
+    }
+  }
+  .item .textbox {
+    font-style: italic;
+    position: relative;
+    padding: 20px;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 25px;
+    background: #3fbfE1;
+    margin-bottom: 10px;
+    width: 100%;
+    &:after {
+      @extend %extend_5;
+    }
+    &:before {
+      @extend %extend_5;
+    }
+  }
+  &.testimonial-version1 .item .textbox:after {
+    border-left: 0 solid transparent;
+    border-right: 22px solid transparent;
+    border-top: 22px solid #3fbfE1;
+  }
+}
+.testimonial-version1 {
+  margin-top: 30px;
+}
+.tm_photo {
+  float: left;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  margin-right: 40px;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+.tm_content {
+  text-align: left;
+  overflow: hidden;
+}
+.tm_member {
+  text-align: left;
+  margin: 50px 0 0;
+}
+@media (min-width: 992px) {
+  .left-services .service-item {
+    text-align: right;
+    margin: 40px 0;
+    .fa-stack {
+      float: right;
+      color: $color_fern_frond_approx;
+      margin-left: 15px;
+      font-size: 2.5em;
+    }
+    h4 {
+      margin-right: 90px;
+    }
+    p {
+      margin-right: 90px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .left-services .service-item {
+    text-align: left;
+    margin: 40px 0;
+    .fa-stack {
+      color: $color_fern_frond_approx;
+      margin-right: 15px;
+      font-size: 2.5em;
+      float: left;
+    }
+    h4 {
+      margin-left: 90px;
+    }
+    p {
+      margin-left: 90px;
+    }
+  }
+}
+.form-control {
+  color: $black;
+}
+.gap-50 {
+  margin-top: 50px;
+}
+.gap-30 {
+  margin-top: 30px;
+}
+.gmap {
+  margin: 0;
+  padding: 0;
+}
+.home_wrap {
+  background-image: url(image_path("TemplateImg/bg35.png"));
+  opacity: 0.7;
+}
+.filter_group {
+  margin-bottom: 20px;
+}
+.blog_photo {
+  width: 100%;
+  max-width: 100%;
+}
+.blog_title {
+  display: block;
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 30px;
+}
+.blog_meta {
+  margin: 15px 0 8px;
+  .posted_by {
+    color: $color_tapa_approx;
+  }
+  .fa {
+    margin-left: 10px;
+  }
+  a {
+    color: $color_tapa_approx;
+  }
+}
+.blog_item {
+  background-color: $white;
+  margin-bottom: 30px;
+}
+.blog_content {
+  padding: 30px;
+  .date_category {
+    float: left;
+    margin-right: 15px;
+  }
+  .blog_inner_content {
+    margin-left: 75px;
+  }
+}
+.date_icon {
+  background-color: $black;
+  color: $white;
+  display: block;
+  padding: 10px 7px;
+  width: 64px;
+  height: auto;
+  text-align: center;
+  .day {
+    font-size: 40px;
+    line-height: 30px;
+  }
+  .month {
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 5px;
+  }
+}
+.blog_readmore {
+  color: inherit;
+}
+.category_icon {
+  background-color: $black;
+}
+.primary_color {
+  color: fff;
+  background-color: $black;
+}
+.list_blog {
+  .form-control {
+    border-width: 0 !important;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0 !important;
+  }
+  .input-group {
+    margin-bottom: 30px;
+  }
+  .input-group-btn:last-child > .btn {
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0;
+  }
+}
+.input {
+  border-width: 0 !important;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 0 !important;
+}
+.categories-list {
+  background-color: $white;
+  padding: 0;
+  list-style: none;
+  li {
+    width: 100%;
+    border-bottom: 3px solid #F2F2F2;
+    a {
+      color: $color_storm_dust_approx;
+      padding: 11px 0 11px 10px;
+      display: block;
+      //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all 0.3s;
+      i {
+        margin-right: 10px;
+        margin-left: 5px;
+      }
+      &:hover {
+        color: $white;
+        background: $color_pickled_bluewood_approx;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.list_tags {
+  margin-left: 2px;
+  margin-top: 30px;
+  li {
+    padding: 0;
+  }
+  .btn {
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0;
+    margin: 0 5px 5px 0;
+  }
+}
+.margin-top-180 {
+  margin-top: 180px;
+}
+.post_comment {
+  background-color: $white;
+  margin-bottom: 15px;
+}
+.comment_photo {
+  float: left;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  margin: 30px 30px 0 30px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+div {
+  &.comment-block {
+    background-color: $white;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0;
+    padding: 20px 20px 30px;
+    position: relative;
+  }
+  &.comment-arrow {
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #F4F4F4;
+    border-top: 15px solid transparent;
+    height: 0;
+    left: -15px;
+    position: absolute;
+    top: 28px;
+    width: 0;
+  }
+  &#content {
+    display: none;
+  }
+  &#loading {
+    top: 50%;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: -60px;
+    position: absolute;
+    z-index: 1000;
+    width: 115px;
+    height: 119px;
+    background: url(image_path("TemplateImg/loadingimage.gif")) no-repeat;
+    cursor: wait;
+  }
+}
+.blog_autor {
+  background-color: $white;
+  padding: 30px;
+}
+.animateup {
+  //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all ease .5s;
+}
+.animateright {
+  //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all ease .5s;
+}
+.animateleft {
+  //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all ease .5s;
+}
+.slides {
+  list-style: none;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0;
+  li {
+    text-align: center;
+  }
+}
+@media (min-width:500px) and (max-width:768px) {
+  .element-item.portfolio-item {
+    max-width: 50%;
+  }
+}
+@media (max-width:500px) {
+  .element-item.portfolio-item {
+    max-width: 100%;
+  }
+}
+.list_blogs hr.star-light:after {
+  background-color: $concrete;
+}
+.team hr.star-light:after {
+  background-color: $concrete;
+}
+.floating-label-form-group-with-value label {
+  top: 0;
+  opacity: 1;
+}
+.floating-label-form-group-with-focus label {
+  color: #950C01;
+}
+.dropdown-menu li {
+  font-family: $font_8, $font_3, $font_4, $font_5, $font_6;
+  font-weight: 700;
+}
+.textbox .reviewcomment {
+  font-size: 1em;
+  margin: 30px;
+  text-align: center;
+  &:before {
+    content: '\201C';
+    font-size: 3em;
+    color: $color_blue_lagoon_approx;
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    margin-top: -0.5em;
+  }
+  &:after {
+    content: '\201D';
+    font-size: 3em;
+    right: 35px;
+    color: $color_blue_lagoon_approx;
+    position: absolute;
+    float: right;
+    top: 50%;
+    margin-top: -0.5em;
+  }
+}
+.testimonial-control .btn {
+  padding: 0 6px;
+  font-size: 11px;
+}
+.right-services .service-item {
+  text-align: left;
+  margin: 40px 0;
+  .fa-stack {
+    color: $color_fern_frond_approx;
+    margin-right: 15px;
+    font-size: 2.5em;
+    float: left;
+  }
+  h4 {
+    margin-left: 90px;
+  }
+  p {
+    margin-left: 90px;
+  }
+}
+.portfolio-container .mix {
+  display: none;
+}
+.navbar-brand i {
+  font-size: 15px;
+  margin-left: -2px;
+  margin-top: -5px;
+  vertical-align: middle;
+}
+.element-item.portfolio-item {
+  max-width: 33.333333333%;
+  padding: 15px;
+}
+.footer-above a {
+  color: #950C01;
+  text-decoration: underline;
+  &:hover {
+    color: #950C01;
+    text-decoration: underline;
+  }
+  &:focus {
+    color: #950C01;
+    text-decoration: underline;
+  }
+  &:active {
+    color: #950C01;
+    text-decoration: underline;
+  }
+}

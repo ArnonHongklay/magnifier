@@ -14,10 +14,9 @@
     window.onload = preloader;
   </script>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-
-  <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Montserrat:700" %>
+  <%= stylesheet_link_tag 'landing', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   </head>
@@ -48,9 +47,14 @@
               <li class="page-scroll">
                 <a href="#services">Services</a>
               </li>
-              <li class="page-scroll">
-                <a href="/apps">Free Trial</a>
-              </li>
+              <% unless signed_in? %>
+                <li class="page-scroll">
+                  <%= link_to "Sign in", new_account_session_path %>
+                </li>
+                <li class="page-scroll">
+                  <%= link_to "Free Trial", new_account_registration_path %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -141,8 +145,8 @@
         </a>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-<%= jquery_version %>.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag "https://code.jquery.com/jquery-#{jquery_version}.min.js" %>
+    <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/js/bootstrap.min.js" %>
     <%= javascript_include_tag 'landing', 'data-turbolinks-track' => true %>
   </body>
   </html>

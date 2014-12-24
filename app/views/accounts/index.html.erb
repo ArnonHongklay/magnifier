@@ -1,0 +1,190 @@
+
+
+
+<!-- <h1>Welcome to</h1>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<hr>
+<p>
+Or, sign in with
+<% if signed_in? %>
+<%= link_to "Sign out", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
+<% else %>
+<%= link_to "Sign in", new_account_session_path %>
+<%= link_to "Sign up", new_account_registration_path %>
+<% end %>
+</p> -->
+
+
+
+			<!-- Page start here ( usual with .row ) -->
+<div class="row">
+	<!-- Start .row -->
+	<div class="col-lg-12 col-md-12">
+		<!-- Start col-lg-12 -->
+		<div class="panel panel-default toggle">
+			<!-- Start .panel -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><i class="im-bars"></i> Auto updating chart</h4>
+			</div>
+			<div class="panel-body">
+				<div id="autoupdate-chart" style="width: 100%; height:250px;"></div>
+			</div>
+		</div>
+		<!-- End .panel -->
+	</div>
+	<!-- End col-lg-12 -->
+</div>
+<!-- End .row -->
+<div class="row">
+	<div class="col-lg-6 col-md-12">
+		<!-- Start col-lg-6 -->
+		<div class="panel panel-primary plain toggle">
+			<!-- Start .panel -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><i class="im-bars"></i> Line chart with dots</h4>
+			</div>
+			<div class="panel-body blue-bg">
+				<div id="line-chart-dots" style="width: 100%; height:250px;"></div>
+			</div>
+		</div>
+		<!-- End .panel -->
+	</div>
+	<!-- End col-lg-6 -->
+	<div class="col-lg-6 col-md-12">
+		<!-- Start col-lg-6 -->
+		<div class="panel panel-default plain toggle">
+			<!-- Start .panel -->
+			<div class="panel-heading white-bg">
+				<h4 class="panel-title"><i class="im-bars"></i> Line chart only</h4>
+			</div>
+			<div class="panel-body white-bg">
+				<div id="line-chart" style="width: 100%; height:250px;"></div>
+			</div>
+		</div>
+		<!-- End .panel -->
+	</div>
+</div>
+<!-- End .row -->
+<div class="row">
+	<!-- Start .row -->
+	<div class="col-lg-12">
+		<!-- col-lg-12 start here -->
+		<div class="page-header">
+			<h4><i class="im-bars s20"></i> Other chart elements</h4>
+		</div>
+		<div class="row">
+			<!-- Start .row -->
+			<div class="col-lg-6 col-md-12">
+				<!-- col-lg- start here -->
+				<div class="panel panel-default toggle">
+					<!-- Start .panel -->
+					<div class="panel-heading">
+						<h4 class="panel-title"><i class="im-pie"></i> Easy pie chart</h4>
+					</div>
+					<div class="panel-body">
+						<div class="pie-charts">
+							<div class="easy-pie-chart" data-percent="45">45%</div>
+							<div class="label">New Visitors</div>
+						</div>
+						<div class="pie-charts red-pie">
+							<div class="easy-pie-chart-red" data-percent="7">7%</div>
+							<div class="label">Drop rate</div>
+						</div>
+						<div class="pie-charts green-pie">
+							<div class="easy-pie-chart-green" data-percent="28">28%</div>
+							<div class="label">Returning</div>
+						</div>
+						<div class="pie-charts blue-pie">
+							<div class="easy-pie-chart-blue" data-percent="65">65%</div>
+							<div class="label">From Google</div>
+						</div>
+						<div class="pie-charts teal-pie">
+							<div class="easy-pie-chart-teal" data-percent="23">23%</div>
+							<div class="label">Direct Hits</div>
+						</div>
+						<div class="pie-charts purple-pie">
+							<div class="easy-pie-chart-purple" data-percent="88">88%</div>
+							<div class="label">Ads source</div>
+						</div>
+					</div>
+				</div>
+				<!-- End .panel -->
+			</div>
+			<!-- col-lg-6 end here -->
+			<div class="col-lg-6 col-md-12">
+				<!-- col-lg- start here -->
+				<div class="panel panel-default toggle">
+					<!-- Start .panel -->
+					<div class="panel-heading">
+						<h4 class="panel-title"><i class="im-bars"></i> Sparklines</h4>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+								<!-- col-lg-3 start here -->
+								<div class="tile gray-spr m0 mb20">
+									<div class="tile-content text-center clearfix">
+										<div class="label">Visitors last week</div>
+										<div class="spark-number"><i class="ec-users"></i> 12,678</div>
+										<div class="spark clearfix">
+											<div class="percent"><i class="im-arrow-up-right3 color-green"></i> 3.08%</div>
+											<div class="sparkline sparkline-positive"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col-lg-3 end here -->
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+								<!-- col-lg-3 start here -->
+								<div class="tile gray-spr m0 mb20">
+									<div class="tile-content text-center clearfix">
+										<div class="label">Time on site</div>
+										<div class="spark-number"><i class="ec-clock"></i> 5m 26s</div>
+										<div class="spark clearfix">
+											<div class="percent"><i class="im-arrow-down-right2 color-red"></i> 10.24%</div>
+											<div class="sparkline sparkline-negative"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col-lg-3 end here -->
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+								<!-- col-lg-3 start here -->
+								<div class="tile gray-spr m0 mb20">
+									<div class="tile-content text-center clearfix">
+										<div class="label">New visitors</div>
+										<div class="spark-number"><i class="ec-users"></i> 2367</div>
+										<div class="spark clearfix">
+											<div class="percent"><i class="im-arrow-up-right3 color-green"></i> 84.29%</div>
+											<div class="sparkline sparkline-bar-positive"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col-lg-3 end here -->
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+								<!-- col-lg-3 start here -->
+								<div class="tile gray-spr m0 mb20">
+									<div class="tile-content text-center clearfix">
+										<div class="label">Pages view</div>
+										<div class="spark-number"><i class="fa-eye-open"></i> 2300</div>
+										<div class="spark clearfix">
+											<div class="percent"><i class="im-arrow-down-right2 color-red"></i> 17.65%</div>
+											<div class="sparkline sparkline-bar-negative"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- col-lg-3 end here -->
+						</div>
+					</div>
+				</div>
+				<!-- End .panel -->
+			</div>
+			<!-- col-lg-6 end here -->
+		</div>
+		<!-- End .row -->
+	</div>
+	<!-- col-lg-12 end here -->
+</div>
