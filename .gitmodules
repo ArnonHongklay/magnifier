@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/wicked_pdf"]
+	path = vendor/plugins/wicked_pdf
+	url = git@github.com:mileszs/wicked_pdf.git

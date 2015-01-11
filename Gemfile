@@ -1,88 +1,78 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.1.5'
 
-gem 'rails', '4.1.5'                # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'railties'
-gem 'mysql2'                        # Use mysql as the database for Active Record
-gem 'sdoc', '~> 0.4.0',	group: :doc	# bundle exec rake doc:rails generates the API under doc/api.
+# gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.5'
+# Use mysql as the database for Active Record
+gem 'mysql2'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# gem 'less-rails'
-# gem 'therubyracer' # Ruby
-gem 'sass-rails', '>= 3.2'
-gem 'bootstrap-sass', '~> 3.3.0'
-gem 'autoprefixer-rails'
+gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 
-gem 'coffee-rails'                  # Use CoffeeScript for .js.coffee assets and views
-gem 'jquery-rails'                  # Use jquery as the JavaScript library
-gem 'turbolinks'                    # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'jwt'                           # JSON Web Token implementation in Ruby
-gem 'jbuilder', '~> 2.0'            # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'execjs'
-# gem 'bootbox-rails'
+# javascript
+gem 'jquery-rails'
+gem 'coffee-rails', github: 'rails/coffee-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# stylesheet
+gem 'sass-rails', github: 'rails/sass-rails'
+gem 'font-awesome-sass'
+gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+gem 'autoprefixer-rails'  # CSS auto-prefixing
+gem 'sprockets-rails', require: 'sprockets/railtie'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0' # Minification
 
-gem 'uglifier'                      # Use Uglifier as compressor for JavaScript assets
-# gem 'closure-compiler'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+
+gem 'wicked_pdf'  # pdf
 
 gem 'cancan'                     		# Authorization
+gem 'devise'                     		# Authorization
 gem 'koala'                         # Facebook
 gem 'omniauth'                      # Authentication
 gem 'omniauth-facebook'           	# Authentication Facebook
 gem 'omniauth-twitter'              # Authentication Facebook
 
-gem 'bcrypt-ruby'                   # Secure password storing
-gem 'bcrypt', '~> 3.1.7'            # Use ActiveModel has_secure_password
-
 gem 'sidekiq'
+gem 'sidekiq-failures'
 
 gem 'redis-namespace'               # Cleaner redis keys
 gem 'redis-semaphore'               # Facebook access locking
-gem 'unicorn', '4.8.3'              # Use unicorn as the app server
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring',        group: :development
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.14'      # Testing engine
-  gem 'rspec-its'                   # Rspec deprecated its
-  gem 'rspec-collection_matchers'   # Rspec deprecated should
-  gem 'byebug'
-  gem 'machinist'                   # Fixtures, Blueprint
-end
-
-group :test do
-  # gem 'sdoc', '0.4.0', require: false
-  gem 'minitest'
-  gem 'faker'                     # Fake data for fixtures
-  gem 'mock_redis'                # Fake redis implemented in Ruby
-  gem 'shoulda-matchers'          # Tests common Rails functionalities
-  gem 'database_cleaner'          # Resets database after each test
-  gem 'simplecov', '~> 0.7.1', require: false # Keeps track of our test coverage
-  gem 'capybara'                  # Integration testing
-  gem 'hitimes'                   # Clock
-  gem 'cliver'                    # Assertions for command-line dependencies
-  gem 'poltergeist'               # Headless browser
-  gem 'vcr'                       # Record and replay HTTP requests
-  gem 'webmock'                   # For stubbing on HTTP requests
-end
-
-group :development do
-  gem 'puma'            # Multi-threaded server for development
-  gem 'foreman'         # Executes Procfile
-  gem 'spring'          # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'quiet_assets'    # For cleaner logs
-  gem 'letter_opener'   # For easier mail testing
-  gem 'guard-livereload', require: false # Live CSS reloading
-
+  gem 'puma'                      # Multi-threaded server for development
+  gem 'foreman'                   # Executes Procfile
   gem 'capistrano-ext'              # So developers and CircleCI can deploy
   gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
+  # Use debugger
+  # gem 'debugger', group: [:development, :test]
+  # http://knomedia.github.io/blog/2013/01/21/debugging-ruby-with-pry/
+  # gem 'pry'
+  # gem 'pry-debugger'
 end
 
 group :production do
-	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'rails_12factor', '0.0.2'
-  # gem 'therubyracer',  platforms: :ruby
-  gem 'therubyracer'              # JavaScript compilation
-  gem 'gibbon'                    # Mailchimp gem
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'therubyracer',  platforms: :ruby
   gem 'passenger'
+
+  # Use unicorn as the app server
+  # gem 'unicorn'
 end
