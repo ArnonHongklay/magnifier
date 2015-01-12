@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.0'
 
 # gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use sqlite3 as the database for Active Record
@@ -61,11 +61,14 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
-  # Use debugger
-  # gem 'debugger', group: [:development, :test]
-  # http://knomedia.github.io/blog/2013/01/21/debugging-ruby-with-pry/
-  # gem 'pry'
-  # gem 'pry-debugger'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
 group :production do
