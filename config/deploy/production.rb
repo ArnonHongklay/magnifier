@@ -12,7 +12,7 @@ server 'ohmpieng.org',
   my_property: :my_value,
   ssh_options: {
     user: 'deployer', # overrides user setting above
-    keys: %w(/Users/non/.ssh/id_rsa),
+    keys: %w(~/.ssh/id_rsa),
     forward_agent: false,
     auth_methods: %w(publickey password)
     # password: 'please use keys'

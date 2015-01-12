@@ -16,4 +16,4 @@ test:
 production:
   <<: *default
   database: ohmpieng_production
-  password: "oomN8iy[z,"
+  password: "Arnon007"
