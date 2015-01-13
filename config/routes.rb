@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  root 'admin#index'
+  # root 'admin#index'
 
-  get 'admin' => 'admin#index'
-  get 'admin/dashboard' => 'admin#dashboard'
-  get 'admin/analysis' => 'admin#analysis'
-  get 'admin/reports' => 'admin#reports'
+  # get 'admin' => 'admin#index'
+  # get 'admin/dashboard' => 'admin#dashboard'
+  # get 'admin/analysis' => 'admin#analysis'
+  # get 'admin/reports' => 'admin#reports'
 
   # devise_for :users
 
   root 'landing#index'
 
-  get '/hello' => 'landing#hello'
+  # get '/hello' => 'landing#hello'
 
   # resources :dashboard
   # resources :report
