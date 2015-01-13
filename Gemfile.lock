@@ -176,7 +176,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.5.0)
+    minitest (5.5.1)
     mono_logger (1.1.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
@@ -252,7 +252,7 @@ GEM
     redis (3.2.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
-    redis-semaphore (0.2.3.1)
+    redis-semaphore (0.2.4)
       redis
     ref (1.0.5)
     responders (2.0.2)
