@@ -1,9 +1,8 @@
 class LandingController < ApplicationController
-
   def index
-    # @message = "Hello, How are you today?"
-  end
-
-  def hello
+    if signed_in?
+      raise account_index_path(params[:account_id])
+      # redirect_to :account_index_path
+    end
   end
 end
