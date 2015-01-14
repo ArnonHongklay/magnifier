@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
 
-# gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
@@ -11,8 +9,11 @@ gem 'mysql2'
 gem 'sqlite3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem 'activeresource', github: 'rails/activeresource'
+gem "activerecord-deprecated_finders", "~> 1.0.3"
+gem "actionpack-action_caching"
+gem "actionpack-page_caching"
 
 # javascript
 gem 'jquery-rails'
@@ -33,12 +34,16 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'wicked_pdf'  # pdf
 
-gem 'cancan'                     		# Authorization
-gem 'devise'                     		# Authorization
+
+# gem 'strong_parameters'
+
+gem 'cancan'                        # Authorization
+gem 'devise'                        # Authorization
 gem 'koala'                         # Facebook
+gem 'twitter'                       # Twitter
 gem 'omniauth'                      # Authentication
-gem 'omniauth-facebook'           	# Authentication Facebook
-gem 'omniauth-twitter'              # Authentication Facebook
+gem 'omniauth-facebook'             # Authentication Facebook
+gem 'omniauth-twitter'              # Authentication Twitter
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
@@ -52,6 +57,12 @@ gem 'redis-semaphore'               # Facebook access locking
 group :development, :test do
   gem 'puma'                      # Multi-threaded server for development
   gem 'foreman'                   # Executes Procfile
+
+  # test
+  gem 'rspec-rails'               # Testing engine
+  gem 'rspec-its'                 # Rspec deprecated its
+  gem 'rspec-collection_matchers' # Rspec deprecated should
+
   gem 'capistrano-ext'              # So developers and CircleCI can deploy
   gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
   gem 'capistrano-bundler', '~> 1.1.2'
@@ -76,3 +87,4 @@ group :production do
   # Use unicorn as the app server
   # gem 'unicorn'
 end
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'landing#index'
+
   # root 'admin#index'
 
   # get 'admin' => 'admin#index'
@@ -8,7 +10,6 @@ Rails.application.routes.draw do
 
   # devise_for :users
 
-  root 'landing#index'
 
   # get '/hello' => 'landing#hello'
 
