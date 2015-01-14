@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use sqlite3 as the database for Active Record
@@ -37,12 +37,12 @@ gem 'wicked_pdf'  # pdf
 
 # gem 'strong_parameters'
 
-gem 'cancan'                     		# Authorization
-gem 'devise'                     		# Authorization
+gem 'cancan'                        # Authorization
+gem 'devise'                        # Authorization
 gem 'koala'                         # Facebook
 gem 'twitter'                       # Twitter
 gem 'omniauth'                      # Authentication
-gem 'omniauth-facebook'           	# Authentication Facebook
+gem 'omniauth-facebook'             # Authentication Facebook
 gem 'omniauth-twitter'              # Authentication Twitter
 
 gem 'sidekiq'
@@ -53,9 +53,6 @@ gem 'redis-semaphore'               # Facebook access locking
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 group :development, :test do
   gem 'puma'                      # Multi-threaded server for development
@@ -72,11 +69,14 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
-  # Use debugger
-  # gem 'debugger', group: [:development, :test]
-  # http://knomedia.github.io/blog/2013/01/21/debugging-ruby-with-pry/
-  # gem 'pry'
-  # gem 'pry-debugger'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
 group :production do
@@ -87,3 +87,4 @@ group :production do
   # Use unicorn as the app server
   # gem 'unicorn'
 end
+
