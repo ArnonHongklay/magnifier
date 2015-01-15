@@ -10,6 +10,10 @@ class AccountsController < ApplicationController
     # raise "xxxx"
   end
 
+  def dashboard
+
+  end
+
 private
   def account_params
     params[:account_id]
