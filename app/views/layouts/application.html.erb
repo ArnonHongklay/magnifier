@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ohmpieng.org | Dashboard Admin</title>
-    <!-- Stylesheet -->
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ohmpieng.org | Dashboard Admin</title>
+  <!-- Stylesheet -->
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
 
-    <!-- Javascripts -->
-    <%= javascript_include_tag "https://code.jquery.com/jquery-#{jquery_version}.min.js" %>
-    <%= javascript_include_tag "https://code.jquery.com/ui/#{jquery_version}/jquery-ui.min.js" %>
-    <!-- BOOTSTRAP STYLES-->
-    <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/js/bootstrap.min.js" %>
+  <!-- Javascripts -->
+  <%= javascript_include_tag "https://code.jquery.com/jquery-#{jquery_version}.min.js" %>
+  <%= javascript_include_tag "https://code.jquery.com/ui/#{jquery_version}/jquery-ui.min.js" %>
+  <!-- BOOTSTRAP STYLES-->
+  <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/js/bootstrap.min.js" %>
 
-    <%= stylesheet_link_tag "font-awesome.css" %> <!-- FONTAWESOME STYLES-->
-    <%= stylesheet_link_tag "morris-0.4.3.min.css" %> <!-- MORRIS CHART STYLES-->
-    <%= stylesheet_link_tag "custom.css" %> <!-- CUSTOM STYLES-->
-    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "apps/font-awesome.css" %> <!-- FONTAWESOME STYLES-->
+  <%= stylesheet_link_tag "apps/morris-0.4.3.min.css" %> <!-- MORRIS CHART STYLES-->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <div id="wrapper">
@@ -29,10 +29,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Binary admin</a> 
+        <a class="navbar-brand" href="index.html">Binary admin</a>
       </div>
       <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
-    </nav>   
+    </nav>
     <!-- /. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
       <div class="sidebar-collapse">
@@ -41,62 +41,41 @@
           <li><a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a></li>
           <li><a href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a></li>
           <li><a href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a></li>
-          <li><a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
-          </li> 
+          <li><a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a></li>
           <li><a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a></li>
-              <li  >
-                  <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
-              </li>       
-    
-                       
-              <li>
-                  <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                  <ul class="nav nav-second-level">
-                      <li>
-                          <a href="#">Second Level Link</a>
-                      </li>
-                      <li>
-                          <a href="#">Second Level Link</a>
-                      </li>
-                      <li>
-                          <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                          <ul class="nav nav-third-level">
-                              <li>
-                                  <a href="#">Third Level Link</a>
-                              </li>
-                              <li>
-                                  <a href="#">Third Level Link</a>
-                              </li>
-                              <li>
-                                  <a href="#">Third Level Link</a>
-                              </li>
+          <li><a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a></li>
+          <li><a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li><a href="#">Second Level Link</a></li>
+              <li><a href="#">Second Level Link</a></li>
+              <li><a href="#">Second Level Link<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                  <li><a href="#">Third Level Link</a></li>
+                  <li><a href="#">Third Level Link</a></li>
+                  <li><a href="#">Third Level Link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a></li>
+        </ul>
+      </div>
+    </nav>
 
-                          </ul>
-                         
-                      </li>
-                  </ul>
-                </li>  
-            <li  >
-                  <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-              </li> 
-          </ul>
-               
-            </div>
-            
-        </nav>  
+
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Admin Dashboard</h2>   
+                     <h2>Admin Dashboard</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
                     </div>
-                </div>              
+                </div>
                  <!-- /. ROW  -->
                   <hr />
                 <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-6">           
+                <div class="col-md-3 col-sm-6 col-xs-6">
       <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon">
                     <i class="fa fa-envelope-o"></i>
@@ -107,7 +86,7 @@
                 </div>
              </div>
          </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                    <div class="col-md-3 col-sm-6 col-xs-6">
       <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-green set-icon">
                     <i class="fa fa-bars"></i>
@@ -118,7 +97,7 @@
                 </div>
              </div>
          </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                    <div class="col-md-3 col-sm-6 col-xs-6">
       <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-blue set-icon">
                     <i class="fa fa-bell-o"></i>
@@ -129,7 +108,7 @@
                 </div>
              </div>
          </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                    <div class="col-md-3 col-sm-6 col-xs-6">
       <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-brown set-icon">
                     <i class="fa fa-rocket"></i>
@@ -142,9 +121,9 @@
          </div>
       </div>
                  <!-- /. ROW  -->
-                <hr />                
+                <hr />
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">           
+                    <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-blue">
                     <i class="fa fa-warning"></i>
@@ -156,21 +135,21 @@
                     <hr />
                     <p class="text-muted">
                           <span class="text-muted color-bottom-txt"><i class="fa fa-edit"></i>
-                               Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
                                </span>
                     </p>
                 </div>
              </div>
          </div>
-                    
-                    
+
+
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel back-dash">
                                <i class="fa fa-dashboard fa-3x"></i><strong> &nbsp; SPEED</strong>
                              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing sit ametsit amet elit ftr. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         </div>
-                       
+
                     </div>
                     <div class="col-md-3 col-sm-12 col-xs-12 ">
                         <div class="panel ">
@@ -184,7 +163,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
                      <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-green set-icon">
@@ -195,15 +174,15 @@
                     <p class="text-muted">Looking Good</p>
                 </div>
              </div>
-      
+
     </div>
-                        
+
         </div>
                  <!-- /. ROW  -->
-                <div class="row"> 
-                    
-                      
-                               <div class="col-md-9 col-sm-12 col-xs-12">                     
+                <div class="row">
+
+
+                               <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Bar Chart Example
@@ -211,9 +190,9 @@
                         <div class="panel-body">
                             <div id="morris-bar-chart"></div>
                         </div>
-                    </div>            
+                    </div>
                 </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">                       
+                    <div class="col-md-3 col-sm-12 col-xs-12">
                     <div class="panel panel-primary text-center no-boder bg-color-green">
                         <div class="panel-body">
                             <i class="fa fa-bar-chart-o fa-5x"></i>
@@ -221,7 +200,7 @@
                         </div>
                         <div class="panel-footer back-footer-green">
                            Disk Space Available
-                            
+
                         </div>
                     </div>
                     <div class="panel panel-primary text-center no-boder bg-color-red">
@@ -231,11 +210,11 @@
                         </div>
                         <div class="panel-footer back-footer-red">
                             Articles Pending
-                            
+
                         </div>
-                    </div>                         
+                    </div>
                         </div>
-                
+
            </div>
                  <!-- /. ROW  -->
                 <div class="row" >
@@ -249,12 +228,12 @@
                         <div class="panel-footer back-footer-green">
                              <i class="fa fa-rocket fa-5x"></i>
                             Lorem ipsum dolor sit amet sit sit, consectetur adipiscing elitsit sit gthn ipsum dolor sit amet ipsum dolor sit amet
-                            
+
                         </div>
                     </div>
                     </div>
                     <div class="col-md-9 col-sm-12 col-xs-12">
-               
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                            Responsive Table Example
@@ -320,13 +299,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     </div>
                 </div>
                  <!-- /. ROW  -->
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                   
+
                     <div class="chat-panel panel panel-default chat-boder chat-panel-head" >
                         <div class="panel-heading">
                             <i class="fa fa-comments fa-fw"></i>
@@ -372,11 +351,11 @@
                                     <span class="chat-img pull-left">
                                         <img src="assets/img/1.png" alt="User" class="img-circle" />
                                     </span>
-                                    <div class="chat-body">                                        
+                                    <div class="chat-body">
                                             <strong >Jack Sparrow</strong>
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>12 mins ago
-                                            </small>                                      
+                                            </small>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -388,11 +367,11 @@
                                         <img src="assets/img/2.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
-                                        
+
                                             <small class=" text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>13 mins ago</small>
                                             <strong class="pull-right">Jhonson Deed</strong>
-                                      
+
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -403,11 +382,11 @@
                                          <img src="assets/img/3.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
-                                        
+
                                             <strong >Jack Sparrow</strong>
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>14 mins ago</small>
-                                        
+
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -418,11 +397,11 @@
                                          <img src="assets/img/4.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
-                                      
+
                                             <small class=" text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>15 mins ago</small>
                                             <strong class="pull-right">Jhonson Deed</strong>
-                                       
+
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -432,11 +411,11 @@
                                     <span class="chat-img pull-left">
                                         <img src="assets/img/1.png" alt="User" class="img-circle" />
                                     </span>
-                                    <div class="chat-body">                                        
+                                    <div class="chat-body">
                                             <strong >Jack Sparrow</strong>
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>12 mins ago
-                                            </small>                                      
+                                            </small>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -447,11 +426,11 @@
                                        <img src="assets/img/2.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
-                                        
+
                                             <small class=" text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i>13 mins ago</small>
                                             <strong class="pull-right">Jhonson Deed</strong>
-                                      
+
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
@@ -472,7 +451,7 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                          <div class="panel panel-default">
@@ -488,7 +467,7 @@
 <span class="label label-danger">Danger</span>
                         </div>
                     </div>
-                         
+
                          <div class="panel panel-default">
                         <div class="panel-heading">
                             Donut Chart Example
@@ -497,17 +476,17 @@
                             <div id="morris-donut-chart"></div>
                         </div>
                     </div>
-                      
+
                     </div>
-                </div>     
-                 <!-- /. ROW  -->           
+                </div>
+                 <!-- /. ROW  -->
     </div>
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    
+
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
 
     <!-- JQUERY SCRIPTS -->
@@ -520,7 +499,6 @@
     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

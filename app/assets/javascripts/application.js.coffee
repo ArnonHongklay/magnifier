@@ -2,4 +2,5 @@
 # = require jquery_ujs
 # = require turbolinks
 # = require_self
-# = require sessions.js.coffee
+# = require sessions
+# = require accounts/apps

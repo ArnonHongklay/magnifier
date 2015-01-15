@@ -2,27 +2,26 @@ Rails.application.routes.draw do
   devise_for :accounts, path: 'auth'
 
   root 'landing#index'
+  resources :accounts, path: 'account', constraints: { account_id: '[^\/]+' } do
+    get '/'                 => 'accounts#index',          as: :index
+    get 'settings'          => 'accounts#settings'
+    get 'community'         => 'conversation#index',      as: :community
+    get 'dashboard'         => 'dashboard#index',         as: :dashboard
+    get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools
+    get 'ticket-support'    => 'ticket_support#index',    as: :ticket_support
+    get 'report'            => 'report#index',            as: :report
+    scope :format => true, :constraints => { format: /(|pdf|csv)/ } do
+      get 'report/show'       => 'report#show',             as: :report_show
+    end
 
-  get 'dashboard' => 'accounts#dashboard'
+    # resources :community
+    # resources :dashboard
+    # resources :report
+    # resources :monitoring_tools
+    # resources :ticket_support
+  end
 
-  # resources :accounts, path: 'account', constraints: { account_id: '[^\/]+' } do
-  #   get '/'                 => 'accounts#index',          as: :index
-  #   get 'settings'          => 'accounts#settings'
-  #   get 'community'         => 'conversation#index',      as: :community
-  #   get 'dashboard'         => 'dashboard#index',         as: :dashboard
-  #   get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools
-  #   get 'ticket-support'    => 'ticket_support#index',    as: :ticket_support
-  #   get 'report'            => 'report#index',            as: :report
-  #   scope :format => true, :constraints => { format: /(|pdf|csv)/ } do
-  #     get 'report/show'       => 'report#show',             as: :report_show
-  #   end
-
-  #   # resources :community
-  #   # resources :dashboard
-  #   # resources :report
-  #   # resources :monitoring_tools
-  #   # resources :ticket_support
-  # end
+  get 'xxx' => 'dashboard#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
