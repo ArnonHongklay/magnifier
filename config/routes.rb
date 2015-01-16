@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :accounts, path: 'auth'
 
   root 'landing#index'
-
   resources :accounts, path: 'account', constraints: { account_id: '[^\/]+' } do
     get '/'                 => 'accounts#index',          as: :index
     get 'settings'          => 'accounts#settings'
@@ -21,6 +20,8 @@ Rails.application.routes.draw do
     # resources :monitoring_tools
     # resources :ticket_support
   end
+
+  get 'xxx' => 'dashboard#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
