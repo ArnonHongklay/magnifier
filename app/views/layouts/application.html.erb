@@ -6,7 +6,6 @@
   <title>Ohmpieng.org | Dashboard Admin</title>
   <!-- Stylesheet -->
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
-
   <!-- Javascripts -->
   <%= javascript_include_tag "https://code.jquery.com/jquery-#{jquery_version}.min.js" %>
   <%= javascript_include_tag "https://code.jquery.com/ui/#{jquery_version}/jquery-ui.min.js" %>
@@ -488,16 +487,11 @@
      <!-- /. WRAPPER  -->
 
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <%= javascript_include_tag "apps/jquery.metisMenu.js" %>
     <!-- MORRIS CHART SCRIPTS -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <%= javascript_include_tag "apps/morris/raphael-2.1.0.min.js" %>
+    <%= javascript_include_tag "apps/morris/morris.js" %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>

@@ -3,15 +3,7 @@
   "use strict"
   mainApp =
     main_fun: ->
-
-      #====================================
-      #            METIS MENU
-      #            ======================================
-      $("#main-menu").metisMenu()
-
-      #====================================
-      #              LOAD APPROPRIATE MENU BAR
-      #           ======================================
+      # $("#main-menu").metisMenu()
       $(window).bind "load resize", ->
         if $(this).width() < 768
           $("div.sidebar-collapse").addClass "collapse"
@@ -19,10 +11,6 @@
           $("div.sidebar-collapse").removeClass "collapse"
         return
 
-
-      #====================================
-      #            MORRIS BAR CHART
-      #         ======================================
       Morris.Bar
         element: "morris-bar-chart"
         data: [
@@ -74,10 +62,6 @@
         hideHover: "auto"
         resize: true
 
-
-      #====================================
-      #          MORRIS DONUT CHART
-      #       ======================================
       Morris.Donut
         element: "morris-donut-chart"
         data: [
@@ -96,10 +80,6 @@
         ]
         resize: true
 
-
-      #====================================
-      #         MORRIS AREA CHART
-      #      ======================================
       Morris.Area
         element: "morris-area-chart"
         data: [
@@ -179,10 +159,6 @@
         hideHover: "auto"
         resize: true
 
-
-      #====================================
-      #    MORRIS LINE CHART
-      # ======================================
       Morris.Line
         element: "morris-line-chart"
         data: [
