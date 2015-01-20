@@ -1,5 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :accounts, path: 'auth'
+  mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
 
