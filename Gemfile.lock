@@ -239,6 +239,8 @@ GEM
     puma (2.10.2)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -314,6 +316,10 @@ GEM
     sidekiq-failures (0.4.3)
       sidekiq (>= 2.16.0)
     simple_oauth (0.3.1)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -407,6 +413,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sidekiq
   sidekiq-failures
+  sinatra
   spring
   sprockets-rails
   sqlite3

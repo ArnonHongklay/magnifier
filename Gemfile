@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'wicked_pdf'  # pdf
 
-
 # gem 'strong_parameters'
 
 gem 'cancan'                        # Authorization
@@ -47,6 +46,7 @@ gem 'omniauth-twitter'              # Authentication Twitter
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
+gem 'sinatra', :require => nil
 
 gem 'redis-namespace'               # Cleaner redis keys
 gem 'redis-semaphore'               # Facebook access locking
