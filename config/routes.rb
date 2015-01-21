@@ -24,12 +24,6 @@ Rails.application.routes.draw do
     # resources :ticket_support
   end
 
-  get 'home' => 'dashboard#home'
-  get 'dashboard' => 'dashboard#index'
-  get 'monitoring-tools' => 'dashboard#monitoring_tools'
-  get 'ticket-support' => 'dashboard#ticket_support'
-  get 'report' => 'dashboard#report'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

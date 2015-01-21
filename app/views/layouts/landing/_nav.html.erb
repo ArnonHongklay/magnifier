@@ -11,8 +11,9 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="" class="smothscroll">Free Trial</a></li>
-              <li><a href="" class="smothscroll">Login</a></li>
+              <li><%= link_to "Free Trial", new_account_registration_path, class: "smothscroll" %></li>
+              <li><%= link_to "Login", new_account_session_path, class: "smothscroll" %></li>
+              <li><%= link_to "Logout", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
