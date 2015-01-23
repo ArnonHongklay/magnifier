@@ -1,9 +1,16 @@
+# = require jquery_ujs
+# = require turbolinks
+
+# = require apps/jquery.metisMenu
+# = require apps/morris/raphael-2.1.0.min
+# = require apps/morris/morris
+# = require_self
 
 (($) ->
   "use strict"
   mainApp =
     main_fun: ->
-      # $("#main-menu").metisMenu()
+      $("#main-menu").metisMenu()
       $(window).bind "load resize", ->
         if $(this).width() < 768
           $("div.sidebar-collapse").addClass "collapse"

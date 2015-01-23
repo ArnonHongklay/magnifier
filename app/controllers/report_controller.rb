@@ -1,4 +1,5 @@
 class ReportController < ApplicationController
+  layout 'accounts'
   # before_action :authenticate_member!
 
   def index

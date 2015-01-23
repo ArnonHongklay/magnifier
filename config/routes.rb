@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
-  resources :accounts, path: 'account', constraints: { account_id: '[^\/]+' } do
+  resources :accounts, path: '', constraints: { account_id: '[^\/]+' } do
     get '/'                 => 'accounts#index',          as: :index
     get 'settings'          => 'accounts#settings'
     get 'community'         => 'conversation#index',      as: :community
