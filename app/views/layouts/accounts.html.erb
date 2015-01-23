@@ -4,18 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ohmpieng.io | Dashboard Admin</title>
-  <!-- Stylesheet -->
-  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
-
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
-  <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
-
-  <!-- Javascripts -->
   <%= javascript_include_tag "https://code.jquery.com/jquery-#{jquery_version}.min.js" %>
   <%= javascript_include_tag "https://code.jquery.com/ui/#{jquery_version}/jquery-ui.min.js" %>
-  <!-- BOOTSTRAP STYLES-->
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/css/bootstrap.min.css" %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/#{bootstrap_version}/js/bootstrap.min.js" %>
-
+  <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -31,43 +25,29 @@
         </button>
         <a class="navbar-brand" href="index.html">Ohmpieng.io</a>
       </div>
-      <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+      <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> Last access : 30 May 2014 &nbsp;
+        <%= link_to "Signout", destroy_account_session_path, method: :delete, class: "btn btn-danger square-btn-adjust", data: { confirm: "Are you sure?" } %>
+        <%= link_to "Setting", account_settings_path, class: "btn btn-primary square-btn-adjust" %>
+      </div>
     </nav>
     <!-- /. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
       <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
-          <li class="text-center"><%= image_tag "find_user.png", class: "user-image img-responsive" %>
-            <li><a href=""><i class="fa fa-sitemap fa-2x"></i> Profile<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level">
-                <li><a href="<%= account_settings_path %>">Setting</a></li>
-                <li>
-                  <%= link_to "Sign out", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
-                </li>
-              </ul>
-            </li>
-            <!-- <li><a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a></li> -->
-            <li><a href="<%= account_index_path %>"><i class="fa fa-square-o fa-2x"></i> Home</a></li>
-            <li><a href="<%= account_dashboard_path %>"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a></li>
-            <li><a href="<%= account_report_path %>"><i class="fa fa-table fa-2x"></i> Report</a></li>
-            <li><a href="<%= account_monitoring_tools_path %>"><i class="fa fa-desktop fa-2x"></i> Monitoring Tools</a></li>
-            <li><a href="<%= account_ticket_support_path %>"><i class="fa fa-edit fa-2x"></i> Ticket Support</a></li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <!-- /. NAV SIDE  -->
-      <div id="page-wrapper" >
-        <div id="page-inner">
-
-          <%= yield %>
-
-        </div>
-        <!-- /. PAGE INNER  -->
+          <li class="text-center"><%= image_tag "find_user.png", class: "user-image img-responsive" %></li>
+          <li><a href="<%= account_index_path %>" target="_self"><i class="fa fa-square-o fa-2x"></i> Home</a></li>
+          <li><a href="<%= account_dashboard_path %>" target="_self"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a></li>
+          <li><a href="<%= account_report_path %>" target="_self"><i class="fa fa-table fa-2x"></i> Report</a></li>
+          <li><a href="<%= account_monitoring_tools_path %>" target="_self"><i class="fa fa-desktop fa-2x"></i> Monitoring Tools</a></li>
+          <li><a href="<%= account_ticket_support_path %>" target="_self"><i class="fa fa-edit fa-2x"></i> Ticket Support</a></li>
+        </ul>
       </div>
-      <!-- /. PAGE WRAPPER  -->
+    </nav>
+    <div id="page-wrapper" >
+      <div id="page-inner">
+        <%= yield %>
+      </div>
     </div>
-    <!-- /. WRAPPER  -->
+  </div>
   </body>
   </html>

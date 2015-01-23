@@ -10,7 +10,7 @@
   "use strict"
   mainApp =
     main_fun: ->
-      $("#main-menu").metisMenu()
+      # $("#main-menu").metisMenu()
       $(window).bind "load resize", ->
         if $(this).width() < 768
           $("div.sidebar-collapse").addClass "collapse"
