@@ -8,9 +8,6 @@ class ReportController < ApplicationController
   end
 
   def show
-    # excel and csv
-    # http://railscasts.com/episodes/362-exporting-csv-and-excel?view=asciicast
-
     @xxx = "xx,xxx,xxx,xxxx,xxx,xxx,xx"
     respond_to do |format|
       format.html
