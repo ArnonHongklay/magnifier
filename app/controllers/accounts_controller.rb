@@ -1,8 +1,9 @@
 class AccountsController < ApplicationController
   before_action :authenticate_account!
+  before_filter :verify_permissions
 
   def index
-    raise current_account.admin?.inspect
+
   end
 
   def settings
@@ -10,7 +11,7 @@ class AccountsController < ApplicationController
   end
 
 private
-  def account_params
+  def account
     params[:account_id]
   end
 end
