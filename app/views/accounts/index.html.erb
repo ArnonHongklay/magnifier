@@ -1,26 +1,9 @@
-
-<!-- <h1>Welcome to</h1>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<hr>
-<p>
-Or, sign in with
-<% if signed_in? %>
-<%= link_to "Sign out", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
-<% else %>
-<%= link_to "Sign in", new_account_session_path %>
-<%= link_to "Sign up", new_account_registration_path %>
-<% end %>
-</p> -->
-
-
 <div class="row">
   <div class="col-md-12">
-    <h2>Admin Dashboard</h2>
-    <h5>Welcome Jhon Deo , Love to see you back. </h5>
+    <h2>Ohmpieng - Home</h2>
+    <h5>Welcome <%= current_account.name %> <%= notice %> <%= alert %></h5>
   </div>
 </div>
-<!-- /. ROW  -->
 <hr />
 <div class="row">
   <div class="col-md-3 col-sm-6 col-xs-6">

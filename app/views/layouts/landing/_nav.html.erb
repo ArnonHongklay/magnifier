@@ -7,13 +7,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>OHMPIENG.IO</b></a>
+            <a class="navbar-brand" href=""><b>OHMPIENG.IO</b></a>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to "Free Trial", new_account_registration_path, class: "smothscroll" %></li>
-              <li><%= link_to "Login", new_account_session_path, class: "smothscroll" %></li>
-              <li><%= link_to "Logout", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+              <% unless signed_in? %>
+                <li><%= link_to "Free Trial", new_account_registration_path, class: "smothscroll" %></li>
+                <li><%= link_to "Login", new_account_session_path, class: "smothscroll" %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

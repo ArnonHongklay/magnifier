@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_account!
+
   def index
     # render status: 404 if account_params.nil?
     # accounts = Account.find_by_name(account_params) or not_found
