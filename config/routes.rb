@@ -13,9 +13,6 @@ Rails.application.routes.draw do
     get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools
     get 'ticket-support'    => 'ticket_support#index',    as: :ticket_support
     get 'report'            => 'report#index',            as: :report
-    scope :format => true, :constraints => { format: /(|pdf|csv)/ } do
-      get 'report/show'       => 'report#show',             as: :report_show
-    end
 
     # resources :community
     # resources :dashboard
