@@ -1,6 +1,8 @@
 # = require jquery_ujs
 # = require turbolinks
 
-# = require apps/jquery.metisMenu
-# = require apps/morris/raphael-2.1.0.min
-# = require apps/morris/morris
+# = require apps/Chart.min
+#= require accounts/dashboard
+#= require accounts/report
+#= require accounts/monitoring_tools
+#= require accounts/ticket_support
