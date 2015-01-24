@@ -1,5 +1,7 @@
 class ReportController < ApplicationController
-  # before_action :authenticate_member!
+  before_action :authenticate_account!
+  before_filter :verify_account!
+  layout 'accounts'
 
   def index
     @pdf = "#{:account_report_show.to_s}"
@@ -27,5 +29,10 @@ class ReportController < ApplicationController
         }
       end
     end
+  end
+
+private
+  def account
+    params[:account_id]
   end
 end

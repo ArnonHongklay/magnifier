@@ -1,188 +1,111 @@
-
-<!-- <h1>Welcome to</h1>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<hr>
-<p>
-Or, sign in with
-<% if signed_in? %>
-<%= link_to "Sign out", destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
-<% else %>
-<%= link_to "Sign in", new_account_session_path %>
-<%= link_to "Sign up", new_account_registration_path %>
-<% end %>
-</p> -->
-
-
-
-<!-- Page start here ( usual with .row ) -->
 <div class="row">
-  <!-- Start .row -->
-  <div class="col-lg-12 col-md-12">
-    <!-- Start col-lg-12 -->
-    <div class="panel panel-default toggle">
-      <!-- Start .panel -->
-      <div class="panel-heading">
-        <h4 class="panel-title"><i class="im-bars"></i> Auto updating chart</h4>
-      </div>
-      <div class="panel-body">
-        <div id="autoupdate-chart" style="width: 100%; height:250px;"></div>
-      </div>
-    </div>
-    <!-- End .panel -->
-  </div>
-  <!-- End col-lg-12 -->
-</div>
-<!-- End .row -->
-<div class="row">
-  <div class="col-lg-6 col-md-12">
-    <!-- Start col-lg-6 -->
-    <div class="panel panel-primary plain toggle">
-      <!-- Start .panel -->
-      <div class="panel-heading">
-        <h4 class="panel-title"><i class="im-bars"></i> Line chart with dots</h4>
-      </div>
-      <div class="panel-body blue-bg">
-        <div id="line-chart-dots" style="width: 100%; height:250px;"></div>
-      </div>
-    </div>
-    <!-- End .panel -->
-  </div>
-  <!-- End col-lg-6 -->
-  <div class="col-lg-6 col-md-12">
-    <!-- Start col-lg-6 -->
-    <div class="panel panel-default plain toggle">
-      <!-- Start .panel -->
-      <div class="panel-heading white-bg">
-        <h4 class="panel-title"><i class="im-bars"></i> Line chart only</h4>
-      </div>
-      <div class="panel-body white-bg">
-        <div id="line-chart" style="width: 100%; height:250px;"></div>
-      </div>
-    </div>
-    <!-- End .panel -->
+  <div class="col-md-12">
+    <h2>Ohmpieng - Home</h2>
+    <h5>Welcome <%= current_account.name %> <%= notice %> <%= alert %></h5>
   </div>
 </div>
-<!-- End .row -->
+<hr />
 <div class="row">
-  <!-- Start .row -->
-  <div class="col-lg-12">
-    <!-- col-lg-12 start here -->
-    <div class="page-header">
-      <h4><i class="im-bars s20"></i> Other chart elements</h4>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-red set-icon">
+        <i class="fa fa-envelope-o"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">120 New</p>
+        <p class="text-muted">Messages</p>
+      </div>
     </div>
-    <div class="row">
-      <!-- Start .row -->
-      <div class="col-lg-6 col-md-12">
-        <!-- col-lg- start here -->
-        <div class="panel panel-default toggle">
-          <!-- Start .panel -->
-          <div class="panel-heading">
-            <h4 class="panel-title"><i class="im-pie"></i> Easy pie chart</h4>
-          </div>
-          <div class="panel-body">
-            <div class="pie-charts">
-              <div class="easy-pie-chart" data-percent="45">45%</div>
-              <div class="label">New Visitors</div>
-            </div>
-            <div class="pie-charts red-pie">
-              <div class="easy-pie-chart-red" data-percent="7">7%</div>
-              <div class="label">Drop rate</div>
-            </div>
-            <div class="pie-charts green-pie">
-              <div class="easy-pie-chart-green" data-percent="28">28%</div>
-              <div class="label">Returning</div>
-            </div>
-            <div class="pie-charts blue-pie">
-              <div class="easy-pie-chart-blue" data-percent="65">65%</div>
-              <div class="label">From Google</div>
-            </div>
-            <div class="pie-charts teal-pie">
-              <div class="easy-pie-chart-teal" data-percent="23">23%</div>
-              <div class="label">Direct Hits</div>
-            </div>
-            <div class="pie-charts purple-pie">
-              <div class="easy-pie-chart-purple" data-percent="88">88%</div>
-              <div class="label">Ads source</div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-green set-icon">
+        <i class="fa fa-bars"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">30 Tasks</p>
+        <p class="text-muted">Remaining</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-blue set-icon">
+        <i class="fa fa-bell-o"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">240 New</p>
+        <p class="text-muted">Notifications</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-brown set-icon">
+        <i class="fa fa-rocket"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">3 Orders</p>
+        <p class="text-muted">Pending</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /. ROW  -->
+<hr />
+<div class="row">
+  <div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-blue">
+        <i class="fa fa-warning"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">52 Important Issues to Fix </p>
+        <p class="text-muted">Please fix these issues to work smooth</p>
+        <p class="text-muted">Time Left: 30 mins</p>
+        <hr />
+        <p class="text-muted">
+          <span class="text-muted color-bottom-txt"><i class="fa fa-edit"></i>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-3 col-sm-12 col-xs-12">
+    <div class="panel back-dash">
+      <i class="fa fa-dashboard fa-3x"></i><strong> &nbsp; SPEED</strong>
+      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing sit ametsit amet elit ftr. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+  </div>
+  <div class="col-md-3 col-sm-12 col-xs-12 ">
+    <div class="panel ">
+      <div class="main-temp-back">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6"> <i class="fa fa-cloud fa-3x"></i> Newyork City </div>
+            <div class="col-xs-6">
+              <div class="text-temp"> 10° </div>
             </div>
           </div>
         </div>
-        <!-- End .panel -->
       </div>
-      <!-- col-lg-6 end here -->
-      <div class="col-lg-6 col-md-12">
-        <!-- col-lg- start here -->
-        <div class="panel panel-default toggle">
-          <!-- Start .panel -->
-          <div class="panel-heading">
-            <h4 class="panel-title"><i class="im-bars"></i> Sparklines</h4>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <!-- col-lg-3 start here -->
-                <div class="tile gray-spr m0 mb20">
-                  <div class="tile-content text-center clearfix">
-                    <div class="label">Visitors last week</div>
-                    <div class="spark-number"><i class="ec-users"></i> 12,678</div>
-                    <div class="spark clearfix">
-                      <div class="percent"><i class="im-arrow-up-right3 color-green"></i> 3.08%</div>
-                      <div class="sparkline sparkline-positive"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- col-lg-3 end here -->
-              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <!-- col-lg-3 start here -->
-                <div class="tile gray-spr m0 mb20">
-                  <div class="tile-content text-center clearfix">
-                    <div class="label">Time on site</div>
-                    <div class="spark-number"><i class="ec-clock"></i> 5m 26s</div>
-                    <div class="spark clearfix">
-                      <div class="percent"><i class="im-arrow-down-right2 color-red"></i> 10.24%</div>
-                      <div class="sparkline sparkline-negative"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- col-lg-3 end here -->
-              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <!-- col-lg-3 start here -->
-                <div class="tile gray-spr m0 mb20">
-                  <div class="tile-content text-center clearfix">
-                    <div class="label">New visitors</div>
-                    <div class="spark-number"><i class="ec-users"></i> 2367</div>
-                    <div class="spark clearfix">
-                      <div class="percent"><i class="im-arrow-up-right3 color-green"></i> 84.29%</div>
-                      <div class="sparkline sparkline-bar-positive"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- col-lg-3 end here -->
-              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <!-- col-lg-3 start here -->
-                <div class="tile gray-spr m0 mb20">
-                  <div class="tile-content text-center clearfix">
-                    <div class="label">Pages view</div>
-                    <div class="spark-number"><i class="fa-eye-open"></i> 2300</div>
-                    <div class="spark clearfix">
-                      <div class="percent"><i class="im-arrow-down-right2 color-red"></i> 17.65%</div>
-                      <div class="sparkline sparkline-bar-negative"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- col-lg-3 end here -->
-            </div>
-          </div>
-        </div>
-        <!-- End .panel -->
-      </div>
-      <!-- col-lg-6 end here -->
+
     </div>
-    <!-- End .row -->
+    <div class="panel panel-back noti-box">
+      <span class="icon-box bg-color-green set-icon">
+        <i class="fa fa-desktop"></i>
+      </span>
+      <div class="text-box" >
+        <p class="main-text">Display</p>
+        <p class="text-muted">Looking Good</p>
+      </div>
+    </div>
+
   </div>
-  <!-- col-lg-12 end here -->
+
 </div>

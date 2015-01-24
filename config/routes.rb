@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
-  resources :accounts, path: 'account', constraints: { account_id: '[^\/]+' } do
+  resources :accounts, path: '', constraints: { account_id: '[^\/]+' } do
     get '/'                 => 'accounts#index',          as: :index
     get 'settings'          => 'accounts#settings'
     get 'community'         => 'conversation#index',      as: :community
@@ -23,8 +23,6 @@ Rails.application.routes.draw do
     # resources :monitoring_tools
     # resources :ticket_support
   end
-
-  get 'xxx' => 'dashboard#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = Account.new(email: 'nonmadden@gmail.com', password: 'Arnon007', password_confirmation: 'Arnon007', name: "Non Madden")
+user = Account.new(email: 'geek@ohmpieng.io', password: '87654321', password_confirmation: '87654321', name: "geek")
 user.admin = true
 user.confirmed_at = Time.now
 user.save
 
+user = Account.new(email: 'test@ohmpieng.io', password: '12345678', password_confirmation: '12345678', name: "test")
+user.confirmed_at = Time.now
+user.save

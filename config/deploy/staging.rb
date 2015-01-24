@@ -1,11 +1,11 @@
 set :stage, :staging
 set :rails_env, :production
 
-role :app, %w{deployer@staging.ohmpieng.org}
-role :web, %w{deployer@staging.ohmpieng.org}
-role :db,  %w{deployer@staging.ohmpieng.org}
+role :app, %w{deployer@staging.ohmpieng.io}
+role :web, %w{deployer@staging.ohmpieng.io}
+role :db,  %w{deployer@staging.ohmpieng.io}
 
-server 'staging.ohmpieng.org',
+server 'staging.ohmpieng.io',
   user: 'deployer',
   roles: %w{web app db},
   primary: true,

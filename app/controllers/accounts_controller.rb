@@ -1,9 +1,9 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_account!
+  before_filter :verify_account!
+
   def index
-    render status: 404 if account_params.nil?
-    accounts = Account.find_by_name(account_params) or not_found
-    # raise current_user.admin?.inspect
-    # raise signed_in.inspect
+
   end
 
   def settings
@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
   end
 
 private
-  def account_params
+  def account
     params[:account_id]
   end
 end
