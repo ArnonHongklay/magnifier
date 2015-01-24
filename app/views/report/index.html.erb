@@ -1,9 +1,10 @@
 <div class="row" >
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div id="header">
-      <%= image_tag '1.png' %><%= wicked_pdf_image_tag '1.png' %> <%= @account %>
+    <%= image_tag '1.png' %><%= wicked_pdf_image_tag '1.png' %> <%= @account %>
+    <div class="pull-right">
+      <%= link_to 'PDF', "#{account_report_path(@account)}.pdf" %>
     </div>
-    <br>
+    <hr>
     <div class="panel panel-default">
       <div class="panel-heading">
         Responsive Table Example
