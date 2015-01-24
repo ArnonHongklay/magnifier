@@ -5,9 +5,4 @@ class MonitoringToolsController < ApplicationController
 
   def index
   end
-
-private
-  def account
-    params[:account_id]
-  end
 end

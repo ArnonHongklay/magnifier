@@ -6,9 +6,4 @@ class DashboardController < ApplicationController
   def index
     # HardWorker.perform_async('bob', 5)
   end
-
-private
-  def account
-    params[:account_id]
-  end
 end
