@@ -1,6 +1,0 @@
-Mon, 10 Nov 2014 22:11:25 +0700
-README.rdoc	Sun, 31 Aug 2014 22:25:10 +0700
-app/controllers/application_controller.rb	Sun, 09 Nov 2014 01:53:45 +0700
-app/controllers/greetings_controller.rb	Sun, 09 Nov 2014 20:32:51 +0700
-app/helpers/application_helper.rb	Sun, 31 Aug 2014 22:25:10 +0700
-app/helpers/greetings_helper.rb	Sun, 09 Nov 2014 01:45:48 +0700
