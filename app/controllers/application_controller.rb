@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :username
   end
 
-  def verify_permissions
+  def verify_accounts!
     not_found if not current_account.admin? and account != current_account.name
     not_found if current_account.admin? and Account.find_by_name(account).nil?
   end

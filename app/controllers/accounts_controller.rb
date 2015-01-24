@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   before_action :authenticate_account!
-  before_filter :verify_permissions
+  before_filter :verify_accounts!
 
   def index
 

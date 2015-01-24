@@ -1,6 +1,6 @@
 class ReportController < ApplicationController
   before_action :authenticate_account!
-  before_filter :verify_permissions
+  before_filter :verify_accounts!
   layout 'accounts'
 
   def index
@@ -29,5 +29,10 @@ class ReportController < ApplicationController
         }
       end
     end
+  end
+
+private
+  def account
+    params[:account_id]
   end
 end
