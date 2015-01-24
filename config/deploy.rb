@@ -4,7 +4,7 @@ lock '3.1.0'
 set :application, 'production'
 
 set :scm, :git
-set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@github.com/nonmadden/production.git'
+set :repo_url, 'https://nonmadden:f676fb0faa535c355ff51d4d0fe56ceb8b6c439f@github.com/nonmadden/production.git'
 set :branch, 'master'
 
 set :deploy_to, '/home/deployer/project/production'
