@@ -1,6 +1,6 @@
 class ReportController < ApplicationController
+  before_action :authenticate_account!
   layout 'accounts'
-  # before_action :authenticate_member!
 
   def index
     @pdf = "#{:account_report_show.to_s}"
