@@ -2,16 +2,14 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
+# Rails.application.config.assets.initialize_on_precompile = true
 
-Rails.root.join('vendor', 'assets', 'fonts','bower_components').to_s.tap do |bower_path|
-  Rails.application.config.sass.load_paths << bower_path
-  Rails.application.config.assets.paths << bower_path
-end
+Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
-Rails.application.config.assets.precompile += %w( *.css )
-Rails.application.config.assets.precompile += %w( *.js )
-Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-Rails.application.config.assets.precompile << '*.png' << '*.jpg' << '*.gif'
+Rails.application.config.assets.precompile += %w( .css )
+Rails.application.config.assets.precompile += %w( .js )
+Rails.application.config.assets.precompile += %w( .png .jpg .jpeg .gif .woff .ttf .svg .eot)
 
 # Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff)$)
 # ::Sass::Script::Number.precision = [10, ::Sass::Script::Number.precision].max
