@@ -13,5 +13,5 @@ Rails.application.config.assets.precompile += %w( *.js )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 Rails.application.config.assets.precompile << '*.png' << '*.jpg' << '*.gif'
 
-Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff)$)
-::Sass::Script::Number.precision = [10, ::Sass::Script::Number.precision].max
+# Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff)$)
+# ::Sass::Script::Number.precision = [10, ::Sass::Script::Number.precision].max

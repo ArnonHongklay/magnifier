@@ -23,6 +23,7 @@ gem 'turbolinks'
 # stylesheet
 gem 'sass-rails', github: 'rails/sass-rails'
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+gem "font-awesome-rails"
 gem 'autoprefixer-rails'  # CSS auto-prefixing
 gem 'sprockets-rails', require: 'sprockets/railtie'
 # Use Uglifier as compressor for JavaScript assets
