@@ -17,15 +17,20 @@ gem "actionpack-page_caching"
 
 # javascript
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'angularjs-rails'
 gem 'coffee-rails', github: 'rails/coffee-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
 # stylesheet
-gem 'sass-rails', github: 'rails/sass-rails'
-gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+gem 'sass-rails', '>= 3.2', github: 'rails/sass-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem "font-awesome-rails"
-gem 'autoprefixer-rails'  # CSS auto-prefixing
+gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+# gem 'autoprefixer-rails'  # CSS auto-prefixing
 gem 'sprockets-rails', require: 'sprockets/railtie'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0' # Minification
 
