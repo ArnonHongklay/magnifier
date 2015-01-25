@@ -22,7 +22,6 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'turbolinks'
 # stylesheet
 gem 'sass-rails', github: 'rails/sass-rails'
-gem 'font-awesome-sass'
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
 gem 'autoprefixer-rails'  # CSS auto-prefixing
 gem 'sprockets-rails', require: 'sprockets/railtie'

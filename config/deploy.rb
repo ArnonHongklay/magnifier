@@ -4,7 +4,7 @@ lock '3.1.0'
 set :application, 'production'
 
 set :scm, :git
-set :repo_url, 'https://nonmadden:3618b7120d511b2c1aa28fe61f14c50023143694@github.com/nonmadden/production.git'
+set :repo_url, 'https://nonmadden:f676fb0faa535c355ff51d4d0fe56ceb8b6c439f@github.com/ohmpieng/production.git'
 set :branch, 'master'
 
 set :deploy_to, '/home/deployer/project/production'
@@ -44,6 +44,19 @@ namespace :deploy do
         execute :touch, release_path.join('tmp/restart.txt')
     end
   end
+
+  desc 'Runs rake db:seed for SeedMigrations data'
+  task :seed => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
+
+  after 'deploy:migrate', 'deploy:seed'
 
   desc "Database config"
     task :setup_config do
