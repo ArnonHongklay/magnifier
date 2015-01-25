@@ -45,6 +45,13 @@ namespace :deploy do
     end
   end
 
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+
+  after 'deploy:migrate', 'deploy:seed'
+
   desc "Database config"
     task :setup_config do
       on roles(:app), in: :sequence, wait: 5 do
