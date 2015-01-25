@@ -1,4 +1,5 @@
 # = require_self
+# = require_tree ./services
 # = require_tree ./directives
 # = require_tree ./controllers
 
@@ -11,20 +12,12 @@ window.ohmpieng = angular.module 'ohmpieng', [
 ]
 
 ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
-  $stateProvider
-		.state 'account',
-			url:					'/:account'
-			templateUrl		'/accounts/ui'
-			controller:		'HomeCtrl'
-  .state 'account.nav',
-    abstract:    true
-    templateUrl: '/accounts/nav'
-    controller:  'NavCtrl'
+  console.log $stateProvider.state
 
-  $urlRouterProvider.otherwise '/'
-  $locationProvider.html5Mode(true).hashPrefix('!')
+ohmpieng.config ($analyticsProvider) ->
+  $analyticsProvider.firstPageview(false)
 
-ohmpieng.run ->
+ohmpieng.run (gettextCatalog) ->
   gettextCatalog.currentLanguage = 'th'
 
 ohmpieng.controller 'AppCtrl', ($scope) ->

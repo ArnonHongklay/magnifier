@@ -9,7 +9,12 @@ class AccountsController < ApplicationController
     end
   end
 
-  def settings
+  def setting
     # raise "xxxx"
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 end

@@ -37,7 +37,7 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'uglifier', '>= 1.3.0' # Minification
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 
 gem 'wicked_pdf'  # pdf
 

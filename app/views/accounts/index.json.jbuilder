@@ -1,5 +1,5 @@
 json.user do
-  json.name     current_user.name
-  json.email    current_user.email
-  json.admin    admin?
-end if current_user
+  json.name     current_account.name
+  json.email    current_account.email
+  json.admin    current_account.admin?
+end if current_account
