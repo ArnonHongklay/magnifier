@@ -1,23 +1,23 @@
 
 window.onload = ->
-  if (window.location.pathname.split("/")[2] == 'dashboard')
-    dashBar = document.getElementById("dashBar").getContext("2d")
-    window.myBar = new Chart(dashBar).Bar(barChartData,
-      responsive: true
-    )
-    dashDoughnut = document.getElementById("dashDoughnut").getContext("2d")
-    window.myDoughnut = new Chart(dashDoughnut).Doughnut(doughnutData,
-      responsive: true
-    )
-    dashLine = document.getElementById("dashLine").getContext("2d")
-    window.myLine = new Chart(dashLine).Line(lineChartData,
-      responsive: true
-    )
-    dashPie = document.getElementById("dashPie").getContext("2d")
-    window.myPie = new Chart(dashPie).Pie(pieData,
-      responsive: true
-    )
-    return
+  # if (window.location.pathname.split("/")[2] == 'dashboard')
+  dashBar = document.getElementById("dashBar").getContext("2d")
+  window.myBar = new Chart(dashBar).Bar(barChartData,
+    responsive: true
+  )
+  dashDoughnut = document.getElementById("dashDoughnut").getContext("2d")
+  window.myDoughnut = new Chart(dashDoughnut).Doughnut(doughnutData,
+    responsive: true
+  )
+  dashLine = document.getElementById("dashLine").getContext("2d")
+  window.myLine = new Chart(dashLine).Line(lineChartData,
+    responsive: true
+  )
+  dashPie = document.getElementById("dashPie").getContext("2d")
+  window.myPie = new Chart(dashPie).Pie(pieData,
+    responsive: true
+  )
+  # return
 
 randomScalingFactor = ->
   Math.round Math.random() * 100

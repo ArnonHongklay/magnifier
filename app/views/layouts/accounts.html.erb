@@ -6,7 +6,6 @@
   <title>Ohmpieng.io | Dashboard Admin</title>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
   <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -50,11 +49,11 @@
       <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
           <li class="text-center"><%= image_tag "find_user.png", class: "user-image img-responsive" %></li>
-          <li><a href="<%= account_index_path %>" target="_self"><i class="fa fa-square-o fa-2x"></i> Home</a></li>
-          <li><a href="<%= account_dashboard_path %>" target="_self"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a></li>
-          <li><a href="<%= account_report_path %>" target="_self"><i class="fa fa-table fa-2x"></i> Report</a></li>
-          <li><a href="<%= account_monitoring_tools_path %>" target="_self"><i class="fa fa-desktop fa-2x"></i> Monitoring Tools</a></li>
-          <li><a href="<%= account_ticket_support_path %>" target="_self"><i class="fa fa-edit fa-2x"></i> Ticket Support</a></li>
+          <li><a href="<%= account_index_path %>"><i class="fa fa-square-o fa-2x"></i> Home</a></li>
+          <li><a href="<%= account_dashboard_path %>"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a></li>
+          <li><a href="<%= account_report_path %>"><i class="fa fa-table fa-2x"></i> Report</a></li>
+          <li><a href="<%= account_monitoring_tools_path %>"><i class="fa fa-desktop fa-2x"></i> Monitoring Tools</a></li>
+          <li><a href="<%= account_ticket_support_path %>"><i class="fa fa-edit fa-2x"></i> Ticket Support</a></li>
         </ul>
       </div>
     </nav>
@@ -64,5 +63,8 @@
       </div>
     </div>
   </div>
+
+  <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
+
   </body>
-  </html>
+</html>
