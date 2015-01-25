@@ -1,2 +1,4 @@
-ohmpieng.controller 'HomeCtrl', ($scope) ->
-	console.log "xxxx"
+
+# ohmpieng.controller 'HomeCtrl', ($scope, $window, account, events) ->
+# 	$scope.account = account.data
+# 	console.log "xxx"
