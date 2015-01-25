@@ -12,7 +12,11 @@ window.ohmpieng = angular.module 'ohmpieng', [
 ]
 
 ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
-  console.log $stateProvider.state
+  $stateProvider
+    .state 'account',
+      url:         '/:accountId'
+      templateUrl: '/accounts/ui'
+      controller:  'AccountCtrl'
 
 ohmpieng.config ($analyticsProvider) ->
   $analyticsProvider.firstPageview(false)
@@ -24,6 +28,8 @@ ohmpieng.controller 'AppCtrl', ($scope) ->
   $scope.$on '$stateChangeSuccess', (e, toState) ->
     $scope.stateName = toState.name
 
+ohmpieng.controller 'AccountCtrl', ($scope, $stateParams, $http, $window, account, events) ->
+  console.log $stateParams
 ohmpieng.controller 'NavCtrl', ($scope, $window) ->
   $scope.$on '$stateChangeStart',   $window.NProgress.start
   $scope.$on '$stateChangeSuccess', $window.NProgress.done

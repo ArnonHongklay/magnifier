@@ -8,11 +8,11 @@
 
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
   <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'accounts/vendor' %>
+  <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body responsive class="{{stateName}} {{device}}">
   <div id="wrapper">
     <ui-view></ui-view>
     <dinger></dinger>
