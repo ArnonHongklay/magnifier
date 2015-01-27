@@ -11,6 +11,10 @@ angular.module("ohmpieng", [
   # $urlRouterProvider.otherwise('/')
 
   $stateProvider
+    .state 'home',
+      url: '/',
+      templateUrl: "template/state1.html"
+
     .state      'state1',
       url:      '/state1',
       templateUrl: 'template/state1.html'
