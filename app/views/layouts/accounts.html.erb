@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ohmpieng" ng-controller="AppCtrl">
+<html ng-app="ohmpieng">
 <head>
   <meta charset="utf-8" />
   <title>Ohmpieng.io | Dashboard Admin</title>
@@ -12,11 +12,11 @@
   <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body responsive class="{{stateName}} {{device}}">
+<body>
   <div id="wrapper">
-    <ui-view>
-      <i>Some content will load here!</i> {{xxx}}
-    </ui-view>
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+    <div ui-view></div>
   </div>
 </body>
 </html>
