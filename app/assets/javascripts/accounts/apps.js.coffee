@@ -1,56 +1,28 @@
 # = require_self
+# = require apps/angular/angular
+# = require apps/angular/angular-resource
+# = require apps/angular/angular-cookies
+# = require apps/angular-strap/angular-strap
+# = require ./angular-devise/index
+# = require ./config
+# = require_tree ./services
+# = require_tree ./directives
+# = require_tree ./controllers
 
-
-angular.module("ohmpieng", [
+window.ohmpieng = angular.module("ohmpieng", [
   'ui.router',
   'gettext',
   'angulartics',
   'angulartics.google.analytics',
   'nprogress-rails'
-]).config ($stateProvider, $urlRouterProvider) ->
-  # $urlRouterProvider.otherwise('/')
+])
 
-  $stateProvider
-    .state 'home',
-      url: '/',
-      templateUrl: "template/state1.html"
+ohmpieng.controller 'AppCtrl', ($scope, $state) ->
 
-    .state      'state1',
-      url:      '/state1',
-      templateUrl: 'template/state1.html'
-    .state      'state1.list',
-      url:      '/list'
-      template: "xxxxxxx",
-      # controller: function($scope) {
-      #   $scope.items = ["A", "LIST", "OF", "Items"]
-      # }
-    .state      'state2',
-      url:      '/state2',
-      templateUrl: 'template/state2.html'
+  $scope.$on '$stateChangeStart',   NProgress.start
+  $scope.$on '$stateChangeSuccess', NProgress.done
+  $scope.$on '$stateChangeError',   NProgress.done
 
-    .state      'state2.list',
-      url:      '/list',
-      template: 'list'
+  $scope.$on '$stateChangeSuccess', (e, toState) ->
+    $scope.stateName = toState.name
 
-
-# ohmpieng.config ($analyticsProvider) ->
-#   $analyticsProvider.firstPageview(false)
-
-# ohmpieng.run (gettextCatalog) ->
-#   gettextCatalog.currentLanguage = 'th'
-
-# ohmpieng.controller 'AppCtrl', ($scope, $stateParams) ->
-#   $scope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
-#     $scope.pageState.selectedCarId = toParams.id
-
-#   $scope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-#     console.log "$stateChangeSuccess to " + toState.name + "- fired once the state transition is complete."
-
-#   $scope.xxx = 1
-
-#   # $scope.$on '$stateChangeSuccess', (e, toState) ->
-#     # $scope.stateName = toState.name
-
-# ohmpieng.controller 'AccountCtrl', ($scope, $stateParams, $http, $window, account, events) ->
-#   console.log $stateParams
-# ohmpieng.controller 'NavCtrl', ($scope, $window) ->

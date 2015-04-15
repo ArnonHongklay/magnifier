@@ -15,6 +15,9 @@ gem "activerecord-deprecated_finders", "~> 1.0.3"
 gem "actionpack-action_caching"
 gem "actionpack-page_caching"
 
+# static page
+gem 'high_voltage'
+
 # javascript
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -26,7 +29,7 @@ gem 'turbolinks'
 
 # stylesheet
 gem 'sass-rails', '>= 3.2', github: 'rails/sass-rails'
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing

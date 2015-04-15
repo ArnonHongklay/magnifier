@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
+  get "/accounts/*id" => 'pages#show', as: :page, format: false
+
   resources :accounts, path: '' do
     get ''                  => 'accounts#index',          as: :index
     get 'setting'           => 'accounts#setting',        as: :setting
