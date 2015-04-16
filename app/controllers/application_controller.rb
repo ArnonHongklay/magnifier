@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 protected
   def layout_by_resource
     if devise_controller?
-      "accounts"
+      "auth"
     end
   end
 

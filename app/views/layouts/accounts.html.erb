@@ -16,13 +16,97 @@
   <%= csrf_meta_tags %>
   <base href="/">
 </head>
-<body responsive class="<%= yield (:body_class) %> {{device}}">
-  <!--
-  <ui-view></ui-view>
-  <div id="fb-root"></div>
-  <dinger></dinger> -->
-
-  <%= yield %>
+<body responsive class="accounts page <%= yield (:body_class) %> {{device}}">
+  <!-- Navbar -->
+  <div class='navbar navbar-default' id='navbar'>
+    <a class='navbar-brand' href='#'>
+      <i class='icon-beer'></i>
+      Ohmpieng
+    </a>
+    <ul class='nav navbar-nav pull-right'>
+      <li>
+        <%= link_to "<i class='fa fa-cog'></i> Setting".html_safe, account_setting_path(current_account.name), target: '_self' %>
+      </li>
+      <li class='dropdown user'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+          <i class='icon-user'></i>
+          <strong>John DOE</strong>
+          <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+          <b class='caret'></b>
+        </a>
+        <ul class='dropdown-menu'>
+          <li>
+            <%= link_to  'Edit Profile', account_profile_path(current_account.name), target: '_self' %>
+          </li>
+          <li class='divider'></li>
+          <li>
+            <%= link_to 'Sign out', destroy_account_session_path, method: :delete, target: '_self' %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id='wrapper'>
+    <!-- Sidebar -->
+    <section id='sidebar'>
+      <i class='fa fa-align-justify fa-lg' id='toggle'></i>
+      <ul id='dock'>
+        <li class='active launcher'>
+          <i class='fa fa-tachometer'></i>
+          <a href="">Dashboard</a>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-file-text-o'></i>
+          <a href="/forms.html">Forms</a>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-table'></i>
+          <a href="/tables.html">Tables</a>
+        </li>
+        <li class='launcher dropdown hover'>
+          <i class='fa fa-flag'></i>
+          <a href='#'>Reports</a>
+          <ul class='dropdown-menu'>
+            <li class='dropdown-header'>Launcher description</li>
+            <li>
+              <a href='#'>Action</a>
+            </li>
+            <li>
+              <a href='#'>Another action</a>
+            </li>
+            <li>
+              <a href='#'>Something else here</a>
+            </li>
+          </ul>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-bookmark'></i>
+          <a href='#'>Bookmarks</a>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-cloud'></i>
+          <a href='#'>Backup</a>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-bug'></i>
+          <a href='#'>Feedback</a>
+        </li>
+      </ul>
+      <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+    </section>
+    <!-- Tools -->
+    <section id='tools'>
+      <ul class='breadcrumb' id='breadcrumb'>
+        <li class='title'>Dashboard</li>
+        <!-- <li><a href="#">Lorem</a></li>
+        <li class='active'><a href="#">ipsum</a></li> -->
+      </ul>
+    </section>
+    <!-- Content -->
+    <div id='content'>
+      <%= yield %>
+    </div>
+  </div>
 
   <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
