@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
-  resources :accounts, path: '', constraints: { account_id: '[^\/]+' } do
-    get '/'                 => 'accounts#index',          as: :index
-    get 'settings'          => 'accounts#settings'
+
+  # get "/accounts/*id" => 'pages#show', as: :page, format: false
+
+  resources :accounts, path: '' do
+    get ''                  => 'accounts#index',          as: :index
+    get 'setting'           => 'accounts#setting',        as: :setting
+    get 'setting/profile'   => 'accounts#profile',        as: :profile
     get 'community'         => 'conversation#index',      as: :community
     get 'dashboard'         => 'dashboard#index',         as: :dashboard
     get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools

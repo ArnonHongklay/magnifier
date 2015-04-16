@@ -1,44 +1,59 @@
-# = require accounts/vendor
 # = require_self
+# = require_tree ./services
+# = require_tree ./directives
+# = require_tree ./controllers
 
-(($) ->
-  "use strict"
-  appOhmpieng =
-    main_func: ->
-      $(window).bind "load resize", ->
-        if $(this).width() < 768
-          $("div.sidebar-collapse").addClass "collapse"
-        else
-          $("div.sidebar-collapse").removeClass "collapse"
-        return
-    initialization: ->
-      appOhmpieng.main_func()
-      return
+$(document).ready ->
 
-  # noty({text: 'nonmadden!'});
-  $.noty.defaults =
-  layout: "bottomRight"
-  theme: "relax"
-  type: "alert"
-  dismissQueue: true
-  template: "<div class=\"noty_message\"><span class=\"noty_text\"></span><div class=\"noty_close\"></div></div>"
-  animation:
-    open: 'animated fadeInRight'
-    close: 'animated fadeOutRight'
-    easing: "swing"
-    speed: 500 # opening & closing animation speed
-  timeout: 5000 # delay for closing event. Set false for sticky notifications
-  maxVisible: 10
-  closeWith: ["click"] # ['click', 'button', 'hover', 'backdrop'] // backdrop click will close all notifications
-  callback:
-    onShow: ->
-    afterShow: ->
-    onClose: ->
-    afterClose: ->
-    onCloseClick: ->
+  # Enable Tips & Popovers
+  $('[data-toggle=tooltip]').tooltip()
+  $('[data-toggle=popover]').popover()
 
-  $(document).ready ->
-    appOhmpieng.main_func()
-    return
-  return
-) jQuery
+  # Eable Dropdowns
+  $('.dropdown-toggle').dropdown()
+  $('.dropdown.hover').hover (->
+    $(this).find('.dropdown-menu').stop(true, true).fadeIn()
+  ), ->
+    $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut()
+
+
+  $('#toggle').click ->
+    $('#dock .launcher a').toggle()
+    $('#dock li.launcher').each ->
+      $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
+
+  # Enable toolbar tooltips
+  $('[data-toggle=toolbar-tooltip]').tooltip
+    placement: 'bottom'
+
+  # Enable knob inputs
+  # $('.knob').knob()
+
+
+window.ohmpieng = angular.module("ohmpieng", [
+  # 'ui.router',
+  'gettext',
+  'angulartics',
+  'angulartics.google.analytics',
+  'nprogress-rails'
+])
+
+
+ohmpieng.config ($locationProvider) ->
+  $locationProvider.html5Mode(true).hashPrefix('!')
+
+ohmpieng.controller 'AppCtrl', ($scope) ->
+#   # console.log $scope.name
+#   # $scope.$on '$stateChangeStart',   NProgress.start
+#   # $scope.$on '$stateChangeSuccess', NProgress.done
+#   # $scope.$on '$stateChangeError',   NProgress.done
+
+#   # $scope.$on '$stateChangeSuccess', (e, toState) ->
+#     $scope.stateName = toState.name
+
+ohmpieng.controller 'AuthCtrl', ($scope) ->
+  $scope.name = "auth"
+  console.log $scope.name
+
+# ohmpieng.controller 'AccountsCtrl', ($scope) ->
+#   console.log "AccountsCtrl"

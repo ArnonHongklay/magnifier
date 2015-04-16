@@ -1,68 +1,107 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="ohmpieng" ng-controller="AppCtrl">
+<!-- <html> -->
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ohmpieng.io | Dashboard Admin</title>
-  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
-  <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="wrapper">
-    <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="">Ohmpieng.io</a>
-      </div>
+  <title>Ohmpieng.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" href="/favicon.ico">
 
-      <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> Last access : <%= current_account.last_sign_in_at %> &nbsp;
-        <div class="btn-group pull-right">
-          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-chevron-down"></i>
-          </button>
-          <ul class="dropdown-menu slidedown">
-            <li>
-              <%= link_to account_settings_path do %>
-                <i class="fa fa-check-circle fa-fw"></i>
-                <%= "Setting".html_safe %>
-              <% end %>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <%= link_to destroy_account_session_path, method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fa fa-sign-out fa-fw"></i>
-                <%= "Signout".html_safe %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- /. NAV TOP  -->
-    <nav class="navbar-default navbar-side" role="navigation">
-      <div class="sidebar-collapse">
-        <ul class="nav" id="main-menu">
-          <li class="text-center"><%= image_tag "find_user.png", class: "user-image img-responsive" %></li>
-          <li><a href="<%= account_index_path %>" target="_self"><i class="fa fa-square-o fa-2x"></i> Home</a></li>
-          <li><a href="<%= account_dashboard_path %>" target="_self"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a></li>
-          <li><a href="<%= account_report_path %>" target="_self"><i class="fa fa-table fa-2x"></i> Report</a></li>
-          <li><a href="<%= account_monitoring_tools_path %>" target="_self"><i class="fa fa-desktop fa-2x"></i> Monitoring Tools</a></li>
-          <li><a href="<%= account_ticket_support_path %>" target="_self"><i class="fa fa-edit fa-2x"></i> Ticket Support</a></li>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css
+" %>
+  <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '//connect.facebook.net/en_US/all.js' %>
+  <%= javascript_include_tag '//www.googleadservices.com/pagead/conversion_async.js' %>
+  <%= csrf_meta_tags %>
+  <base href="/">
+</head>
+<body responsive class="accounts page <%= yield (:body_class) %> {{device}}">
+  <!-- Navbar -->
+  <div class='navbar navbar-default' id='navbar'>
+    <a class='navbar-brand' href='#'>
+      <i class='icon-beer'></i>
+      Ohmpieng
+    </a>
+    <ul class='nav navbar-nav pull-right'>
+      <li>
+        <%= link_to "<i class='fa fa-cog'></i> Setting".html_safe, account_setting_path(current_account.name), target: '_self' %>
+      </li>
+      <li class='dropdown user'>
+        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+          <i class='icon-user'></i>
+          <strong>John DOE</strong>
+          <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+          <b class='caret'></b>
+        </a>
+        <ul class='dropdown-menu'>
+          <li>
+            <%= link_to  'Edit Profile', account_profile_path(current_account.name), target: '_self' %>
+          </li>
+          <li class='divider'></li>
+          <li>
+            <%= link_to 'Sign out', destroy_account_session_path, method: :delete, target: '_self' %>
+          </li>
         </ul>
-      </div>
-    </nav>
-    <div id="page-wrapper" >
-      <div id="page-inner">
-        <%= yield %>
-      </div>
+      </li>
+    </ul>
+  </div>
+  <div id='wrapper'>
+    <!-- Sidebar -->
+    <section id='sidebar'>
+      <i class='fa fa-align-justify fa-lg' id='toggle'></i>
+      <ul id='dock'>
+
+        <li class='active launcher'>
+          <i class='fa fa-info'></i>
+          <%= link_to  'Info', account_index_path(current_account.name), target: '_self' %>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-tachometer'></i>
+          <%= link_to  'Dashboard', account_dashboard_path(current_account.name), target: '_self' %>
+        </li>
+        <li class='launcher dropdown hover'>
+          <i class='fa fa-flag'></i>
+          <%= link_to  'Reports', account_report_path(current_account.name), target: '_self' %>
+          <!-- <ul class='dropdown-menu'>
+            <li class='dropdown-header'>Launcher description</li>
+            <li>
+              <a href='#'>Action</a>
+            </li>
+            <li>
+              <a href='#'>Another action</a>
+            </li>
+            <li>
+              <a href='#'>Something else here</a>
+            </li>
+          </ul> -->
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-cloud'></i>
+          <a href='#'>Backup</a>
+        </li>
+        <li class='launcher'>
+          <i class='fa fa-bug'></i>
+          <a href='#'>Feedback</a>
+        </li>
+      </ul>
+      <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+    </section>
+    <!-- Tools -->
+    <section id='tools'>
+      <ul class='breadcrumb' id='breadcrumb'>
+        <li class='title'>Dashboard</li>
+        <!-- <li><a href="#">Lorem</a></li>
+        <li class='active'><a href="#">ipsum</a></li> -->
+      </ul>
+    </section>
+    <!-- Content -->
+    <div id='content'>
+      <%= yield %>
     </div>
   </div>
-  </body>
-  </html>
+
+  <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
+</body>
+</html>

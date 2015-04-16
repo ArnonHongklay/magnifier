@@ -15,17 +15,21 @@ gem "activerecord-deprecated_finders", "~> 1.0.3"
 gem "actionpack-action_caching"
 gem "actionpack-page_caching"
 
+# static page
+gem 'high_voltage'
+
 # javascript
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'angularjs-rails'
 gem 'coffee-rails', github: 'rails/coffee-rails'
+gem 'nprogress-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # stylesheet
-gem 'sass-rails', '>= 3.2', github: 'rails/sass-rails'
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails'
+gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
@@ -36,7 +40,7 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'uglifier', '>= 1.3.0' # Minification
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 
 gem 'wicked_pdf'  # pdf
 

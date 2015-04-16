@@ -3,9 +3,20 @@ class AccountsController < ApplicationController
   before_filter :verify_account!
 
   def index
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
-  def settings
-    # raise "xxxx"
+  def setting
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def profile
+
   end
 end
