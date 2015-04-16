@@ -28,7 +28,7 @@ gem 'nprogress-rails'
 gem 'turbolinks'
 
 # stylesheet
-gem 'sass-rails', '>= 3.2', github: 'rails/sass-rails'
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 

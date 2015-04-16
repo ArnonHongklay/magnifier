@@ -1,111 +1,183 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Ohmpieng - Home</h2>
-    <h5>Welcome <%= current_account.name %> <%= notice %> <%= alert %></h5>
-  </div>
-</div>
-<hr />
-<div class="row">
-  <div class="col-md-3 col-sm-6 col-xs-6">
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-red set-icon">
-        <i class="fa fa-envelope-o"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">120 New</p>
-        <p class="text-muted">Messages</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 col-sm-6 col-xs-6">
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-green set-icon">
-        <i class="fa fa-bars"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">30 Tasks</p>
-        <p class="text-muted">Remaining</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 col-sm-6 col-xs-6">
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-blue set-icon">
-        <i class="fa fa-bell-o"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">240 New</p>
-        <p class="text-muted">Notifications</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 col-sm-6 col-xs-6">
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-brown set-icon">
-        <i class="fa fa-rocket"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">3 Orders</p>
-        <p class="text-muted">Pending</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /. ROW  -->
-<hr />
-<div class="row">
-  <div class="col-md-6 col-sm-12 col-xs-12">
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-blue">
-        <i class="fa fa-warning"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">52 Important Issues to Fix </p>
-        <p class="text-muted">Please fix these issues to work smooth</p>
-        <p class="text-muted">Time Left: 30 mins</p>
-        <hr />
-        <p class="text-muted">
-          <span class="text-muted color-bottom-txt"><i class="fa fa-edit"></i>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn.
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
+<% content_for :body_class, "accounts page" %>
 
-
-  <div class="col-md-3 col-sm-12 col-xs-12">
-    <div class="panel back-dash">
-      <i class="fa fa-dashboard fa-3x"></i><strong> &nbsp; SPEED</strong>
-      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing sit ametsit amet elit ftr. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <!-- Navbar -->
+    <div class='navbar navbar-default' id='navbar'>
+      <a class='navbar-brand' href='#'>
+        <i class='icon-beer'></i>
+        Hierapolis
+      </a>
+      <ul class='nav navbar-nav pull-right'>
+        <li class='dropdown'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            <i class='icon-envelope'></i>
+            Messages
+            <span class='badge'>5</span>
+            <b class='caret'></b>
+          </a>
+          <ul class='dropdown-menu'>
+            <li>
+              <a href='#'>New message</a>
+            </li>
+            <li>
+              <a href='#'>Inbox</a>
+            </li>
+            <li>
+              <a href='#'>Outbox</a>
+            </li>
+            <li>
+              <a href='#'>Trash</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href='#'>
+            <i class='icon-cog'></i>
+            Settings
+          </a>
+        </li>
+        <li class='dropdown user'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            <i class='icon-user'></i>
+            <strong>John DOE</strong>
+            <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+            <b class='caret'></b>
+          </a>
+          <ul class='dropdown-menu'>
+            <li>
+              <a href='#'>Edit Profile</a>
+            </li>
+            <li class='divider'></li>
+            <li>
+              <a href="/">Sign out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
-
-  </div>
-  <div class="col-md-3 col-sm-12 col-xs-12 ">
-    <div class="panel ">
-      <div class="main-temp-back">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-xs-6"> <i class="fa fa-cloud fa-3x"></i> Newyork City </div>
-            <div class="col-xs-6">
-              <div class="text-temp"> 10° </div>
+    <div id='wrapper'>
+      <!-- Sidebar -->
+      <section id='sidebar'>
+        <i class='fa fa-align-justify fa-lg' id='toggle'></i>
+        <ul id='dock'>
+          <li class='active launcher'>
+            <i class='fa fa-tachometer'></i>
+            <a href="/dashboard.html">Dashboard</a>
+          </li>
+          <li class='launcher'>
+            <i class='fa fa-file-text-o'></i>
+            <a href="/forms.html">Forms</a>
+          </li>
+          <li class='launcher'>
+            <i class='fa fa-table'></i>
+            <a href="/tables.html">Tables</a>
+          </li>
+          <li class='launcher dropdown hover'>
+            <i class='fa fa-flag-o'></i>
+            <a href='#'>Reports</a>
+            <ul class='dropdown-menu'>
+              <li class='dropdown-header'>Launcher description</li>
+              <li>
+                <a href='#'>Action</a>
+              </li>
+              <li>
+                <a href='#'>Another action</a>
+              </li>
+              <li>
+                <a href='#'>Something else here</a>
+              </li>
+            </ul>
+          </li>
+          <li class='launcher'>
+            <i class='fa fa-bookmark-o'></i>
+            <a href='#'>Bookmarks</a>
+          </li>
+          <li class='launcher'>
+            <i class='fa fa-cloud'></i>
+            <a href='#'>Backup</a>
+          </li>
+          <li class='launcher'>
+            <i class='fa fa-bug'></i>
+            <a href='#'>Feedback</a>
+          </li>
+        </ul>
+        <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+      </section>
+      <!-- Tools -->
+      <section id='tools'>
+        <ul class='breadcrumb' id='breadcrumb'>
+          <li class='title'>Dashboard</li>
+          <li><a href="#">Lorem</a></li>
+          <li class='active'><a href="#">ipsum</a></li>
+        </ul>
+        <div id='toolbar'>
+          <div class='btn-group'>
+            <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Building'>
+              <i class='icon-building'></i>
+            </a>
+            <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Laptop'>
+              <i class='icon-laptop'></i>
+            </a>
+            <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Calendar'>
+              <i class='icon-calendar'></i>
+              <span class='badge'>3</span>
+            </a>
+            <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Lemon'>
+              <i class='icon-lemon'></i>
+            </a>
+          </div>
+          <div class='label label-danger'>
+            Danger
+          </div>
+          <div class='label label-info'>
+            Info
+          </div>
+        </div>
+      </section>
+      <!-- Content -->
+      <div id='content'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            <i class='icon-beer icon-large'></i>
+            Hierapolis Rocks!
+            <div class='panel-tools'>
+              <div class='btn-group'>
+                <a class='btn' href='#'>
+                  <i class='icon-refresh'></i>
+                  Refresh statics
+                </a>
+                <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Toggle'>
+                  <i class='icon-chevron-down'></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class='panel-body'>
+            <div class='page-header'>
+              <h4>System usage</h4>
+            </div>
+            <div class='progress'>
+              <div class='progress-bar progress-bar-success' style='width: 35%'></div>
+              <div class='progress-bar progress-bar-warning' style='width: 20%'></div>
+              <div class='progress-bar progress-bar-danger' style='width: 10%'></div>
+            </div>
+            <div class='page-header'>
+              <h4>User statics</h4>
+            </div>
+            <div class='row text-center'>
+              <div class='col-md-3'>
+                <input class='knob second' data-bgcolor='#d4ecfd' data-fgcolor='#30a1ec' data-height='140' data-inputcolor='#333' data-thickness='.3' data-width='140' type='text' value='50'>
+              </div>
+              <div class='col-md-3'>
+                <input class='knob second' data-bgcolor='#c4e9aa' data-fgcolor='#8ac368' data-height='140' data-inputcolor='#333' data-thickness='.3' data-width='140' type='text' value='75'>
+              </div>
+              <div class='col-md-3'>
+                <input class='knob second' data-bgcolor='#cef3f5' data-fgcolor='#5ba0a3' data-height='140' data-inputcolor='#333' data-thickness='.3' data-width='140' type='text' value='35'>
+              </div>
+              <div class='col-md-3'>
+                <input class='knob second' data-bgcolor='#f8d2e0' data-fgcolor='#b85e80' data-height='140' data-inputcolor='#333' data-thickness='.3' data-width='140' type='text' value='85'>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-    <div class="panel panel-back noti-box">
-      <span class="icon-box bg-color-green set-icon">
-        <i class="fa fa-desktop"></i>
-      </span>
-      <div class="text-box" >
-        <p class="main-text">Display</p>
-        <p class="text-muted">Looking Good</p>
-      </div>
-    </div>
-
-  </div>
-
-</div>
