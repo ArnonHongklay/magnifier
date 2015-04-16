@@ -1,24 +1,48 @@
 # = require_self
-# = require apps/angular/angular
-# = require apps/angular/angular-resource
-# = require apps/angular/angular-cookies
-# = require apps/angular-strap/angular-strap
-# = require ./angular-devise/index
 # = require ./config
 # = require_tree ./services
 # = require_tree ./directives
 # = require_tree ./controllers
 
 window.ohmpieng = angular.module("ohmpieng", [
-  'ui.router',
+  # 'ui.router',
   'gettext',
   'angulartics',
   'angulartics.google.analytics',
   'nprogress-rails'
 ])
 
-ohmpieng.controller 'AppCtrl', ($scope, $state) ->
 
+ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
+
+  # $urlRouterProvider.when '/auth', 'auth/sign_in'
+  $stateProvider
+    .state          'auth',
+      url:          '/auth/sign_in',
+      templateUrl:  '/accounts/auth'
+      controller:   'AuthCtrl'
+
+    .state          'accounts',
+      url:          '/',
+      abstract:     true,
+      template:     '<ui-view/>'
+
+
+
+    # .state          'accounts.auth.signout',
+    #   url:          '/auth/sign_out',
+    #   templateUrl:  'accounts/sign_out'
+
+  $locationProvider.html5Mode(true).hashPrefix('!')
+
+ohmpieng.controller 'AccountsCtrl', ($scope) ->
+  console.log "AccountsCtrl"
+
+ohmpieng.controller 'AuthCtrl', ($scope) ->
+  console.log "AuthCtrl"
+
+
+ohmpieng.controller 'AppCtrl', ($scope, $state) ->
   $scope.$on '$stateChangeStart',   NProgress.start
   $scope.$on '$stateChangeSuccess', NProgress.done
   $scope.$on '$stateChangeError',   NProgress.done

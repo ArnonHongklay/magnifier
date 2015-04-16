@@ -29,39 +29,17 @@
                 Remember me on this computer
               </label>
             </div>
-            <a class="btn btn-default" href="/dashboard.html">Sign in</a>
+            <a class="btn btn-default" href="dashboard">Sign in</a>
             <br>
-            <a href="/forgot_password.html">Forgot password?</a>
+            <p>
+              <a href="forgot_password">Forgot password?</a>
+            </p>
+          </div>
+          <div class="text-center">
+            <a class="btn btn-primary btn-block btn-lg" href="/auth/signup">Join with Facebook</a>
           </div>
         </fieldset>
       </form>
     </div>
   </div>
 </div>
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

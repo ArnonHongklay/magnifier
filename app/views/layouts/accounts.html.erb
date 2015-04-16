@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="ohmpieng" ng-controller="AppCtrl">
+<!-- <html> -->
 <head>
   <meta charset="utf-8" />
   <title>Ohmpieng.io</title>
@@ -14,9 +15,13 @@
   <base href="/">
 </head>
 <body responsive class="{{stateName}} {{device}}">
-    <ui-view></ui-view>
-    <div id="fb-root"></div>
-    <dinger></dinger>
+  <!--
+  <ui-view></ui-view>
+  <div id="fb-root"></div>
+  <dinger></dinger> -->
+
+  <%= yield %>
+
   <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
 </body>
