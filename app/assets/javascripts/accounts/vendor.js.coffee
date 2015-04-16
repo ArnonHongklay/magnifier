@@ -10,6 +10,7 @@
 # = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
+# = require flat-ui
 
 # = require apps/Chart.min
 # = require apps/jquery.noty.packaged.min
