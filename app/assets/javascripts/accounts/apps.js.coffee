@@ -27,7 +27,7 @@ $(document).ready ->
     placement: 'bottom'
 
   # Enable knob inputs
-  $('.knob').knob()
+  # $('.knob').knob()
 
 
 window.ohmpieng = angular.module("ohmpieng", [

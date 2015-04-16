@@ -10,11 +10,13 @@ class AccountsController < ApplicationController
   end
 
   def setting
-    # raise "xxxx"
-
     respond_to do |format|
       format.html
       format.json
     end
+  end
+
+  def profile
+
   end
 end

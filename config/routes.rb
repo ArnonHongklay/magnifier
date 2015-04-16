@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :accounts, path: '' do
     get ''                  => 'accounts#index',          as: :index
     get 'setting'           => 'accounts#setting',        as: :setting
+    get 'setting/profile'   => 'accounts#profile',        as: :profile
     get 'community'         => 'conversation#index',      as: :community
     get 'dashboard'         => 'dashboard#index',         as: :dashboard
     get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools
