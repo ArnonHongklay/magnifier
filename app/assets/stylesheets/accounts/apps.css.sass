@@ -42,6 +42,7 @@ $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
 $brand-font-size: 1.8em
 
+$body-bg:       #fff
 $body-bg-primary: $silver
 $body-bg-secondary: $asbestos
 
@@ -100,6 +101,24 @@ $dropdown-link-color: $clouds !default
     top: -6px
     right: 20px
 
+.navbar-default .navbar-nav > .open > a
+  background: none !important
+  box-shadow: none
+
+.dropdown-menu
+  background-color: #2c3e50
+  border: 1px solid #1a242f
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+  background-clip: padding-box
+  & > li > a
+    color: #ecf0f1
+    white-space: nowrap
+  & > li > a:hover
+    color: #1a242f
+
+.dropdown-menu .divider
+  background-color: #1a242f
+
 //Panels
 .panel // Remove box shadow from panels
   // box-shadow: none
@@ -123,6 +142,8 @@ $dropdown-link-color: $clouds !default
 .radio, .checkbox
   margin-top: 0
 
+.breadcrumb
+  background-color: #ecf0f1
 // Tables
 // .table
 //   @extend .table-striped
@@ -170,7 +191,7 @@ body.auth
 body.accounts
   padding: 10px 20px 0px 20px
   background-color: $body-bg-primary
-  //+background-image(linear-gradient(left, $body-bg-primary, $body-bg-secondary))
+  //background-image(linear-gradient(left, $body-bg-primary, $body-bg-secondary))
 
 .sprite-image
   background-image: url(../images/sprite.png)
@@ -257,6 +278,7 @@ form
     padding: 15px 10px
   .navbar-nav > li > .dropdown-menu
     margin-top: -5px
+
   li.dropdown.user img
     margin: -2px 5px 0 5px
     width: 20px
@@ -340,7 +362,7 @@ form
           margin-top: -5px
           padding: 5px 20px
           &:before
-            rotate: 45deg
+            transform: rotate(45deg)
             position: absolute
             margin-top: 4px
             margin-left: -25px
@@ -354,7 +376,7 @@ form
           +animate-property(color, $animation-duration, ease-in-out)
           color: $dock-active-icon-color
         &:before
-          rotate: 45deg
+          transform: rotate(45deg)
           content: ''
           display: inline-block
           width: 10px
@@ -367,7 +389,7 @@ form
 #content
   overflow: auto
   margin-top: 51px
-  // background-color: $body-bg
+  background-color: $body-bg
   padding: 20px
   left: $sidebar-width
 
