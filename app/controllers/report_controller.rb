@@ -6,7 +6,7 @@ class ReportController < ApplicationController
   def index
     @account = account
     respond_to do |format|
-      format.html
+      format.html { render "accounts/report"}
       format.pdf do
         render :pdf => "report",
         :template => 'report/index.html.erb',
