@@ -89,7 +89,6 @@ GEM
       railties (>= 3.1)
       sprockets
       tilt
-    angular-ui-bootstrap-rails (0.12.1)
     arel (6.0.0)
     autoprefixer-rails (5.0.0.3)
       execjs
@@ -381,7 +380,6 @@ DEPENDENCIES
   activerecord-session_store!
   activeresource!
   angular-rails-templates
-  angular-ui-bootstrap-rails
   autoprefixer-rails (= 5.0.0.3)
   bower-rails
   byebug
