@@ -3,37 +3,42 @@
 # = require_tree ./directives
 # = require_tree ./controllers
 
-$(document).ready ->
+# $(document).ready ->
 
-  # Enable Tips & Popovers
-  $('[data-toggle=tooltip]').tooltip()
-  $('[data-toggle=popover]').popover()
+#   # Enable Tips & Popovers
+#   $('[data-toggle=tooltip]').tooltip()
+#   $('[data-toggle=popover]').popover()
 
-  # Eable Dropdowns
-  $('.dropdown-toggle').dropdown()
-  $('.dropdown.hover').hover (->
-    $(this).find('.dropdown-menu').stop(true, true).fadeIn()
-  ), ->
-    $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut()
+#   # Eable Dropdowns
+#   $('.dropdown-toggle').dropdown()
+#   $('.dropdown.hover').hover (->
+#     $(this).find('.dropdown-menu').stop(true, true).fadeIn()
+#   ), ->
+#     $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut()
 
+#   $('.dropdown-toggle').click ->
+#     alert('xxx')
 
-  $('#toggle').click ->
-    $('#dock .launcher a').toggle()
-    $('#dock li.launcher').each ->
-      $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
+#   $('#toggle').click ->
+#     $('#dock .launcher a').toggle()
+#     $('#dock li.launcher').each ->
+#       $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
 
-  # Enable toolbar tooltips
-  $('[data-toggle=toolbar-tooltip]').tooltip
-    placement: 'bottom'
+#   # Enable toolbar tooltips
+#   $('[data-toggle=toolbar-tooltip]').tooltip
+#     placement: 'bottom'
 
-  # Enable knob inputs
-  # $('.knob').knob()
+#   # Enable knob inputs
+#   # $('.knob').knob()
 
 
 window.ohmpieng = angular.module("ohmpieng", [
   'ui.router',
+  'ui.bootstrap',
   'gettext',
   'ngAnimate',
+  'ngCookies',
+  'ngResource',
   'angulartics',
   # 'angulartics.google.analytics',
   'templates',
@@ -53,8 +58,7 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
       controller: 'AccountCtrl'
       resolve:
         account: ($http, $stateParams) ->
-          console.log $stateParams
-          $http.get "/#{$stateParams}.json"
+          $http.get "/#{$stateParams.userId}.json"
 
     .state 'account.index',
       url: '/index'
@@ -71,15 +75,23 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
       templateUrl: 'accounts/report'
       controller: 'ReportCtrl'
 
+    .state 'account.setting',
+      url: '/setting'
+      templateUrl: 'accounts/setting'
+      controller: 'SettingCtrl'
+
+    .state 'account.profile',
+      url: '/profile'
+      templateUrl: 'accounts/profile'
+      controller: 'ProfileCtrl'
+
   $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')
 
-ohmpieng.controller 'AppCtrl', ($scope, $stateParams) ->
-
+ohmpieng.controller 'AppCtrl', ($scope) ->
   $scope.$on '$stateChangeStart',   NProgress.start
   $scope.$on '$stateChangeSuccess', NProgress.done
   $scope.$on '$stateChangeError',   NProgress.done
 
   $scope.$on '$stateChangeSuccess', (e, toState) ->
-    console.log toState
     $scope.stateName = toState.name

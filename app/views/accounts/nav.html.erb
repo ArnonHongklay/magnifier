@@ -1,52 +1,83 @@
-<!-- Sidebar -->
-<section id='sidebar'>
-  <i class='fa fa-align-justify fa-lg' id='toggle'></i>
-  <ul id='dock'>
+  <!-- Navbar -->
+  <div class='navbar navbar-default' id='navbar'>
+    <a class='navbar-brand' href='/' target="_self">
+      <i class='icon-beer'></i>
+      Ohmpieng
+    </a>
+    <ul class='nav navbar-nav pull-right' ng-controller="DropdownCtrl">
+      <li>
+        <a href="#" ui-sref=".setting"><i class='fa fa-cog'></i> Setting</a>
+      </li>
+      <li class='dropdown user' dropdown is-open="status.isopen">
+        <a class='dropdown-toggle' dropdown-toggle href='#'>
+          <i class='icon-user'></i>
+          <strong>John DOE</strong>
+          <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+          <b class='caret'></b>
+        </a>
+        <ul class='dropdown-menu'>
+          <li>
+            <a href="#" ui-sref=".profile">Edit Profile</a>
+          </li>
+          <li class='divider'></li>
+          <li>
+            <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id='wrapper'>
+    <!-- Sidebar -->
+    <section id='sidebar'>
+      <i class='fa fa-align-justify fa-lg' id='toggle'></i>
+      <ul id='dock'>
 
-    <li class='launcher' ui-sref-active="active">
-      <i class='fa fa-info'></i>
-      <a href="#" ui-sref="account.index">Info</a>
-    </li>
-    <li class='launcher' ui-sref-active="active">
-      <i class='fa fa-tachometer'></i>
-      <a href="#" ui-sref=".dashboard">Dashboard</a>
+        <li class='launcher' ui-sref-active="active">
+          <i class='fa fa-info'></i>
+          <a href="#" ui-sref="account.index">Info</a>
+        </li>
+        <li class='launcher' ui-sref-active="active">
+          <i class='fa fa-tachometer'></i>
+          <a href="#" ui-sref=".dashboard">Dashboard</a>
 
-    </li>
-    <li class='launcher dropdown hover' ui-sref-active="active">
-      <i class='fa fa-flag'></i>
-      <a href="#" ui-sref=".report">Reports</a>
-      <!-- <ul class='dropdown-menu'>
-        <li class='dropdown-header'>Launcher description</li>
-        <li>
-          <a href='#'>Action</a>
         </li>
-        <li>
-          <a href='#'>Another action</a>
+        <li class='launcher dropdown hover' ui-sref-active="active">
+          <i class='fa fa-flag'></i>
+          <a href="#" ui-sref=".report">Reports</a>
+          <!-- <ul class='dropdown-menu'>
+            <li class='dropdown-header'>Launcher description</li>
+            <li>
+              <a href='#'>Action</a>
+            </li>
+            <li>
+              <a href='#'>Another action</a>
+            </li>
+            <li>
+              <a href='#'>Something else here</a>
+            </li>
+          </ul> -->
         </li>
-        <li>
-          <a href='#'>Something else here</a>
+        <li class='launcher'>
+          <i class='fa fa-cloud'></i>
+          <a href='#'>Backup</a>
         </li>
-      </ul> -->
-    </li>
-    <li class='launcher'>
-      <i class='fa fa-cloud'></i>
-      <a href='#'>Backup</a>
-    </li>
-    <li class='launcher'>
-      <i class='fa fa-bug'></i>
-      <a href='#'>Feedback</a>
-    </li>
-  </ul>
-  <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
-</section>
+        <li class='launcher'>
+          <i class='fa fa-bug'></i>
+          <a href='#'>Feedback</a>
+        </li>
+      </ul>
+      <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+    </section>
 
-<!-- Tools -->
-<section id='tools'>
-  <ul class='breadcrumb' id='breadcrumb'>
-    <li class='title'>Ohmpieng</li>
-    <li><a href="#">{{stateName}}</a></li>
-  </ul>
-</section>
-<!-- Content -->
-<div id='content' ui-view>
-</div>
+    <!-- Tools -->
+    <section id='tools'>
+      <ul class='breadcrumb' id='breadcrumb'>
+        <li class='title'>Ohmpieng</li>
+        <li><a href="#">{{stateName}}</a></li>
+      </ul>
+    </section>
+    <!-- Content -->
+    <div id='content' ui-view>
+    </div>
+  </div>

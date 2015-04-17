@@ -24,7 +24,7 @@ gem 'bower-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'angular-rails-templates'
-
+gem 'angular-ui-bootstrap-rails'
 gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'nprogress-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
