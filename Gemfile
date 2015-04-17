@@ -17,11 +17,11 @@ gem "actionpack-page_caching"
 
 # static page
 gem 'high_voltage'
+# bundle
+gem 'bower-rails'
 
 # javascript
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'angularjs-rails'
+gem 'angular-rails-templates'
 gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'nprogress-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -29,7 +29,7 @@ gem 'turbolinks'
 
 # stylesheet
 gem 'sass-rails'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing

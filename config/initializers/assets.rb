@@ -4,7 +4,7 @@
 Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.initialize_on_precompile = true
 
-Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts', 'bower_components')
 Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
 Rails.application.config.assets.precompile += %w( .css )
