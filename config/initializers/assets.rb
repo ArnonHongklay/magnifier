@@ -9,8 +9,8 @@ Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
 Rails.application.config.assets.precompile += %w( .css )
 Rails.application.config.assets.precompile += %w( .js )
-Rails.application.config.assets.precompile += %w( .png .jpg .jpeg .gif .woff .ttf .svg .eot)
-Rails.application.config.assets.precompile += %w( files )
+Rails.application.config.assets.precompile += %w( .png .jpg .jpeg .gif .woff .ttf .svg .eot )
+Rails.application.config.assets.precompile += %w( .map )
 
 # Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff)$)
 # ::Sass::Script::Number.precision = [10, ::Sass::Script::Number.precision].max
