@@ -6,12 +6,11 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
-  get "/accounts/*id" => 'pages#show',      as: :page, format: false
-
+  get "/accounts/*id"   => 'pages#show',      as: :page, format: false
   get '/info'          => 'accounts#info',  as: :info, format: :json
 
   resources :accounts, path: '' do
-    get ''                  => 'accounts#index',          as: :index
+    get 'index'             => 'accounts#index',          as: :index
     get 'setting'           => 'accounts#setting',        as: :setting
     get 'setting/profile'   => 'accounts#profile',        as: :profile
     get 'community'         => 'conversation#index',      as: :community
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
     # resources :report
     # resources :monitoring_tools
     # resources :ticket_support
+    get 'events' => 'subscription#index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

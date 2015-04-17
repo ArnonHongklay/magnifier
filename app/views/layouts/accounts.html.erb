@@ -19,7 +19,7 @@
 <body responsive class="<%= yield (:body_class) %> {{stateName}} {{device}}">
   <!-- Navbar -->
   <div class='navbar navbar-default' id='navbar'>
-    <a class='navbar-brand' href='#'>
+    <a class='navbar-brand' href='#' ui-sref="account">
       <i class='icon-beer'></i>
       Ohmpieng
     </a>
@@ -47,58 +47,7 @@
     </ul>
   </div>
   <div id='wrapper'>
-    <!-- Sidebar -->
-    <section id='sidebar'>
-      <i class='fa fa-align-justify fa-lg' id='toggle'></i>
-      <ul id='dock'>
-
-        <li class='active launcher'>
-          <i class='fa fa-info'></i>
-          <%= link_to  'Info', account_index_path(current_account.name) %>
-        </li>
-        <li class='launcher'>
-          <i class='fa fa-tachometer'></i>
-          <%= link_to  'Dashboard', account_dashboard_path(current_account.name) %>
-        </li>
-        <li class='launcher dropdown hover'>
-          <i class='fa fa-flag'></i>
-          <%= link_to  'Reports', account_report_path(current_account.name) %>
-          <!-- <ul class='dropdown-menu'>
-            <li class='dropdown-header'>Launcher description</li>
-            <li>
-              <a href='#'>Action</a>
-            </li>
-            <li>
-              <a href='#'>Another action</a>
-            </li>
-            <li>
-              <a href='#'>Something else here</a>
-            </li>
-          </ul> -->
-        </li>
-        <li class='launcher'>
-          <i class='fa fa-cloud'></i>
-          <a href='#'>Backup</a>
-        </li>
-        <li class='launcher'>
-          <i class='fa fa-bug'></i>
-          <a href='#'>Feedback</a>
-        </li>
-      </ul>
-      <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
-    </section>
-    <!-- Tools -->
-    <section id='tools'>
-      <ul class='breadcrumb' id='breadcrumb'>
-        <li class='title'>Ohmpieng</li>
-        <li><a href="#">{{stateName}}</a></li>
-      </ul>
-    </section>
-    <!-- Content -->
-    <div id='content'>
-      <!-- <%= yield %> -->
-      <ui-view></ui-view>
-    </div>
+    <ui-view></ui-view>
   </div>
 
   <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>

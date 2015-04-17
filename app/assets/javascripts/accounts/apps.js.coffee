@@ -31,72 +31,55 @@ $(document).ready ->
 
 
 window.ohmpieng = angular.module("ohmpieng", [
-  'ngAnimate',
   'ui.router',
   'gettext',
+  'ngAnimate',
   'angulartics',
   # 'angulartics.google.analytics',
   'templates',
   'nprogress-rails'
 ])
 
+# ohmpieng.run ($rootScope, $state, $stateParams) ->
+#   $rootScope.$state = $state
+#   $rootScope.$stateParams = $stateParams
+#   return
+
 ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $stateProvider
-    .state 'accounts',
-      url: '/:user',
-      templateUrl: 'accounts/index',
+    .state 'account',
+      url: '/:userId'
+      templateUrl: 'accounts/nav'
       controller: 'AccountCtrl'
       resolve:
-        info: ($http, $stateParams) ->
-          $http.get '/info.json'
+        account: ($http, $stateParams) ->
+          console.log $stateParams
+          $http.get "/#{$stateParams}.json"
 
-    .state 'accounts.dashboard',
-      url: '/:user/dashboard',
-      templateUrl: 'accounts/dashboard',
+    .state 'account.index',
+      url: '/index'
+      templateUrl: 'accounts/index'
+      controller: 'IndexCtrl'
+
+    .state 'account.dashboard',
+      url: '/dashboard'
+      templateUrl: 'accounts/dashboard'
       controller: 'DashboardCtrl'
 
-    .state 'accounts.report',
-      url: '/:user/report',
-      templateUrl: 'accounts/report',
+    .state 'account.report',
+      url: '/report'
+      templateUrl: 'accounts/report'
       controller: 'ReportCtrl'
 
-    .state 'accounts.setting',
-      url: '/:user/setting',
-      templateUrl: 'accounts/setting',
-      controller: 'SettingCtrl'
-
-    .state 'accounts.setting.profile',
-      url: '/:user/setting/profile',
-      templateUrl: 'accounts/profile',
-      controller: 'ProfileCtrl'
-
-  $urlRouterProvider.otherwise('/')
+  $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')
 
-ohmpieng.controller 'AppCtrl', ($scope) ->
+ohmpieng.controller 'AppCtrl', ($scope, $stateParams) ->
+
   $scope.$on '$stateChangeStart',   NProgress.start
   $scope.$on '$stateChangeSuccess', NProgress.done
   $scope.$on '$stateChangeError',   NProgress.done
 
   $scope.$on '$stateChangeSuccess', (e, toState) ->
+    console.log toState
     $scope.stateName = toState.name
-
-ohmpieng.controller 'AccountCtrl', ($scope, info) ->
-  $scope.user = info.data.user
-  $scope.things = ['Angular', 'Rails 4.1', 'UI Router', 'Together!!']
-
-ohmpieng.controller 'DashboardCtrl', ($scope, info) ->
-  $scope.user = info.data.user
-ohmpieng.controller 'ReportCtrl', ($scope, info) ->
-  $scope.user = info.data.user
-ohmpieng.controller 'SettingCtrl', ($scope, info) ->
-  $scope.user = info.data.user
-ohmpieng.controller 'ProfileCtrl', ($scope, info) ->
-  $scope.user = info.data.user
-
-# ohmpieng.controller 'AuthCtrl', ($scope) ->
-#   $scope.name = "auth"
-#   console.log $scope.name
-
-# ohmpieng.controller 'AccountsCtrl', ($scope) ->
-#   console.log "AccountsCtrl"

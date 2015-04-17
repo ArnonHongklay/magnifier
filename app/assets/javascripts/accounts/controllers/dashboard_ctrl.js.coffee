@@ -1,3 +1,7 @@
+
+ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
+  $scope.user = account.data.user
+
 #
 # window.onload = ->
 #   # if (window.location.pathname.split("/")[2] == 'dashboard')

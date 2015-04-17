@@ -1,0 +1,52 @@
+<!-- Sidebar -->
+<section id='sidebar'>
+  <i class='fa fa-align-justify fa-lg' id='toggle'></i>
+  <ul id='dock'>
+
+    <li class='launcher' ui-sref-active="active">
+      <i class='fa fa-info'></i>
+      <a href="#" ui-sref="account.index">Info</a>
+    </li>
+    <li class='launcher' ui-sref-active="active">
+      <i class='fa fa-tachometer'></i>
+      <a href="#" ui-sref=".dashboard">Dashboard</a>
+
+    </li>
+    <li class='launcher dropdown hover' ui-sref-active="active">
+      <i class='fa fa-flag'></i>
+      <a href="#" ui-sref=".report">Reports</a>
+      <!-- <ul class='dropdown-menu'>
+        <li class='dropdown-header'>Launcher description</li>
+        <li>
+          <a href='#'>Action</a>
+        </li>
+        <li>
+          <a href='#'>Another action</a>
+        </li>
+        <li>
+          <a href='#'>Something else here</a>
+        </li>
+      </ul> -->
+    </li>
+    <li class='launcher'>
+      <i class='fa fa-cloud'></i>
+      <a href='#'>Backup</a>
+    </li>
+    <li class='launcher'>
+      <i class='fa fa-bug'></i>
+      <a href='#'>Feedback</a>
+    </li>
+  </ul>
+  <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
+</section>
+
+<!-- Tools -->
+<section id='tools'>
+  <ul class='breadcrumb' id='breadcrumb'>
+    <li class='title'>Ohmpieng</li>
+    <li><a href="#">{{stateName}}</a></li>
+  </ul>
+</section>
+<!-- Content -->
+<div id='content' ui-view>
+</div>
