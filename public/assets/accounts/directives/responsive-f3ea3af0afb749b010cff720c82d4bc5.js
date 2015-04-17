@@ -1,1 +1,0 @@
-(function(){ohmpieng.directive("responsive",function(n){return{link:function(e){var t;return t=function(){var t;return t=n.innerWidth,e.device=function(){switch(!1){case!(600>t):return"phone";case!(1200>t):return"tablet";default:return"desktop"}}()},t(),angular.element(n).on("resize",function(){return e.$applyAsync(function(){return t()})})}}})}).call(this);
