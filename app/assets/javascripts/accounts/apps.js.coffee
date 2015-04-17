@@ -31,29 +31,72 @@ $(document).ready ->
 
 
 window.ohmpieng = angular.module("ohmpieng", [
-  # 'ui.router',
+  'ngAnimate',
+  'ui.router',
   'gettext',
   'angulartics',
-  'angulartics.google.analytics',
+  # 'angulartics.google.analytics',
+  'templates',
   'nprogress-rails'
 ])
 
+ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
+  $stateProvider
+    .state 'accounts',
+      url: '/:user',
+      templateUrl: 'accounts/index',
+      controller: 'AccountCtrl'
+      resolve:
+        info: ($http, $stateParams) ->
+          $http.get '/info.json'
 
-ohmpieng.config ($locationProvider) ->
+    .state 'accounts.dashboard',
+      url: '/:user/dashboard',
+      templateUrl: 'accounts/dashboard',
+      controller: 'DashboardCtrl'
+
+    .state 'accounts.report',
+      url: '/:user/report',
+      templateUrl: 'accounts/report',
+      controller: 'ReportCtrl'
+
+    .state 'accounts.setting',
+      url: '/:user/setting',
+      templateUrl: 'accounts/setting',
+      controller: 'SettingCtrl'
+
+    .state 'accounts.setting.profile',
+      url: '/:user/setting/profile',
+      templateUrl: 'accounts/profile',
+      controller: 'ProfileCtrl'
+
+  $urlRouterProvider.otherwise('/')
   $locationProvider.html5Mode(true).hashPrefix('!')
 
 ohmpieng.controller 'AppCtrl', ($scope) ->
-#   # console.log $scope.name
-#   # $scope.$on '$stateChangeStart',   NProgress.start
-#   # $scope.$on '$stateChangeSuccess', NProgress.done
-#   # $scope.$on '$stateChangeError',   NProgress.done
+  $scope.$on '$stateChangeStart',   NProgress.start
+  $scope.$on '$stateChangeSuccess', NProgress.done
+  $scope.$on '$stateChangeError',   NProgress.done
 
-#   # $scope.$on '$stateChangeSuccess', (e, toState) ->
-#     $scope.stateName = toState.name
+  $scope.$on '$stateChangeSuccess', (e, toState) ->
+    $scope.stateName = toState.name
 
-ohmpieng.controller 'AuthCtrl', ($scope) ->
-  $scope.name = "auth"
-  console.log $scope.name
+ohmpieng.controller 'AccountCtrl', ($scope, info) ->
+  $scope.user = info.data.user
+  $scope.things = ['Angular', 'Rails 4.1', 'UI Router', 'Together!!']
+
+ohmpieng.controller 'DashboardCtrl', ($scope, info) ->
+  $scope.user = info.data.user
+ohmpieng.controller 'ReportCtrl', ($scope, info) ->
+  $scope.user = info.data.user
+ohmpieng.controller 'SettingCtrl', ($scope, info) ->
+  $scope.user = info.data.user
+ohmpieng.controller 'ProfileCtrl', ($scope, info) ->
+  $scope.user = info.data.user
+
+# ohmpieng.controller 'AuthCtrl', ($scope) ->
+#   $scope.name = "auth"
+#   console.log $scope.name
 
 # ohmpieng.controller 'AccountsCtrl', ($scope) ->
 #   console.log "AccountsCtrl"

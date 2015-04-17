@@ -3,4 +3,4 @@
 # = require jquery_ujs
 # = require turbolinks
 # = require angular
-# = require bootstrap-sass-official
+# = require bootstrap-sass/assets/javascripts/bootstrap-sprockets

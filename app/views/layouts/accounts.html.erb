@@ -16,7 +16,7 @@
   <%= csrf_meta_tags %>
   <base href="/">
 </head>
-<body responsive class="accounts page <%= yield (:body_class) %> {{device}}">
+<body responsive class="<%= yield (:body_class) %> {{stateName}} {{device}}">
   <!-- Navbar -->
   <div class='navbar navbar-default' id='navbar'>
     <a class='navbar-brand' href='#'>
@@ -25,7 +25,7 @@
     </a>
     <ul class='nav navbar-nav pull-right'>
       <li>
-        <%= link_to "<i class='fa fa-cog'></i> Setting".html_safe, account_setting_path(current_account.name), target: '_self' %>
+        <%= link_to "<i class='fa fa-cog'></i> Setting".html_safe, account_setting_path(current_account.name) %>
       </li>
       <li class='dropdown user'>
         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
@@ -36,11 +36,11 @@
         </a>
         <ul class='dropdown-menu'>
           <li>
-            <%= link_to  'Edit Profile', account_profile_path(current_account.name), target: '_self' %>
+            <%= link_to  'Edit Profile', account_profile_path(current_account.name) %>
           </li>
           <li class='divider'></li>
           <li>
-            <%= link_to 'Sign out', destroy_account_session_path, method: :delete, target: '_self' %>
+            <%= link_to 'Sign out', destroy_account_session_path, method: :delete %>
           </li>
         </ul>
       </li>
@@ -54,15 +54,15 @@
 
         <li class='active launcher'>
           <i class='fa fa-info'></i>
-          <%= link_to  'Info', account_index_path(current_account.name), target: '_self' %>
+          <%= link_to  'Info', account_index_path(current_account.name) %>
         </li>
         <li class='launcher'>
           <i class='fa fa-tachometer'></i>
-          <%= link_to  'Dashboard', account_dashboard_path(current_account.name), target: '_self' %>
+          <%= link_to  'Dashboard', account_dashboard_path(current_account.name) %>
         </li>
         <li class='launcher dropdown hover'>
           <i class='fa fa-flag'></i>
-          <%= link_to  'Reports', account_report_path(current_account.name), target: '_self' %>
+          <%= link_to  'Reports', account_report_path(current_account.name) %>
           <!-- <ul class='dropdown-menu'>
             <li class='dropdown-header'>Launcher description</li>
             <li>
@@ -91,12 +91,13 @@
     <section id='tools'>
       <ul class='breadcrumb' id='breadcrumb'>
         <li class='title'>Ohmpieng</li>
-        <li><a href="#"><%= yield(:title) %></a></li>
+        <li><a href="#">{{stateName}}</a></li>
       </ul>
     </section>
     <!-- Content -->
     <div id='content'>
-      <%= yield %>
+      <!-- <%= yield %> -->
+      <ui-view></ui-view>
     </div>
   </div>
 

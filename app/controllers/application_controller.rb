@@ -16,7 +16,6 @@ protected
 
   def verify_account!
     not_found if not current_account.admin? and account != current_account.name
-    not_found if current_account.admin? and Account.find_by_name(account).nil?
   end
 
   def not_found

@@ -7,7 +7,7 @@
       "angular-gettext": "latest",
       "angular-animate": "latest",
       "angular-resource": "latest",
-      "bootstrap-sass-official": "latest",
+      "bootstrap-sass": "latest",
       "jquery": "1.11.1",
       "jquery-ujs": "latest",
       "jquery-ui": "1.11.1",
