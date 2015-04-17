@@ -1,6 +1,6 @@
 # = require jquery
-# = require jquery-ui
 # = require jquery_ujs
+# = require jquery-ui
 # = require turbolinks
 # = require apps/angular.min
 # = require apps/angular-ui-router.min
