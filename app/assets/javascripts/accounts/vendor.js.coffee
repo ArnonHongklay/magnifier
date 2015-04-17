@@ -1,5 +1,5 @@
 # = require jquery
-# = require jquery-ujs
+# = require jquery_ujs
 # = require jquery-ui
 # = require turbolinks
 # = require angular
