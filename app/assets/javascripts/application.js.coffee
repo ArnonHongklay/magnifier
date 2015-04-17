@@ -1,8 +1,8 @@
-# = require jquery
-# = require jquery-ui
-# = require jquery_ujs
+# = require jquery/dist/jquery
+# = require jquery-ujs/src/rails
+# = require jquery-ui/jquery-ui
 # = require turbolinks
-# = require angular
-# = require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+# = require angular/angular
+# = require bootstrap-sass/assets/javascripts/bootstrap
 # = require_self
 
