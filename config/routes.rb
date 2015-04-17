@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   get "/accounts/*id"   => 'pages#show',      as: :page, format: false
-  get '/info'          => 'accounts#info',  as: :info, format: :json
+  # get '/info'          => 'accounts#info',  as: :info, format: :json
 
   resources :accounts, path: '' do
     get 'index'             => 'accounts#index',          as: :index
