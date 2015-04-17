@@ -11,7 +11,6 @@
 # = require angular-bootstrap/ui-bootstrap-tpls
 # = require angular-rails-templates
 # = require angulartics/src/angulartics
-# = require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 # = require bootstrap-sass/assets/javascripts/bootstrap/affix
 # = require bootstrap-sass/assets/javascripts/bootstrap/alert
 # = require bootstrap-sass/assets/javascripts/bootstrap/button
