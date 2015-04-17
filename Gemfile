@@ -21,7 +21,8 @@ gem 'high_voltage'
 gem 'bower-rails'
 
 # javascript
-# gem 'jquery-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'angular-rails-templates'
 gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'nprogress-rails'

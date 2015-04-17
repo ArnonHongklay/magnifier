@@ -11,9 +11,6 @@
       "angular-sanitize": "latest",
       "angular-bootstrap": "latest",
       "bootstrap-sass": "latest",
-      "jquery": "*",
-      "jquery-ujs": "*",
-      "jquery-ui": "*",
       "angulartics": "latest"
     }
   },
