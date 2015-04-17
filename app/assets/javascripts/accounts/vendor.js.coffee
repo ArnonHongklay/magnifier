@@ -1,5 +1,5 @@
 # = require jquery/dist/jquery
-# = require jquery_ujs
+# = require jquery-ujs
 # = require jquery-ui/jquery-ui
 # = require turbolinks
 # = require angular/angular
