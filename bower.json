@@ -12,9 +12,6 @@
       "jquery-ujs": "latest",
       "jquery-ui": "1.11.1",
       "angulartics": "latest"
-
-      // "threex"      : "git@github.com:rharriso/threex.git",
-      // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
     }
   },
   "vendor": {
