@@ -4,11 +4,11 @@ lock '3.1.0'
 set :application, 'production'
 
 set :scm, :git
-set :repo_url, 'https://nonmadden:f676fb0faa535c355ff51d4d0fe56ceb8b6c439f@github.com/ohmpieng/production.git'
+set :repo_url, 'git@github.com:ohmpieng/production.git'
 set :branch, 'master'
 
-set :deploy_to, '/home/deployer/project/production'
-set :deploy_user, 'deployer'
+set :deploy_to, '/home/deploy/production'
+set :deploy_user, 'deploy'
 set :use_sudo, true
 
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
@@ -26,7 +26,7 @@ set :default_stage, "staging"
 
 namespace :deploy do
   before :publishing, :setup_config
-  after :publishing, :restart
+  # after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
@@ -38,12 +38,12 @@ namespace :deploy do
     end
   end
 
-  desc 'Restart application'
-    task :restart do
-      on roles(:app), in: :sequence, wait: 5 do
-        execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
+  # desc 'Restart application'
+  #   task :restart do
+  #     on roles(:app), in: :sequence, wait: 5 do
+  #       execute :touch, release_path.join('tmp/restart.txt')
+  #   end
+  # end
 
   desc 'Runs rake db:seed for SeedMigrations data'
   task :seed => [:set_rails_env] do
