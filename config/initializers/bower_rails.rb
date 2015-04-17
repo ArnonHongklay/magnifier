@@ -15,5 +15,5 @@ BowerRails.configure do |bower_rails|
   bower_rails.use_bower_install_deployment = true
 
   # Passes the -F option to rake bower:install or rake bower:install:deployment. Defaults to false.
-  bower_rails.force_install = true
+  # bower_rails.force_install = true
 end
