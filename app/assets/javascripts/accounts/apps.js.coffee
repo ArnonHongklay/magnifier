@@ -5,9 +5,9 @@
 
 # $(document).ready ->
 
-#   # Enable Tips & Popovers
-#   $('[data-toggle=tooltip]').tooltip()
-#   $('[data-toggle=popover]').popover()
+  # Enable Tips & Popovers
+  # $('[data-toggle=tooltip]').tooltip()
+  # $('[data-toggle=popover]').popover()
 
 #   # Eable Dropdowns
 #   $('.dropdown-toggle').dropdown()
@@ -18,11 +18,6 @@
 
 #   $('.dropdown-toggle').click ->
 #     alert('xxx')
-
-#   $('#toggle').click ->
-#     $('#dock .launcher a').toggle()
-#     $('#dock li.launcher').each ->
-#       $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
 
 #   # Enable toolbar tooltips
 #   $('[data-toggle=toolbar-tooltip]').tooltip
@@ -82,7 +77,7 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
       templateUrl: 'accounts/setting'
       controller: 'SettingCtrl'
 
-    .state 'account.profile',
+    .state 'account.setting.profile',
       url: '/profile'
       templateUrl: 'accounts/profile'
       controller: 'ProfileCtrl'
@@ -90,7 +85,7 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')
 
-ohmpieng.controller 'AppCtrl', ($scope) ->
+ohmpieng.controller 'AppCtrl', ($scope, $rootScope) ->
   $scope.$on '$stateChangeStart',   NProgress.start
   $scope.$on '$stateChangeSuccess', NProgress.done
   $scope.$on '$stateChangeError',   NProgress.done
