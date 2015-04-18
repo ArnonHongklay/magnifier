@@ -11,10 +11,6 @@
 # = require angular-bootstrap/ui-bootstrap-tpls
 # = require angular-rails-templates
 # = require angulartics/src/angulartics
-# = require bootstrap-sass/assets/javascripts/bootstrap
-
+# = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
-# = require flat-ui
-
-# = require apps/jquery.noty.packaged.min

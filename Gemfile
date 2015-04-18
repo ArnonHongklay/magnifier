@@ -30,6 +30,7 @@ gem 'turbolinks'
 # stylesheet
 gem 'sass-rails'
 # gem 'bootstrap-sass'
+gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
