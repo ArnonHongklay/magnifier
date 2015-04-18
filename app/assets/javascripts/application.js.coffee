@@ -3,6 +3,6 @@
 # = require jquery-ui/jquery-ui
 # = require turbolinks
 # = require angular/angular
-# = require bootstrap-sass/assets/javascripts/bootstrap
+# = require bootstrap-sprockets
 # = require_self
 
