@@ -79,15 +79,16 @@ $dropdown-link-color: $clouds !default
   transition-duration: $duration
   transition-timing-function: $timing
 
-
-// Bootstrap overrides
-
 // Navbars
 .navbar-default
   background: inherit
   border: inherit
   box-shadow: inherit
   -webkit-box-shadow: inherit
+
+.navbar-default > .pull-right .dropdown-menu
+  left: inherit
+  right: -8px
 
 .navbar-nav > li > .dropdown-menu // Add arrow and border radius from dropdowns
   border-radius: 5px
@@ -359,7 +360,7 @@ form
         li.dropdown-header
           border-radius: 4px
           color: $dock-active-icon-color
-          margin-top: -5px
+          margin-top: 0px
           padding: 5px 20px
           &:before
             transform: rotate(45deg)
@@ -442,3 +443,12 @@ form
   background-size: 100px
   background-repeat: no-repeat
   margin-left: 33px
+
+.noselect
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+

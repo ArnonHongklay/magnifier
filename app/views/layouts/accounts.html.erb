@@ -10,15 +10,15 @@
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css
 " %>
-  <%= stylesheet_link_tag 'accounts/apps', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag '//connect.facebook.net/en_US/all.js' %>
-  <%= javascript_include_tag '//www.googleadservices.com/pagead/conversion_async.js' %>
+  <%= stylesheet_link_tag "accounts/apps", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//connect.facebook.net/en_US/all.js" %>
+  <%= javascript_include_tag "//www.googleadservices.com/pagead/conversion_async.js" %>
   <%= csrf_meta_tags %>
   <base href="/">
 </head>
 <body responsive class="<%= yield (:body_class) %> {{stateName}} {{device}}">
   <ui-view></ui-view>
-  <%= javascript_include_tag 'accounts/vendor', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'accounts/apps', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "accounts/vendor", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "accounts/apps", "data-turbolinks-track" => true %>
 </body>
 </html>
