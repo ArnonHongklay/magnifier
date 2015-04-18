@@ -39,7 +39,9 @@ window.ohmpieng = angular.module("ohmpieng", [
   'ngAnimate',
   'ngCookies',
   'ngResource',
+  'ngTable',
   'angulartics',
+  'nvd3ChartDirectives',
   # 'angulartics.google.analytics',
   'templates',
   'nprogress-rails'

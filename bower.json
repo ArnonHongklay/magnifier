@@ -10,10 +10,12 @@
       "angular-cookies": "latest",
       "angular-sanitize": "latest",
       "angular-bootstrap": "latest",
+      "angulartics": "latest",
+      "ng-table": "latest",
+      "angularjs-nvd3-directives": "latest",
       "jquery": "1.11.1",
       "jquery-ujs": "*",
-      "jquery-ui": "1.11.1",
-      "angulartics": "latest"
+      "jquery-ui": "1.11.1"
     }
   },
   "vendor": {
