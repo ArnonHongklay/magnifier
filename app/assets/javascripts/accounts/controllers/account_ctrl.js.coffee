@@ -4,8 +4,8 @@ ohmpieng.controller 'AccountCtrl', ($scope, $state, $stateParams, account) ->
 
   $scope.isCollapsed = ->
     $('#dock .launcher a').toggle()
-    $('#dock li.launcher').each ->
-      $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
+    # $('#dock li.launcher').each ->
+    #   $(this).find('.dropdown-menu').css 'top', $(this).position().top + 33
     return
 
   $scope.isHoverIn = (e) ->
