@@ -3,30 +3,6 @@
 # = require_tree ./directives
 # = require_tree ./controllers
 
-# $(document).ready ->
-
-  # Enable Tips & Popovers
-  # $('[data-toggle=tooltip]').tooltip()
-  # $('[data-toggle=popover]').popover()
-
-#   # Eable Dropdowns
-#   $('.dropdown-toggle').dropdown()
-#   $('.dropdown.hover').hover (->
-#     $(this).find('.dropdown-menu').stop(true, true).fadeIn()
-#   ), ->
-#     $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut()
-
-#   $('.dropdown-toggle').click ->
-#     alert('xxx')
-
-#   # Enable toolbar tooltips
-#   $('[data-toggle=toolbar-tooltip]').tooltip
-#     placement: 'bottom'
-
-#   # Enable knob inputs
-#   # $('.knob').knob()
-
-
 window.ohmpieng = angular.module("ohmpieng", [
   'ui.router',
   'ui.bootstrap',
@@ -41,11 +17,6 @@ window.ohmpieng = angular.module("ohmpieng", [
   'templates',
   'nprogress-rails'
 ])
-
-# ohmpieng.run ($rootScope, $state, $stateParams) ->
-#   $rootScope.$state = $state
-#   $rootScope.$stateParams = $stateParams
-#   return
 
 ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $stateProvider
