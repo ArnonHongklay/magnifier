@@ -17,6 +17,7 @@
 # = require nvd3/nv.d3
 # = require angularjs-nvd3-directives/dist/angularjs-nvd3-directives
 # = require malhar-angular-dashboard/dist/malhar-angular-dashboard
+# = require gauge
 # = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
