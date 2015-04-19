@@ -13,6 +13,8 @@ window.ohmpieng = angular.module("ohmpieng", [
   'ngTable',
   'angulartics',
   'nvd3ChartDirectives',
+  'ui.sortable',
+  'ui.dashboard',
   # 'angulartics.google.analytics',
   'templates',
   'nprogress-rails'

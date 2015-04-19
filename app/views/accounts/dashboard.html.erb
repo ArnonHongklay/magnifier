@@ -1,7 +1,30 @@
-<nvd3-line-chart
-  data="exampleData"
-  showXAxis="true"
-  showYAxis="true"
-  tooltips="true"
-  interactive="true">
-</nvd3-line-chart>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="icon-beer icon-large"></i>
+    Ohmpieng Rocks!
+    <div class="panel-tools">
+      <div class="btn-group">
+        <a class="btn" href="#">
+          <i class="fa fa-refresh"></i>
+          Refresh statics
+        </a>
+        <a class="btn" data-toggle="toolbar-tooltip" href="#" title="Toggle">
+          <i class="fa fa-chevron-down"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="page-header">
+      <h4>System usage</h4>
+      <nvd3-line-chart
+        data="exampleData"
+        showXAxis="true"
+        showYAxis="true"
+        tooltips="true"
+        interactive="true">
+      </nvd3-line-chart>
+    </div>
+  </div>
+</div>
+

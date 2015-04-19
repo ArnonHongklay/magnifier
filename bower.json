@@ -13,6 +13,8 @@
       "angulartics": "latest",
       "ng-table": "latest",
       "angularjs-nvd3-directives": "latest",
+      "malhar-angular-dashboard": "latest",
+      "angular-ui-sortable": "latest",
       "jquery": "1.11.1",
       "jquery-ujs": "*",
       "jquery-ui": "1.11.1"
