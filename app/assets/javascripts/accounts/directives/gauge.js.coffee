@@ -8,7 +8,7 @@ ohmpieng.directive 'gauge', ->
     value: '='
   link: (scope, element, attrs) ->
     config =
-      size: 300
+      size: 250
       label: attrs.label
       min: if undefined != scope.min then scope.min else 0
       max: if undefined != scope.max then scope.max else 100
@@ -28,5 +28,3 @@ ohmpieng.directive 'gauge', ->
     scope.$watch 'value', ->
       if scope.gauge
         scope.gauge.redraw scope.value
-      # return
-    # return

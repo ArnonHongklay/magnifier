@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <i class="icon-beer icon-large"></i>
-    Ohmpieng Rocks!
+    System usage!
     <div class="panel-tools">
       <div class="btn-group">
         <a class="btn" href="#">
@@ -16,18 +16,56 @@
   </div>
   <div class="panel-body">
     <div class="page-header">
-      <h4>System usage</h4>
-      <nvd3-line-chart
-        data="exampleData"
-        showXAxis="true"
-        showYAxis="true"
-        tooltips="true"
-        interactive="true">
-      </nvd3-line-chart>
+      <div class="row">
+        <div class="col-md-12">
+          <metor chart="chart" class="gauge"></metor>
+        </div>
 
-      <h2>D3.js Gauge</h2>
-      <gauge min="0" max="100" value="gaugeValue" label="CPU" class="gauge"></gauge>
+        <div class="col-md-6">
+        xxx
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
+        <div class="col-md-6">
+          x1
+          <nvd3-line-chart
+              data="exampleData"
+              id="x1"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+              tooltips="true"
+              interactive="true">
+            <svg></svg>
+          </nvd3-line-chart>
+        </div>
 
+        <div class="col-md-6">
+          x2
+          <nvd3-line-chart
+              data="exampleData"
+              id="x2"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+              isArea="true"
+              tooltips="true"
+              interactive="true">
+            <svg></svg>
+          </nvd3-line-chart>
+        </div>
+
+        <div class="col-md-6">
+          x3
+          <nvd3-line-chart
+              data="isAreaExampleData"
+              id="isAreaDataExample"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+            <svg></svg>
+          </nvd3-line-chart>
+        </div>
+      </div>
     </div>
   </div>
 </div>

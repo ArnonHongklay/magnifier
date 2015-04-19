@@ -6,21 +6,19 @@
 window.ohmpieng = angular.module("ohmpieng", [
   'ui.router',
   'ui.bootstrap',
-  'gettext',
   'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngTable',
+  'gettext',
   'angulartics',
-  'nvd3ChartDirectives',
-  'ui.sortable',
-  'ui.dashboard',
-  # 'angulartics.google.analytics',
   'templates',
+  'nvd3ChartDirectives',
   'nprogress-rails'
 ])
 
-ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
+ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyticsProvider) ->
+
   $stateProvider
     .state 'account',
       url: '/:userId'
