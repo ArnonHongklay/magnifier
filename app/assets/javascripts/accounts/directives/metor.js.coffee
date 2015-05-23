@@ -17,7 +17,7 @@ ohmpieng.directive 'metor', ->
         ])
 
       chartOptions = {
-        height: 300,
+        height: 150,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
         minorTicks: 5
