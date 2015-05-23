@@ -46,5 +46,10 @@ module Ohmpieng
     ActiveRecord::SessionStore::Session.table_name = 'sessions'
     ActiveRecord::SessionStore::Session.primary_key = 'session_id'
     # ActiveRecord::SessionStore::Session.data_column_name = 'legacy_session_data'
+
+    config.action_dispatch.default_headers.merge!({
+      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Request-Method' => '*'
+    })
   end
 end

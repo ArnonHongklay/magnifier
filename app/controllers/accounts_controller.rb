@@ -3,6 +3,12 @@ class AccountsController < ApplicationController
   before_filter :verify_account!
 
   def index
+    # raise redis.inspect
+    redis.set("mykey", "hello world")
+    x = redis.get("mykey")
+
+    # raise x.inspect
+
     respond_to do |format|
       format.html
       format.json

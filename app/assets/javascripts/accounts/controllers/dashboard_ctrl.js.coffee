@@ -3,8 +3,10 @@ ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
   $scope.user = account.data.user
 
   # $scope.gaugeValue = 0
-  items = []
-  items.push({timestamp: 20, value: 82})
+  #items = []
+  #items.push({timestamp: 20, value: 82})
+  items = [{timestamp: 20, value: 82}, {timestamp: 20
+  , value: 30}]
   $scope.chart = {
     data: items
     max: 30
