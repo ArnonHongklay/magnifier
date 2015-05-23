@@ -1,4 +1,125 @@
-<h1>The Home View!</h1>
-<ul>
-    <li ng-repeat="thing in things">{{thing}}</li>
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        RAM
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <metor chart="chart" class="gauge"></metor>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        RAM
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <monitor chart="chart" class="line-chart"></monitor>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        Internet
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <nvd3-line-chart
+              data="exampleData"
+              id="x1"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+              tooltips="true"
+              interactive="true">
+            <svg></svg>
+          </nvd3-line-chart>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        CPU
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <nvd3-line-chart
+            data="exampleData"
+            id="x2"
+            height="300"
+            showXAxis="true"
+            showYAxis="true"
+            isArea="true"
+            tooltips="true"
+            interactive="true">
+          <svg></svg>
+        </nvd3-line-chart>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        ALL
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <nvd3-line-chart
+            data="isAreaExampleData"
+            id="isAreaDataExample"
+            height="300"
+            showXAxis="true"
+            showYAxis="true"
+          <svg></svg>
+        </nvd3-line-chart>      
+      </div>
+    </div>
+  </div>
+</div>

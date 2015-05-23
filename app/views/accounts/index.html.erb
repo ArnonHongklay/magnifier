@@ -1,46 +1,364 @@
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <i class="icon-beer icon-large"></i>
-    Hierapolis Rocks!
-    <div class="panel-tools">
-      <div class="btn-group">
-        <a class="btn" href="#">
-          <i class="fa fa-refresh"></i>
-          Refresh statics
-        </a>
-        <a class="btn" data-toggle="toolbar-tooltip" href="#" title="Toggle">
-          <i class="fa fa-chevron-down"></i>
-        </a>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        General Info
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="getneral-info">
+          <div class="general-info-item">
+            <span class="general-title">OS:</span>
+            <span class="general-data">Ubuntu 14.04.2 LTS\n3.13.0-43-generic</span>
+          </div>
+          <div class="general-info-item">
+            <span class="general-title">Uptime:</span>
+            <span id="os-uptime">46 days 12 hours 43 minutes</span>
+          </div>
+          <div class="general-info-item">
+            <span class="general-title">Server Time:</span>
+            <span id="os-time">Fri May 22 23:37:34 EDT 2015</span>
+          </div>
+          <div class="general-info-item">
+            <span class="general-title">Hostname:</span>
+            <span id="os-hostname">Madden</span>
+          </div>
+        </div><br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" style="width: 33.33%"></div>
+          <div class="progress-bar progress-bar-warning" style="width: 33.33%"></div>
+          <div class="progress-bar progress-bar-danger" style="width: 33.33%"></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="panel-body">
-    <div class="page-header">
-      <h4>System usage</h4>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%"></div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
-      <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
-    </div>
-    <div class="page-header">
-      <h4>User statics</h4>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-3">
-        <input class="knob second" data-bgcolor="#d4ecfd" data-fgcolor="#30a1ec" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="50">
+
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        Internet Bandwidth
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <input class="knob second" data-bgcolor="#c4e9aa" data-fgcolor="#8ac368" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="75">
-      </div>
-      <div class="col-md-3">
-        <input class="knob second" data-bgcolor="#cef3f5" data-fgcolor="#5ba0a3" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="35">
-      </div>
-      <div class="col-md-3">
-        <input class="knob second" data-bgcolor="#f8d2e0" data-fgcolor="#b85e80" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="85">
+      <div class="panel-body">
+        5,199 KB/s  
+        728 KB/s
       </div>
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        Load average
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        Load average 1 min <div class="progress">
+          <div class="progress-bar progress-bar-success" style="width: 35%">35%</div>
+        </div>
+        Load average 5 min
+        <div class="progress">
+          <div class="progress-bar progress-bar-warning" style="width: 50%">50%</div>
+        </div>
+        Load average 10 min
+        <div class="progress">
+          <div class="progress-bar progress-bar-danger" style="width: 20%">20%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        RAM
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        Total:  490 MB
+        <div class="progress" style="text-align: right">
+          <div class="progress-bar progress-bar-warning" style="width: 80%"></div>
+          <div class="progress-bar progress-bar-danger" style="width: 20%"></div>
+        </div>
+        Used: 209 MB
+        <div class="progress" style="text-align: right">43%
+          <div class="progress-bar progress-bar-warning" style="width: 43%"></div>
+        </div>
+        Free: 281 MB
+        <div class="progress" style="text-align: right">10%
+          <div class="progress-bar progress-bar-success" style="width: 10%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        Processes
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped table-condensed table-bordered">
+          <tr>
+            <th>USER</th>
+            <th>PID</th>
+            <th>%CPU</th>
+            <th>%MEM</th>
+            <th>VSZ</th>
+            <th>RSS</th>
+            <th>TTY</th>
+            <th>STAT</th>
+            <th>START</th>
+            <th>TIME</th>
+            <th>COMMAND</th>
+          </tr>
+<tr>
+  <td>daemon</td>  
+  <td>934   </td> 
+  <td>0.0   </td> 
+  <td>0.0   </td> 
+  <td>19136   </td> 
+  <td>168  </td>  
+  <td>?  </td>  
+  <td>Ss    </td> 
+  <td>Apr06   </td> 
+  <td>0:00    </td> 
+  <td>atd</td>
+</tr>
+<tr>
+  <td>message+    </td> 
+  <td>753   </td> 
+  <td>0.0   </td> 
+  <td>0.2   </td> 
+  <td>39224   </td> 
+  <td>1080    </td> 
+  <td>?   </td> 
+  <td>Ss    </td> 
+  <td>Apr06   </td> 
+  <td>0:00    </td> 
+  <td>dbus-daemon</td>
+</tr>
+<tr>
+  <td>mysql </td>
+  <td>29831 </td>
+  <td>0.0 </td>
+  <td>11.2  </td>
+  <td>755484  </td>
+  <td>56344 </td>
+  <td>? </td>
+  <td>Ssl </td>
+  <td>May02 </td>
+  <td>22:21 </td>
+  <td>/usr/sbin/mysqld</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>1 </td>
+  <td>0.0 </td>
+  <td>0.4 </td>
+  <td>33464 </td>
+  <td>2124  </td>
+  <td>? </td>
+  <td>Ss  </td>
+  <td>Apr06 </td>
+  <td>1:41  </td>
+  <td>/sbin/init</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>2 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S </td>
+  <td>Apr06 </td>
+  <td>0:00  </td>
+  <td>[kthreadd]</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>3 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S </td>
+  <td>Apr06 </td>
+  <td>0:03  </td>
+  <td>[ksoftirqd/0]</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>5 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S  </td>
+  <td>Apr06 </td>
+  <td>0:00  </td>
+  <td>[kworker/0:0H]  </td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>7 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S </td>
+  <td>Apr06 </td>
+  <td>3:37  </td>
+  <td>[rcu_sched]</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>8 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S </td>
+  <td>Apr06 </td>
+  <td>3:32  </td>
+  <td>[rcuos/0]</td>
+</tr>
+<tr>
+  <td>root  </td>
+  <td>9 </td>
+  <td>0.0 </td>
+  <td>0.0 </td>
+  <td>0 </td>
+  <td>0 </td>
+  <td>? </td>
+  <td>S </td>
+  <td>Apr06 </td>
+  <td>0:00  </td>
+  <td>[rcu_bh]</td>
+</tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-beer icon-large"></i>
+        RAM
+        <div class="panel-tools">
+          <div class="btn-group">
+            <a class="btn" href="#">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        
+        <table class="table table-hover table-striped table-condensed table-bordered">
+          <tr>
+            <th>Filesystem</th>
+            <th>Size</th>
+            <th>Used</th>
+            <th>Avail</th>
+            <th>Use%</th>
+            <th>Mounted</th>
+          </tr>
+          <tr>
+            <td>/dev/vda1</td> 
+            <td>20G </td>
+            <td>3.9G  </td>
+            <td>15G </td>
+            <td>21% </td>
+            <td>/</td>
+          </tr>
+          <tr>
+            <td>none  </td>
+            <td>4.0K  </td>
+            <td>0 </td>
+            <td>4.0K  </td>
+            <td>0%  </td>
+            <td>/sys/fs/cgroup</td>
+          </tr>
+          <tr>
+            <td>none  </td>
+            <td>5.0M  </td>
+            <td>0 </td>
+            <td>5.0M  </td>
+            <td>0%  </td>
+            <td>/run/lock</td>
+          </tr>
+          <tr>
+            <td>none  </td>
+            <td>246M  </td>
+            <td>0 </td>
+            <td>246M  </td>
+            <td>0%  </td>
+            <td>/run/shm</td>
+          </tr>
+          <tr>
+            <td>none  </td>
+            <td>100M  </td>
+            <td>0 </td>
+            <td>100M  </td>
+            <td>0%  </td>
+            <td>/run/user</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 

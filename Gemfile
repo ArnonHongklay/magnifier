@@ -59,8 +59,9 @@ gem 'sidekiq'
 gem 'sidekiq-failures'
 gem 'sinatra', :require => nil
 
-gem 'redis-namespace'               # Cleaner redis keys
-gem 'redis-semaphore'               # Facebook access locking
+gem 'redis'
+# gem 'redis-namespace'               # Cleaner redis keys
+# gem 'redis-semaphore'               # Facebook access locking
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
