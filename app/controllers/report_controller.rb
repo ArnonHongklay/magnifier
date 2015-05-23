@@ -9,7 +9,7 @@ class ReportController < ApplicationController
       format.html { render "accounts/report"}
       format.pdf do
         render :pdf => "report",
-        :template => 'report/index.html.erb',
+        :template => 'accounts/index.html.erb',
         :layout => 'pdf',
         :header => {
           :right => "1"
