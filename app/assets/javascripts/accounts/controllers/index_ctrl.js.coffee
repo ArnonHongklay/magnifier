@@ -11,3 +11,4 @@ ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account) 
   $scope.getProcesses = ->
     # $http.get("#{$scope.url}sh/ps.php").success(result) ->
     #   console.log result
+

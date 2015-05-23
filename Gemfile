@@ -63,6 +63,7 @@ gem 'redis'
 # gem 'redis-namespace'               # Cleaner redis keys
 # gem 'redis-semaphore'               # Facebook access locking
 
+gem 'websocket-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

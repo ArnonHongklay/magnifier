@@ -1,16 +1,36 @@
-
 ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
   $scope.user = account.data.user
 
+  dispatcher = new WebSocketRails('127.0.0.1:3001/websocket')
+
+  dispatcher.on_open = (data) ->
+    console.log "XXX #{data}"
+
+  dispatcher.bind 'new_event', (monitor) ->
+    console.log "xxx"
+
   # $scope.gaugeValue = 0
-  #items = []
-  #items.push({timestamp: 20, value: 82})
-  items = [{timestamp: 20, value: 82}, {timestamp: 20
-  , value: 30}]
+  items = []
+  items.push({timestamp: 20, value: 82})
   $scope.chart = {
     data: items
     max: 30
   }
+
+  $scope.ram = {
+    data: { text: "Ram", value: 80 }
+    max: 30
+  }
+  $scope.cpu = {
+    data: { text: "CPU", value: 33 }
+    max: 30
+  }
+  $scope.disk = {
+    data: { text: "Disk", value: 50 }
+    max: 30
+  }
+
+
   # items = []
   # webSocket.subscribe (item) ->
   #   items.push item

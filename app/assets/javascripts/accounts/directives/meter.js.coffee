@@ -1,4 +1,4 @@
-ohmpieng.directive 'metor', ->
+ohmpieng.directive 'meter', ->
   template: '<div></div>'
   scope: chart: '='
   restrict: 'E'
@@ -6,14 +6,14 @@ ohmpieng.directive 'metor', ->
   link: (scope, element) ->
     gauge = new google.visualization.Gauge(element[0])
 
-    draw = (chart) ->
-
+    draw = (datas) ->
       view = new google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Memory', 80],
-          ['CPU', 55],
-          ['Network', 68]
-          ['Disk', 80]
+          [datas.data.text, datas.data.value]
+          # ,
+          # ['CPU', 55],
+          # ['Network', 68]
+          # ['Disk', 80]
         ])
 
       chartOptions = {
@@ -41,7 +41,7 @@ ohmpieng.directive 'metor', ->
 
       gauge.draw view, chartOptions
 
-    scope.$watch 'chart', (chart) ->
-      if chart and chart.data and chart.max
-        draw chart
+    scope.$watch 'chart', (datas) ->
+      if datas and datas.data and datas.max
+        draw datas
 

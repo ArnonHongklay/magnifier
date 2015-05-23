@@ -4,8 +4,8 @@ class AccountsController < ApplicationController
 
   def index
     # raise redis.inspect
-    redis.set("mykey", "hello world")
-    x = redis.get("mykey")
+    # redis.set("mykey", "hello world")
+    # x = redis.get("mykey")
 
     # raise x.inspect
 

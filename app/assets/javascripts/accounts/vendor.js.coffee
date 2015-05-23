@@ -18,3 +18,5 @@
 # = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
+
+# = require websocket_rails/main

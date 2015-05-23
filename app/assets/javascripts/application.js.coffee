@@ -5,4 +5,3 @@
 # = require angular/angular
 # = require bootstrap-sprockets
 # = require_self
-

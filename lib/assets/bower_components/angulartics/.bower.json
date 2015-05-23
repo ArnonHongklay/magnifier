@@ -1,6 +1,6 @@
 {
   "name": "angulartics",
-  "version": "0.17.2",
+  "version": "0.18.0",
   "main": [
     "src/angulartics.js",
     "src/angulartics-adobe.js",
@@ -31,11 +31,11 @@
     "angular-ui-router": "~0.2"
   },
   "homepage": "https://github.com/luisfarzati/angulartics",
-  "_release": "0.17.2",
+  "_release": "0.18.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.17.2",
-    "commit": "1b8bbf0608bec2c23105e2b31e86293e9c0ed5d6"
+    "tag": "v0.18.0",
+    "commit": "3b4c5ecb0a7d45d65de0f863712ec5e0cfa8b89c"
   },
   "_source": "git://github.com/luisfarzati/angulartics.git",
   "_target": "*",
