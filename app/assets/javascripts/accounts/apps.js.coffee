@@ -63,3 +63,4 @@ ohmpieng.controller 'AppCtrl', ($scope, $rootScope) ->
 
   $scope.$on '$stateChangeSuccess', (e, toState) ->
     $scope.stateName = toState.name
+

@@ -20,3 +20,4 @@
 # = require nprogress-angular
 
 # = require websocket_rails/main
+# = require noty/js/noty/packaged/jquery.noty.packaged.min
