@@ -64,6 +64,7 @@ gem 'redis'
 # gem 'redis-semaphore'               # Facebook access locking
 
 gem 'websocket-rails'
+# gem 'tubesock'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

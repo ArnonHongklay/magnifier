@@ -1,13 +1,16 @@
 ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
   $scope.user = account.data.user
 
-  dispatcher = new WebSocketRails('127.0.0.1:3001/websocket')
+  dispatcher = new WebSocketRails("127.0.0.1:10000/websocket")
+
+
 
   dispatcher.on_open = (data) ->
-    console.log "XXX #{data}"
+    console.log data
 
-  dispatcher.bind 'new_event', (monitor) ->
-    console.log "xxx"
+  dispatcher.bind 'tasks.create_success', (task) ->
+    console.log 'successfully created ' + task.name
+    return
 
   # $scope.gaugeValue = 0
   items = []
