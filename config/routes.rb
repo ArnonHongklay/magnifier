@@ -7,13 +7,12 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
-  get "/accounts/*id"   => 'pages#show',      as: :page, format: false
-  # get '/info'           => 'accounts#info',  as: :info, format: :json
+  get "/accounts/*id"   => 'pages#show',        as: :page, format: false
+  get '/profile'        => 'accounts#profile',  as: :profile
 
-  resources :accounts, path: '', constraints: { path: /(?!websocket\z).*/ }  do
+  resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
     get 'index'             => 'accounts#index',          as: :index
     get 'setting'           => 'accounts#setting',        as: :setting
-    get 'setting/profile'   => 'accounts#profile',        as: :profile
     get 'community'         => 'conversation#index',      as: :community
     get 'report'            => 'report#index',            as: :report
     get 'dashboard'         => 'dashboard#index',         as: :dashboard
