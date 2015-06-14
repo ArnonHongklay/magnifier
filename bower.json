@@ -20,8 +20,7 @@
       "angular-gettext": "latest",
       "angular-bootstrap": "latest",
       "ng-table": "latest",
-      "angularjs-nvd3-directives": "latest",
-      "noty": "latest"
+      "angularjs-nvd3-directives": "latest"
     }
   }
 }
