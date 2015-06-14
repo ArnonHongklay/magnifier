@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html # { redirect_to account_index_path(current_account.name) }
+      format.html { redirect_to account_index_path(current_account.name) }
       format.json
     end
   end
