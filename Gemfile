@@ -68,14 +68,9 @@ gem 'websocket-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-group :development, :test do
+group :development do
   gem 'puma'                      # Multi-threaded server for development
   gem 'foreman'                   # Executes Procfile
-
-  # test
-  gem 'rspec-rails'               # Testing engine
-  gem 'rspec-its'                 # Rspec deprecated its
-  gem 'rspec-collection_matchers' # Rspec deprecated should
 
   gem 'capistrano-ext'              # So developers and CircleCI can deploy
   gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
@@ -92,6 +87,14 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test do
+  # test
+  gem 'rspec-rails'               # Testing engine
+  gem 'rspec-its'                 # Rspec deprecated its
+  gem 'rspec-collection_matchers' # Rspec deprecated should
+
 end
 
 group :production do
