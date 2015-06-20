@@ -3,6 +3,7 @@ ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+gem 'nokogiri'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use sqlite3 as the database for Active Record
@@ -46,7 +47,6 @@ gem 'jbuilder'
 gem 'wicked_pdf'  # pdf
 
 # gem 'strong_parameters'
-
 gem 'cancan'                        # Authorization
 gem 'devise'                        # Authorization
 gem 'koala'                         # Facebook

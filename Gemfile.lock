@@ -421,6 +421,7 @@ DEPENDENCIES
   jbuilder
   koala
   mysql2
+  nokogiri
   nprogress-rails
   omniauth
   omniauth-facebook
