@@ -447,6 +447,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   websocket-rails
   wicked_pdf
-
-BUNDLED WITH
-   1.10.3
