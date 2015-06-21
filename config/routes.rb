@@ -1,10 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  devise_for :accounts, path: 'auth',
+  devise_for :accounts, path: 'session',
     controllers: {
-      registrations: 'accounts/registrations'
+      registrations:  'accounts/registrations',
+      sessions:       'accounts/sessions',
+      passwords:      'accounts/passwords',
+      confirmations:  'accounts/confirmations'
     }
+
   mount Sidekiq::Web => '/sidekiq'
   match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
 
