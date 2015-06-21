@@ -16,6 +16,8 @@ gem "activerecord-deprecated_finders", "~> 1.0.3"
 gem "actionpack-action_caching"
 gem "actionpack-page_caching"
 
+gem 'activeadmin', github: 'activeadmin'
+
 # static page
 gem 'high_voltage'
 # bundle
