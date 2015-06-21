@@ -28,10 +28,11 @@
             <%= f.submit "Sign in", class: 'btn btn-default' %>
           </div>
         </fieldset>
-        <p>
-        <%= render "accounts/shared/links" %>
-        </p>
       <% end %>
+      <p><%= devise_error_messages! %></p>
+      <p>
+        <%= render "accounts/shared/links" %>
+      </p>
     </div>
   </div>
 </div>

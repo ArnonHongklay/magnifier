@@ -30,6 +30,10 @@ class AccountsController < ApplicationController
   end
 
   def profile
-
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
+    # raise current_account.inspect
   end
 end
