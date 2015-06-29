@@ -77,9 +77,9 @@ group :development do
   gem 'capistrano-ext'              # So developers and CircleCI can deploy
   gem 'capistrano', '~> 3.1.0'       # So developers and CircleCI can deploy
   gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-bower'
   gem 'capistrano-rails', '~> 1.1.1' # Use Capistrano for deployment
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
-  gem 'capistrano-bower'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
