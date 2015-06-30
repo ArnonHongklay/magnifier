@@ -1,10 +1,11 @@
 {
   "name": "angulartics",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "main": [
     "src/angulartics.js",
     "src/angulartics-adobe.js",
     "src/angulartics-chartbeat.js",
+    "src/angulartics-clicky.js",
     "src/angulartics-cnzz.js",
     "src/angulartics-flurry.js",
     "src/angulartics-ga-cordova.js",
@@ -18,11 +19,13 @@
     "src/angulartics-splunk.js",
     "src/angulartics-woopra.js",
     "src/angulartics-marketo.js",
-    "src/angulartics-intercom.js"
+    "src/angulartics-intercom.js",
+    "src/angulartics-inspectlet.js",
+    "src/angulartics-newrelic-insights.js"
   ],
   "dependencies": {
     "angular": ">= 1.1.5",
-    "waypoints": "~2.0.3",
+    "waypoints": "~3.1.1",
     "SHA-1": "*"
   },
   "devDependencies": {
@@ -30,12 +33,15 @@
     "angular-route": "~1.2",
     "angular-ui-router": "~0.2"
   },
+  "resolutions": {
+    "angular": ">= 1.1.5"
+  },
   "homepage": "https://github.com/luisfarzati/angulartics",
-  "_release": "0.18.0",
+  "_release": "0.19.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.18.0",
-    "commit": "3b4c5ecb0a7d45d65de0f863712ec5e0cfa8b89c"
+    "tag": "v0.19.0",
+    "commit": "aaaaab708883b33245fcbb7227c602d6081e951e"
   },
   "_source": "git://github.com/luisfarzati/angulartics.git",
   "_target": "*",

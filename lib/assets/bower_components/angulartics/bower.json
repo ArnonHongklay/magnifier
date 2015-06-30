@@ -1,10 +1,11 @@
 {
   "name": "angulartics",
-  "version": "0.17.2",
+  "version": "0.19.0",
   "main": [
     "src/angulartics.js",
     "src/angulartics-adobe.js",
     "src/angulartics-chartbeat.js",
+    "src/angulartics-clicky.js",
     "src/angulartics-cnzz.js",
     "src/angulartics-flurry.js",
     "src/angulartics-ga-cordova.js",
@@ -18,16 +19,22 @@
     "src/angulartics-splunk.js",
     "src/angulartics-woopra.js",
     "src/angulartics-marketo.js",
-    "src/angulartics-intercom.js"
+    "src/angulartics-intercom.js",
+    "src/angulartics-inspectlet.js",
+    "src/angulartics-newrelic-insights.js"
+
   ],
   "dependencies": {
     "angular": ">= 1.1.5",
-    "waypoints": "~2.0.3",
+    "waypoints": "~3.1.1",
     "SHA-1": "*"
   },
   "devDependencies": {
     "angular-mocks": ">= 1.1.5",
     "angular-route": "~1.2",
     "angular-ui-router": "~0.2"
+  },
+  "resolutions": {
+    "angular": ">= 1.1.5"
   }
 }
