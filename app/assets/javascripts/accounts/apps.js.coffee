@@ -13,7 +13,7 @@ window.ohmpieng = angular.module("ohmpieng", [
   'gettext',
   'angulartics',
   'templates',
-  'nvd3ChartDirectives',
+  # 'nvd3ChartDirectives',
   'nprogress-rails'
 ])
 

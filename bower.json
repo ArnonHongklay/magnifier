@@ -1,5 +1,6 @@
 {
-  "name": "bower-rails generated lib assets",
+  "name": "ohmpieng",
+  "version": "1.0",
   "dependencies": {
     "angular": "latest",
     "angular-ui-router": "latest",
@@ -13,7 +14,6 @@
     "jquery-ui": "1.11.1",
     "angular-gettext": "latest",
     "angular-bootstrap": "latest",
-    "ng-table": "latest",
-    "angularjs-nvd3-directives": "latest"
+    "ng-table": "latest"
   }
 }
