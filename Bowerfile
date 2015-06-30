@@ -8,7 +8,7 @@ dependency_group :dependencies do
   asset "angular-resource"
   asset "angular-cookies"
   asset "angular-sanitize"
-  # asset "angulartics"
+  asset "angulartics"
   asset "jquery"
   asset "jquery-ujs"
   asset "jquery-ui"
@@ -17,3 +17,4 @@ dependency_group :dependencies do
   asset "ng-table"
   # asset "angularjs-nvd3-directives"
 end
+
