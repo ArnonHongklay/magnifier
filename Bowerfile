@@ -8,11 +8,12 @@ dependency_group :dependencies do
   asset "angular-resource"
   asset "angular-cookies"
   asset "angular-sanitize"
-  asset "angulartics"
+  # asset "angulartics"
   asset "jquery"
   asset "jquery-ujs"
   asset "jquery-ui"
   asset "angular-gettext"
   asset "angular-bootstrap"
   asset "ng-table"
+  # asset "angularjs-nvd3-directives"
 end

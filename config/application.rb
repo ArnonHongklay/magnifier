@@ -35,8 +35,6 @@ module Ohmpieng
     config.assets.version = '1.3' # Version of your assets, change this if you want to expire all your assets
 
     config.sass.preferred_syntax = :sass
-    config.assets.precompile << '*.ttf' << '*.eot' << '*.svg' << '*.woff'
-    config.assets.precompile << '*.png' << '*.jpg' << '*.gif'
     config.assets.initialize_on_precompile = false
 
     # Enable caching via the memory store
@@ -50,6 +48,6 @@ module Ohmpieng
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => '*'
     }
-    
+
   end
 end
