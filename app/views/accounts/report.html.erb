@@ -13,10 +13,33 @@
   <div class="panel-body">
     <table ng-table class="table table-hover table-striped table-condensed table-bordered">
       <tr ng-repeat="x in xxx">
-        <td data-title="'Name'">{{x.name}}</td>
-        <td data-title="'Age'">{{x.age}}</td>
+        <td data-title="'ID'">{{x.age}}</td>
+        <td data-title="'ServerName'">{{x.name}}</td>
+        <td data-title="'TypeReport'">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> information
+            </label><br>
+            <label>
+              <input type="checkbox"> worning
+            </label>
+          </div>
+        </td>
+        <td data-title="'ReportDetail'">
+            <div class="radio">
+              <label class="radio-inline{{x.age}}">
+                <input type="radio" name="{{x.age}}" id="inlineRadio1" value="option1"> ย้อนหลัง 7 วัน
+              </label>
+              <label class="radio-inline{{x.age}}">
+                <input type="radio" name="{{x.age}}" id="inlineRadio2" value="option2"> ย้อนหลัง 3 วัน
+              </label>
+              <label class="radio-inline{{x.age}}">
+                <input type="radio" name="{{x.age}}" id="inlineRadio3" value="option3" > ย้อนหลัง 1 วัน
+              </label>
+            </div>
+        </td>
       </tr>
     </table>
+    <button type="submit" class="btn btn-primary">Confirm</button>
   </div>
 </div>
-
