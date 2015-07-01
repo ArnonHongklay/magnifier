@@ -24,8 +24,8 @@ set :format, :pretty
 set :stages, ["staging", "production"]
 set :default_stage, "production"
 
-# set :bower_flags, '--quiet --config.interactive=false'
-# set :bower_roles, :web
+set :bower_flags, '--quiet --config.interactive=false'
+set :bower_roles, :web
 # set :bower_target_path, "#{release_path}/web"
 set :bower_bin, '/usr/local/bin/bower'
 
