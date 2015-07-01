@@ -5,5 +5,5 @@ Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'bo
 # Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 Rails.application.config.assets.precompile += %w( *.css )
 Rails.application.config.assets.precompile += %w( *.js )
-Rails.application.config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif ) 
+Rails.application.config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
 Rails.application.config.assets.precompile += %w( *.woff *.ttf *.svg *.eot )
