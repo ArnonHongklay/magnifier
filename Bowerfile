@@ -1,14 +1,16 @@
 # A sample Bowerfile
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
-dependency_group :dependencies do
+assets_path "assets/javascript"
+
+group :vendor, :assets_path => "assets"  do
   asset "angular"
   asset "angular-ui-router"
   asset "angular-animate"
   asset "angular-resource"
   asset "angular-cookies"
   asset "angular-sanitize"
-  asset "angulartics"
+  # asset "angulartics"
   asset "jquery"
   asset "jquery-ujs"
   asset "jquery-ui"

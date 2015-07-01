@@ -38,7 +38,8 @@ gem "font-awesome-rails"
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
-gem 'sprockets-rails', require: 'sprockets/railtie'
+# gem 'sprockets-rails', require: 'sprockets/railtie'
+gem "sprockets"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0' # Minification

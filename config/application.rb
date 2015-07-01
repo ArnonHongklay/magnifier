@@ -34,8 +34,8 @@ module Ohmpieng
     config.assets.enabled = true
     config.assets.version = '1.3' # Version of your assets, change this if you want to expire all your assets
 
-    config.sass.preferred_syntax = :sass
-    config.assets.initialize_on_precompile = false
+    # config.sass.preferred_syntax = :sass
+    # config.assets.initialize_on_precompile = false
 
     # Enable caching via the memory store
     config.cache_store = :memory_store
