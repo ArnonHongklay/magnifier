@@ -122,7 +122,6 @@ GEM
     bourbon (4.2.3)
       sass (~> 3.4)
       thor
-    bower-rails (0.9.2)
     buftok (0.2.0)
     builder (3.2.2)
     byebug (5.0.0)
@@ -455,7 +454,6 @@ DEPENDENCIES
   angular-rails-templates
   autoprefixer-rails (= 5.0.0.3)
   bootstrap-sass
-  bower-rails
   byebug
   cancan
   capistrano (~> 3.1.0)
@@ -500,6 +498,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   websocket-rails
   wicked_pdf
-
-BUNDLED WITH
-   1.10.5
