@@ -21,7 +21,7 @@ gem 'activeadmin', github: 'activeadmin'
 # static page
 gem 'high_voltage'
 # bundle
-gem 'bower-rails'
+# gem 'bower-rails'
 
 # javascript
 gem 'angular-rails-templates'
@@ -108,4 +108,3 @@ group :production do
   # Use unicorn as the app server
   # gem 'unicorn'
 end
-
