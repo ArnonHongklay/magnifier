@@ -2,7 +2,7 @@
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/bundler'
-require 'capistrano/bower'
+# require 'capistrano/bower'
 
 # require 'capistrano/rbenv'
 require 'capistrano/rails/assets'
