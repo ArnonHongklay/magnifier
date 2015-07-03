@@ -30,11 +30,6 @@ module Ohmpieng
 
     config.active_support.escape_html_entities_in_json = true
 
-    # Enable the asset pipeline
-    config.assets.enabled = true
-    config.assets.version = '1.3' # Version of your assets, change this if you want to expire all your assets
-    config.sass.preferred_syntax = :sass
-
     # Enable caching via the memory store
     config.cache_store = :memory_store
     config.session_store :encrypted_cookie_store
