@@ -61,6 +61,7 @@ group :development, :test do
   gem 'capistrano-rails'                # =>  Use Capistrano for deployment
   gem 'capistrano-rbenv',               github: "capistrano/rbenv"
   gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
 
   gem 'byebug'
   gem 'web-console', '~> 2.0'
