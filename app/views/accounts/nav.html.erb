@@ -5,17 +5,17 @@
       Ohmpieng
     </a>
     <ul class="nav navbar-nav pull-right">
-      <li>
+<!--       <li>
         <a href="#" ui-sref=".setting"><i class="fa fa-cog"></i> Setting</a>
-      </li>
+      </li> -->
       <li class="dropdown user" dropdown is-open="status.isopen">
         <a class="dropdown-toggle" dropdown-toggle href="#">
           <i class="icon-user"></i>
           <strong>{{user.name}}</strong>
-          <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
-          <b class="caret"></b>
+          <!-- <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" /> -->
+          <!-- <b class="caret"></b> -->
         </a>
-        <ul class="dropdown-menu">
+        <!-- <ul class="dropdown-menu">
           <li>
             <a href="#" ui-sref=".setting.profile">Edit Profile</a>
           </li>
@@ -23,7 +23,7 @@
           <li>
             <%= link_to "Sign out", destroy_account_session_path, method: :delete %>
           </li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
   </div>
@@ -44,7 +44,11 @@
           <i class="fa fa-flag"></i>
           <a href="#" ui-sref=".report">Reports</a>
         </li>
-        <li class="launcher dropdown hover" ng-mouseover="isHoverIn($event)" ng-mouseleave="isHoverOut($event)">
+        <li class="launcher" ui-sref-active="active">
+          <i class="fa fa-cog"></i>
+          <a ui-sref=".setting">Setting</a>
+        </li>
+        <!-- <li class="launcher dropdown hover" ng-mouseover="isHoverIn($event)" ng-mouseleave="isHoverOut($event)">
           <i class="fa fa-cloud"></i>
           <a href="#">Backup</a>
           <ul class="dropdown-menu">
@@ -56,7 +60,7 @@
               <a href="#">Another action</a>
             </li>
           </ul>
-        </li>
+        </li> -->
         <li class="launcher">
           <i class="fa fa-bug"></i>
           <a href="#">Feedback</a>

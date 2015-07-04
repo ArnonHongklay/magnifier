@@ -45,6 +45,7 @@ gem 'nprogress-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
+gem 'angular-rails-templates'
 
 gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
