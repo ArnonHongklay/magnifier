@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 802dc451f3b3bd84e736b512d554867c0f2ae011
+  revision: 95b4a71e8ec4536cf292d67071560acdf4160419
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -479,7 +479,7 @@ DEPENDENCIES
   rspec-collection_matchers
   rspec-its
   rspec-rails
-  sass-rails (~> 5.0)
+  sass-rails
   sdoc (~> 0.4.0)
   sidekiq
   sidekiq-failures
