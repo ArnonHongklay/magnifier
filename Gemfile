@@ -4,28 +4,25 @@ ruby '2.2.0'
 gem 'rails', '4.2.3'
 gem 'mysql2'
 
-group :assets do
-  gem 'sass-rails', '~> 5.0'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.1.0'
-  gem 'therubyracer', platforms: :ruby
+gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'therubyracer', platforms: :ruby
 
-  gem 'jquery-rails'
-  gem 'turbolinks'
-  gem 'jbuilder', '~> 2.0'
-  gem 'sdoc', '~> 0.4.0', group: :doc
-  gem 'bcrypt', '~> 3.1.7'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'bcrypt', '~> 3.1.7'
 
-  gem 'nprogress-rails'
-  gem 'sass-rails', '~> 5.0'
-  gem 'bootstrap-sass'
-  gem "font-awesome-rails"
-  gem 'angular-rails-templates'
+gem 'nprogress-rails'
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
+gem 'angular-rails-templates'
 
-  gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
-  gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
-  gem "sprockets"
-end
+gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
+gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+gem "sprockets"
 
 gem 'nokogiri'
 gem 'activeadmin',                github: 'activeadmin'
