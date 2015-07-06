@@ -12,12 +12,8 @@
 # = require angular-rails-templates
 # = require angulartics/src/angulartics
 # = require ng-table/dist/ng-table.min
-# = require d3/d3
-# = require nvd3/nv.d3
-# = require angularjs-nvd3-directives/dist/angularjs-nvd3-directives
 # = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
 
 # = require websocket_rails/main
-# = require noty/js/noty/packaged/jquery.noty.packaged.min

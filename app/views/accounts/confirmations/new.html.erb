@@ -11,20 +11,20 @@
   <div class='row'>
     <div class='col-lg-12'>
 			<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-			  <%= devise_error_messages! %>
         <fieldset class='text-center'>
-          <legend>Resend confirmation instructions</legend>
+          <legend>Resend confirmation</legend>
           <div class='form-group'>
             <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: :email %>
           </div>
           <div class='text-center'>
-            <%= f.submit "Resend confirmation instructions", class: 'btn btn-default' %>
+            <%= f.submit "Resend confirmation", class: 'btn btn-default' %>
           </div>
         </fieldset>
-        <p>
-        <%= render "accounts/shared/links" %>
-        </p>
       <% end %>
+      <p><%= devise_error_messages! %></p>
+      <p>
+        <%= render "accounts/shared/links" %>
+      </p>
     </div>
   </div>
 </div>

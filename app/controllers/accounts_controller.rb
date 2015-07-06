@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html # { redirect_to account_index_path(current_account.name) }
+      format.html { redirect_to account_index_path(current_account.name) }
       format.json
     end
   end
@@ -30,6 +30,10 @@ class AccountsController < ApplicationController
   end
 
   def profile
-
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
+    # raise current_account.inspect
   end
 end

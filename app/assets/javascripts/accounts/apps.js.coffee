@@ -13,13 +13,21 @@ window.ohmpieng = angular.module("ohmpieng", [
   'gettext',
   'angulartics',
   'templates',
-  'nvd3ChartDirectives',
+  # 'nvd3ChartDirectives',
   'nprogress-rails'
 ])
 
 ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyticsProvider) ->
 
   $stateProvider
+    .state 'profile',
+      url: '/profile'
+      templateUrl: 'accounts/profile'
+      controller: 'ProfileCtrl'
+      resolve:
+        profile: ($http, $stateParams) ->
+          $http.get "/profile.json"
+
     .state 'account',
       url: '/:userId'
       templateUrl: 'accounts/nav'
@@ -48,11 +56,6 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       templateUrl: 'accounts/setting'
       controller: 'SettingCtrl'
 
-    .state 'account.setting.profile',
-      url: '/profile'
-      templateUrl: 'accounts/profile'
-      controller: 'ProfileCtrl'
-
   $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')
 
@@ -63,4 +66,3 @@ ohmpieng.controller 'AppCtrl', ($scope, $rootScope) ->
 
   $scope.$on '$stateChangeSuccess', (e, toState) ->
     $scope.stateName = toState.name
-
