@@ -17,7 +17,9 @@ window.ohmpieng = angular.module("ohmpieng", [
   'nprogress-rails'
 ])
 
-ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyticsProvider) ->
+ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyticsProvider, $httpProvider) ->
+  $httpProvider.defaults.useXDomain = true
+  delete $httpProvider.defaults.headers.common['X-Requested-With']
 
   $stateProvider
     .state 'profile',
@@ -45,6 +47,9 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/dashboard'
       templateUrl: 'accounts/dashboard'
       controller: 'DashboardCtrl'
+      resolve:
+        arp: ($http, $stateParams) ->
+          $http.get "http://128.199.222.111:9999/arp_cache"
 
     .state 'account.report',
       url: '/report'
