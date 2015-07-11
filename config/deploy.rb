@@ -43,7 +43,12 @@ set :keep_releases, 5
 set :stages, ["staging", "production"]
 set :default_stage, "production"
 
+set :passenger_restart_with_touch, true
+
 namespace :deploy do
+  before :starting, :setup_config
+  # after :publishing, :restart
+  # after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -54,28 +59,12 @@ namespace :deploy do
     end
   end
 
-end
-
-# namespace :deploy do
-#   before :publishing, :setup_config
-#   # after :publishing, :restart
-#   after :finishing, 'deploy:cleanup'
-
-#   after :restart, :clear_cache do
-#     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#       # Here we can do anything such as:
-#       # within release_path do
-#       #   execute :rake, 'cache:clear'
-#       # end
-#     end
-#   end
-
-#   # desc 'Restart application'
-#   #   task :restart do
-#   #     on roles(:app), in: :sequence, wait: 5 do
-#   #       execute :touch, release_path.join('tmp/restart.txt')
-#   #   end
-#   # end
+  desc 'Restart application'
+    task :restart do
+      on roles(:app), in: :sequence, wait: 5 do
+        execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
 
 #   desc 'Runs rake db:seed for SeedMigrations data'
 #   task :seed => [:set_rails_env] do
@@ -90,20 +79,20 @@ end
 
 #   after 'deploy:migrate', 'deploy:seed'
 
-#   desc "Database config"
-#     task :setup_config do
-#       on roles(:app), in: :sequence, wait: 5 do
-#         execute "mkdir -p #{shared_path}/config"
-#         execute "mkdir -p #{shared_path}/bin"
-#         execute "mkdir -p #{shared_path}/log"
-#         execute "mkdir -p #{shared_path}/tmp"
-#         execute "mkdir -p #{shared_path}/vendor/bundle"
-#         execute "mkdir -p #{shared_path}/public/system"
-#         upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
-#         # upload! StringIO.new(File.read("config/config.yml")), "#{shared_path}/config/config.yml"
-#     end
-#   end
-# end
+  desc "Database config"
+    task :setup_config do
+      on roles(:app), in: :sequence, wait: 5 do
+        execute "mkdir -p #{shared_path}/config"
+        execute "mkdir -p #{shared_path}/bin"
+        execute "mkdir -p #{shared_path}/log"
+        execute "mkdir -p #{shared_path}/tmp"
+        execute "mkdir -p #{shared_path}/vendor/bundle"
+        execute "mkdir -p #{shared_path}/public/system"
+        upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
+        upload! StringIO.new(File.read("config/secrets.yml")),  "#{shared_path}/config/secrets.yml"
+    end
+  end
+end
 
 # namespace :bower do
 #   desc 'Install bower'

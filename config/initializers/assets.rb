@@ -9,7 +9,8 @@ Rails.application.config.sass.cache = false
 
 Rails.application.config.assets.debug = true
 
-Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+Rails.application.config.assets.paths << Rails.root.join('components')
 Rails.application.config.assets.precompile += %w( *.css *.js )
 Rails.application.config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif *.ico )
 Rails.application.config.assets.precompile += %w( *.woff *.ttf *.svg *.eot )
+# Rails.application.config.assets.precompile << /\A(?!active_admin).*\.(js|css)\z/
