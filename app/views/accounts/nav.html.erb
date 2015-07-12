@@ -1,7 +1,7 @@
   <!-- Navbar -->
   <div class="navbar navbar-default noselect" id="navbar">
     <a class="navbar-brand" href="/" target="_self">
-      <i class="icon-beer"></i>
+      <!-- <i class="icon-beer"></i> -->
       Ohmpieng
     </a>
     <ul class="nav navbar-nav pull-right">
@@ -10,7 +10,7 @@
       </li> -->
       <li class="dropdown user" dropdown is-open="status.isopen">
         <a class="dropdown-toggle" dropdown-toggle href="#">
-          <i class="icon-user"></i>
+          <i class="fa fa-user"></i>
           <strong>{{user.name}}</strong>
           <!-- <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" /> -->
           <!-- <b class="caret"></b> -->
@@ -24,6 +24,9 @@
             <%= link_to "Sign out", destroy_account_session_path, method: :delete %>
           </li>
         </ul> -->
+      </li>
+      <li>
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete %>
       </li>
     </ul>
   </div>
