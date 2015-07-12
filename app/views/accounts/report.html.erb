@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <i class="icon-beer icon-large"></i>
-    System usage
+    Report
     <div class="panel-tools">
       <div class="btn-group">
         <a class="btn" href="#">
@@ -10,8 +10,9 @@
       </div>
     </div>
   </div>
+  <form>
   <div class="panel-body">
-    <table ng-table class="table table-hover table-striped table-condensed table-bordered">
+    <table ng-table class="table table-hover table-striped">
       <tr ng-repeat="x in xxx">
         <td data-title="'ID'">{{x.age}}</td>
         <td data-title="'ServerName'">{{x.name}}</td>
@@ -42,4 +43,5 @@
     </table>
     <button type="submit" class="btn btn-primary">Confirm</button>
   </div>
+  </form>
 </div>
