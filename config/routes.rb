@@ -1,4 +1,3 @@
-require 'sidekiq/web'
 
 Rails.application.routes.draw do
   devise_for :accounts, path: 'session',
@@ -9,8 +8,8 @@ Rails.application.routes.draw do
       confirmations:  'accounts/confirmations'
     }
 
-  mount Sidekiq::Web => '/sidekiq'
-  match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
+  mount ResqueWeb::Engine => "/resque_web"
+  # match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
 
   root 'landing#index'
 
