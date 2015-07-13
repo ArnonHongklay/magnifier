@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'mysql2'
@@ -45,6 +45,7 @@ gem 'omniauth-twitter'                  # => Authentication Twitter
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
+gem 'whenever', :require => false
 gem 'sinatra', :require => nil
 
 gem 'redis'

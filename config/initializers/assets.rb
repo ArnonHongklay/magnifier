@@ -1,7 +1,7 @@
 
 # Enable the asset pipeline
 Rails.application.config.assets.enabled = true
-Rails.application.config.assets.version = '1.3' # Version of your assets, change this if you want to expire all your assets
+Rails.application.config.assets.version = '1.1' # Version of your assets, change this if you want to expire all your assets
 Rails.application.config.assets.initialize_on_precompile = false
 Rails.application.config.sass.preferred_syntax = :sass
 Rails.application.config.sass.line_comments = false
