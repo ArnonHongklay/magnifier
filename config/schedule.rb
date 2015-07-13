@@ -19,6 +19,21 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 10.seconds do
+
+# whenever --update-crontab ohmpieng --set environment=development
+# every 1.minutes do
+#   runner "EasyWorker.last_night_work"
+# end
+
+# * * * * * sleep 00; some_job
+# * * * * * sleep 15; some_job
+# * * * * * sleep 30; some_job
+# * * * * * sleep 45; some_job
+
+every '* * * * * sleep 00;' do
+  runner "EasyWorker.last_night_work"
+end
+
+every '* * * * * sleep 30;' do
   runner "EasyWorker.last_night_work"
 end

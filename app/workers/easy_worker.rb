@@ -5,11 +5,11 @@ class EasyWorker
   # queue_as :default
 
   def perform(count)
-    puts 'Doing easy work ##{count}'
+    puts 'Doing easy work #{count}'
   end
 
   def self.last_night_work
-    10.times do |x|
+    1.times do |x|
       perform_async(x)
     end
   end
