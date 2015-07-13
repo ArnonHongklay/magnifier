@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125185437) do
+ActiveRecord::Schema.define(version: 20150713085152) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -36,6 +36,34 @@ ActiveRecord::Schema.define(version: 20141125185437) do
 
   add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
+
+  create_table "arps", force: :cascade do |t|
+    t.string   "address",    limit: 255
+    t.string   "hw_type",    limit: 255
+    t.string   "hw_address", limit: 255
+    t.string   "flags",      limit: 255
+    t.string   "mask",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "generals", force: :cascade do |t|
+    t.string   "hostname",     limit: 255
+    t.string   "os",           limit: 255
+    t.string   "uptime",       limit: 255
+    t.string   "datetime",     limit: 255
+    t.integer  "ipaddress_id", limit: 4
+    t.integer  "cpu_id",       limit: 4
+    t.integer  "mem_id",       limit: 4
+    t.integer  "disk_id",      limit: 4
+    t.integer  "arp_id",       limit: 4
+    t.integer  "bandwidth_id", limit: 4
+    t.integer  "io_id",        limit: 4
+    t.integer  "load_avg_id",  limit: 4
+    t.integer  "process_id",   limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", limit: 255,   null: false

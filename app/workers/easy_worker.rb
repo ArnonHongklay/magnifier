@@ -1,8 +1,6 @@
 
 class EasyWorker
   include Sidekiq::Worker
-  # sidekiq_options :retry => 5, :backtrace => true
-  # queue_as :default
 
   def perform(count)
     puts 'Doing easy work #{count}'
