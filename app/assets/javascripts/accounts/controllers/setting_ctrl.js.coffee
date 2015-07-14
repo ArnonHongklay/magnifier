@@ -12,10 +12,3 @@ ohmpieng.controller 'SettingCtrl', ($scope, account) ->
   $('#cmsv').click ->
     $('#bbb').toggle 'slow'
     return
-
-  $('#chpic').hover ->
-  bigImg = (x) ->
-    x.style.height = '64px'
-    x.style.width = '64px'
-    return
-  return
