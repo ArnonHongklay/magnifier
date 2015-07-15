@@ -27,9 +27,17 @@
 # * * * * * sleep 45; some_job
 
 every '* * * * * sleep 00;' do
-  runner "EasyWorker.last_night_work"
+  runner "HardWorker.poller"
 end
 
 every '* * * * * sleep 30;' do
-  runner "EasyWorker.last_night_work"
+  runner "HardWorker.poller"
+end
+
+every 5.minutes do
+  runner "MiddleWorker.poller"
+end
+
+every 1.days do
+  runner "EasyWorker.poller"
 end
