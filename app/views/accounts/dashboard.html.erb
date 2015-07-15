@@ -1,193 +1,229 @@
-<div class="table-responsive">
-  <table class="table table-condensed">
-    <tr>
-      <th class="info">1</th>
-      <td class="info">Madden</td>
-      <td class="info"><button type="button" class="btn btn-default">View</button></td>
-      <th class="success">2</th>
-      <td class="success">Madden2</td>
-      <td class="success"><button type="button" class="btn btn-default">View</button></td>
-      <th class="info">3</th>
-      <td class="info">Madden3</td>
-      <td class="info"><button type="button" class="btn btn-default">View</button></td>
-      <th class="success">4</th>
-      <td class="success">Madden4</td>
-      <td class="success"><button type="button" class="btn btn-default">View</button></td>
-    </tr>
-    <tr>
-      <th class="info">5</th>
-      <td class="info">Madden5</td>
-      <td class="info"><button type="button" class="btn btn-default">View</button></td>
-      <th class="success">6</th>
-      <td class="success">Madden6</td>
-      <td class="success"><button type="button" class="btn btn-default">View</button></td>
-      <th class="info">7</th>
-      <td class="info">Madden7</td>
-      <td class="info"><button type="button" class="btn btn-default">View</button></td>
-      <th class="success">8</th>
-      <td class="success">Madden8</td>
-      <td class="success"><button type="button" class="btn btn-default">View</button></td>
-    </tr>
-  </table>
-</div>
-
-<div class="row">
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        RAM
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
+<h2>Select Server Graphs</h2>
+<div class="row" id="box">
+  <div class="col-xs-6 col-sm-3">
+    <div class="col-md-3">
+      <button class="btn btn-default active" type="button" id="seelectsvdh1">
+      <div class="panel-body" align="center" id="iconserver">
+        <img alt="user" src="/assets/user.png" />
       </div>
-      <div class="panel-body">
-        <meter chart="ram" class="gauge"></meter>
+      <div class="panel-body" align="center" id="servername">
+        <span>
+          Medden
+        </span>
       </div>
+      </button>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        CPU
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="col-md-3">
+      <button class="btn btn-default" type="button" id="seelectsvdh2">
+      <div class="panel-body" align="center" id="iconserver">
+        <img alt="user" src="/assets/user.png" />
       </div>
-      <div class="panel-body">
-        <meter chart="cpu" class="gauge"></meter>
+      <div class="panel-body" align="center" id="servername">
+        <span>
+          Medden 2
+        </span>
       </div>
+      </button>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        Disk
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="col-md-3">
+      <button class="btn btn-default" type="button" id="seelectsvdh3">
+      <div class="panel-body" align="center" id="iconserver">
+        <img alt="user" src="/assets/user.png" />
       </div>
-      <div class="panel-body">
-        <meter chart="disk" class="gauge"></meter>
+      <div class="panel-body" align="center" id="servername">
+        <span>
+          Medden 3
+        </span>
       </div>
+      </button>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="col-md-3">
+      <button class="btn btn-default" type="button" id="seelectsvdh4">
+      <div class="panel-body" align="center" id="iconserver">
+        <img alt="user" src="/assets/user.png" />
+      </div>
+      <div class="panel-body" align="center" id="servername">
+        <span>
+          Medden 4
+        </span>
+      </div>
+      </button>
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        RAM
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
+<div id='cssmenu'>
+<ul>
+   <li id="sv1" class="active"><a href='#'>Current</a></li>
+   <li id="sv2"><a href='#'>24 hours</a></li>
+   <li id="sv3"><a href='#'>7 days</a></li>
+   <li id="sv4"><a href='#'>1 mount</a></li>
+</ul>
+</div>
+<div class="panel panel-default" id="page">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          RAM
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
         </div>
+        <div class="panel-body">
+          <meter chart="ram" class="gauge"></meter>
+        </div>
       </div>
-      <div class="panel-body">
-        <monitor chart="chart" class="line-chart"></monitor>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <meter chart="cpu" class="gauge"></meter>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Disk
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <meter chart="disk" class="gauge"></meter>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        Internet
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          RAM
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
         </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
       </div>
-      <div class="panel-body">
-        <nvd3-line-chart
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Internet
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <nvd3-line-chart
+                data="exampleData"
+                id="x1"
+                height="300"
+                showXAxis="true"
+                showYAxis="true"
+                tooltips="true"
+                interactive="true">
+              <svg></svg>
+            </nvd3-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <nvd3-line-chart
               data="exampleData"
-              id="x1"
+              id="x2"
               height="300"
               showXAxis="true"
               showYAxis="true"
+              isArea="true"
               tooltips="true"
               interactive="true">
             <svg></svg>
           </nvd3-line-chart>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        CPU
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
         </div>
       </div>
-      <div class="panel-body">
-        <nvd3-line-chart
-            data="exampleData"
-            id="x2"
-            height="300"
-            showXAxis="true"
-            showYAxis="true"
-            isArea="true"
-            tooltips="true"
-            interactive="true">
-          <svg></svg>
-        </nvd3-line-chart>
-      </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        ALL
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          ALL
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel-body">
-        <nvd3-line-chart
-            data="isAreaExampleData"
-            id="isAreaDataExample"
-            height="300"
-            showXAxis="true"
-            showYAxis="true"
-          <svg></svg>
-        </nvd3-line-chart>
+        <div class="panel-body">
+          <nvd3-line-chart
+              data="isAreaExampleData"
+              id="isAreaDataExample"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+            <svg></svg>
+          </nvd3-line-chart>
+        </div>
       </div>
     </div>
   </div>

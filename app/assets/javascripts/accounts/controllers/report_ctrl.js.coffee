@@ -11,17 +11,35 @@ ohmpieng.controller 'ReportCtrl', ($scope, $http, $filter, ngTableParams, accoun
   ]
 
   $('#seleteserver').click ->
-    $(this).css 'background-color', '#35E5C3'
-    $("#seleteserver2").css 'background-color', '#fff'
-    $("#seleteserver3").css 'background-color', '#fff'
+    $(this).css
+      'background-color': '#47c9af'
+      'color': '#fff'
+    $("#seleteserver2").css
+      'background-color': '#fff'
+      'color': '#444'
+    $("#seleteserver3").css
+      'background-color': '#fff'
+      'color': '#444'
     return
   $('#seleteserver2').click ->
-    $(this).css 'background-color', '#35E5C3'
-    $("#seleteserver").css 'background-color', '#fff'
-    $("#seleteserver3").css 'background-color', '#fff'
+    $(this).css
+      'background-color': '#47c9af'
+      'color': '#fff'
+    $("#seleteserver").css
+      'background-color': '#fff'
+      'color': '#444'
+    $("#seleteserver3").css
+      'background-color': '#fff'
+      'color': '#444'
     return
   $('#seleteserver3').click ->
-    $(this).css 'background-color', '#35E5C3'
-    $("#seleteserver").css 'background-color', '#fff'
-    $("#seleteserver2").css 'background-color', '#fff'
+    $(this).css
+      'background-color': '#47c9af'
+      'color': '#fff'
+    $("#seleteserver").css
+      'background-color': '#fff'
+      'color': '#444'
+    $("#seleteserver2").css
+      'background-color': '#fff'
+      'color': '#444'
     return
