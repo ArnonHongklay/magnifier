@@ -1,9 +1,9 @@
 <h1>Welcome</h1>
 <h2>Select Server</h2>
 
-<div class="row" id="box">
-  <div class="col-xs-6 col-sm-2">
-    <button class="btn btn-default" type="button" id="seletindex1">
+<div class="col-xs-6 col-sm-2">
+  <div class="row">
+    <button class="btn btn-default active" type="button" id="seletindex1">
       <div class="panel-body" align="center">
         <i class="fa fa-server fa-5x" id="iconcolor"></i>
       </div>
@@ -14,98 +14,7 @@
       </div>
     </button>
   </div>
-
-    <div class="col-xs-6 col-sm-6" id="detailData1">
-      <div class="panel-body">
-          <div class="panel-heading" id="boxgeninfo">
-            <div class="panel-body" id="headinfo">
-              General Infomation
-            </div>
-            <div class="panel-body">
-              <p>OS: Ubuntu 14.04.2 LTS\n3.13.0-43-generic</p>
-              <p>Uptime: 46 days 12 hours 43 minutes</p>
-              <p>Server Time: Fri May 22 23:37:34 EDT 2015</p>
-              <p>Hostname: Madden</p>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-4" id="detailData2">
-      <div class="panel-body">
-        <div class="panel-heading" id="boxban">
-          <div class="panel-body" id="headban">
-            Internet Bandwidth
-          </div>
-          <div class="panel-body">
-            <p>eth0: 5,199 KB/s 728 KB/s</p>
-            <p>eth1: 5,199 KB/s 728 KB/s</p>
-            <p>lo: 5,199 KB/s 728 KB/s</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="row" id="detailData3">
-  <div class="col-xs-6 col-sm-2">
-  </div>
-    <div class="col-xs-6 col-sm-6">
-      <div class="panel-body">
-          <div class="panel-heading" id="boxcpu">
-            <div class="panel-body" id="headcpu">
-              Swap
-            </div>
-            <div class="panel-body">
-              <p>filename: /swapfile</p>
-              <p>type: file</p>
-              <p>size: 4194300</p>
-              <p>used: 0</p>
-              <p>priority: -1</p>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="col-xs-6 col-sm-4">
-      <div class="panel-body">
-        <div class="panel-heading" id="boxram">
-          <div class="panel-body" id="headram">
-            Ram
-          </div>
-          <div class="panel-body">
-            <p>Total: 490 MB</p>
-            <p>Used: 209 MB</p>
-            <p>Free: 281 MB</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="row" id="detailData4">
-  <div class="col-xs-6 col-sm-2">
-  </div>
-  <div class="col-xs-6 col-sm-10">
-      <div class="panel-body">
-          <div class="panel-heading" id="boxswap">
-            <div class="panel-body" id="headswap">
-              CPU Information
-            </div>
-            <div class="panel-body">
-              <p>Model name: Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</p>
-              <p>Model: 62</p>
-              <p>Socket(s): 1</p>
-              <p>Thread(s) per core: 1</p>
-              <p>CPU(s): 1</p>
-              <p>Vendor ID: GenuineIntel</p>
-              <p>L1d cache: 32K</p>
-              <p>L1i cache: 32K</p>
-              <p>L2 cache: 4096K</p>
-            </div>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="row" id="box">
-  <div class="col-xs-6 col-sm-2">
+  <div class="row">
     <button class="btn btn-default" type="button" id="seletindex2">
       <div class="panel-body" align="center">
         <i class="fa fa-server fa-5x" id="iconcolor"></i>
@@ -117,8 +26,23 @@
       </div>
     </button>
   </div>
-
-    <div class="col-xs-6 col-sm-6" id="detailData11">
+  <div class="row">
+    <button class="btn btn-default" type="button" id="seletindex3">
+      <div class="panel-body" align="center">
+        <i class="fa fa-server fa-5x" id="iconcolor"></i>
+      </div>
+      <div class="panel-body" align="center" id="servername">
+        <span>
+          Madden 3
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div class="panel panel-default">
+<div class="col-xs-6 col-sm-10" id="detailData1">
+  <div class="row">
+    <div class="col-xs-0 col-sm-6">
       <div class="panel-body">
           <div class="panel-heading" id="boxgeninfo">
             <div class="panel-body" id="headinfo">
@@ -133,7 +57,7 @@
           </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-4" id="detailData12">
+    <div class="col-xs-0 col-sm-4">
       <div class="panel-body">
         <div class="panel-heading" id="boxban">
           <div class="panel-body" id="headban">
@@ -147,11 +71,9 @@
         </div>
       </div>
     </div>
-</div>
-<div class="row" id="detailData13">
-  <div class="col-xs-6 col-sm-2">
   </div>
-    <div class="col-xs-6 col-sm-6">
+  <div class="row">
+    <div class="col-xs-0 col-sm-5">
       <div class="panel-body">
           <div class="panel-heading" id="boxcpu">
             <div class="panel-body" id="headcpu">
@@ -167,7 +89,7 @@
           </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-4">
+    <div class="col-xs-0 col-sm-5">
       <div class="panel-body">
         <div class="panel-heading" id="boxram">
           <div class="panel-body" id="headram">
@@ -181,32 +103,207 @@
         </div>
       </div>
     </div>
-</div>
-<div class="row" id="detailData14">
-  <div class="col-xs-6 col-sm-2">
   </div>
-  <div class="col-xs-6 col-sm-10">
-      <div class="panel-body">
-          <div class="panel-heading" id="boxswap">
-            <div class="panel-body" id="headswap">
-              CPU Information
-            </div>
-            <div class="panel-body">
-              <p>Model name: Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</p>
-              <p>Model: 62</p>
-              <p>Socket(s): 1</p>
-              <p>Thread(s) per core: 1</p>
-              <p>CPU(s): 1</p>
-              <p>Vendor ID: GenuineIntel</p>
-              <p>L1d cache: 32K</p>
-              <p>L1i cache: 32K</p>
-              <p>L2 cache: 4096K</p>
-            </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-10">
+    <div class="panel-body">
+        <div class="panel-heading" id="boxswap">
+          <div class="panel-body" id="headswap">
+            CPU Information
           </div>
-      </div>
+          <div class="panel-body">
+            <p>Model name: Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</p>
+            <p>Model: 62</p>
+            <p>Socket(s): 1</p>
+            <p>Thread(s) per core: 1</p>
+            <p>CPU(s): 1</p>
+            <p>Vendor ID: GenuineIntel</p>
+            <p>L1d cache: 32K</p>
+            <p>L1i cache: 32K</p>
+            <p>L2 cache: 4096K</p>
+          </div>
+        </div>
+    </div>
+  </div>
   </div>
 </div>
 
+<div class="col-xs-6 col-sm-10" id="detailData2">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6">
+      <div class="panel-body">
+          <div class="panel-heading" id="boxgeninfo">
+            <div class="panel-body" id="headinfo">
+              General Infomation
+            </div>
+            <div class="panel-body">
+              <p>OS: Ubuntu 14.04.2 LTS\n3.13.0-43-generic</p>
+              <p>Uptime: 46 days 12 hours 43 minutes</p>
+              <p>Server Time: Fri May 22 23:37:34 EDT 2015</p>
+              <p>Hostname: Madden</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <div class="panel-body">
+        <div class="panel-heading" id="boxban">
+          <div class="panel-body" id="headban">
+            Internet Bandwidth
+          </div>
+          <div class="panel-body">
+            <p>eth0: 5,199 KB/s 728 KB/s</p>
+            <p>eth1: 5,199 KB/s 728 KB/s</p>
+            <p>lo: 5,199 KB/s 728 KB/s</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-5">
+      <div class="panel-body">
+          <div class="panel-heading" id="boxcpu">
+            <div class="panel-body" id="headcpu">
+              Swap
+            </div>
+            <div class="panel-body">
+              <p>filename: /swapfile</p>
+              <p>type: file</p>
+              <p>size: 4194300</p>
+              <p>used: 0</p>
+              <p>priority: -1</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-5">
+      <div class="panel-body">
+        <div class="panel-heading" id="boxram">
+          <div class="panel-body" id="headram">
+            Ram
+          </div>
+          <div class="panel-body">
+            <p>Total: 490 MB</p>
+            <p>Used: 209 MB</p>
+            <p>Free: 281 MB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-10">
+    <div class="panel-body">
+        <div class="panel-heading" id="boxswap">
+          <div class="panel-body" id="headswap">
+            CPU Information
+          </div>
+          <div class="panel-body">
+            <p>Model name: Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</p>
+            <p>Model: 62</p>
+            <p>Socket(s): 1</p>
+            <p>Thread(s) per core: 1</p>
+            <p>CPU(s): 1</p>
+            <p>Vendor ID: GenuineIntel</p>
+            <p>L1d cache: 32K</p>
+            <p>L1i cache: 32K</p>
+            <p>L2 cache: 4096K</p>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-6 col-sm-10" id="detailData3">
+  <div class="row">
+    <div class="col-xs-0 col-sm-6">
+      <div class="panel-body">
+          <div class="panel-heading" id="boxgeninfo">
+            <div class="panel-body" id="headinfo">
+              General Infomation
+            </div>
+            <div class="panel-body">
+              <p>OS: Ubuntu 14.04.2 LTS\n3.13.0-43-generic</p>
+              <p>Uptime: 46 days 12 hours 43 minutes</p>
+              <p>Server Time: Fri May 22 23:37:34 EDT 2015</p>
+              <p>Hostname: Madden</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-0 col-sm-4">
+      <div class="panel-body">
+        <div class="panel-heading" id="boxban">
+          <div class="panel-body" id="headban">
+            Internet Bandwidth
+          </div>
+          <div class="panel-body">
+            <p>eth0: 5,199 KB/s 728 KB/s</p>
+            <p>eth1: 5,199 KB/s 728 KB/s</p>
+            <p>lo: 5,199 KB/s 728 KB/s</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-0 col-sm-5">
+      <div class="panel-body">
+          <div class="panel-heading" id="boxcpu">
+            <div class="panel-body" id="headcpu">
+              Swap
+            </div>
+            <div class="panel-body">
+              <p>filename: /swapfile</p>
+              <p>type: file</p>
+              <p>size: 4194300</p>
+              <p>used: 0</p>
+              <p>priority: -1</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-0 col-sm-5">
+      <div class="panel-body">
+        <div class="panel-heading" id="boxram">
+          <div class="panel-body" id="headram">
+            Ram
+          </div>
+          <div class="panel-body">
+            <p>Total: 490 MB</p>
+            <p>Used: 209 MB</p>
+            <p>Free: 281 MB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-10">
+    <div class="panel-body">
+        <div class="panel-heading" id="boxswap">
+          <div class="panel-body" id="headswap">
+            CPU Information
+          </div>
+          <div class="panel-body">
+            <p>Model name: Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</p>
+            <p>Model: 62</p>
+            <p>Socket(s): 1</p>
+            <p>Thread(s) per core: 1</p>
+            <p>CPU(s): 1</p>
+            <p>Vendor ID: GenuineIntel</p>
+            <p>L1d cache: 32K</p>
+            <p>L1i cache: 32K</p>
+            <p>L2 cache: 4096K</p>
+          </div>
+        </div>
+    <div>
+    </div>
+  </div>
+</div>
+</div>
 
 <!--
 
