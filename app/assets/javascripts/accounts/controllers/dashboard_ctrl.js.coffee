@@ -155,7 +155,7 @@ ohmpieng.controller 'DashboardCtrl', ($scope, account, arp) ->
     $("#seelectsvdh3").css
       'background-color': '#fff'
       'color': '#444'
-    $("#seelectsvdh1").css
+    $("#seelectsvdh2").css
       'background-color': '#fff'
       'color': '#444'
     return
