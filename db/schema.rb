@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141125185437) do
     t.string   "email",                  limit: 255, default: "",    null: false
     t.string   "encrypted_password",     limit: 255, default: "",    null: false
     t.string   "name",                   limit: 255, default: "",    null: false
-    t.boolean  "admin",                  limit: 1,   default: false
+    t.boolean  "admin",                              default: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 95b4a71e8ec4536cf292d67071560acdf4160419
+  revision: e812e07c9a1b244250fb9b6875a71acee1212f98
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -101,7 +101,7 @@ GEM
       tilt
     arbre (1.0.3)
       activesupport (>= 3.0.0)
-    arel (6.0.0)
+    arel (6.0.2)
     autoprefixer-rails (5.0.0.3)
       execjs
       json
@@ -135,6 +135,7 @@ GEM
       capistrano-bundler (~> 1.1)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    chronic (0.10.2)
     chunky_png (1.3.4)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -176,7 +177,7 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    faye-websocket (0.9.2)
+    faye-websocket (0.10.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.10)
@@ -206,7 +207,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    jbuilder (2.3.0)
+    jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.4)
@@ -321,7 +322,7 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     redis-objects (1.2.0)
       redis (>= 3.0.2)
-    ref (1.0.5)
+    ref (2.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-collection_matchers (1.1.2)
@@ -346,7 +347,7 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    sass (3.4.15)
+    sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -415,12 +416,12 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    web-console (2.1.3)
+    web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    websocket-driver (0.5.4)
+    websocket-driver (0.6.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     websocket-rails (0.7.0)
@@ -432,6 +433,8 @@ GEM
       redis
       redis-objects
       thin
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
     wicked_pdf (0.11.0)
       rails
 
@@ -492,4 +495,5 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   websocket-rails
+  whenever
   wicked_pdf

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'mysql2'
@@ -7,7 +7,6 @@ gem 'mysql2'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -45,6 +44,7 @@ gem 'omniauth-twitter'                  # => Authentication Twitter
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
+gem 'whenever', :require => false
 gem 'sinatra', :require => nil
 
 gem 'redis'
