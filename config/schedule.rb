@@ -31,7 +31,7 @@ every '* * * * * sleep 00;' do
 end
 
 every '* * * * * sleep 30;' do
-  runner "HardWorker.poller"
+  runner HardWorker.poller"
 end
 
 every 5.minutes do
