@@ -1,3 +1,3 @@
 class Bandwidth < ActiveRecord::Base
-  belongs_to :general
+  has_many :servers
 end

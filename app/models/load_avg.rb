@@ -1,3 +1,3 @@
 class LoadAvg < ActiveRecord::Base
-  belongs_to :general
+  has_many :servers
 end

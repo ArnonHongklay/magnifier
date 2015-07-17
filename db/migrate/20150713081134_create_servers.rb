@@ -1,6 +1,7 @@
-class CreateGenerals < ActiveRecord::Migration
+class CreateServers < ActiveRecord::Migration
   def up
     create_table :cpus do |t|
+      t.belongs_to  :server,   index: true
       t.string :architecture
       t.string :cpu_op_mode_s
       t.string :byte_order
@@ -29,6 +30,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :memories do |t|
+      t.belongs_to  :server,   index: true
       t.string :mem_total
       t.string :mem_free
       t.string :mem_available
@@ -80,6 +82,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :disks do |t|
+      t.belongs_to  :server,   index: true
       t.string :file_system
       t.string :size
       t.string :used
@@ -91,6 +94,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :arps do |t|
+      t.belongs_to  :server,   index: true
       t.string :address
       t.string :hw_type
       t.string :hw_address
@@ -101,6 +105,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :bandwidths do |t|
+      t.belongs_to  :server,   index: true
       t.string :interface
       t.string :tx
       t.string :rx
@@ -109,6 +114,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :ios do |t|
+      t.belongs_to  :server,   index: true
       t.string :device
       t.string :reads
       t.string :writes
@@ -119,6 +125,7 @@ class CreateGenerals < ActiveRecord::Migration
     end
 
     create_table :load_avgs do |t|
+      t.belongs_to  :server,   index: true
       t.string :one_min_avg
       t.string :five_min_avg
       t.string :fifteen_min_avg
@@ -126,20 +133,13 @@ class CreateGenerals < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    create_table :generals do |t|
+    create_table :servers do |t|
       t.belongs_to  :account,   index: true
       t.string      :hostname
       t.string      :os
       t.string      :uptime
       t.string      :datetime
       t.string      :ip_address
-      t.belongs_to  :cpu,       index: true
-      t.belongs_to  :memory,    index: true
-      t.belongs_to  :disk,      index: true
-      t.belongs_to  :arp,       index: true
-      t.belongs_to  :bandwidth, index: true
-      t.belongs_to  :io,        index: true
-      t.belongs_to  :load_avg,  index: true
 
       t.timestamps null: false
     end
@@ -153,6 +153,6 @@ class CreateGenerals < ActiveRecord::Migration
     drop_table :bandwidths
     drop_table :ios
     drop_table :load_avgs
-    drop_table :generals
+    drop_table :servers
   end
 end

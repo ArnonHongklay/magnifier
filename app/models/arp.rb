@@ -1,4 +1,3 @@
 class Arp < ActiveRecord::Base
-  has_many :generals
-
+  has_many :servers
 end

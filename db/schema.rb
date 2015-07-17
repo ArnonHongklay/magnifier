@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150713081134) do
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
 
   create_table "arps", force: :cascade do |t|
+    t.integer  "server_id",  limit: 4
     t.string   "address",    limit: 255
     t.string   "hw_type",    limit: 255
     t.string   "hw_address", limit: 255
@@ -47,7 +48,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",             null: false
   end
 
+  add_index "arps", ["server_id"], name: "index_arps_on_server_id", using: :btree
+
   create_table "bandwidths", force: :cascade do |t|
+    t.integer  "server_id",  limit: 4
     t.string   "interface",  limit: 255
     t.string   "tx",         limit: 255
     t.string   "rx",         limit: 255
@@ -55,7 +59,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",             null: false
   end
 
+  add_index "bandwidths", ["server_id"], name: "index_bandwidths_on_server_id", using: :btree
+
   create_table "cpus", force: :cascade do |t|
+    t.integer  "server_id",           limit: 4
     t.string   "architecture",        limit: 255
     t.string   "cpu_op_mode_s",       limit: 255
     t.string   "byte_order",          limit: 255
@@ -83,7 +90,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",                      null: false
   end
 
+  add_index "cpus", ["server_id"], name: "index_cpus_on_server_id", using: :btree
+
   create_table "disks", force: :cascade do |t|
+    t.integer  "server_id",    limit: 4
     t.string   "file_system",  limit: 255
     t.string   "size",         limit: 255
     t.string   "used",         limit: 255
@@ -94,34 +104,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "generals", force: :cascade do |t|
-    t.integer  "account_id",   limit: 4
-    t.string   "hostname",     limit: 255
-    t.string   "os",           limit: 255
-    t.string   "uptime",       limit: 255
-    t.string   "datetime",     limit: 255
-    t.string   "ip_address",   limit: 255
-    t.integer  "cpu_id",       limit: 4
-    t.integer  "memory_id",    limit: 4
-    t.integer  "disk_id",      limit: 4
-    t.integer  "arp_id",       limit: 4
-    t.integer  "bandwidth_id", limit: 4
-    t.integer  "io_id",        limit: 4
-    t.integer  "load_avg_id",  limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  add_index "generals", ["account_id"], name: "index_generals_on_account_id", using: :btree
-  add_index "generals", ["arp_id"], name: "index_generals_on_arp_id", using: :btree
-  add_index "generals", ["bandwidth_id"], name: "index_generals_on_bandwidth_id", using: :btree
-  add_index "generals", ["cpu_id"], name: "index_generals_on_cpu_id", using: :btree
-  add_index "generals", ["disk_id"], name: "index_generals_on_disk_id", using: :btree
-  add_index "generals", ["io_id"], name: "index_generals_on_io_id", using: :btree
-  add_index "generals", ["load_avg_id"], name: "index_generals_on_load_avg_id", using: :btree
-  add_index "generals", ["memory_id"], name: "index_generals_on_memory_id", using: :btree
+  add_index "disks", ["server_id"], name: "index_disks_on_server_id", using: :btree
 
   create_table "ios", force: :cascade do |t|
+    t.integer  "server_id",   limit: 4
     t.string   "device",      limit: 255
     t.string   "reads",       limit: 255
     t.string   "writes",      limit: 255
@@ -131,7 +117,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",              null: false
   end
 
+  add_index "ios", ["server_id"], name: "index_ios_on_server_id", using: :btree
+
   create_table "load_avgs", force: :cascade do |t|
+    t.integer  "server_id",       limit: 4
     t.string   "one_min_avg",     limit: 255
     t.string   "five_min_avg",    limit: 255
     t.string   "fifteen_min_avg", limit: 255
@@ -139,7 +128,10 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_index "load_avgs", ["server_id"], name: "index_load_avgs_on_server_id", using: :btree
+
   create_table "memories", force: :cascade do |t|
+    t.integer  "server_id",          limit: 4
     t.string   "mem_total",          limit: 255
     t.string   "mem_free",           limit: 255
     t.string   "mem_available",      limit: 255
@@ -189,6 +181,21 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
+
+  add_index "memories", ["server_id"], name: "index_memories_on_server_id", using: :btree
+
+  create_table "servers", force: :cascade do |t|
+    t.integer  "account_id", limit: 4
+    t.string   "hostname",   limit: 255
+    t.string   "os",         limit: 255
+    t.string   "uptime",     limit: 255
+    t.string   "datetime",   limit: 255
+    t.string   "ip_address", limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "servers", ["account_id"], name: "index_servers_on_account_id", using: :btree
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", limit: 255,   null: false

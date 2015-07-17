@@ -1,4 +1,4 @@
-class General < ActiveRecord::Base
+class Server < ActiveRecord::Base
   has_many :accounts
   has_many :cpus
   has_many :memories
