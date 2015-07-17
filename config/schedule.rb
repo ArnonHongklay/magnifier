@@ -21,10 +21,6 @@
 
 
 # whenever --update-crontab ohmpieng --set environment=development
-# every 1.minutes do
-#   runner "EasyWorker.last_night_work"
-# end
-
 # * * * * * sleep 00; some_job
 # * * * * * sleep 15; some_job
 # * * * * * sleep 30; some_job
