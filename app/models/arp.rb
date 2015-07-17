@@ -1,3 +1,4 @@
 class Arp < ActiveRecord::Base
-  belongs_to :general
+  has_many :generals
+
 end
