@@ -65,7 +65,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
 
+group :test do
   gem 'rspec-rails'               # => Testing engine
   gem 'rspec-its'                 # => Rspec deprecated its
   gem 'rspec-collection_matchers' # => Rspec deprecated should
