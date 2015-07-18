@@ -124,7 +124,6 @@ class HardWorker
   end
 
   def self.bandwidth(server)
-
     url = "http://#{server.ip_address}:9999/bandwidth"
     response = Net::HTTP.get_response(URI.parse(url))
     items = JSON.parse(response.body)
@@ -139,7 +138,6 @@ class HardWorker
   end
 
   def self.io(server)
-
     url = "http://#{server.ip_address}:9999/io_stats"
     response = Net::HTTP.get_response(URI.parse(url))
     items = JSON.parse(response.body)
