@@ -4,11 +4,11 @@ class HardWorker
   def perform(server_id)
     server = Server.find(server_id)
 
-    HardWorker.cpu(server)
-    HardWorker.memory(server)
-    HardWorker.load_avg(server)
-    HardWorker.bandwidth(server)
-    HardWorker.io(server)
+    cpu(server)
+    memory(server)
+    load_avg(server)
+    bandwidth(server)
+    io(server)
   end
 
   def self.poller
@@ -21,7 +21,7 @@ class HardWorker
     end
   end
 
-  def self.cpu(server)
+  def cpu(server)
     cpu = server.cpus.first_or_create
 
     url = "http://#{server.ip_address}:9999/cpu_info"
@@ -54,7 +54,7 @@ class HardWorker
     cpu.save!
   end
 
-  def self.memory(server)
+  def memory(server)
     memory = server.memories.first_or_create
 
     url = "http://#{server.ip_address}:9999/memory_info"
@@ -110,7 +110,7 @@ class HardWorker
     memory.save!
   end
 
-  def self.load_avg(server)
+  def load_avg(server)
     load_avg = server.load_avgs.first_or_create
 
     url = "http://#{server.ip_address}:9999/load_avg"
@@ -123,13 +123,13 @@ class HardWorker
     load_avg.save!
   end
 
-  def self.bandwidth(server)
+  def bandwidth(server)
     url = "http://#{server.ip_address}:9999/bandwidth"
     response = Net::HTTP.get_response(URI.parse(url))
     items = JSON.parse(response.body)
 
     items.each do |item|
-      bandwidth = server.bandwidths.first_or_create
+      bandwidth = server.bandwidths.where(interface: item['interface']).first_or_create
       bandwidth.interface = item['interface']
       bandwidth.tx        = item['tx']
       bandwidth.rx        = item['rx']
@@ -137,13 +137,13 @@ class HardWorker
     end
   end
 
-  def self.io(server)
+  def io(server)
     url = "http://#{server.ip_address}:9999/io_stats"
     response = Net::HTTP.get_response(URI.parse(url))
     items = JSON.parse(response.body)
 
     items.each do |item|
-      io = server.ios.first_or_create
+      io = server.ios.where(device: item['device']).first_or_create
       io.device       = item['device']
       io.reads        = item['reads']
       io.writes       = item['writes']
