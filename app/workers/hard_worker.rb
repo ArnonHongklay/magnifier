@@ -6,9 +6,9 @@ class HardWorker
 
     HardWorker.cpu(server)
     HardWorker.memory(server)
+    HardWorker.load_avg(server)
     HardWorker.bandwidth(server)
     HardWorker.io(server)
-    HardWorker.load_avg(server)
   end
 
   def self.poller
@@ -110,45 +110,48 @@ class HardWorker
     memory.save!
   end
 
-  def self.bandwidth
-    bandwidth = server.bandwidths.first_or_create
-
-    url = "http://#{server.ip_address}:9999/bandwidth"
-    response = Net::HTTP.get_response(URI.parse(url))
-    items = JSON.parse(response.body)
-
-    items.each do |item|
-      bandwidth.interface = item['interface']
-      bandwidth.tx        = item['tx']
-      bandwidth.rx        = item['rx']
-    end
-  end
-
-  def self.io
-    io = server.ios.first_or_create
-
-    url = "http://#{server.ip_address}:9999/bandwidth"
-    response = Net::HTTP.get_response(URI.parse(url))
-    items = JSON.parse(response.body)
-
-    items.each do |item|
-      io.device       = item['device']
-      io.reads        = item['reads']
-      io.writes       = item['writes']
-      io.in_progress  = item['in_progress']
-      io.time_in_io   = item['time_in_io']
-    end
-  end
-
-  def self.load_avg
+  def self.load_avg(server)
     load_avg = server.load_avgs.first_or_create
 
-    url = "http://#{server.ip_address}:9999/bandwidth"
+    url = "http://#{server.ip_address}:9999/load_avg"
     response = Net::HTTP.get_response(URI.parse(url))
     items = JSON.parse(response.body)
 
     load_avg.one_min_avg      = items['1_min_avg']
     load_avg.five_min_avg     = items['5_min_avg']
     load_avg.fifteen_min_avg  = items['15_min_avg']
+    load_avg.save!
+  end
+
+  def self.bandwidth(server)
+
+    url = "http://#{server.ip_address}:9999/bandwidth"
+    response = Net::HTTP.get_response(URI.parse(url))
+    items = JSON.parse(response.body)
+
+    items.each do |item|
+      bandwidth = server.bandwidths.first_or_create
+      bandwidth.interface = item['interface']
+      bandwidth.tx        = item['tx']
+      bandwidth.rx        = item['rx']
+      bandwidth.save!
+    end
+  end
+
+  def self.io(server)
+
+    url = "http://#{server.ip_address}:9999/io_stats"
+    response = Net::HTTP.get_response(URI.parse(url))
+    items = JSON.parse(response.body)
+
+    items.each do |item|
+      io = server.ios.first_or_create
+      io.device       = item['device']
+      io.reads        = item['reads']
+      io.writes       = item['writes']
+      io.in_progress  = item['in_progress']
+      io.time_in_io   = item['time_in_io']
+      io.save!
+    end
   end
 end
