@@ -2,8 +2,13 @@ class HardWorker
   include Sidekiq::Worker
 
   def perform(server_id)
-    # server = Server.find(server_id)
-    # memory(server)
+    server = Server.find(server_id)
+
+    HardWorker.cpu(server)
+    HardWorker.memory(server)
+    HardWorker.bandwidth(server)
+    HardWorker.io(server)
+    HardWorker.load_avg(server)
   end
 
   def self.poller
@@ -11,10 +16,7 @@ class HardWorker
       next if account.servers.empty?
       account.servers.each do |server|
         next if server.ip_address.nil?
-        # perform_async(server.id)
-
-        cpu(server)
-        memory(server)
+        perform_async(server.id)
       end
     end
   end
@@ -49,6 +51,7 @@ class HardWorker
     cpu.l1i_cache           = items['L1i cache']
     cpu.l2_cache            = items['L2 cache']
     cpu.numa_node0_cpu_s    = items['NUMA node0 CPU(s)']
+    cpu.save!
   end
 
   def self.memory(server)
@@ -104,7 +107,48 @@ class HardWorker
     memory.direct_map_4k      = items['DirectMap4k'].gsub(/\s+/m, "")
     memory.direct_map_2M      = items['DirectMap2M'].gsub(/\s+/m, "")
     memory.direct_map_1G      = items['DirectMap1G'].gsub(/\s+/m, "")
-
     memory.save!
+  end
+
+  def self.bandwidth
+    bandwidth = server.bandwidths.first_or_create
+
+    url = "http://#{server.ip_address}:9999/bandwidth"
+    response = Net::HTTP.get_response(URI.parse(url))
+    items = JSON.parse(response.body)
+
+    items.each do |item|
+      bandwidth.interface = item['interface']
+      bandwidth.tx        = item['tx']
+      bandwidth.rx        = item['rx']
+    end
+  end
+
+  def self.io
+    io = server.ios.first_or_create
+
+    url = "http://#{server.ip_address}:9999/bandwidth"
+    response = Net::HTTP.get_response(URI.parse(url))
+    items = JSON.parse(response.body)
+
+    items.each do |item|
+      io.device       = item['device']
+      io.reads        = item['reads']
+      io.writes       = item['writes']
+      io.in_progress  = item['in_progress']
+      io.time_in_io   = item['time_in_io']
+    end
+  end
+
+  def self.load_avg
+    load_avg = server.load_avgs.first_or_create
+
+    url = "http://#{server.ip_address}:9999/bandwidth"
+    response = Net::HTTP.get_response(URI.parse(url))
+    items = JSON.parse(response.body)
+
+    load_avg.one_min_avg      = items['1_min_avg']
+    load_avg.five_min_avg     = items['5_min_avg']
+    load_avg.fifteen_min_avg  = items['15_min_avg']
   end
 end
