@@ -5,7 +5,7 @@ class EasyWorker
   def perform(server_id)
     server = Server.find(server_id)
 
-    self.update_server(server)
+    EasyWorker.update_server(server)
   end
 
   def self.poller
