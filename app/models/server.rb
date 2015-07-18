@@ -1,10 +1,10 @@
 class Server < ActiveRecord::Base
   belongs_to :account
-  belongs_to :cpu
-  belongs_to :memory
-  belongs_to :disk
-  belongs_to :arp
-  belongs_to :bandwidth
-  belongs_to :io
-  belongs_to :load_avg
+  has_many :cpus
+  has_many :memories
+  has_many :disks
+  has_many :arps
+  has_many :bandwidths
+  has_many :ios
+  has_many :load_avgs
 end

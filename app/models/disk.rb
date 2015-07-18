@@ -1,3 +1,3 @@
 class Disk < ActiveRecord::Base
-  has_many :servers
+  belongs_to :server
 end
