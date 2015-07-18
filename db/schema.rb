@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150713081134) do
     t.string   "vendor_id",           limit: 255
     t.string   "cpu_family",          limit: 255
     t.string   "model",               limit: 255
-    t.string   "model_name",          limit: 255
+    t.string   "m_name",              limit: 255
     t.string   "stepping",            limit: 255
     t.string   "cpu_mhz",             limit: 255
     t.string   "bogo_mips",           limit: 255

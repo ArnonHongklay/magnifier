@@ -14,7 +14,7 @@ class CreateServers < ActiveRecord::Migration
       t.string :vendor_id
       t.string :cpu_family
       t.string :model
-      t.string :model_name
+      t.string :m_name
       t.string :stepping
       t.string :cpu_mhz
       t.string :bogo_mips
