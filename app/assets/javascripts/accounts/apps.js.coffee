@@ -37,7 +37,7 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         account: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}.json"
-          
+
     .state 'account.index',
       url: '/index'
       templateUrl: 'accounts/index'
