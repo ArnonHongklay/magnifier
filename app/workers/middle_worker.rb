@@ -41,14 +41,14 @@ class MiddleWorker
     items = JSON.parse(response.body)
 
     items.each do |item|
-      cpu = server.cpus.where(device: item['mounted']).first_or_create
-      cpu.file_system   = item['file_system']
-      cpu.size          = item['size']
-      cpu.used          = item['used']
-      cpu.avail         = item['avail']
-      cpu.used_percent  = item['used_percent']
-      cpu.mounted       = item['mounted']
-      cpu.save!
+      disk = server.disks.where(mounted: item['mounted']).first_or_create
+      disk.file_system   = item['file_system']
+      disk.size          = item['size']
+      disk.used          = item['used']
+      disk.avail         = item['avail']
+      disk.used_percent  = item['used_percent']
+      disk.mounted       = item['mounted']
+      disk.save!
     end
   end
 end

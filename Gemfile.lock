@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: e812e07c9a1b244250fb9b6875a71acee1212f98
+  revision: 5a2b7b5bc683ae98a114958c3d1eb9c932234c56
   specs:
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
@@ -194,7 +194,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.2)
-    high_voltage (2.3.0)
+    high_voltage (2.4.0)
     hike (1.2.3)
     hiredis (0.6.0)
     hitimes (1.2.2)
@@ -268,13 +268,12 @@ GEM
       json (~> 1.3)
       omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
-    passenger (5.0.13)
+    passenger (5.0.14)
       rack
       rake (>= 0.8.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
-    puma (2.11.3)
-      rack (>= 1.1, < 2.0)
+    puma (2.12.2)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -327,18 +326,18 @@ GEM
       railties (>= 4.2.0, < 5)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
-    rspec-core (3.3.1)
+    rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
-    rspec-expectations (3.3.0)
+    rspec-expectations (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-its (1.2.0)
       rspec-core (>= 3.0.0)
       rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.3.1)
+    rspec-mocks (3.3.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
-    rspec-rails (3.3.2)
+    rspec-rails (3.3.3)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -357,12 +356,12 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sidekiq (3.4.1)
+    sidekiq (3.4.2)
       celluloid (~> 0.16.0)
-      connection_pool (>= 2.1.1)
-      json
-      redis (>= 3.0.6)
-      redis-namespace (>= 1.3.1)
+      connection_pool (~> 2.2, >= 2.2.0)
+      json (~> 1.0)
+      redis (~> 3.2, >= 3.2.1)
+      redis-namespace (~> 1.5, >= 1.5.2)
     sidekiq-failures (0.4.4)
       sidekiq (>= 2.16.0)
     simple_oauth (0.3.1)
@@ -421,7 +420,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    websocket-driver (0.6.0)
+    websocket-driver (0.6.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     websocket-rails (0.7.0)
@@ -497,3 +496,6 @@ DEPENDENCIES
   websocket-rails
   whenever
   wicked_pdf
+
+BUNDLED WITH
+   1.10.5

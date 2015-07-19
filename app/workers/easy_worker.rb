@@ -23,9 +23,10 @@ class EasyWorker
     response = Net::HTTP.get_response(URI.parse(url))
     item = JSON.parse(response.body)
 
-    server.os       = item['os']
+    server.os       = item['OS']
     server.hostname = item['Hostname']
     server.uptime   = item['Uptime']
     server.datetime = item['Server Time']
+    server.save!
   end
 end
