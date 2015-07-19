@@ -6,20 +6,20 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tr class="info">
-                <form class="form-horizontal">
+
                   <td widih="20%"><label>Email</label></td>
                     <td cwidth="70%">
                       <div class="form-group">
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                          <input type="email" class="form-control" placeholder="Email" ng-model="account.email">
                         </div>
                       </div>
                     </td>
                   <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-                </form>
+
               </tr>
-              <tr class="info">
-                <form class="form-horizontal">
+              <!-- <tr class="info">
+
                   <td widih="20%"><label>Password</label></td>
                     <td cwidth="70%">
                       <div class="form-group">
@@ -29,46 +29,33 @@
                       </div>
                     </td>
                   <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-                </form>
-              </tr>
+
+              </tr> -->
               <tr class="info">
-                <form class="form-horizontal">
+
                   <td widih="20%"><label>Name</label></td>
                     <td cwidth="70%">
                       <div class="form-group">
                         <div class="col-sm-10">
-                          <input type="name" class="form-control" id="inputEmail3" placeholder="Name">
+                          <input type="name" class="form-control" placeholder="Name" ng-model="account.name">
                         </div>
                       </div>
                     </td>
                   <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-                </form>
+
               </tr>
-              <tr class="info">
-                <form class="form-horizontal">
-                  <td widih="20%"><label>Lastname</label></td>
-                    <td cwidth="70%">
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="lastname" class="form-control" id="inputEmail3" placeholder="Lastname">
-                        </div>
-                      </div>
-                    </td>
-                  <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-                </form>
-              </tr>
-              <tr class="info">
-                <form class="form-horizontal">
+              <tr class="info" ng-repeat="server in servers">
+
                   <td widih="20%"><label>Address</label></td>
                     <td cwidth="70%">
                       <div class="form-group">
                         <div class="col-sm-10">
-                          <input type="address" class="form-control" id="inputEmail3" placeholder="Address">
+                          <input type="ip_address" class="form-control" placeholder="IP Address" ng-model="server.ip_address">
                         </div>
                       </div>
                     </td>
                   <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-                </form>
+
               </tr>
             </table>
           </div>
@@ -78,44 +65,43 @@
 
     <div class="row">
       <div class="col-sm-offset-2 col-sm-12">
-        <button type="button" class="btn btn-success btn-lg col-xs-8 col-md-8" id="addsv">Add Server</button>
+        <button type="button" class="btn btn-success btn-lg col-xs-8 col-md-8" ng-click="addServer()">Add Server</button>
       </div>
     </div>
   </div>
 
-<h1 class="text-success">PLEASE INPUT IP ADDRESS</h1>
-<div class="panel panel-default" id="aaa">
-  <div class="panel-body">
-    <form class="form-horizontal">
-      <div class="form-group has-feedback">
-        <label for="ipaddress" class="col-sm-2 control-label">IPAddress</label>
-        <div class="col-sm-10">
-          <input type="ipaddress" class="form-control" id="ipaddress" placeholder="IPAddress">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-primary" id="cmsv">Confirm</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<div class="panel panel-default" id="bbb">
-  <div class="panel-heading">
+  <div class="panel panel-default" ng-if="ipaddress">
+    <h1 class="text-success">PLEASE INPUT IP ADDRESS</h1>
     <div class="panel-body">
-      <div class="row">
-          <div class="table-responsive">
-            <table class="table table-condensed">
-              <tr>
-                <td><font size="6" class="text-success">Copy to your prompt</font></td>
-              </tr>
-              <tr class="warning" align="center">
-                <td class="text-danger"><!--<font size="6">--><h2>\curl -sSL https://get.ohmpieng.io | bash</h2><!--</font>--></td>
-              </tr>
-            </table>
+        <div class="form-group has-feedback">
+          <label for="ipaddress" class="col-sm-2 control-label">IPAddress</label>
+          <div class="row">
+            <div class="col-sm-4">
+              <input type="ipaddress" class="form-control" placeholder="IPAddress">
+            </div>
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-primary"  ng-click="newipaddress()">Confirm</button>
+            </div>
           </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default" ng-if="script">
+    <div class="panel-heading">
+      <div class="panel-body">
+        <div class="row">
+            <div class="table-responsive">
+              <table class="table table-condensed">
+                <tr>
+                  <td><font size="6" class="text-success">Copy to your prompt</font></td>
+                </tr>
+                <tr class="warning" align="center">
+                  <td class="text-danger"><!--<font size="6">--><h2>\curl -sSL https://get.ohmpieng.io | bash</h2><!--</font>--></td>
+                </tr>
+              </table>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-</div>

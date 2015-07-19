@@ -1,14 +1,17 @@
 
-ohmpieng.controller 'SettingCtrl', ($scope, account) ->
-  console.log $scope.user = account.data.user
-  $('h1').hide()
-  $('#aaa').hide()
-  $('#bbb').hide()
-  $('#addsv').click ->
-    $('h1').toggle 'slow'
-    $('#aaa').toggle 'slow'
-    $('#bbb').hide()
+ohmpieng.controller 'SettingCtrl', ($scope, account, servers) ->
+  $scope.account = account.data.account
+  $scope.servers = servers.data.server
+
+  $scope.ipaddress    = false
+  $scope.script       = false
+
+  $scope.addServer = ->
+    $scope.ipaddress  = true
+    $scope.script     = false
     return
-  $('#cmsv').click ->
-    $('#bbb').toggle 'slow'
+
+  $scope.newipaddress = ->
+    $scope.ipaddress  = true
+    $scope.script     = true
     return

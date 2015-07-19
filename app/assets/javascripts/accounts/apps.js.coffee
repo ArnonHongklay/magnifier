@@ -22,13 +22,13 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
   delete $httpProvider.defaults.headers.common['X-Requested-With']
 
   $stateProvider
-    .state 'profile',
-      url: '/profile'
-      templateUrl: 'accounts/profile'
-      controller: 'ProfileCtrl'
-      resolve:
-        profile: ($http, $stateParams) ->
-          $http.get "/profile.json"
+    # .state 'profile',
+    #   url: '/profile'
+    #   templateUrl: 'accounts/profile'
+    #   controller: 'ProfileCtrl'
+    #   resolve:
+    #     profile: ($http, $stateParams) ->
+    #       $http.get "/profile.json"
 
     .state 'account',
       url: '/:userId'
@@ -37,7 +37,7 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         account: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}.json"
-
+          
     .state 'account.index',
       url: '/index'
       templateUrl: 'accounts/index'
@@ -47,9 +47,6 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/dashboard'
       templateUrl: 'accounts/dashboard'
       controller: 'DashboardCtrl'
-      resolve:
-        arp: ($http, $stateParams) ->
-          $http.get "http://128.199.222.111:9999/arp_cache"
 
     .state 'account.report',
       url: '/report'
@@ -60,6 +57,9 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/setting'
       templateUrl: 'accounts/setting'
       controller: 'SettingCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/setting.json"
 
   $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')

@@ -1,7 +1,6 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, account, arp) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
   $scope.user = account.data.user
 
-  console.log arp.data
   dispatcher = new WebSocketRails("127.0.0.1:31337/websocket")
 
   dispatcher.on_open = (data) ->
