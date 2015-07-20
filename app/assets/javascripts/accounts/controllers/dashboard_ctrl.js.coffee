@@ -1,4 +1,4 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, account) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, account, servers) ->
   $scope.user = account.data.user
 
   dispatcher = new WebSocketRails("127.0.0.1:31337/websocket")

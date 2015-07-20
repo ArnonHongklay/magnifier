@@ -12,6 +12,12 @@ class DashboardController < ApplicationController
     #     tubesock.send_data "Hello, friend"
     #   end
     # end
-    render "accounts/dashboard"
+
+    @account = current_account
+
+    respond_to do |format|
+      format.html { render "accounts/dashboard" }
+      format.json { render "accounts/dashboard" }
+    end
   end
 end

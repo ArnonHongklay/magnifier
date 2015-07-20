@@ -42,16 +42,25 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/index'
       templateUrl: 'accounts/index'
       controller: 'IndexCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/index.json"
 
     .state 'account.dashboard',
       url: '/dashboard'
       templateUrl: 'accounts/dashboard'
       controller: 'DashboardCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/dashboard.json"
 
     .state 'account.report',
       url: '/report'
       templateUrl: 'accounts/report'
       controller: 'ReportCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/report.json"
 
     .state 'account.setting',
       url: '/setting'

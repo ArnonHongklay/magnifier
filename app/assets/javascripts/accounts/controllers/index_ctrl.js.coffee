@@ -1,4 +1,4 @@
-ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account) ->
+ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account, servers) ->
   $scope.user = account.data.user
 
   # $scope.url = "https://nonmadden.com/monitor/"

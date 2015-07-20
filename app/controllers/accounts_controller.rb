@@ -9,6 +9,8 @@ class AccountsController < ApplicationController
 
     # raise x.inspect
 
+    @account = current_account
+
     respond_to do |format|
       format.html
       format.json
@@ -16,6 +18,8 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @account = current_account
+
     respond_to do |format|
       format.html { redirect_to account_index_path(current_account.name) }
       format.json
@@ -23,6 +27,7 @@ class AccountsController < ApplicationController
   end
 
   def setting
+    @account = current_account
     respond_to do |format|
       format.html
       format.json
