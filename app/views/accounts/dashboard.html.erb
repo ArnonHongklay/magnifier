@@ -1,6 +1,6 @@
 <h2>Select Server Graphs</h2>
 <!--selet server-->
-<div class="row" id="box">
+<!-- <div class="row" id="box">
   <div class="col-xs-6 col-sm-3">
     <div class="col-md-3">
       <button class="btn btn-default active" type="button" id="seelectsvdh1">
@@ -57,14 +57,14 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
 <!--menu-->
 <div id='cssmenu'>
   <ul>
-     <li id="sv1" class="active"><a href='#'>Current</a></li>
-     <li id="sv2"><a href='#'>24 hours</a></li>
-     <li id="sv3"><a href='#'>7 days</a></li>
-     <li id="sv4"><a href='#'>1 mount</a></li>
+     <li id="sv1" class="active"><a href='#'>Server 1</a></li>
+     <li id="sv2"><a href='#'>Server 2</a></li>
+     <li id="sv3"><a href='#'>Server 3</a></li>
+     <li id="sv4"><a href='#'>Server 4</a></li>
   </ul>
 </div>
 <!--Data -->
@@ -91,84 +91,59 @@
         </div>
       </div>
     </div>
-      <div class="col-md-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <i class="icon-beer icon-large"></i>
-            Swap
-            <div class="panel-tools">
-              <div class="btn-group">
-                <a class="btn" href="#">
-                  <i class="fa fa-refresh"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <p>filename: /swapfile</p>
-            <p>type: file</p>
-            <p>size: 4194300</p>
-            <p>used: 0</p>
-            <p>priority: -1</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <i class="icon-beer icon-large"></i>
-            Internet
-            <div class="panel-tools">
-              <div class="btn-group">
-                <a class="btn" href="#">
-                  <i class="fa fa-refresh"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <nvd3-line-chart
-                  data="exampleData"
-                  id="x1"
-                  height="300"
-                  showXAxis="true"
-                  showYAxis="true"
-                  tooltips="true"
-                  interactive="true">
-                <svg></svg>
-              </nvd3-line-chart>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <i class="icon-beer icon-large"></i>
-            Disk
-            <div class="panel-tools">
-              <div class="btn-group">
-                <a class="btn" href="#">
-                  <i class="fa fa-refresh"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <meter chart="disk" class="gauge"></meter>
-            <p>Total: 500 GB</p>
-            <p>Used: 250 GB</p>
-            <p>Free: 250 GB</p>
-          </div>
-        </div>
-      </div>
-  </div>
-  <!--แถวแรก -->
-  <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
-          CPU LOAD <!--load_avg-->
+          IP Address
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <p>eth0: 128.199.222.111</p>
+          <p>eth1: 10.130.247.189</p>
+          <p>lo: 127.0.0.1</p>
+          <p>external: 128.199.222.111</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Disk
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <meter chart="disk" class="gauge"></meter>
+          <div>
+            Total: 500 GB
+            Used: 250 GB
+            Free: 250 GB
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--แถวแรก -->
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Internet
           <div class="panel-tools">
             <div class="btn-group">
               <a class="btn" href="#">
@@ -183,7 +158,26 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU LOAD
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
@@ -201,11 +195,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- แถวสอง -->
-  <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
@@ -219,21 +210,15 @@
           </div>
         </div>
         <div class="panel-body">
-          <nvd3-line-chart
-              data="exampleData"
-              id="x2"
-              height="300"
-              showXAxis="true"
-              showYAxis="true"
-              isArea="true"
-              tooltips="true"
-              interactive="true">
-            <svg></svg>
-          </nvd3-line-chart>
+          <monitor chart="chart" class="line-chart"></monitor>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+  </div>
+
+  <!-- แถวสอง -->
+  <div class="row">
+    <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
@@ -260,31 +245,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="icon-beer icon-large"></i>
-          IP Address
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="#">
-                <i class="fa fa-refresh"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <p>eth0: 128.199.222.111</p>
-          <p>eth1: 10.130.247.189</p>
-          <p>lo: 127.0.0.1</p>
-          <p>external: 128.199.222.111</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- แถวสาม -->
-  <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -313,6 +274,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -335,6 +297,29 @@
               showYAxis="true"
             <svg></svg>
           </nvd3-line-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Swap
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <p>filename: /swapfile</p>
+          <p>type: file</p>
+          <p>size: 4194300</p>
+          <p>used: 0</p>
+          <p>priority: -1</p>
         </div>
       </div>
     </div>

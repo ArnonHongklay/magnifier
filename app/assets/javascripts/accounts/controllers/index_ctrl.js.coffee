@@ -1,5 +1,5 @@
 ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account, servers) ->
-  $scope.user = account.data.user
+  console.log $scope.account = account.data
 
   # $scope.url = "https://nonmadden.com/monitor/"
 

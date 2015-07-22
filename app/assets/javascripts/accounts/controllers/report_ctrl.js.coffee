@@ -1,6 +1,6 @@
 
 ohmpieng.controller 'ReportCtrl', ($scope, $http, $filter, ngTableParams, account) ->
-  $scope.user = account.data.user
+  $scope.account = account.data
 
   $scope.xxx = [
     {name: "Moroni", age: 1},

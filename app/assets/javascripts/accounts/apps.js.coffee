@@ -58,9 +58,9 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/report'
       templateUrl: 'accounts/report'
       controller: 'ReportCtrl'
-      resolve:
-        servers: ($http, $stateParams) ->
-          $http.get "/#{$stateParams.userId}/report.json"
+      # resolve:
+      #   servers: ($http, $stateParams) ->
+      #     $http.get "/#{$stateParams.userId}/report.json"
 
     .state 'account.setting',
       url: '/setting'

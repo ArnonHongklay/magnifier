@@ -1,7 +1,9 @@
 
 ohmpieng.controller 'SettingCtrl', ($scope, account, servers) ->
-  $scope.account = account.data.account
+  $scope.account = account.data
   $scope.servers = servers.data.server
+
+  $scope.showEdit = false
 
   $scope.ipaddress    = false
   $scope.script       = false
