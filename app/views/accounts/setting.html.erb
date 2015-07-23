@@ -6,48 +6,38 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tr class="info">
-
-                  <td widih="20%"><label>Email {{showEdit}}</label></td>
-                    <td cwidth="70%">
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="email"
-                                 class="form-control"
-                                 placeholder="Email"
-                                 ng-model="account.email"
-                                 ng-if="showEdit == true"
-                                 ng-blur="showEdit = false">
-                          <span ng-if="showEdit == false">{{account.email}}</span>
-                        </div>
+                  <td widih="10%"><label>Email</label></td>
+                  <td cwidth="70%">
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <input type="email"
+                               class="form-control"
+                               placeholder="Email"
+                               ng-model="account.email"
+                               ng-show="showEdit">
+                        <span ng-hide="showEdit">{{account.email}}</span>
                       </div>
-                    </td>
-                  <td width="10%"><button type="button" class="btn btn-default" ng-click="showEdit = true">Edit</button></td>
+                    </div>
+                  </td>
+                  <td width="20%">
+                    <button type="button" class="btn btn-default" ng-click="showEdit = true">Edit</button>
+                    <button type="button" class="btn btn-success" ng-click="showEdit = false">Confirm</button>
+                  </td>
 
               </tr>
-              <!-- <tr class="info">
-
-                  <td widih="20%"><label>Password</label></td>
-                    <td cwidth="70%">
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputEmail3" placeholder="Password">
-                        </div>
-                      </div>
-                    </td>
-                  <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
-
-              </tr> -->
               <tr class="info">
 
                   <td widih="20%"><label>Name</label></td>
                     <td cwidth="70%">
                       <div class="form-group">
                         <div class="col-sm-10">
-                          <input type="name" class="form-control" placeholder="Name" ng-model="account.name">
+                          <input type="name" class="form-control" placeholder="Name" ng-model="account.name" ng-show="showEdit">
+                          <span ng-hide="showEdit">{{account.name}}</span>
                         </div>
                       </div>
                     </td>
-                  <td width="10%"><button type="button" class="btn btn-default">Edit</button></td>
+                  <td width="10%">
+                  </td>
 
               </tr>
               <tr class="info" ng-repeat="server in servers">
@@ -82,12 +72,14 @@
         <div class="form-group has-feedback">
           <label for="ipaddress" class="col-sm-2 control-label">IPAddress</label>
           <div class="row">
-            <div class="col-sm-4">
-              <input type="ipaddress" class="form-control" placeholder="IPAddress">
-            </div>
-            <div class="col-sm-2">
-              <button type="submit" class="btn btn-primary"  ng-click="newipaddress()">Confirm</button>
-            </div>
+            <form ng-submit="submit()">
+              <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="IPAddress" ng-model="ip">
+              </div>
+              <div class="col-sm-2">
+                <input type="submit" class="btn btn-primary" value="Submit" ng-click="newipaddress()" value="Confirm"/>
+              </div>
+            </form>
           </div>
         </div>
     </div>
@@ -103,7 +95,7 @@
                   <td><font size="6" class="text-success">Copy to your prompt</font></td>
                 </tr>
                 <tr class="warning" align="center">
-                  <td class="text-danger"><!--<font size="6">--><h2>\curl -sSL https://get.ohmpieng.io | bash</h2><!--</font>--></td>
+                  <td class="text-danger"><!--<font size="6">--><h2>\curl -sSL http://get.ohmpieng.io | bash</h2><!--</font>--></td>
                 </tr>
               </table>
             </div>

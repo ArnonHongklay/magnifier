@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
     get 'index'             => 'accounts#index',          as: :index
     get 'setting'           => 'accounts#setting',        as: :setting
+    put 'setting'           => 'accounts#setting_update'
     get 'community'         => 'conversation#index',      as: :community
     get 'report'            => 'report#index',            as: :report
     get 'dashboard'         => 'dashboard#index',         as: :dashboard

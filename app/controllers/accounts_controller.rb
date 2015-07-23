@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   before_action :authenticate_account!
   before_filter :verify_account!
+  skip_before_filter :verify_authenticity_token, :only => [:setting_update]
 
   def index
     # raise redis.inspect
@@ -32,6 +33,12 @@ class AccountsController < ApplicationController
       format.html
       format.json
     end
+  end
+
+  def setting_update
+    # raise params[:ip].inspect
+    account_id = Account.where(name: 'geek').first.id
+    Account.find(account_id).servers.create(ip_address: params[:ip])
   end
 
   # def profile
