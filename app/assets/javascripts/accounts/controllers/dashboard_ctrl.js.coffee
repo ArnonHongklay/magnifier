@@ -1,7 +1,14 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, account, arp) ->
-  $scope.user = account.data.user
+ohmpieng.controller 'DashboardCtrl', ($scope, account, servers) ->
+  $scope.account = account.data
+  console.log $scope.servers = servers.data.servers
 
-  console.log arp.data
+  $scope.currentIndex = 0
+  $scope.server = (index) ->
+    $scope.currentIndex = index
+
+  $scope.arps = $scope.servers[$scope.currentIndex].arps
+  # $scope.ips = $scope.servers[currentIndex].ips[0]
+
   dispatcher = new WebSocketRails("127.0.0.1:31337/websocket")
 
   dispatcher.on_open = (data) ->

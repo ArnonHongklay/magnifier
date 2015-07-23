@@ -1,5 +1,5 @@
-<h1>Setting Report</h1>
-<div class="col-md-12">
+<h2>Reports</h2>
+<!--<div class="col-md-12">
 <h3>Select Server</h3>
   <div class="row" id="box">
 
@@ -49,41 +49,54 @@
     </div>
 
   </div>
+
+</div> -->
+<div id='cssmenu'>
+  <ul>
+     <li id="sv1" class="active"><a href='#'>Server 1</a></li>
+     <li id="sv2"><a href='#'>Server 2</a></li>
+     <li id="sv3"><a href='#'>Server 3</a></li>
+     <li id="sv4"><a href='#'>Server 4</a></li>
+  </ul>
 </div>
-<div class="col-md-12">
-<h3>Select Type Report</h3>
-<div class="panel panel-default" id="box">
-  <div class="row" id="boxselect">
-    <div class="checkbox">
-      <div class="col-sm-offset-1 col-sm-4" id="boxcheck">
-        <input type="checkbox" checked>
-        <label id="checklabel">information</label>
-      </div>
-      <div class="col-sm-offset-1 col-sm-2" id="boxcheck">
-        <input type="checkbox">
-        <label id="checklabel">worning</label>
+<div class="panel panel-default" id="page">
+  <div class="row">
+    <div class="col-md-12">
+    <h3>Select Type Report</h3>
+    <div class="panel panel-default" id="box">
+      <div class="row" id="boxselect">
+        <div class="checkbox">
+          <div class="col-sm-offset-1 col-sm-4" id="boxcheck">
+            <input type="checkbox" checked>
+            <label id="checklabel">information</label>
+          </div>
+          <div class="col-sm-offset-1 col-sm-2" id="boxcheck">
+            <input type="checkbox">
+            <label id="checklabel">worning</label>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
-<div class="col-md-12">
-<h3>Select Report Detail</h3>
-<div class="panel panel-default" id="box">
-  <div class="row" id="boxselect">
-    <div class="radio">
-      <div class="col-sm-offset-1 col-sm-4" id="boxradio">
-        <input type="radio" name="1" id="inlineRadio1" value="option1" checked><label class="radio-inline" id="ralabel">ย้อนหลัง 1 วัน</label>
-      </div>
-      <div class="col-sm-offset-1 col-sm-4" id="boxradio">
-        <input type="radio" name="1" id="inlineRadio2" value="option2"><label class="radio-inline" id="ralabel">ย้อนหลัง 3 วัน</label>
-      </div>
-      <div class="col-sm-offset-1 col-sm-4" id="boxradio">
-        <input type="radio" name="1" id="inlineRadio3" value="option3" ><label class="radio-inline" id="ralabel">ย้อนหลัง 7 วัน</label>
+    </div>
+    <div class="col-md-12">
+    <h3>Select Report Detail</h3>
+    <div class="panel panel-default" id="box">
+      <div class="row" id="boxselect">
+        <div class="radio">
+          <div class="col-sm-offset-1 col-sm-4" id="boxradio">
+            <input type="radio" name="1" id="inlineRadio1" value="option1" checked><label class="radio-inline" id="ralabel">ย้อนหลัง 1 วัน</label>
+          </div>
+          <div class="col-sm-offset-1 col-sm-4" id="boxradio">
+            <input type="radio" name="1" id="inlineRadio2" value="option2"><label class="radio-inline" id="ralabel">ย้อนหลัง 3 วัน</label>
+          </div>
+          <div class="col-sm-offset-1 col-sm-4" id="boxradio">
+            <input type="radio" name="1" id="inlineRadio3" value="option3" ><label class="radio-inline" id="ralabel">ย้อนหลัง 7 วัน</label>
+          </div>
+        </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 </div>
 <div class="col-md-12">
   <button type="button" class="btn btn-success col-sm-offset-1 col-md-10 btn-lg" id="submitreport">Success</button>

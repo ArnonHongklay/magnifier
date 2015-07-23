@@ -15,5 +15,5 @@
 # = require bootstrap-sprockets
 # = require nprogress
 # = require nprogress-angular
-
+# = require jquery.noty.packaged.min
 # = require websocket_rails/main

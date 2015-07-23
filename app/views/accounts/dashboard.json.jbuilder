@@ -1,3 +1,4 @@
+# json.servers @account.servers
 json.servers @account.servers do |server|
   json.account_id server.account_id
   json.hostname   server.hostname
@@ -14,3 +15,6 @@ json.servers @account.servers do |server|
   json.load_avgs  server.load_avgs
   json.memories   server.memories
 end
+# json.array!(@account.servers) do |server|
+#   server
+# end

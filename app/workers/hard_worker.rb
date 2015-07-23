@@ -130,8 +130,8 @@ class HardWorker
     items = JSON.parse(response.body)
 
     items.each do |item|
-      bandwidth = server.bandwidths.where(interface: item['interface']).first_or_create
-      bandwidth.interface = item['interface']
+      bandwidth = server.bandwidths.where(interface: item['interface'].gsub(":", "")).first_or_create
+      bandwidth.interface = item['interface'].gsub(":", "")
       bandwidth.tx        = item['tx']
       bandwidth.rx        = item['rx']
       bandwidth.save!
