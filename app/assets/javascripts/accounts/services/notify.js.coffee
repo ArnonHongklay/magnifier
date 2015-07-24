@@ -1,7 +1,7 @@
 $.noty.defaults =
   layout: 'bottomRight'
   theme: 'defaultTheme'
-  type: 'error'
+  # type: 'error'
   # text: ''
   dismissQueue: true
   template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>'
