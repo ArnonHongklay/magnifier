@@ -5,14 +5,6 @@ class DashboardController < ApplicationController
   layout 'accounts'
 
   def index
-    # HardWorker.perform_async('bob', 5)
-
-    # hijack do |tubesock|
-    #   tubesock.onopen do
-    #     tubesock.send_data "Hello, friend"
-    #   end
-    # end
-
     @account = current_account
 
     respond_to do |format|

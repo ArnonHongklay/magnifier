@@ -1,6 +1,7 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, account, servers) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, $state, account, servers) ->
   $scope.account = account.data
-  console.log $scope.servers = servers.data.servers
+  $scope.servers = servers.data.servers
+  $state.go("account.setting") if $scope.servers.length == 0
 
   $scope.currentIndex = 0
   $scope.server = (index) ->
@@ -106,92 +107,3 @@ ohmpieng.controller 'DashboardCtrl', ($scope, account, servers) ->
       [ 50, 1231 ]
     ]
     }]
-
-  $('#seelectsvdh1').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seelectsvdh2").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh3").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh4").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-
-  $('#seelectsvdh2').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seelectsvdh1").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh3").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh4").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-
-  $('#seelectsvdh3').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seelectsvdh2").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh1").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh4").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-
-  $('#seelectsvdh4').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seelectsvdh1").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh3").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seelectsvdh2").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-
-
-  $('#sv1').click ->
-    $(this).addClass 'active'
-    $("#sv2").removeClass 'active'
-    $("#sv3").removeClass 'active'
-    $("#sv4").removeClass 'active'
-    return
-
-  $('#sv2').click ->
-    $(this).addClass 'active'
-    $('#sv1').removeClass 'active'
-    $('#sv3').removeClass 'active'
-    $('#sv4').removeClass 'active'
-    return
-
-  $('#sv3').click ->
-    $('#sv3').addClass 'active'
-    $("#sv2").removeClass 'active'
-    $("#sv1").removeClass 'active'
-    $("#sv4").removeClass 'active'
-    return
-
-  $('#sv4').click ->
-    $('#sv4').addClass 'active'
-    $("#sv2").removeClass 'active'
-    $("#sv3").removeClass 'active'
-    $("#sv1").removeClass 'active'
-    return

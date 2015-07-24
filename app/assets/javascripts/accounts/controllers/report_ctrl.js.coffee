@@ -1,6 +1,7 @@
-
-ohmpieng.controller 'ReportCtrl', ($scope, $http, $filter, ngTableParams, account) ->
+ohmpieng.controller 'ReportCtrl', ($scope, $state, $http, $filter, ngTableParams, account, servers) ->
   $scope.account = account.data
+  $scope.servers = servers.data.servers
+  $state.go("account.setting") if $scope.servers.length == 0
 
   $scope.xxx = [
     {name: "Moroni", age: 1},
@@ -9,37 +10,3 @@ ohmpieng.controller 'ReportCtrl', ($scope, $http, $filter, ngTableParams, accoun
     {name: "Nephi", age: 4},
     {name: "Enos", age: 5}
   ]
-
-  $('#seleteserver').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seleteserver2").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seleteserver3").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-  $('#seleteserver2').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seleteserver").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seleteserver3").css
-      'background-color': '#fff'
-      'color': '#444'
-    return
-  $('#seleteserver3').click ->
-    $(this).css
-      'background-color': '#47c9af'
-      'color': '#fff'
-    $("#seleteserver").css
-      'background-color': '#fff'
-      'color': '#444'
-    $("#seleteserver2").css
-      'background-color': '#fff'
-      'color': '#444'
-    return

@@ -1,6 +1,8 @@
 ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account, servers) ->
-  console.log $scope.account = account.data
-  console.log $scope.servers = servers.data.servers
+  $scope.account = account.data
+  $scope.servers = servers.data.servers
+  $state.go("account.setting") if $scope.servers.length == 0
+
 
   $scope.currentIndex = 0
   $scope.chose = (index) ->
