@@ -1,4 +1,3 @@
-
 ohmpieng.controller 'SettingCtrl', ($scope, $state, account, servers, $http) ->
   $scope.account = account.data
   $scope.servers = servers.data.server
@@ -16,10 +15,21 @@ ohmpieng.controller 'SettingCtrl', ($scope, $state, account, servers, $http) ->
     $scope.ipaddress  = true
     $scope.script     = true
 
+  $scope.save = ->
+    console.log "xxxx"
+    $http.put "#{$scope.account.name}/setting",
+      name: $scope.account.name
+      email: $scope.account.email
+    .success(result) ->
+      console.log result
+
   $scope.ip = ''
   $scope.submit = ->
     if @ip != ''
       $http.put "#{$scope.account.name}/setting",
         ip: @ip
-      .success (result) ->
+      .success(result) ->
+        console.log result
         $state.go('.')
+      .error(reslut) ->
+        console.log reslut

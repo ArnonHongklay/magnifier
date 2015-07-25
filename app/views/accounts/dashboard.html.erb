@@ -1,70 +1,7 @@
 <h2>Select Server Graphs</h2>
-<!--selet server-->
-<!-- <div class="row" id="box">
-  <div class="col-xs-6 col-sm-3">
-    <div class="col-md-3">
-      <button class="btn btn-default active" type="button" id="seelectsvdh1">
-      <div class="panel-body" align="center" id="iconserver">
-        <img alt="user" src="/assets/logoserver.png" />
-      </div>
-      <div class="panel-body" align="center" id="servername">
-        <span>
-          Medden
-        </span>
-      </div>
-      </button>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="col-md-3">
-      <button class="btn btn-default" type="button" id="seelectsvdh2">
-      <div class="panel-body" align="center" id="iconserver">
-        <img alt="user" src="/assets/logoserver.png" />
-      </div>
-      <div class="panel-body" align="center" id="servername">
-        <span>
-          Medden 2
-        </span>
-      </div>
-      </button>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="col-md-3">
-      <button class="btn btn-default" type="button" id="seelectsvdh3">
-      <div class="panel-body" align="center" id="iconserver">
-        <img alt="user" src="/assets/logoserver.png" />
-      </div>
-      <div class="panel-body" align="center" id="servername">
-        <span>
-          Medden 3
-        </span>
-      </div>
-      </button>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="col-md-3">
-      <button class="btn btn-default" type="button" id="seelectsvdh4">
-      <div class="panel-body" align="center" id="iconserver">
-        <img alt="user" src="/assets/logoserver.png" />
-      </div>
-      <div class="panel-body" align="center" id="servername">
-        <span>
-          Medden 4
-        </span>
-      </div>
-      </button>
-    </div>
-  </div>
-</div> -->
-<!--menu-->
 <div id='cssmenu'>
   <ul>
-     <li id="sv1" ng-click=""><a href='#'>Server 1</a></li>
-     <li id="sv2" ng-click=""><a href='#'>Server 2</a></li>
-     <li id="sv3"><a href='#'>Server 3</a></li>
-     <li id="sv4"><a href='#'>Server 4</a></li>
+     <li ng-repeat="server in servers" ng-class="{active: currentIndex==server.id}"><a>Server {{server.id}}</a></li>
   </ul>
 </div>
 <!--Data -->

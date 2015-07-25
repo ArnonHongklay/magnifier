@@ -36,16 +36,11 @@ class AccountsController < ApplicationController
   end
 
   def setting_update
-    # raise params[:ip].inspect
-    account_id = Account.where(name: 'geek').first.id
-    Account.find(account_id).servers.create(ip_address: params[:ip])
+    current_account.update(name: params[:name], email: params[:email]) unless params[:name].nil?
+    unless params[:ip].nil?
+      Account.find(current_account.id).servers.create(ip_address: params[:ip])
+      EasyWorker.perform_async Server.last.id
+    end
+    render :json
   end
-
-  # def profile
-  #   # respond_to do |format|
-  #   #   format.html
-  #   #   format.json
-  #   # end
-  #   # raise current_account.inspect
-  # end
 end
