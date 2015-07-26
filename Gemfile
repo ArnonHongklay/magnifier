@@ -48,8 +48,7 @@ gem 'whenever', :require => false
 gem 'sinatra', :require => nil
 
 gem 'redis'
-gem 'websocket-rails'
-
+# gem 'websocket-rails'
 gem 'wkhtmltopdf-binary'
 
 group :development, :test do

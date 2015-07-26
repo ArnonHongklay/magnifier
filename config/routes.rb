@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     }
 
   mount Sidekiq::Web => '/sidekiq'
-  match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
+  # match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
 
   root 'landing#index'
 
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/profile'        => 'accounts#profile',  as: :profile
 
   resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
+    get 'events'              => 'events#index'
     get 'index'               => 'accounts#index',          as: :index
     get 'setting'             => 'accounts#setting',        as: :setting
     put 'setting'             => 'accounts#setting_update'
