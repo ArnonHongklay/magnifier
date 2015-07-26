@@ -47,8 +47,8 @@ gem 'sidekiq-failures'
 gem 'whenever', :require => false
 gem 'sinatra', :require => nil
 
+gem 'hiredis'
 gem 'redis'
-# gem 'websocket-rails'
 gem 'wkhtmltopdf-binary'
 
 group :development, :test do

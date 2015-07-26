@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     }
 
   mount Sidekiq::Web => '/sidekiq'
-  # match "/websocket", to: WebsocketRails::ConnectionManager.new, via: [:get, :post]
 
   root 'landing#index'
 
