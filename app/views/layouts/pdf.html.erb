@@ -7,13 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <link rel="shortcut icon" href="/favicon.ico">
 
-  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
-  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" %>
-  <%= stylesheet_link_tag "accounts/apps", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "//connect.facebook.net/en_US/all.js" %>
-  <%= javascript_include_tag "//www.googleadservices.com/pagead/conversion_async.js" %>
-  <%= javascript_include_tag "accounts/vendor", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "accounts/apps", "data-turbolinks-track" => true %>
+  <%= wicked_pdf_stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
+  <%= wicked_pdf_stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" %>
+  <%= wicked_pdf_stylesheet_link_tag "accounts/apps", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <base href="/">
 </head>

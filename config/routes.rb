@@ -18,14 +18,16 @@ Rails.application.routes.draw do
   get '/profile'        => 'accounts#profile',  as: :profile
 
   resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
-    get 'index'             => 'accounts#index',          as: :index
-    get 'setting'           => 'accounts#setting',        as: :setting
-    put 'setting'           => 'accounts#setting_update'
-    get 'community'         => 'conversation#index',      as: :community
-    get 'report'            => 'report#index',            as: :report
-    get 'dashboard'         => 'dashboard#index',         as: :dashboard
-    get 'monitoring-tools'  => 'monitoring_tools#index',  as: :monitoring_tools
-    get 'ticket-support'    => 'ticket_support#index',    as: :ticket_support
+    get 'index'               => 'accounts#index',          as: :index
+    get 'setting'             => 'accounts#setting',        as: :setting
+    put 'setting'             => 'accounts#setting_update'
+    get 'community'           => 'conversation#index',      as: :community
+    get 'report'              => 'report#index',            as: :report
+    # get 'report/information'  => 'report#information',      as: :report_information
+    # get 'report/warning'      => 'report#warning',          as: :report_warning
+    get 'dashboard'           => 'dashboard#index',         as: :dashboard
+    get 'monitoring-tools'    => 'monitoring_tools#index',  as: :monitoring_tools
+    get 'ticket-support'      => 'ticket_support#index',    as: :ticket_support
 
     # resources :community
     # resources :dashboard
