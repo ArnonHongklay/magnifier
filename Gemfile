@@ -49,6 +49,7 @@ gem 'sinatra', :require => nil
 
 gem 'hiredis'
 gem 'redis'
+gem 'rb-fsevent'
 gem 'wkhtmltopdf-binary'
 
 group :development, :test do

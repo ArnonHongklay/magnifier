@@ -452,6 +452,7 @@ DEPENDENCIES
   passenger
   puma
   rails (= 4.2.3)
+  rb-fsevent
   redis
   rspec-collection_matchers
   rspec-its
