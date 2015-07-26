@@ -1,160 +1,242 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        RAM
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <meter chart="ram" class="gauge"></meter>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        CPU
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <meter chart="cpu" class="gauge"></meter>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        Disk
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <meter chart="disk" class="gauge"></meter>
-      </div>
-    </div>
-  </div>
+<h2>Select Server Graphs</h2>
+<div id='cssmenu'>
+  <ul>
+     <li ng-repeat="server in servers" ng-class="{active: currentIndex==server.id}"><a>Server {{server.id}}</a></li>
+  </ul>
 </div>
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        RAM
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
+<!--Data -->
+<div class="panel panel-default" id="page">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          General Information
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
         </div>
+        <div class="panel-body">
+          <p>OS: {{servers[currentIndex].os}}</p>
+          <p>Uptime: {{servers[currentIndex].uptime}}</p>
+          <p>Server Time: {{servers[currentIndex].datetime}}</p>
+          <p>Hostname: {{servers[currentIndex].hostname}}</p>
+          <p>IP Address: {{servers[currentIndex].ip_address}}</p>
+        </div>
       </div>
-      <div class="panel-body">
-        <monitor chart="chart" class="line-chart"></monitor>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Disk
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <meter chart="disk" class="gauge"></meter>
+          <div>
+            Total: 500 GB
+            Used: 250 GB
+            Free: 250 GB
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        Internet
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
+  <!--แถวแรก -->
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Internet
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
         </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
       </div>
-      <div class="panel-body">
-        <nvd3-line-chart
-              data="exampleData"
-              id="x1"
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU LOAD
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          RAM USAGE <!--current_ram-->
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          I/O
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <monitor chart="chart" class="line-chart"></monitor>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- แถวสอง -->
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Memory Information
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <nvd3-line-chart
+              data="isAreaExampleData"
+              id="isAreaDataExample"
               height="300"
               showXAxis="true"
               showYAxis="true"
+            <svg></svg>
+          </nvd3-line-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          Swap
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <p>filename: /swapfile</p>
+          <p>type: file</p>
+          <p>size: 4194300</p>
+          <p>used: 0</p>
+          <p>priority: -1</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          ARP Cache
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table ng-table border="1" width="100%">
+            <tr ng-repeat="arp in arps">
+              <td data-title="'Address'">{{arp.address}}</td>
+              <td data-title="'Mask'">{{arp.mask}}</td>
+              <td data-title="'HW Address'">{{arp.hw_address}}</td>
+              <td data-title="'HW Type'">{{arp.hw_type}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU Information
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <nvd3-line-chart
+              data="exampleData"
+              id="x2"
+              height="300"
+              showXAxis="true"
+              showYAxis="true"
+              isArea="true"
               tooltips="true"
               interactive="true">
             <svg></svg>
           </nvd3-line-chart>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        CPU
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
         </div>
-      </div>
-      <div class="panel-body">
-        <nvd3-line-chart
-            data="exampleData"
-            id="x2"
-            height="300"
-            showXAxis="true"
-            showYAxis="true"
-            isArea="true"
-            tooltips="true"
-            interactive="true">
-          <svg></svg>
-        </nvd3-line-chart>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-beer icon-large"></i>
-        ALL
-        <div class="panel-tools">
-          <div class="btn-group">
-            <a class="btn" href="#">
-              <i class="fa fa-refresh"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <nvd3-line-chart
-            data="isAreaExampleData"
-            id="isAreaDataExample"
-            height="300"
-            showXAxis="true"
-            showYAxis="true"
-          <svg></svg>
-        </nvd3-line-chart>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 
 ohmpieng.controller 'AccountCtrl', ($scope, $state, $stateParams, account) ->
-  $scope.user = account.data.user
+  $scope.account = account.data
 
   $scope.isCollapsed = ->
     $('#dock .launcher a').toggle()

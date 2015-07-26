@@ -54,9 +54,7 @@ gem 'resque-scheduler'                  # Job scheduling
 gem 'sinatra', :require => nil
 
 gem 'redis'
-# gem 'websocket-rails'
-
-gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'puma'                            # => Multi-threaded server for development
@@ -71,7 +69,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
 
+group :test do
   gem 'rspec-rails'               # => Testing engine
   gem 'rspec-its'                 # => Rspec deprecated its
   gem 'rspec-collection_matchers' # => Rspec deprecated should

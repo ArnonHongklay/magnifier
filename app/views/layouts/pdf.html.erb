@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="ohmpieng" ng-controller="AppCtrl">
-<!-- <html> -->
+<html>
 <head>
   <meta charset="utf-8" />
   <title>Ohmpieng.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <link rel="shortcut icon" href="/favicon.ico">
 
-  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
-  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css
-" %>
-  <%= stylesheet_link_tag "accounts/apps", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "//connect.facebook.net/en_US/all.js" %>
-  <%= javascript_include_tag "//www.googleadservices.com/pagead/conversion_async.js" %>
-  <%= javascript_include_tag "accounts/vendor", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "accounts/apps", "data-turbolinks-track" => true %>
+  <%= wicked_pdf_stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans" %> <!-- GOOGLE FONTS-->
+  <%= wicked_pdf_stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" %>
+  <%= wicked_pdf_stylesheet_link_tag "accounts/apps", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <base href="/">
 </head>
 <body responsive class="<%= yield (:body_class) %> {{stateName}} {{device}}">
-  <ui-view></ui-view>
+  <!-- <ui-view></ui-view> -->
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load('visualization', '1', {'packages':['corechart', 'gauge']});
-  </script>
+  <%= yield %>
 </body>
 </html>

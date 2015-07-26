@@ -1,13 +1,12 @@
-ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account) ->
-  $scope.user = account.data.user
+ohmpieng.controller 'IndexCtrl', ($scope, $state, $stateParams, $http, account, servers) ->
+  $scope.account = account.data
+  $scope.servers = servers.data.servers
+  $state.go("account.setting") if $scope.servers.length == 0
 
-  # $scope.url = "https://nonmadden.com/monitor/"
 
-  # $scope.osInfo = ->
-  #   $http.get("#{$scope.url}sh/issue.php").success(result) ->
-  #     console.log result
+  $scope.currentIndex = 0
+  $scope.chose = (index) ->
+    $scope.currentIndex = index
 
-  # $scope.getProcesses = ->
-    # $http.get("#{$scope.url}sh/ps.php").success(result) ->
-    #   console.log result
-
+  $scope.parseId = (val) ->
+    parseInt(val)

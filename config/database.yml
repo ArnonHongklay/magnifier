@@ -14,7 +14,7 @@ default: &default
 
 development:
   <<: *default
-  database: ohmpieng_development
+  database: ohmpieng
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -28,4 +28,4 @@ test:
 production:
   <<: *default
   database: ohmpieng_production
-  password: "oomN8iy[z,"
+  password: "xxx"

@@ -13,7 +13,6 @@ window.ohmpieng = angular.module("ohmpieng", [
   'gettext',
   'angulartics',
   'templates',
-  # 'nvd3ChartDirectives',
   'nprogress-rails'
 ])
 
@@ -22,14 +21,6 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
   delete $httpProvider.defaults.headers.common['X-Requested-With']
 
   $stateProvider
-    .state 'profile',
-      url: '/profile'
-      templateUrl: 'accounts/profile'
-      controller: 'ProfileCtrl'
-      resolve:
-        profile: ($http, $stateParams) ->
-          $http.get "/profile.json"
-
     .state 'account',
       url: '/:userId'
       templateUrl: 'accounts/nav'
@@ -42,24 +33,33 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       url: '/index'
       templateUrl: 'accounts/index'
       controller: 'IndexCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/index.json"
 
     .state 'account.dashboard',
       url: '/dashboard'
       templateUrl: 'accounts/dashboard'
       controller: 'DashboardCtrl'
       resolve:
-        arp: ($http, $stateParams) ->
-          $http.get "http://128.199.222.111:9999/arp_cache"
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/dashboard.json"
 
     .state 'account.report',
       url: '/report'
       templateUrl: 'accounts/report'
       controller: 'ReportCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/dashboard.json"
 
     .state 'account.setting',
       url: '/setting'
       templateUrl: 'accounts/setting'
       controller: 'SettingCtrl'
+      resolve:
+        servers: ($http, $stateParams) ->
+          $http.get "/#{$stateParams.userId}/setting.json"
 
   $urlRouterProvider.otherwise '/'
   $locationProvider.html5Mode(true).hashPrefix('!')

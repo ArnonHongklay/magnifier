@@ -1,1 +1,101 @@
-asdf
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="panel-heading">
+          <!--<p align="center" size="34"><b>--><h2>การตั้งค่าบัญชีผู้ใช้</h2><!--</b></p>-->
+          <div class="pull-right">
+            <a class="btn btn-default" ng-click="showEdit = true">Edit</a>
+            <a class="btn btn-success" ng-click="showEdit = false; save()">Confirm</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <tr class="info">
+                <td widih="10%"><label>Email</label></td>
+                <td cwidth="70%">
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      <input type="email"
+                             class="form-control"
+                             placeholder="Email"
+                             ng-model="account.email"
+                             ng-show="showEdit">
+                      <span ng-hide="showEdit">{{account.email}}</span>
+                    </div>
+                  </div>
+                </td>
+                <td width="20%">&nbsp;</td>
+              </tr>
+              <tr class="info">
+                <td widih="20%"><label>Name</label></td>
+                  <td cwidth="70%">
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <input type="name"
+                               class="form-control"
+                               placeholder="Name"
+                               ng-model="account.name"
+                               ng-show="showEdit">
+                        <span ng-hide="showEdit">{{account.name}}</span>
+                      </div>
+                    </div>
+                  </td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr class="info" ng-repeat="server in servers">
+                <td widih="20%"><label>Address</label></td>
+                  <td cwidth="70%">
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <input type="ip_address" class="form-control" placeholder="IP Address" ng-model="server.ip_address">
+                      </div>
+                    </div>
+                  </td>
+                <td><button type="button" class="btn btn-default">Edit</button></td>
+              </tr>
+            </table>
+          </div>
+
+          <button type="button" class="btn btn-success btn-lg" ng-click="addServer()">Add Server</button>
+          <br><br>
+
+                <div class="panel panel-default" ng-if="ipaddress">
+                  <h1 class="text-success">&nbsp;&nbsp;PLEASE INPUT IP ADDRESS</h1>
+                  <div class="panel-body">
+                      <div class="form-group has-feedback">
+                        <label for="ipaddress" class="col-sm-2 control-label">IPAddress</label>
+                        <div class="row">
+                          <form ng-submit="submit()">
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" placeholder="IPAddress" ng-model="ip">
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="submit" class="btn btn-primary" value="Submit" ng-click="newipaddress()" value="Confirm"/>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default" ng-if="script">
+                  <div class="panel-heading">
+                    <div class="panel-body">
+                      <div class="row">
+                          <div class="table-responsive">
+                            <table class="table table-condensed">
+                              <tr>
+                                <td><font size="6" class="text-success">Copy to your prompt</font></td>
+                              </tr>
+                              <tr class="warning" align="center">
+                                <td class="text-danger"><!--<font size="6">--><h2>\curl -sSL http://get.ohmpieng.io | bash</h2><!--</font>--></td>
+                              </tr>
+                            </table>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>

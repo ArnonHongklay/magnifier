@@ -1,22 +1,164 @@
+<h2>Reports</h2>
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <i class="icon-beer icon-large"></i>
-    System usage
-    <div class="panel-tools">
-      <div class="btn-group">
-        <a class="btn" href="#">
-          <i class="fa fa-refresh"></i>
-        </a>
+  <div class="panel-body">
+    <div class="row-fluid">
+      <div class="col-md-3 col-md-offset-0">
+        <p class="text-left"><%= image_tag "user.png", alt: "Ohmpieng" %><!--<img src="user.png" alt="logo" class="img-rounded">--></p>
+      </div>
+      <div class="col-md-3 col-md-offset-6">
+        <p class="text-right">30-5-58/10:00AM<br>
+        Geek</p>
+      </div>
+    </div>
+    <div class="row-fluid" align="left">
+      <p class="text-center"><font size="5"><b>รายงานการย้อนหลัง 7 วัน</b></font></p>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-0">
+        <h4>User: Geek</h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="text-left"><h4>ServerName: TestServer1</h4></p>
+        <div class="table-responsive">
+          <table ng-table class="table table-condensed table-striped table-bordered">
+            <tr>
+              <th align="center" class="active" colspan="2">ข้อมูลเครื่อง</th>
+            </tr>
+            <tr>
+              <th class="active" width="30%">Hostname</th>
+              <td>demos</td>
+            </tr>
+            <tr>
+              <th class="active" width="30%">OS</th>
+              <td>Ubuntu 14.04.1 LTS 3.13.0-43-generic</td>
+            </tr>
+            <tr>
+              <th class="active" width="30%">￼Uptime</th>
+              <td>10 days 12 hours 59 minutes and 1 seconds</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table ng-table class="table table-condensed table-striped table-bordered">
+            <tr>
+              <th align="center" class="active" colspan="2">CPU</th>
+            </tr>
+            <tr>
+              <th class="active" width="30%">Total</th>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <th class="active" width="30%">Process</th>
+              <td>5%</td>
+            </tr>
+            <tr>
+              <th align="left" class="active" width="30%">Free</th>
+              <td>95%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table ng-table class="table table-condensed table-striped table-bordered">
+            <tr>
+              <th align="center" class="active" colspan="2">Ram</th>
+            </tr>
+            <tr>
+              <th class="active" width="30%">Total</th>
+              <td>490 MB</td>
+            </tr>
+            <tr>
+              <th class="active" width="30%">Used</th>
+              <td>112 MB (22%)</td>
+            </tr>
+            <tr>
+              <th align="left" class="active" width="30%">Free</th>
+              <td>377 MB of 490MB</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table ng-table class="table table-condensed table-striped table-bordered">
+            <tr>
+              <th align="center" class="active" colspan="2">IP address</th>
+            </tr>
+            <tr>
+              <th class="active" width="30%">external</th>
+              <td>104.131.107.150</td>
+            </tr>
+            <tr>
+              <th class="active" width="30%">lo</th>
+              <td>127.0.0.1</td>
+            </tr>
+            <tr>
+              <th align="left" class="active" width="30%">eth0</th>
+              <td>104.131.107.150</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-  <div class="panel-body">
-    <table ng-table class="table table-hover table-striped table-condensed table-bordered">
-      <tr ng-repeat="x in xxx">
-        <td data-title="'Name'">{{x.name}}</td>
-        <td data-title="'Age'">{{x.age}}</td>
-      </tr>
-    </table>
-  </div>
 </div>
 
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row-fluid">
+      <div class="col-md-3 col-md-offset-0">
+        <p class="text-left"><%= image_tag "user.png", alt: "Ohmpieng" %><!--<img src="user.png" alt="logo" class="img-rounded">--></p>
+      </div>
+      <div class="col-md-3 col-md-offset-6">
+        <p class="text-right">30-5-58/10:00AM<br>
+        Geek</p>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <p class="text-center"><font size="5"><b>รายงานการแจ้งเตือนย้อนหลัง 7 วัน</b></font></p>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-0">
+        <h4>User: Geek</h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="text-left"><h4>ServerName: TestServer1</h4></p>
+        <div class="table-responsive">
+          <table ng-table class="table table-hover table-striped table-condensed table-bordered">
+            <tr class="warning"><p class="text-center"><b>Worning</b></p>
+              <td data-title="'ID'" align="center" width="10%">1</td>
+              <td data-title="'DATE'" align="center" width="20%">26/5/58</td>
+              <td data-title="'Count'" align="center" width="10%">2</td>
+              <td data-title="'Details'">CPU ทำงานเกิน 80%</td>
+            </tr>
+            <tr class="warning">
+              <td data-title="'ID'" align="center" width="10%">2</td>
+              <td data-title="'DATE'" align="center" width="20%">27/5/58</td>
+              <td data-title="'Count'" align="center" width="10%">1</td>
+              <td data-title="'Details'">HDD ใกล้จะเต็ม</td>
+            </tr>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table ng-table class="table table-hover table-striped table-condensed table-bordered">
+            <tr class="danger"><p class="text-center"><b>Danger</b></p>
+              <td data-title="'ID'" align="center" width="10%">1</td>
+              <td data-title="'DATE'" align="center" width="20%">26/5/58</td>
+              <td data-title="'Count'" align="center" width="10%">2</td>
+              <td data-title="'Details'">CPU ทำงาน 100%</td>
+            </tr>
+            <tr class="danger">
+              <td data-title="'ID'" align="center" width="10%">2</td>
+              <td data-title="'DATE'" align="center" width="20%">27/5/58</td>
+              <td data-title="'Count'" align="center" width="10%">1</td>
+              <td data-title="'Details'">HDD เต็ม</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
