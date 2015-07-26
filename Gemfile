@@ -42,15 +42,9 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
-# gem 'sidekiq'
-# gem 'sidekiq-failures'
-# gem 'whenever', :require => false
 gem 'resque', github: "resque/resque"   # Jobs
 gem 'resque-web', require: 'resque_web' # Jobs monitoring
 gem 'resque-scheduler'                  # Job scheduling
-# gem 'resque_mailer'                     # mailer jobs
-# gem 'resque-retry'                      # Retrying failed jobs
-# gem 'resque-multi-job-forks'            # Don't fork so often
 gem 'sinatra', :require => nil
 
 gem 'redis'
