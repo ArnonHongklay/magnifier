@@ -4,12 +4,6 @@ class AccountsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:setting_update]
 
   def index
-    # raise redis.inspect
-    # redis.set("mykey", "hello world")
-    # x = redis.get("mykey")
-
-    # raise x.inspect
-
     @account = current_account
 
     respond_to do |format|
