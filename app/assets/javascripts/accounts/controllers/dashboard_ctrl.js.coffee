@@ -1,4 +1,4 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, $state, account, servers) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, $window, account, servers) ->
   $scope.account = account.data
   $scope.servers = servers.data.servers
   $state.go("account.setting") if $scope.servers.length == 0
@@ -17,6 +17,10 @@ ohmpieng.controller 'DashboardCtrl', ($scope, $state, account, servers) ->
   #
   # dispatcher.bind 'tasks.create_success', (task) ->
   #   console.log 'successfully created ' + task.name
+
+  events = new $window.EventSource("/#{$stateParams.userId}/events.json")
+  events.addEventListener 'events', (e) ->
+    alert e
 
   $scope.disk = {
     data: { text: "Disk", value: 50 }

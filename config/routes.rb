@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get '/profile'        => 'accounts#profile',  as: :profile
 
   resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
-    get 'events'              => 'events#index'
     get 'index'               => 'accounts#index',          as: :index
     get 'setting'             => 'accounts#setting',        as: :setting
     put 'setting'             => 'accounts#setting_update'
@@ -26,6 +25,7 @@ Rails.application.routes.draw do
     # get 'report/information'  => 'report#information',      as: :report_information
     # get 'report/warning'      => 'report#warning',          as: :report_warning
     get 'dashboard'           => 'dashboard#index',         as: :dashboard
+    get 'events'              => 'dashboard#events',        as: :dashboard_events
     get 'monitoring-tools'    => 'monitoring_tools#index',  as: :monitoring_tools
     get 'ticket-support'      => 'ticket_support#index',    as: :ticket_support
 
