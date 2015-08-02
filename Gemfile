@@ -50,7 +50,7 @@ gem 'sinatra', :require => nil
 gem 'hiredis'
 gem 'redis'
 gem 'rb-fsevent'
-gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
 
 group :development, :test do
   gem 'puma'                            # => Multi-threaded server for development
