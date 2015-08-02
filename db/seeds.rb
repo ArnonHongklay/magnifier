@@ -12,6 +12,7 @@ user.confirmed_at = Time.now
 user.save
 
 Account.first.servers.create(ip_address: '128.199.222.111')
+EasyWorker.perform_async(Account.first.servers.first.id)
 
 user = Account.new(email: 'test@ohmpieng.io', password: '12345678', password_confirmation: '12345678', name: "test")
 user.confirmed_at = Time.now
