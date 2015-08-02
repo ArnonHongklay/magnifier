@@ -16,12 +16,12 @@ class DashboardController < ApplicationController
         case r
         when /mem_free/
           @mem_free.push([
-            r.gsub("mem_free: ", ""),
+            Time.at(r.gsub("mem_free: ", "").to_i).to_formatted_s(:short),
             $redis.hget("Server #{s.id} Memory", r).gsub("kB", "").to_i * 0.001024
           ])
         when /mem_available/
           @mem_available.push([
-            r.gsub("mem_available: ", ""),
+            Time.at(r.gsub("mem_available: ", "").to_i).to_formatted_s(:short),
             $redis.hget("Server #{s.id} Memory", r).gsub("kB", "").to_i * 0.001024
           ])
         end
