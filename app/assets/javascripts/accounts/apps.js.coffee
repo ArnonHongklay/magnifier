@@ -44,6 +44,8 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         servers: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}/dashboard.json"
+        events: ($window, $stateParams) ->
+          new $window.EventSource("/#{$stateParams.userId}/dashboard/events.json")
 
     .state 'account.report',
       url: '/report'

@@ -55,45 +55,6 @@
   </div>
   <!--แถวแรก -->
   <div class="row">
-
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="icon-beer icon-large"></i>
-          Internet
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="#">
-                <i class="fa fa-refresh"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <monitor chart="chart" class="line-chart"></monitor>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="icon-beer icon-large"></i>
-          CPU LOAD
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="#">
-                <i class="fa fa-refresh"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <monitor chart="chart" class="line-chart"></monitor>
-        </div>
-      </div>
-    </div>
-
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -107,8 +68,15 @@
             </div>
           </div>
         </div>
+
         <div class="panel-body">
-          <monitor chart="chart" class="line-chart"></monitor>
+          <monitor chart="mem" class="line-chart"></monitor>
+        </div>
+        <div class="panel-body">
+          <monitor chart="memfree" class="line-chart"></monitor>
+        </div>
+        <div class="panel-body">
+          <monitor chart="memavailable" class="line-chart"></monitor>
         </div>
       </div>
     </div>
@@ -127,7 +95,7 @@
           </div>
         </div>
         <div class="panel-body">
-          <monitor chart="chart" class="line-chart"></monitor>
+          <monitor chart="io" class="line-chart"></monitor>
         </div>
       </div>
     </div>
@@ -150,14 +118,33 @@
           </div>
         </div>
         <div class="panel-body">
-          <nvd3-line-chart
-              data="isAreaExampleData"
-              id="isAreaDataExample"
-              height="300"
-              showXAxis="true"
-              showYAxis="true"
-            <svg></svg>
-          </nvd3-line-chart>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          CPU Information
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table ng-table border="1" width="100%">
+            <tr ng-repeat="cpu in cpus">
+              <td data-title="'Architecture'">{{cpu.architecture}}</td>
+              <td data-title="'CPU op mode'">{{cpu.cpu_op_mode_s}}</td>
+              <td data-title="'vendor id'">{{cpu.vendor_id}}</td>
+              <td data-title="'m name'">{{cpu.m_name}}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
@@ -207,35 +194,6 @@
               <td data-title="'HW Type'">{{arp.hw_type}}</td>
             </tr>
           </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="icon-beer icon-large"></i>
-          CPU Information
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="#">
-                <i class="fa fa-refresh"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <nvd3-line-chart
-              data="exampleData"
-              id="x2"
-              height="300"
-              showXAxis="true"
-              showYAxis="true"
-              isArea="true"
-              tooltips="true"
-              interactive="true">
-            <svg></svg>
-          </nvd3-line-chart>
         </div>
       </div>
     </div>

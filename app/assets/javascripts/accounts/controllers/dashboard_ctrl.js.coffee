@@ -1,6 +1,11 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, $window, account, servers) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, servers, events) ->
   $scope.account = account.data
   $scope.servers = servers.data.servers
+  $scope.mem            = servers.data.mem
+  $scope.mem_free       = servers.data.mem_free
+  $scope.mem_available  = servers.data.mem_available
+  $scope.io             = servers.data.io
+
   $state.go("account.setting") if $scope.servers.length == 0
 
   $scope.currentIndex = 0
@@ -9,20 +14,41 @@ ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, $window, acc
 
   $scope.arps = $scope.servers[$scope.currentIndex].arps
 
-  # task =
-  #   name: 'Start taking advantage of WebSockets'
-  #   completed: false
-  # dispatcher = new WebSocketRails('127.0.0.1:31337/websocket')
-  # dispatcher.trigger 'tasks.create', task
-  #
-  # dispatcher.bind 'tasks.create_success', (task) ->
-  #   console.log 'successfully created ' + task.name
-
-  events = new $window.EventSource("/#{$stateParams.userId}/events.json")
-  events.addEventListener 'events', (e) ->
-    alert e
+  events.addEventListener 'hello', (e) ->
+    console.log e.data
 
   $scope.disk = {
     data: { text: "Disk", value: 50 }
     max: 30
+  }
+
+  $scope.mem = {
+    chart: { title: "Box Office Earnings in First Two Weeks of Opening", subtitle: "in millions of dollars (USD)"}
+    column_vertical:   { type: "string", text: "Memory" }
+    column_horizontal: { type: "number", text: "mem_free (MB)"}
+    column_horizontal2: { type: "number", text: "mem_available (MB)"}
+    data: $scope.mem
+  }
+
+  $scope.memfree = {
+    chart: { title: "Box Office Earnings in First Two Weeks of Opening", subtitle: "in millions of dollars (USD)"}
+    column_vertical:   { type: "string", text: "Memory" }
+    column_horizontal: { type: "number", text: "mem_free (MB)"}
+    data: $scope.mem_free
+  }
+
+  $scope.memavailable = {
+    chart: { title: "Box Office Earnings in First Two Weeks of Opening", subtitle: "in millions of dollars (USD)"}
+    column_vertical:   { type: "string", text: "Memory" }
+    column_horizontal: { type: "number", text: "mem_available (MB)"}
+    data: $scope.mem_available
+  }
+
+
+  $scope.io = {
+    chart: { title: "Box Office Earnings in First Two Weeks of Opening", subtitle: "in millions of dollars (USD)"}
+    column_vertical:   { type: "number", text: "Memory" }
+    column_horizontal: { type: "number", text: "reads (MB)"}
+    column_horizontal2: { type: "number", text: "writes (MB)"}
+    data: $scope.io
   }

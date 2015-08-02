@@ -15,6 +15,8 @@ json.servers @account.servers do |server|
   json.load_avgs  server.load_avgs
   json.memories   server.memories
 end
-# json.array!(@account.servers) do |server|
-#   server
-# end
+
+json.mem            @mem.last(100)
+json.mem_free       @mem_free.last(100)
+json.mem_available  @mem_available.last(100)
+json.io             @io.last(100)
