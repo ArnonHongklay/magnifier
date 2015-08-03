@@ -1,5 +1,6 @@
 # json.servers @account.servers
 json.servers @account.servers do |server|
+  json.id server.id
   json.account_id server.account_id
   json.hostname   server.hostname
   json.os         server.os

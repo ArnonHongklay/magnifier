@@ -4,8 +4,9 @@ class ReportController < ApplicationController
   layout 'accounts'
 
   def index
-    @account = account
+    @account = current_account
     respond_to do |format|
+      format.json { render "accounts/report" }
       format.html { render "accounts/report" }
       format.pdf do
         render pdf: "report",

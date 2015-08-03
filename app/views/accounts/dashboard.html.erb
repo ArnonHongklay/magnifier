@@ -1,7 +1,9 @@
 <h2>Select Server Graphs</h2>
 <div id='cssmenu'>
   <ul>
-     <li ng-repeat="server in servers" ng-class="{active: currentIndex==server.id}"><a>Server {{server.id}}</a></li>
+     <li ng-repeat="server in servers"
+         ng-class="{ active: currentIndex == $index }"
+         ng-click="selected($index)"><a>{{server.ip_address}}</a></li>
   </ul>
 </div>
 <!--Data -->

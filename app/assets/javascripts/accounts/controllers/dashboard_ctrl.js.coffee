@@ -1,6 +1,6 @@
 ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, servers, events) ->
-  $scope.account = account.data
-  $scope.servers = servers.data.servers
+  $scope.account        = account.data
+  $scope.servers        = servers.data.servers
   $scope.mem            = servers.data.mem
   $scope.mem_free       = servers.data.mem_free
   $scope.mem_available  = servers.data.mem_available
@@ -9,10 +9,18 @@ ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, ser
   $state.go("account.setting") if $scope.servers.length == 0
 
   $scope.currentIndex = 0
-  $scope.server = (index) ->
+  $scope.selected = (index) ->
+    console.log index
     $scope.currentIndex = index
 
-  $scope.arps = $scope.servers[$scope.currentIndex].arps
+  $scope.arps       = $scope.servers[$scope.currentIndex].arps
+  $scope.bandwidths = $scope.servers[$scope.currentIndex].bandwidths
+  $scope.cpus       = $scope.servers[$scope.currentIndex].cpus
+  $scope.disks      = $scope.servers[$scope.currentIndex].disks
+  $scope.ios        = $scope.servers[$scope.currentIndex].ios
+  $scope.load_avgs  = $scope.servers[$scope.currentIndex].load_avgs
+  $scope.memories   = $scope.servers[$scope.currentIndex].memories
+
 
   events.addEventListener 'hello', (e) ->
     console.log e.data

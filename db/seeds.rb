@@ -6,14 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = Account.new(email: 'geek@ohmpieng.io', password: '87654321', password_confirmation: '87654321', name: "geek")
-user.admin = true
-user.confirmed_at = Time.now
-user.save
+account = Account.new(email: 'geek@ohmpieng.io', password: '87654321', password_confirmation: '87654321', name: "geek")
+account.admin = true
+account.confirmed_at = Time.now
+account.save
 
-Account.first.servers.create(ip_address: '128.199.222.111')
-EasyWorker.perform_async(Account.first.servers.first.id)
+server = account.servers.create(ip_address: '128.199.222.111')
+EasyWorker.perform_async(server.id)
 
-user = Account.new(email: 'test@ohmpieng.io', password: '12345678', password_confirmation: '12345678', name: "test")
-user.confirmed_at = Time.now
-user.save
+account = Account.new(email: 'test@ohmpieng.io', password: '12345678', password_confirmation: '12345678', name: "test")
+account.confirmed_at = Time.now
+account.save

@@ -17,11 +17,13 @@ Rails.application.routes.draw do
   get '/profile'        => 'accounts#profile',  as: :profile
 
   resources :accounts, path: '', constraints: { path: /(?!(websocket)\z).*/ }  do
-    get 'index'               => 'accounts#index',          as: :index
-    get 'setting'             => 'accounts#setting',        as: :setting
-    put 'setting'             => 'accounts#setting_update'
-    get 'community'           => 'conversation#index',      as: :community
-    get 'report'              => 'report#index',            as: :report
+    get     'index'               => 'accounts#index',            as: :index
+    get     'setting'             => 'accounts#setting',          as: :setting
+    put     'setting_update'      => 'accounts#setting_update'
+    post    'setting_ip_create'   => 'accounts#setting_ip_create'
+    delete  'setting_ip_delete'   => 'accounts#setting_ip_delete'
+    get     'community'           => 'conversation#index',        as: :community
+    get     'report'              => 'report#index',              as: :report
     # get 'report/information'  => 'report#information',      as: :report_information
     # get 'report/warning'      => 'report#warning',          as: :report_warning
     # get 'dashboard'           => 'dashboard#index',         as: :dashboard

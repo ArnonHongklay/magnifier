@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
   def index
     @account = current_account
     @account.servers.each do |s|
-      memory = $redis.hkeys "Server #{s.id} Memory".last(100)
+      memory = $redis.hkeys "Server #{s.id} Memory"
       @mem_free = []
       @mem_available = []
       @mem = []
@@ -31,7 +31,7 @@ class DashboardController < ApplicationController
         @mem.push [@mem_free[index].first, @mem_free[index].second.to_i, @mem_available[index].second.to_i]
       end
 
-      io = $redis.hkeys "Server #{s.id} IO vda".last(100)
+      io = $redis.hkeys "Server #{s.id} IO vda"
       @reads = []
       @writes = []
       @io = []
@@ -58,10 +58,10 @@ class DashboardController < ApplicationController
 
   def events
     response.headers['Content-Type'] = 'text/event-stream'
-    # subscriber = Redis.new
+    subscriber = Redis.new
     # subscriber.subscribe('internet') do |on|
     #   on.message do |event, data|
-    response.stream.write sse(data, event: "hello")
+    #   response.stream.write sse(data, event: "hello")
     #   end
     # end
   rescue IOError

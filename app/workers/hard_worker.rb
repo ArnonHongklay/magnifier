@@ -5,12 +5,15 @@ class HardWorker
 
   def perform(server_id)
     server = Server.find(server_id)
-
-    cpu(server)
-    memory(server)
-    load_avg(server)
-    bandwidth(server)
-    io(server)
+    begin
+      cpu(server)
+      memory(server)
+      load_avg(server)
+      bandwidth(server)
+      io(server)
+    rescue
+      raise "xxxx"
+    end
   end
 
   def self.poller

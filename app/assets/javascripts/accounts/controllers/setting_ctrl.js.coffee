@@ -3,33 +3,31 @@ ohmpieng.controller 'SettingCtrl', ($scope, $state, account, servers, $http) ->
   $scope.servers = servers.data.server
 
   $scope.showEdit     = false
-
   $scope.ipaddress    = false
-  $scope.script       = false
 
   $scope.addServer = ->
     $scope.ipaddress  = true
-    $scope.script     = false
 
   $scope.newipaddress = ->
     $scope.ipaddress  = true
-    $scope.script     = true
 
-  $scope.save = ->
-    console.log "xxxx"
-    $http.put "#{$scope.account.name}/setting",
+  $scope.setting_update = ->
+    $http.put "#{$scope.account.name}/setting_update",
       name: $scope.account.name
       email: $scope.account.email
     .success(result) ->
-      console.log result
+      $state.go($state.current, {}, {reload: true});
 
-  $scope.ip = ''
-  $scope.submit = ->
-    if @ip != ''
-      $http.put "#{$scope.account.name}/setting",
-        ip: @ip
-      .success(result) ->
-        console.log result
-        $state.go('.')
-      .error(reslut) ->
-        console.log reslut
+  $scope.setting_ip_create = (ip) ->
+    $http.post "#{$scope.account.name}/setting_ip_create", ip: ip
+    .success ->
+      $state.go($state.current, {}, {reload: true});
+
+  $scope.setting_ip_delete = (ip) ->
+    $http
+      url: "#{$scope.account.name}/setting_ip_delete"
+      method: 'DELETE'
+      data: ip: ip
+      headers: 'Content-Type': 'application/json;charset=utf-8'
+    .success ->
+      $state.go($state.current, {}, {reload: true});
