@@ -5,6 +5,8 @@ class ReportController < ApplicationController
 
   def index
     @account = current_account
+    @servers = @account.servers
+
     respond_to do |format|
       format.json { render "accounts/report" }
       format.html { render "accounts/report" }

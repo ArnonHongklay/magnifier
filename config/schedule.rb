@@ -34,6 +34,10 @@ every '* * * * * sleep 30;' do
   runner "HardWorker.poller"
 end
 
+every '* * * * * sleep 30;' do
+  runner "PingWorker.poller"
+end
+
 every 5.minutes do
   runner "MiddleWorker.poller"
 end

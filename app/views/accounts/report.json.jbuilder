@@ -1,1 +1,1 @@
-json.server @account.servers if @account
+json.servers @account.servers if @account
