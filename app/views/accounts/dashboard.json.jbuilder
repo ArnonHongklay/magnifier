@@ -16,7 +16,7 @@ json.servers @account.servers do |server|
   json.memories   server.memories
 end
 
-json.mem            @mem.last(100)
-json.mem_free       @mem_free.last(100)
-json.mem_available  @mem_available.last(100)
-json.io             @io.last(100)
+json.mem            @mem.sort_by{|e| e[0]}.last(200)
+json.mem_free       @mem_free.sort_by{|e| e[0]}.last(200)
+json.mem_available  @mem_available.sort_by{|e| e[0]}.last(200)
+json.io             @io.sort_by{|e| e[0]}.last(100)
