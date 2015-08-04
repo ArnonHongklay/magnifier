@@ -28,6 +28,8 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         account: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}.json"
+        events: ($window, $stateParams) ->
+          new $window.EventSource("/#{$stateParams.userId}/events.json")
 
     .state 'account.index',
       url: '/index'

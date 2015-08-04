@@ -49,7 +49,8 @@ gem 'sinatra', :require => nil
 
 gem 'hiredis'
 gem 'redis'
-gem 'wkhtmltopdf-binary'
+gem 'rb-fsevent'
+gem 'wicked_pdf'
 
 group :development, :test do
   gem 'puma'                            # => Multi-threaded server for development
