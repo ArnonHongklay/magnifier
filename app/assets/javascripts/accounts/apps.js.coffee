@@ -28,6 +28,8 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         account: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}.json"
+        events: ($window, $stateParams) ->
+          new $window.EventSource("/#{$stateParams.userId}/events.json")
 
     .state 'account.index',
       url: '/index'
@@ -44,8 +46,6 @@ ohmpieng.config ($stateProvider, $urlRouterProvider, $locationProvider, $analyti
       resolve:
         servers: ($http, $stateParams) ->
           $http.get "/#{$stateParams.userId}/dashboard.json"
-        events: ($window, $stateParams) ->
-          new $window.EventSource("/#{$stateParams.userId}/dashboard/events.json")
 
     .state 'account.report',
       url: '/report'

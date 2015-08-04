@@ -27,9 +27,9 @@ Rails.application.routes.draw do
     # get 'report/information'  => 'report#information',      as: :report_information
     # get 'report/warning'      => 'report#warning',          as: :report_warning
     # get 'dashboard'           => 'dashboard#index',         as: :dashboard
-    # get 'events'              => 'dashboard#events',        as: :dashboard_events
     # get 'monitoring-tools'    => 'monitoring_tools#index',  as: :monitoring_tools
     # get 'ticket-support'      => 'ticket_support#index',    as: :ticket_support
+    get     'events'              => 'events#index'
 
     # resources :community
     resources :dashboard do

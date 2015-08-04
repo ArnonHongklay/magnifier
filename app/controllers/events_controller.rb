@@ -1,33 +1,29 @@
-# require 'reloader/sse'
-#
-# class EventsController < ApplicationController
-#   include ActionController::Live
-#
-#   def index
-#     response.headers['Content-Type'] = 'text/event-stream'
-#     sse = Reloader::SSE.new(response.stream)
-#
-#     begin
-#       # loop do
-#       #   sse.write({ :time => Time.now })
-#       #   sleep 1
-#       # end
-#       directories = [
-#         File.join(Rails.root, 'app', 'assets'),
-#         File.join(Rails.root, 'app', 'views'),
-#       ]
-#       fsevent = FSEvent.new
-#
-#       # Watch the above directories
-#       fsevent.watch(directories) do |dirs|
-#         # Send a message on the "refresh" channel on every update
-#         sse.write({ :dirs => dirs }, :event => 'refresh')
-#       end
-#       fsevent.run
-#     rescue IOError
-#       # When the client disconnects, we'll get an IOError on write
-#     ensure
-#       sse.close
-#     end
-#   end
-# end
+
+class EventsController < ApplicationController
+  include ActionController::Live
+
+  def index
+    response.headers['Content-Type'] = 'text/event-stream'
+    response.stream.write sse(nil, event: "hello")
+
+    subscriber = Redis.new
+    begin
+      subscriber.subscribe('ping.error') do |on|
+        on.message do |event, data|
+          response.stream.write sse(data, event: :ping)
+        end
+      end
+
+    rescue IOError
+      logger.info "stream closed"
+    ensure
+      subscriber.quit
+      response.stream.close
+    end
+  end
+
+  private
+    def sse(data, options = {})
+      (options.map{|k,v| "#{k}: #{v}" } << "data: #{data}").join("\n") + "\n\n"
+    end
+end

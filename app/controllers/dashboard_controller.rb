@@ -1,6 +1,4 @@
 class DashboardController < ApplicationController
-  include ActionController::Live
-
   before_action :authenticate_account!
   before_filter :verify_account!
   layout 'accounts'
@@ -54,25 +52,5 @@ class DashboardController < ApplicationController
       format.html { render "accounts/dashboard" }
       format.json { render "accounts/dashboard" }
     end
-  end
-
-  def events
-    response.headers['Content-Type'] = 'text/event-stream'
-    subscriber = Redis.new
-    # subscriber.subscribe('internet') do |on|
-    #   on.message do |event, data|
-    #   response.stream.write sse(data, event: "hello")
-    #   end
-    # end
-  rescue IOError
-    logger.info "stream closed"
-  ensure
-    subscriber.quit
-    response.stream.close
-  end
-
-private
-  def sse(data, options = {})
-    (options.map{|k,v| "#{k}: #{v}" } << "data: #{data}").join("\n") + "\n\n"
   end
 end

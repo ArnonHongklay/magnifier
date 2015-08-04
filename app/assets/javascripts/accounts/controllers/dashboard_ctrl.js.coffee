@@ -1,4 +1,4 @@
-ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, servers, events) ->
+ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, servers) ->
   $scope.account        = account.data
   $scope.servers        = servers.data.servers
   $scope.mem            = servers.data.mem
@@ -20,10 +20,6 @@ ohmpieng.controller 'DashboardCtrl', ($scope, $state, $stateParams, account, ser
   $scope.ios        = $scope.servers[$scope.currentIndex].ios
   $scope.load_avgs  = $scope.servers[$scope.currentIndex].load_avgs
   $scope.memories   = $scope.servers[$scope.currentIndex].memories
-
-
-  events.addEventListener 'hello', (e) ->
-    console.log e.data
 
   $scope.disk = {
     data: { text: "Disk", value: 50 }
