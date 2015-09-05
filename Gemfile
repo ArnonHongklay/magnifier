@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 gem 'mysql2'
 
 gem 'sass-rails'
@@ -42,15 +42,13 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
-gem 'sidekiq'
-gem 'sidekiq-failures'
-gem 'whenever', :require => false
+gem 'resque', github: "resque/resque"   # Jobs
+gem 'resque-web', require: 'resque_web' # Jobs monitoring
+gem 'resque-scheduler'                  # Job scheduling
 gem 'sinatra', :require => nil
 
-gem 'hiredis'
 gem 'redis'
-gem 'rb-fsevent'
-gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'puma'                            # => Multi-threaded server for development
