@@ -42,12 +42,16 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
-gem 'resque', github: "resque/resque"   # Jobs
-gem 'resque-web', require: 'resque_web' # Jobs monitoring
+# gem 'resque'                            # Jobs
+# gem 'resque-web', require: 'resque_web' # Jobs monitoring
+# gem 'resque-scheduler'                  # Job scheduling
+gem 'resque'                            # background jobs
+gem 'resque-web', require: 'resque_web'
 gem 'resque-scheduler'                  # Job scheduling
-gem 'sinatra', :require => nil
+# gem 'sinatra', :require => nil
 
 gem 'redis'
+gem 'smarter_csv'
 gem 'wkhtmltopdf-binary'
 
 group :development, :test do
