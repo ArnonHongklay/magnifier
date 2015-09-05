@@ -14,5 +14,5 @@ Rails.application.configure do
   config.assets.precompile += %w( *.css *.js )
   config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif *.ico )
   config.assets.precompile += %w( *.woff *.ttf *.svg *.eot )
-  # config.assets.precompile << /\A(?!active_admin).*\.(js|css)\z/
+  config.assets.precompile << /\A(?!active_admin).*\.(js|css)\z/
 end
