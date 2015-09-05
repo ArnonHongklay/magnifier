@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.2.0'
+set :rbenv_ruby, '2.2.3'
 
 set :application, 'production'
 set :repo_url, 'git@github.com:ohmpieng/production.git'
