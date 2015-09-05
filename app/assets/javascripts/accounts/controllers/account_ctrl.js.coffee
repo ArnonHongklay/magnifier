@@ -1,6 +1,20 @@
 
-ohmpieng.controller 'AccountCtrl', ($scope, $state, $stateParams, account) ->
+ohmpieng.controller 'AccountCtrl', ($scope, $state, $stateParams, account, events) ->
   $scope.account = account.data
+
+  console.log events
+  events.addEventListener 'ping', (e) ->
+    console.log e.data
+    noty
+      text: "ไม่สามารถติดต่อกับ Server #{e.data} ได้ในขณะนี้"
+      type: "error"
+
+  events.addEventListener 'daily', (e) ->
+    console.log e.data
+    noty
+      text: "เรามีรายงานประจำวันให้ท่านดูโปรคลิก"
+      type: "success"
+
 
   $scope.isCollapsed = ->
     $('#dock .launcher a').toggle()

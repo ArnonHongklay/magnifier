@@ -1,6 +1,7 @@
 #
 # class HardWorker
 #   include Sidekiq::Worker
+#   sidekiq_options :retry => false
 #
 #   def perform(server_id)
 #     server = Server.find(server_id)

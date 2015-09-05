@@ -1,6 +1,7 @@
 #
 # class EasyWorker
 #   include Sidekiq::Worker
+#   # sidekiq_options queue: :critical, retry: true
 #
 #   def perform(server_id)
 #     server = Server.find(server_id)
