@@ -91,4 +91,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.domain = "ohmpieng.io"
+
+  config.assets.precompile += %w(active_admin.css)
+  config.assets.precompile += %w(active_admin.js)
 end
