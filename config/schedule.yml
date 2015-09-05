@@ -1,2 +1,0 @@
-SleepingJob:
-  cron: "*/5 * * * *"

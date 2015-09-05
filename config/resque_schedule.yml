@@ -1,3 +1,15 @@
 
 SleepingJob:
+  every: 30m
+
+PingWorker:
+  every: 1m
+
+HardWorker:
+  every: 30s
+
+MiddleWorker:
+  every: 5m
+
+EasyWorker:
   every: 1h

@@ -1,4 +1,6 @@
+
 class SleepingJob
+
   def self.queue
     :sloth
   end
