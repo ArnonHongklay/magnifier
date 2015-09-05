@@ -1,4 +1,3 @@
-require 'sidekiq/web'
 
 Rails.application.routes.draw do
   devise_for :accounts, path: 'session',
@@ -9,7 +8,8 @@ Rails.application.routes.draw do
       confirmations:  'accounts/confirmations'
     }
 
-  mount Sidekiq::Web => '/sidekiq'
+  mount ResqueWeb::Engine => "/resque_web"
+  # mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
 

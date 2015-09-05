@@ -1,11 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'csv'
 require 'rails/all'
+require 'csv'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+# Bundler.require(*Rails.groups)
+Bundler.require(:default, Rails.env)
 
 module Ohmpieng
   class Application < Rails::Application
