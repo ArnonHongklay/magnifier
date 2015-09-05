@@ -24,7 +24,7 @@ gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
 gem "sprockets"
 
 gem 'nokogiri'
-gem 'activeadmin',                github: 'activeadmin'
+# gem 'activeadmin',                github: 'activeadmin'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'activeresource',             github: 'rails/activeresource'
 gem "activerecord-deprecated_finders", "~> 1.0.3"
