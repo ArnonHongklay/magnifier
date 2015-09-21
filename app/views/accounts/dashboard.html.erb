@@ -120,7 +120,15 @@
           </div>
         </div>
         <div class="panel-body">
-
+          <table ng-table border="1" width="100%">
+            <tr ng-repeat="cpu in cpus">
+              <td data-title="'Total'">{{memorie.mem_total}}</td>
+              <td data-title="'Free">{{memorie.mem_free}}</td>
+              <td data-title="'Available'">{{memorie.mem_available}}</td>
+              <td data-title="'Buffers'">{{memorie.buffers}}</td>
+              <td data-title="'Swap Cached'">{{memorie.swap_cached}}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
