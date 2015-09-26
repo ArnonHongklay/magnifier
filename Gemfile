@@ -42,9 +42,10 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
+gem 'sinatra'
 gem 'sidekiq'
 gem 'sidekiq-failures'
-gem 'sinatra'
+gem "sidekiq-cron"
 
 gem 'redis'
 gem 'smarter_csv'
