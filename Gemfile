@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.2.0'
 
 gem 'rails', '4.2.4'
 gem 'mysql2'
@@ -42,13 +42,10 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
-# gem 'resque'                            # Jobs
-# gem 'resque-web', require: 'resque_web' # Jobs monitoring
-# gem 'resque-scheduler'                  # Job scheduling
-gem 'resque'                            # background jobs
-gem 'resque-web', require: 'resque_web'
-gem 'resque-scheduler'                  # Job scheduling
-# gem 'sinatra', :require => nil
+gem 'sinatra'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem "sidekiq-cron"
 
 gem 'redis'
 gem 'smarter_csv'

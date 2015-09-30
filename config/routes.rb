@@ -1,6 +1,9 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
-  devise_for :accounts, path: 'session',
+  devise_for :accounts,
+    path: 'session',
     controllers: {
       registrations:  'accounts/registrations',
       sessions:       'accounts/sessions',
@@ -8,8 +11,7 @@ Rails.application.routes.draw do
       confirmations:  'accounts/confirmations'
     }
 
-  mount ResqueWeb::Engine => "/resque_web"
-  # mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => '/sidekiq'
 
   root 'landing#index'
 
