@@ -3,11 +3,14 @@
   <ul>
      <li ng-repeat="server in servers"
          ng-class="{ active: currentIndex == $index }"
-         ng-click="selected($index)"><a>{{server.ip_address}}</a></li>
+         ng-click="selected($index)">{{server.ip_address}}</li>
   </ul>
 </div>
 <!--Data -->
 <div class="panel panel-default" id="page">
+  <tr ng-repeat="server in servers">
+    <td data-title="'ID'" width="10%" align="center">{{server.ip_address}}</td>
+  </tr>
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default">
@@ -31,7 +34,34 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="icon-beer icon-large"></i>
+          ARP Cache
+          <div class="panel-tools">
+            <div class="btn-group">
+              <a class="btn" href="#">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table ng-table border="1" width="100%">
+            <tr ng-repeat="arp in arps">
+              <td data-title="'Address'">{{arp.address}}</td>
+              <td data-title="'Mask'">{{arp.mask}}</td>
+              <td data-title="'HW Address'">{{arp.hw_address}}</td>
+              <td data-title="'HW Type'">{{arp.hw_type}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
@@ -121,9 +151,9 @@
         </div>
         <div class="panel-body">
           <table ng-table border="1" width="100%">
-            <tr ng-repeat="cpu in cpus">
+            <tr ng-repeat="memorie in memories">
               <td data-title="'Total'">{{memorie.mem_total}}</td>
-              <td data-title="'Free">{{memorie.mem_free}}</td>
+              <td data-title="'Free'">{{memorie.mem_free}}</td>
               <td data-title="'Available'">{{memorie.mem_available}}</td>
               <td data-title="'Buffers'">{{memorie.buffers}}</td>
               <td data-title="'Swap Cached'">{{memorie.swap_cached}}</td>
@@ -149,17 +179,17 @@
         <div class="panel-body">
           <table ng-table border="1" width="100%">
             <tr ng-repeat="cpu in cpus">
-              <td data-title="'Architecture'">{{cpu.architecture}}</td>
-              <td data-title="'CPU op mode'">{{cpu.cpu_op_mode_s}}</td>
-              <td data-title="'vendor id'">{{cpu.vendor_id}}</td>
-              <td data-title="'m name'">{{cpu.m_name}}</td>
+              <td data-title="'Architecture'">{{ cpu.architecture }}</td>
+              <td data-title="'CPU op mode'">{{ cpu.cpu_op_mode_s }}</td>
+              <td data-title="'vendor id'">{{ cpu.vendor_id }}</td>
+              <td data-title="'m name'">{{ cpu.m_name }}</td>
             </tr>
           </table>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="icon-beer icon-large"></i>
@@ -180,32 +210,7 @@
           <p>priority: -1</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="icon-beer icon-large"></i>
-          ARP Cache
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="#">
-                <i class="fa fa-refresh"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <table ng-table border="1" width="100%">
-            <tr ng-repeat="arp in arps">
-              <td data-title="'Address'">{{arp.address}}</td>
-              <td data-title="'Mask'">{{arp.mask}}</td>
-              <td data-title="'HW Address'">{{arp.hw_address}}</td>
-              <td data-title="'HW Type'">{{arp.hw_type}}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
