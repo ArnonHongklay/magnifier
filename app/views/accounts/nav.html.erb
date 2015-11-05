@@ -48,10 +48,16 @@
             </li>
           </ul>
         </li> -->
+        <% if current_account.try(:admin?) %>
         <li class="launcher">
+          <i class="fa fa-user"></i>
+          <a href="#">Admin</a>
+        </li>
+        <% end %>
+        <!-- <li class="launcher">
           <i class="fa fa-bug"></i>
           <a href="#">Feedback</a>
-        </li>
+        </li> -->
       </ul>
       <div data-toggle="tooltip" id="beaker" title="Made by lab2023"></div>
     </section>

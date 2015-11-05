@@ -80,16 +80,21 @@
               <div class="panel-body">
                   <div class="form-group has-feedback">
                     <label for="ipaddress" class="col-sm-2 control-label">IPAddress</label>
+
+                    <!-- input IP -->
                     <div class="row">
-                      <form ng-submit="submit()">
-                        <div class="col-sm-4">
-                          <input type="text" class="form-control" placeholder="IPAddress" ng-model="ipaddr">
+                      <form name="ip" ng-submit="submit()" novalidate>
+                        <div class="col-sm-4" ng-class="{ 'has-error' : ip.static_ip.$invalid && !ip.static_ip.$pristine}">
+                          <!-- <input type="text" class="form-control" placeholder="IPAddress" ng-model="ipaddr" ng-pattern="phoneNumberPattern"> -->
+                          <input type="text" class="form-control" id="static_ip" name="static_ip" placeholder="IPAddress" ng-model="ipaddr" ng-pattern='/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/'>
+                          <p ng-show="ip.static_ip.$invalid" class="help-block">Enter a valid IP Address.</p>
                         </div>
                         <div class="col-sm-2">
                           <input type="submit" class="btn btn-primary" value="Submit" ng-click="setting_ip_create(ipaddr)" value="Confirm"/>
                         </div>
                       </form>
                     </div>
+
                   </div>
               </div>
             </div>

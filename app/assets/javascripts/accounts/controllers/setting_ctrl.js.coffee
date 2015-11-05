@@ -5,6 +5,30 @@ ohmpieng.controller 'SettingCtrl', ($scope, $state, account, servers, $http) ->
   $scope.showEdit     = false
   $scope.ipaddress    = false
 
+  $scope.phoneNumberPattern = do ->
+  regexp = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+  { test: (value) ->
+    if $scope.requireTel == false
+      return true
+    regexp.test value
+  }
+
+  # # create angular app
+  # validationApp = angular.module('validationApp', [])
+  # # create angular controller
+  # validationApp.controller 'mainController', ($scope) ->
+  #   # function to submit the form after all validation has occurred
+  #
+  #   $scope.submitForm = ->
+  #     # check to make sure the form is completely valid
+  #     if $scope.userForm.$valid
+  #       alert 'our form is amazing'
+  #     return
+  #
+  #   return
+  #
+  # # ---
+
   $scope.addServer = ->
     $scope.ipaddress  = true
 
