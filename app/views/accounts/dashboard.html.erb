@@ -3,7 +3,7 @@
   <ul>
      <li ng-repeat="server in servers"
          ng-class="{ active: currentIndex == $index }"
-         ng-click="selected($index)">{{server.ip_address}}</li>
+         ng-click="selected($index)"><a>{{server.ip_address}}</a></li>
   </ul>
 </div>
 <!--Data -->
