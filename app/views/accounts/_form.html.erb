@@ -1,0 +1,14 @@
+<%= form_for(@message, html: {class: 'form-horizontal'}) do |f| %>
+	<%= f.error_notification %>
+
+	<div class="field">
+		<%= f.input :subject %><br>
+	</div>
+	<div class="field">
+		<%= f.input :body, :as => :text %>
+	</div>
+	<div class="actions">
+		<%= f.button :submit , 'Send Email', :class => "primary btn btn-success" %>
+		<%= link_to 'Back', users_path, :class => 'btn btn-danger' %>
+	</div>
+<% end %>

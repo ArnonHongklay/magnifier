@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Page</h1>
+
+<form class="form-horizontal well" action="/geek/message" method="post">
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label" for="message_subject" >Subject</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="message[subject]" id="message_subject" name="message[subject]">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="body" class="col-sm-2 control-label" for="message_body">Mesage For All User</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3" name="message[body]" id="message_body" name="message_body" required="required"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</form>

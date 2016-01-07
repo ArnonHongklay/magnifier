@@ -49,7 +49,8 @@ gem "sidekiq-cron"
 
 gem 'redis'
 gem 'smarter_csv'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
+gem 'wicked_pdf'
 
 group :development, :test do
   gem 'puma'                            # => Multi-threaded server for development
