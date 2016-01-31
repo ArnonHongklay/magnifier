@@ -1,4 +1,6 @@
 # monitoring
+
+[![Join the chat at https://gitter.im/ohmpieng/magnifier](https://badges.gitter.im/ohmpieng/magnifier.svg)](https://gitter.im/ohmpieng/magnifier?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This is for my project
 
 [![Throughput Graph](https://graphs.waffle.io/ohmpieng/monitoring/throughput.svg)](https://waffle.io/ohmpieng/monitoring/metrics)
