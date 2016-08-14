@@ -1,0 +1,15 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: bloggy_development
+  pool: 5
+  username: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: bloggy_test
+  pool: 5
+  username: root

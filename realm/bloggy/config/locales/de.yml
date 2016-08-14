@@ -1,0 +1,136 @@
+de:
+  bloggy:
+    posts:
+      pagination:
+        older_posts: "Ältere Beitrag"
+        newer_posts: "Neuere Beitrag"
+      social_sharing:
+        tagline: "Magst du was du liest? Teile es!"
+      post:
+        readmore: "Lese mehr"
+      "404":
+        title: "Die Seite nach dem Sie gesucht haben existiert nicht."
+        message: "Vielleicht haben Sie die falsche Adresse eingegeben oder sie wurde verschoben."
+    sidebar:
+      categories:
+        title: "Kategorien"
+      latest_posts:
+        title: "Letzte Beiträge"
+      latest_tweets:
+        title: "Letzte Tweets"
+      tag_cloud:
+        title: "Tags"
+    tags:
+      show:
+        showing_post_with_tag: "Zeige alle Beiträge mit tag"
+        show_all_posts: "Zeige alle Beiträge"
+    admin:
+      login:
+        need_auth: "Sie müssen sich erst anmelden um in den Admin-Bereich zu kommen"
+      users:
+        form:
+          email: "Email"
+          name: "Name"
+          password: "Passwort"
+          password_confirmation: "Password Bestätigung"
+        edit:
+          header: "Bearbeite dein Zugang"
+          save: "Speichern"
+        new:
+          create: "Erstelle"
+          header: "Benutzer hinzufügen"
+        create:
+          success: "Benutzer erstellt"
+        delete:
+          removed: "Benutzer '%{user}' erfolgreich entfernt"
+          failed: "Benutzer '%{user}' konnte nicht entfernt werden"
+        index:
+          email: "Email"
+          name: "Name"
+          edit: "Bearbeiten"
+          delete: "Löschen"
+          create: "Erstellen"
+      posts:
+        index:
+          title: "Titel"
+          edit: "Bearbeiten"
+          delete: "Löschen"
+          published: "Yes"
+          not_published: "Nicht veröffentlicht"
+          status: "Veröffentlichen ?"
+          author: "Autor"
+        new:
+          header: "Neuer Bloggy"
+        create:
+          saved: "Bloggy erstellt"
+          saved_with_future_date_and_cache: "Bloggy erstellt: Beiträge mit Zukunft Veröffentlichungsdatum wird nicht angezeigt, es sei denn, der Cache wird am selben Tag gelöscht. Wahrscheinlich wird der Cache vorher erzeugt und wird nicht automatisch aktualisiert."
+        edit:
+          header: "bearbeiten"
+        update:
+          saved_with_future_date_and_cache: "Bloggy gespeichert: Beiträge mit Zukunft Veröffentlichungsdatum wird nicht angezeigt, es sei denn, der Cache wird am selben Tag gelöscht. Wahrscheinlich wird der Cache vorher erzeugt und wird nicht automatisch aktualisiert."
+          saved: "Bloggy gespeichert"
+        delete:
+          removed: "Bloggy entfernt"
+          fail: "Entfernt von bloggy fehlgeschlagen!"
+        form:
+          title: "Titel"
+          content: "Inhalt"
+          url:
+            caption: "URL<br/><i> Dies wird mit dem Stadard URL befüllt. '%{default_url}'. Sie können sich Ihr eigene URL einfügen. Fügen sie kein '%{root}' am Anfang ihrer URL.</i>"
+            generated_title: "ihr-beitrags-titel"
+          published_at: "veröffentlicht am"
+          published: "Veröffentlicht"
+          save: "Speichern"
+          preview: "Vorschau"
+          close: "Schliesen"
+          tags: "Tags"
+      comments:
+        show:
+          recent_comments: "Neuste Kommentare"
+      sessions:
+        new:
+          title: "Anmelden"
+          email: "Email"
+          password: "Passwort"
+          button: "anmelden"
+        messages:
+          invalid: "Fehlerhafte Email oder Passwort"
+          logged_in: "Angemeldet!"
+          logged_out: "Abgemeldet!"
+  layouts:
+    bloggy:
+      admin:
+        nav_bar:
+          add_a_bloggy: "Bloggy hinzufügen"
+          list_bloggys: "Liste der Bloggy"
+          comments: "Kommentare"
+          cache: "Cache managen"
+          edit_user_info: "Mein Zugang"
+          settings: "Einstellung"
+          log_out: "Abmelden"
+          users: "Benutzer"
+  activerecord:
+    attributes:
+      bloggy/user:
+        password_digest: "Password bestätigung"
+    errors:
+      format: "%{message}"
+    errors:
+      full_messages: "%{message}"
+    errors:
+      models:
+        full_messages: "%{message}"
+        bloggy/post:
+          blank: "%{attribute} ist benötigt"
+          taken: "%{attribute} wurde schon in einem anderen Beitrag von einem anderen Benutzer verwendet"
+          attributes:
+            published_at:
+              blank: "'Veröffentlichen am' wird benötigt"
+            url:
+              start_with_slash: "URL darf nicht mit einem Schrägstrich anfangen ('/')"
+        bloggy/user:
+          blank: "%{attribute} wird benötigt"
+          taken: "%{attribute} wurde schon benutzt"
+          attributes:
+            password:
+              confirmation: "Passwort und Bestätigung stimmen nicht überein."

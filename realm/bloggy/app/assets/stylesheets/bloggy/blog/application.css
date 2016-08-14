@@ -1,0 +1,13 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+ *= require bloggy/blog/skeleton/base
+ *= require bloggy/blog/skeleton/skeleton
+ *= require bloggy/blog/skeleton/layout
+ *= require bloggy/foundation_icons/social_foundicons
+ *= require bloggy/blog/bloggy
+ *= require bloggy/blog/fonts
+ *= require bloggy/blog/custom
+*/
