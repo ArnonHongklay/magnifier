@@ -1,0 +1,7 @@
+<% if Bloggy::Config.sidebar %>
+<aside class="sidebar four columns">
+   <% Bloggy::Config.sidebar.each do |ext| %>
+     <%= render partial: "bloggy/sidebar/#{ext}" %>
+   <% end %>
+</aside>
+<% end %>
