@@ -14,11 +14,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'nprogress-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
-gem 'angular-rails-templates'
+# gem 'angular-rails-templates'
 
 # gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
-# gem "sprockets"
+gem "sprockets"
 
 gem 'nokogiri'
 # gem 'activeadmin',                github: 'activeadmin'
