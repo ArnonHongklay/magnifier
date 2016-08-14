@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.3.1'
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
 gem 'mysql2'
 
 gem 'sass-rails'
@@ -25,11 +25,11 @@ gem "sprockets"
 
 gem 'nokogiri'
 # gem 'activeadmin',                github: 'activeadmin'
-gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-gem 'activeresource',             github: 'rails/activeresource'
-gem "activerecord-deprecated_finders", "~> 1.0.3"
-gem "actionpack-action_caching"
-gem "actionpack-page_caching"
+# gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+# gem 'activeresource',             github: 'rails/activeresource'
+# gem "activerecord-deprecated_finders", "~> 1.0.3"
+# gem "actionpack-action_caching"
+# gem "actionpack-page_caching"
 
 # static page
 gem 'high_voltage'
