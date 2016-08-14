@@ -1,0 +1,70 @@
+I"»	(function() {
+  window.ohmpieng = angular.module("ohmpieng", ['ui.router', 'ui.bootstrap', 'ngAnimate', 'ngCookies', 'ngResource', 'ngTable', 'gettext', 'angulartics', 'templates', 'nprogress-rails']);
+
+  ohmpieng.config(function($stateProvider, $urlRouterProvider, $locationProvider, $analyticsProvider, $httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $stateProvider.state('account', {
+      url: '/:userId',
+      templateUrl: 'accounts/nav',
+      controller: 'AccountCtrl',
+      resolve: {
+        account: function($http, $stateParams) {
+          return $http.get("/" + $stateParams.userId + ".json");
+        },
+        events: function($window, $stateParams) {
+          return new $window.EventSource("/" + $stateParams.userId + "/events.json");
+        }
+      }
+    }).state('account.index', {
+      url: '/index',
+      templateUrl: 'accounts/index',
+      controller: 'IndexCtrl',
+      resolve: {
+        servers: function($http, $stateParams) {
+          return $http.get("/" + $stateParams.userId + "/index.json");
+        }
+      }
+    }).state('account.dashboard', {
+      url: '/dashboard',
+      templateUrl: 'accounts/dashboard',
+      controller: 'DashboardCtrl',
+      resolve: {
+        servers: function($http, $stateParams) {
+          return $http.get("/" + $stateParams.userId + "/dashboard.json");
+        }
+      }
+    }).state('account.report', {
+      url: '/report',
+      templateUrl: 'accounts/report',
+      controller: 'ReportCtrl',
+      resolve: {
+        servers: function($http, $stateParams) {
+          return $http.get("/" + $stateParams.userId + "/dashboard.json");
+        }
+      }
+    }).state('account.setting', {
+      url: '/setting',
+      templateUrl: 'accounts/setting',
+      controller: 'SettingCtrl',
+      resolve: {
+        servers: function($http, $stateParams) {
+          return $http.get("/" + $stateParams.userId + "/setting.json");
+        }
+      }
+    });
+    $urlRouterProvider.otherwise('/');
+    return $locationProvider.html5Mode(true).hashPrefix('!');
+  });
+
+  ohmpieng.controller('AppCtrl', function($scope, $rootScope) {
+    $scope.$on('$stateChangeStart', NProgress.start);
+    $scope.$on('$stateChangeSuccess', NProgress.done);
+    $scope.$on('$stateChangeError', NProgress.done);
+    return $scope.$on('$stateChangeSuccess', function(e, toState) {
+      return $scope.stateName = toState.name;
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,38 +1,60 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-# Use Puma as the app server
 gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'nprogress-rails'
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
+gem 'angular-rails-templates'
+
+# gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
+gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
+# gem "sprockets"
+
+gem 'nokogiri'
+# gem 'activeadmin',                github: 'activeadmin'
+# gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+# gem 'activeresource',             github: 'rails/activeresource'
+# gem "activerecord-deprecated_finders", "~> 1.0.3"
+# gem "actionpack-action_caching"
+# gem "actionpack-page_caching"
+
+# static page
+gem 'high_voltage'
+
+gem 'cancan'                            # => Authorization
+gem 'devise'                            # => Authorization
+gem 'koala'                             # => Facebook
+gem 'twitter'                           # => Twitter
+gem 'omniauth'                          # => Authentication
+gem 'omniauth-facebook'                 # => Authentication Facebook
+gem 'omniauth-twitter'                  # => Authentication Twitter
+
+gem 'rack-protection', github: 'sinatra/rack-protection'
+gem 'sinatra', github: 'sinatra'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem "sidekiq-cron"
+
+gem 'redis'
+gem 'smarter_csv'
+gem 'wkhtmltopdf-binary-edge'
+gem 'wicked_pdf'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'               # => Testing engine
+  gem 'rspec-its'                 # => Rspec deprecated its
+  gem 'rspec-collection_matchers' # => Rspec deprecated should
 end
 
 group :development do
@@ -42,6 +64,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rbenv', github: 'capistrano/rbenv'
+  gem 'capistrano-rails-console'
+  # gem 'capistrano-passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

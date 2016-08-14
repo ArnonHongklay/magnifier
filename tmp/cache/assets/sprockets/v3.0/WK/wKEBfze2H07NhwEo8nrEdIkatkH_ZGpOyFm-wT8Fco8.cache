@@ -1,0 +1,11 @@
+I"9(function() {
+  ohmpieng.controller('AdminCtrl', function($scope, $state, $http, $filter, ngTableParams, account, servers) {
+    $scope.account = account.data;
+    $scope.servers = servers.data.servers;
+    if ($scope.servers.length === 0) {
+      return $state.go("account.setting");
+    }
+  });
+
+}).call(this);
+:ET

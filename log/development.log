@@ -3761,3 +3761,571 @@ ActiveRecord::NoDatabaseError (FATAL:  database "Harem_development" does not exi
   Rendered /Users/arnonhongklay/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/arnonhongklay/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/arnonhongklay/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (409.3ms)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "name" character varying(255) DEFAULT '' NOT NULL, "admin" boolean DEFAULT 'f', "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "confirmation_token" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying(255), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_email" ON "accounts" USING btree ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_reset_password_token" ON "accounts" USING btree ("reset_password_token")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "arps" ("id" serial primary key, "server_id" integer, "address" character varying(255), "hw_type" character varying(255), "hw_address" character varying(255), "flags" character varying(255), "mask" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_arps_on_server_id" ON "arps" USING btree ("server_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "bandwidths" ("id" serial primary key, "server_id" integer, "interface" character varying(255), "tx" character varying(255), "rx" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_bandwidths_on_server_id" ON "bandwidths" USING btree ("server_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "cpus" ("id" serial primary key, "server_id" integer, "architecture" character varying(255), "cpu_op_mode_s" character varying(255), "byte_order" character varying(255), "cpu_s" character varying(255), "on_line_cpu_s_list" character varying(255), "thread_s_per_core" character varying(255), "core_s_per_socket" character varying(255), "socket_s" character varying(255), "numa_node_s" character varying(255), "vendor_id" character varying(255), "cpu_family" character varying(255), "model" character varying(255), "m_name" character varying(255), "stepping" character varying(255), "cpu_mhz" character varying(255), "bogo_mips" character varying(255), "virtualization" character varying(255), "hypervisor_vendor" character varying(255), "virtualization_type" character varying(255), "l1d_cache" character varying(255), "l1i_cache" character varying(255), "l2_cache" character varying(255), "numa_node0_cpu_s" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_cpus_on_server_id" ON "cpus" USING btree ("server_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "disks" ("id" serial primary key, "server_id" integer, "file_system" character varying(255), "size" character varying(255), "used" character varying(255), "avail" character varying(255), "used_percent" character varying(255), "mounted" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_disks_on_server_id" ON "disks" USING btree ("server_id")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ios" ("id" serial primary key, "server_id" integer, "device" character varying(255), "reads" character varying(255), "writes" character varying(255), "in_progress" character varying(255), "time_in_io" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_ios_on_server_id" ON "ios" USING btree ("server_id")[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "load_avgs" ("id" serial primary key, "server_id" integer, "one_min_avg" character varying(255), "five_min_avg" character varying(255), "fifteen_min_avg" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_load_avgs_on_server_id" ON "load_avgs" USING btree ("server_id")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "memories" ("id" serial primary key, "server_id" integer, "mem_total" character varying(255), "mem_free" character varying(255), "mem_available" character varying(255), "buffers" character varying(255), "cached" character varying(255), "swap_cached" character varying(255), "active" character varying(255), "inactive" character varying(255), "active_anon" character varying(255), "inactive_anon" character varying(255), "active_file" character varying(255), "inactive_file" character varying(255), "unevictable" character varying(255), "mlocked" character varying(255), "swap_total" character varying(255), "swap_free" character varying(255), "dirty" character varying(255), "write_back" character varying(255), "anon_pages" character varying(255), "mapped" character varying(255), "shmem" character varying(255), "slab" character varying(255), "s_reclaimable" character varying(255), "s_unreclaim" character varying(255), "kernel_stack" character varying(255), "page_tables" character varying(255), "nfs_unstable" character varying(255), "bounce" character varying(255), "writeback_tmp" character varying(255), "commit_limit" character varying(255), "committed_as" character varying(255), "vmalloc_total" character varying(255), "vmalloc_used" character varying(255), "vmalloc_chunk" character varying(255), "hardware_corrupted" character varying(255), "anon_huge_pages" character varying(255), "cma_total" character varying(255), "cma_free" character varying(255), "huge_pages_total" character varying(255), "huge_pages_free" character varying(255), "huge_pages_rsvd" character varying(255), "huge_pages_surp" character varying(255), "hugepagesize" character varying(255), "direct_map_4k" character varying(255), "direct_map_2M" character varying(255), "direct_map_1G" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_memories_on_server_id" ON "memories" USING btree ("server_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "servers" ("id" serial primary key, "account_id" integer, "hostname" character varying(255), "os" character varying(255), "uptime" character varying(255), "datetime" character varying(255), "ip_address" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_account_id" ON "servers" USING btree ("account_id")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sessions_on_session_id" ON "sessions" USING btree ("session_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_sessions_on_updated_at" ON "sessions" USING btree ("updated_at")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20150713081134')[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20141124204950'), ('20141125185437');
+
+[0m
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-14 10:11:45 UTC], ["updated_at", 2016-08-14 10:11:45 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (20.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "name" character varying(255) DEFAULT '' NOT NULL, "admin" boolean DEFAULT 'f', "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "confirmation_token" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying(255), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_email" ON "accounts" USING btree ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_reset_password_token" ON "accounts" USING btree ("reset_password_token")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "arps" ("id" serial primary key, "server_id" integer, "address" character varying(255), "hw_type" character varying(255), "hw_address" character varying(255), "flags" character varying(255), "mask" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_arps_on_server_id" ON "arps" USING btree ("server_id")[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "bandwidths" ("id" serial primary key, "server_id" integer, "interface" character varying(255), "tx" character varying(255), "rx" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bandwidths_on_server_id" ON "bandwidths" USING btree ("server_id")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "cpus" ("id" serial primary key, "server_id" integer, "architecture" character varying(255), "cpu_op_mode_s" character varying(255), "byte_order" character varying(255), "cpu_s" character varying(255), "on_line_cpu_s_list" character varying(255), "thread_s_per_core" character varying(255), "core_s_per_socket" character varying(255), "socket_s" character varying(255), "numa_node_s" character varying(255), "vendor_id" character varying(255), "cpu_family" character varying(255), "model" character varying(255), "m_name" character varying(255), "stepping" character varying(255), "cpu_mhz" character varying(255), "bogo_mips" character varying(255), "virtualization" character varying(255), "hypervisor_vendor" character varying(255), "virtualization_type" character varying(255), "l1d_cache" character varying(255), "l1i_cache" character varying(255), "l2_cache" character varying(255), "numa_node0_cpu_s" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_cpus_on_server_id" ON "cpus" USING btree ("server_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "disks" ("id" serial primary key, "server_id" integer, "file_system" character varying(255), "size" character varying(255), "used" character varying(255), "avail" character varying(255), "used_percent" character varying(255), "mounted" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_disks_on_server_id" ON "disks" USING btree ("server_id")[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ios" ("id" serial primary key, "server_id" integer, "device" character varying(255), "reads" character varying(255), "writes" character varying(255), "in_progress" character varying(255), "time_in_io" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_ios_on_server_id" ON "ios" USING btree ("server_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "load_avgs" ("id" serial primary key, "server_id" integer, "one_min_avg" character varying(255), "five_min_avg" character varying(255), "fifteen_min_avg" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_load_avgs_on_server_id" ON "load_avgs" USING btree ("server_id")[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "memories" ("id" serial primary key, "server_id" integer, "mem_total" character varying(255), "mem_free" character varying(255), "mem_available" character varying(255), "buffers" character varying(255), "cached" character varying(255), "swap_cached" character varying(255), "active" character varying(255), "inactive" character varying(255), "active_anon" character varying(255), "inactive_anon" character varying(255), "active_file" character varying(255), "inactive_file" character varying(255), "unevictable" character varying(255), "mlocked" character varying(255), "swap_total" character varying(255), "swap_free" character varying(255), "dirty" character varying(255), "write_back" character varying(255), "anon_pages" character varying(255), "mapped" character varying(255), "shmem" character varying(255), "slab" character varying(255), "s_reclaimable" character varying(255), "s_unreclaim" character varying(255), "kernel_stack" character varying(255), "page_tables" character varying(255), "nfs_unstable" character varying(255), "bounce" character varying(255), "writeback_tmp" character varying(255), "commit_limit" character varying(255), "committed_as" character varying(255), "vmalloc_total" character varying(255), "vmalloc_used" character varying(255), "vmalloc_chunk" character varying(255), "hardware_corrupted" character varying(255), "anon_huge_pages" character varying(255), "cma_total" character varying(255), "cma_free" character varying(255), "huge_pages_total" character varying(255), "huge_pages_free" character varying(255), "huge_pages_rsvd" character varying(255), "huge_pages_surp" character varying(255), "hugepagesize" character varying(255), "direct_map_4k" character varying(255), "direct_map_2M" character varying(255), "direct_map_1G" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_memories_on_server_id" ON "memories" USING btree ("server_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "servers" ("id" serial primary key, "account_id" integer, "hostname" character varying(255), "os" character varying(255), "uptime" character varying(255), "datetime" character varying(255), "ip_address" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_account_id" ON "servers" USING btree ("account_id")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sessions_on_session_id" ON "sessions" USING btree ("session_id")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX  "index_sessions_on_updated_at" ON "sessions" USING btree ("updated_at")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20150713081134')[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20141124204950'), ('20141125185437');
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-14 10:11:46 UTC], ["updated_at", 2016-08-14 10:11:46 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3459704181813537000);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Notis (20151117073832)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class Notis < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "notificats" ("id" serial primary key, "account_id" integer, "subject" character varying, "body" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_notificats_on_account_id" ON "notificats"  ("account_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151117073832"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBloggyUsers (20160130050935)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateBloggyUsers < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "bloggy_users" ("id" serial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050935"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBloggyPostsRevisions (20160130050936)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateBloggyPostsRevisions < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "bloggy_posts_revisions" ("id" serial primary key, "title" character varying, "content" text, "url" character varying, "user_id" integer, "post_id" integer, "published_at" timestamp, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_bloggy_posts_revisions_on_id" ON "bloggy_posts_revisions"  ("id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_bloggy_posts_revisions_on_published_at" ON "bloggy_posts_revisions"  ("published_at")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_bloggy_posts_revisions_on_post_id" ON "bloggy_posts_revisions"  ("post_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050936"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBloggyPosts (20160130050937)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateBloggyPosts < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "bloggy_posts" ("id" serial primary key, "posts_revision_id" integer, "published" boolean, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050937"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBloggyTags (20160130050938)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateBloggyTags < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "bloggy_tags" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050938"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to JoinPostsAndTags (20160130050939)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class JoinPostsAndTags < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "posts_tags" ("post_id" integer, "tag_id" integer)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050939"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to MigrateOldUrls (20160130050940)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3459704181813537000)[0m
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3459704181813537000);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to MigrateOldUrls (20160130050940)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3459704181813537000)[0m
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (39.4ms)[0m  [1m[35mDROP TABLE "accounts" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "name" character varying(255) DEFAULT '' NOT NULL, "admin" boolean DEFAULT 'f', "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "confirmation_token" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying(255), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_email" ON "accounts" USING btree ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_reset_password_token" ON "accounts" USING btree ("reset_password_token")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "arps" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "arps" ("id" serial primary key, "server_id" integer, "address" character varying(255), "hw_type" character varying(255), "hw_address" character varying(255), "flags" character varying(255), "mask" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_arps_on_server_id" ON "arps" USING btree ("server_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "bandwidths" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "bandwidths" ("id" serial primary key, "server_id" integer, "interface" character varying(255), "tx" character varying(255), "rx" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bandwidths_on_server_id" ON "bandwidths" USING btree ("server_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE "cpus" CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "cpus" ("id" serial primary key, "server_id" integer, "architecture" character varying(255), "cpu_op_mode_s" character varying(255), "byte_order" character varying(255), "cpu_s" character varying(255), "on_line_cpu_s_list" character varying(255), "thread_s_per_core" character varying(255), "core_s_per_socket" character varying(255), "socket_s" character varying(255), "numa_node_s" character varying(255), "vendor_id" character varying(255), "cpu_family" character varying(255), "model" character varying(255), "m_name" character varying(255), "stepping" character varying(255), "cpu_mhz" character varying(255), "bogo_mips" character varying(255), "virtualization" character varying(255), "hypervisor_vendor" character varying(255), "virtualization_type" character varying(255), "l1d_cache" character varying(255), "l1i_cache" character varying(255), "l2_cache" character varying(255), "numa_node0_cpu_s" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_cpus_on_server_id" ON "cpus" USING btree ("server_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "disks" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "disks" ("id" serial primary key, "server_id" integer, "file_system" character varying(255), "size" character varying(255), "used" character varying(255), "avail" character varying(255), "used_percent" character varying(255), "mounted" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_disks_on_server_id" ON "disks" USING btree ("server_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "ios" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ios" ("id" serial primary key, "server_id" integer, "device" character varying(255), "reads" character varying(255), "writes" character varying(255), "in_progress" character varying(255), "time_in_io" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_ios_on_server_id" ON "ios" USING btree ("server_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "load_avgs" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "load_avgs" ("id" serial primary key, "server_id" integer, "one_min_avg" character varying(255), "five_min_avg" character varying(255), "fifteen_min_avg" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_load_avgs_on_server_id" ON "load_avgs" USING btree ("server_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "memories" CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "memories" ("id" serial primary key, "server_id" integer, "mem_total" character varying(255), "mem_free" character varying(255), "mem_available" character varying(255), "buffers" character varying(255), "cached" character varying(255), "swap_cached" character varying(255), "active" character varying(255), "inactive" character varying(255), "active_anon" character varying(255), "inactive_anon" character varying(255), "active_file" character varying(255), "inactive_file" character varying(255), "unevictable" character varying(255), "mlocked" character varying(255), "swap_total" character varying(255), "swap_free" character varying(255), "dirty" character varying(255), "write_back" character varying(255), "anon_pages" character varying(255), "mapped" character varying(255), "shmem" character varying(255), "slab" character varying(255), "s_reclaimable" character varying(255), "s_unreclaim" character varying(255), "kernel_stack" character varying(255), "page_tables" character varying(255), "nfs_unstable" character varying(255), "bounce" character varying(255), "writeback_tmp" character varying(255), "commit_limit" character varying(255), "committed_as" character varying(255), "vmalloc_total" character varying(255), "vmalloc_used" character varying(255), "vmalloc_chunk" character varying(255), "hardware_corrupted" character varying(255), "anon_huge_pages" character varying(255), "cma_total" character varying(255), "cma_free" character varying(255), "huge_pages_total" character varying(255), "huge_pages_free" character varying(255), "huge_pages_rsvd" character varying(255), "huge_pages_surp" character varying(255), "hugepagesize" character varying(255), "direct_map_4k" character varying(255), "direct_map_2M" character varying(255), "direct_map_1G" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_memories_on_server_id" ON "memories" USING btree ("server_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "servers" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "servers" ("id" serial primary key, "account_id" integer, "hostname" character varying(255), "os" character varying(255), "uptime" character varying(255), "datetime" character varying(255), "ip_address" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_account_id" ON "servers" USING btree ("account_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE "sessions" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sessions_on_session_id" ON "sessions" USING btree ("session_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_sessions_on_updated_at" ON "sessions" USING btree ("updated_at")[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE "accounts" CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "name" character varying(255) DEFAULT '' NOT NULL, "admin" boolean DEFAULT 'f', "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "confirmation_token" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying(255), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_email" ON "accounts" USING btree ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_accounts_on_reset_password_token" ON "accounts" USING btree ("reset_password_token")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "arps" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "arps" ("id" serial primary key, "server_id" integer, "address" character varying(255), "hw_type" character varying(255), "hw_address" character varying(255), "flags" character varying(255), "mask" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_arps_on_server_id" ON "arps" USING btree ("server_id")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE "bandwidths" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "bandwidths" ("id" serial primary key, "server_id" integer, "interface" character varying(255), "tx" character varying(255), "rx" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bandwidths_on_server_id" ON "bandwidths" USING btree ("server_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "cpus" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "cpus" ("id" serial primary key, "server_id" integer, "architecture" character varying(255), "cpu_op_mode_s" character varying(255), "byte_order" character varying(255), "cpu_s" character varying(255), "on_line_cpu_s_list" character varying(255), "thread_s_per_core" character varying(255), "core_s_per_socket" character varying(255), "socket_s" character varying(255), "numa_node_s" character varying(255), "vendor_id" character varying(255), "cpu_family" character varying(255), "model" character varying(255), "m_name" character varying(255), "stepping" character varying(255), "cpu_mhz" character varying(255), "bogo_mips" character varying(255), "virtualization" character varying(255), "hypervisor_vendor" character varying(255), "virtualization_type" character varying(255), "l1d_cache" character varying(255), "l1i_cache" character varying(255), "l2_cache" character varying(255), "numa_node0_cpu_s" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_cpus_on_server_id" ON "cpus" USING btree ("server_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "disks" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "disks" ("id" serial primary key, "server_id" integer, "file_system" character varying(255), "size" character varying(255), "used" character varying(255), "avail" character varying(255), "used_percent" character varying(255), "mounted" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_disks_on_server_id" ON "disks" USING btree ("server_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "ios" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ios" ("id" serial primary key, "server_id" integer, "device" character varying(255), "reads" character varying(255), "writes" character varying(255), "in_progress" character varying(255), "time_in_io" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_ios_on_server_id" ON "ios" USING btree ("server_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE "load_avgs" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "load_avgs" ("id" serial primary key, "server_id" integer, "one_min_avg" character varying(255), "five_min_avg" character varying(255), "fifteen_min_avg" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_load_avgs_on_server_id" ON "load_avgs" USING btree ("server_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "memories" CASCADE[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "memories" ("id" serial primary key, "server_id" integer, "mem_total" character varying(255), "mem_free" character varying(255), "mem_available" character varying(255), "buffers" character varying(255), "cached" character varying(255), "swap_cached" character varying(255), "active" character varying(255), "inactive" character varying(255), "active_anon" character varying(255), "inactive_anon" character varying(255), "active_file" character varying(255), "inactive_file" character varying(255), "unevictable" character varying(255), "mlocked" character varying(255), "swap_total" character varying(255), "swap_free" character varying(255), "dirty" character varying(255), "write_back" character varying(255), "anon_pages" character varying(255), "mapped" character varying(255), "shmem" character varying(255), "slab" character varying(255), "s_reclaimable" character varying(255), "s_unreclaim" character varying(255), "kernel_stack" character varying(255), "page_tables" character varying(255), "nfs_unstable" character varying(255), "bounce" character varying(255), "writeback_tmp" character varying(255), "commit_limit" character varying(255), "committed_as" character varying(255), "vmalloc_total" character varying(255), "vmalloc_used" character varying(255), "vmalloc_chunk" character varying(255), "hardware_corrupted" character varying(255), "anon_huge_pages" character varying(255), "cma_total" character varying(255), "cma_free" character varying(255), "huge_pages_total" character varying(255), "huge_pages_free" character varying(255), "huge_pages_rsvd" character varying(255), "huge_pages_surp" character varying(255), "hugepagesize" character varying(255), "direct_map_4k" character varying(255), "direct_map_2M" character varying(255), "direct_map_1G" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_memories_on_server_id" ON "memories" USING btree ("server_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "servers" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "servers" ("id" serial primary key, "account_id" integer, "hostname" character varying(255), "os" character varying(255), "uptime" character varying(255), "datetime" character varying(255), "ip_address" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_servers_on_account_id" ON "servers" USING btree ("account_id")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE "sessions" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sessions_on_session_id" ON "sessions" USING btree ("session_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_sessions_on_updated_at" ON "sessions" USING btree ("updated_at")[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3459704181813537000);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to MigrateOldUrls (20160130050940)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class MigrateOldUrls < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050940"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToPostsRevisionUrl (20160130050941)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddIndexToPostsRevisionUrl < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050941"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenamePostTagsTable (20160130050942)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class RenamePostTagsTable < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050942"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTaggings (20160130050943)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateTaggings < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050943"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeleteJoinPostsTags (20160130050944)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class DeleteJoinPostsTags < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050944"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToTagName (20160130050945)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddIndexToTagName < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050945"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to MoveUserIdToPost (20160130050946)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class MoveUserIdToPost < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050946"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to MergeRevisionsIntoPosts (20160130050947)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class MergeRevisionsIntoPosts < ActiveRecord::Migration[4.2] (called from load at /Users/arnonhongklay/.rbenv/versions/2.3.1/bin/rake:22)
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160130050947"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3459704181813537000)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'arps'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bandwidths'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bloggy_posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bloggy_posts_revisions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bloggy_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bloggy_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cpus'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'disks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ios'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'load_avgs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'memories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'notificats'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'servers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sessions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: alias_method_chain is deprecated. Please, use Module#prepend instead. From module, you can access the original method using super. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+DEPRECATION WARNING: after_filter is deprecated and will be removed in Rails 5.1. Use after_action instead. (called from <top (required)> at /Users/arnonhongklay/Repositories/Hongklay/magnifier/config/environment.rb:5)
+Started GET "/" for ::1 at 2016-08-14 17:15:25 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 31ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-14 17:16:16 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.1ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-14 17:17:41 +0700
+Processing by LandingController#index as HTML
+  Rendering landing/index.html.erb within layouts/landing
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/setting.css.sass to /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/setting.sass. (called from evaluate at /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/compass-rails-86afb2c45ae3/lib/compass-rails/patches/sass_importer.rb:36)
+WARNING on line 1 of /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/setting.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/index.css.sass to /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/index.sass. (called from evaluate at /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/compass-rails-86afb2c45ae3/lib/compass-rails/patches/sass_importer.rb:36)
+WARNING on line 1 of /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/index.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/setting.css.sass to /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/setting.sass. (called from evaluate at /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/compass-rails-86afb2c45ae3/lib/compass-rails/patches/sass_importer.rb:48)
+DEPRECATION WARNING: Extra .css in SASS file is unnecessary. Rename /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/index.css.sass to /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/index.sass. (called from evaluate at /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/compass-rails-86afb2c45ae3/lib/compass-rails/patches/sass_importer.rb:48)
+WARNING on line 1 of /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/dashboard.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Warning. Error encountered while saving cache 41e969f0eaaea2f3dca247e2de57b3ddeb2c5d22/dashboard.css.sassc: can't dump IO
+
+WARNING on line 1 of /Users/arnonhongklay/Repositories/Hongklay/magnifier/app/assets/stylesheets/accounts/dashboard.css.sass:
+This selector doesn't have any properties and will not be rendered.
+
+Warning. Error encountered while saving cache 41e969f0eaaea2f3dca247e2de57b3ddeb2c5d22/dashboard.css.sassc: can't dump IO
+
+Warning. Error encountered while saving cache d4d131efb1251f3aa40b5478f87528c18788fa8e/landing.css.sassc: can't dump IO
+
+Warning. Error encountered while saving cache d4d131efb1251f3aa40b5478f87528c18788fa8e/landing.css.sassc: can't dump IO
+
+  Rendered landing/index.html.erb within layouts/landing (9251.9ms)
+Completed 500 Internal Server Error in 9443ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( landing.css )` to `config/initializers/assets.rb` and restart your server):
+    13:     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" %>
+    14:     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Raleway:400,300,700" %>
+    15: 
+    16:     <%= stylesheet_link_tag "landing", media: "all", "data-turbolinks-track" => true %>
+    17: 
+    18:     <%= csrf_meta_tags %>
+    19: 
+  
+app/views/layouts/landing.html.erb:16:in `_app_views_layouts_landing_html_erb__2124790872145667964_70195663712920'
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/arnonhongklay/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (106.9ms)
