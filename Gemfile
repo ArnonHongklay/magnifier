@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.1'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'nprogress-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
-# gem 'angular-rails-templates'
+gem 'angular-rails-templates'
 
 # gem 'autoprefixer-rails', '5.0.0.3'  # CSS auto-prefixing
 gem "compass-rails", github: 'Compass/compass-rails' # CSS helper
@@ -39,7 +39,7 @@ gem 'omniauth'                          # => Authentication
 gem 'omniauth-facebook'                 # => Authentication Facebook
 gem 'omniauth-twitter'                  # => Authentication Twitter
 
-gem 'rack-protection', github: 'sinatra/rack-protection'
+# gem 'rack-protection', github: 'sinatra/rack-protection'
 gem 'sinatra', github: 'sinatra'
 gem 'sidekiq'
 gem 'sidekiq-failures'
