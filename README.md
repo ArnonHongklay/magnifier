@@ -1,4 +1,4 @@
 # Magnifier
 Magnifier for monitoring your server
 
-Demo here: https://geekly-magnifier.herokuapp.com/
+Demo here: https://magnifier.hongklay.com/
